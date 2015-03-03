@@ -46,26 +46,23 @@ namespace SHEMS.entities
         static public String SW_SERVER_IP = "10.0.0.";
         static string QUIC_PORT = "80";
         static StreamSocket clientSocket = null;
-     
+
         public static async void switchOn(String severip)
         {
-            DatagramSocket datagramSocket=null;
+            DatagramSocket datagramSocket = null;
             try
             {
                 HostName hostName = new HostName(severip);
                 datagramSocket = new DatagramSocket();
-              
-                await datagramSocket.ConnectAsync(hostName, QUIC_PORT);
-               
-                DataWriter writer = new DataWriter(datagramSocket.OutputStream);
-             
+
+                IOutputStream outputStream = await datagramSocket.GetOutputStreamAsync(hostName, QUIC_PORT);
+                DataWriter writer = new DataWriter(outputStream);
                 writer.WriteBytes(ON_SWITCH_BYTES);
                 await writer.StoreAsync();
-
             }
-              catch(Exception exception)
+            catch (Exception exception)
             {
-               
+
                 datagramSocket.Dispose();
                 datagramSocket = null;
             }
@@ -78,8 +75,7 @@ namespace SHEMS.entities
                 HostName hostName = new HostName(severip);
                 datagramSocket = new DatagramSocket();
                 IOutputStream outputStream = await datagramSocket.GetOutputStreamAsync(hostName, QUIC_PORT);
-
-                DataWriter writer = new DataWriter(datagramSocket.OutputStream);
+                DataWriter writer = new DataWriter(outputStream);
                 writer.WriteBytes(OFF_SWITCH_BYTES);
                 await writer.StoreAsync();
             }

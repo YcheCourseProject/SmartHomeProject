@@ -35,3 +35,40 @@ C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Debug\Bl
 C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Debug\BlankPage1.g.cs
 C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Debug\BlankPage1.xaml
 C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Debug\BlankPage1.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\App.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\BlankPage1.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\MainPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.xr.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.exe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\resources.pri
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\AppxManifest.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.build.appxrecipe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\App.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\App.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\BlankPage1.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\BlankPage1.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MainPage.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MainPage.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\XamlTypeInfo.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\App.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\BlankPage1.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MainPage.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\App.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\BlankPage1.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MainPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\XamlSaveStateFile.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SHEMS.exe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SHEMS.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\priconfig.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\priconfig.xml.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\layout.resfiles
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\layout.resfiles.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\resources.resfiles
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\resources.resfiles.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\pri.resfiles
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\pri.resfiles.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\qualifiers.txt
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\qualifiers.txt.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\ProjectArchitectures.txt

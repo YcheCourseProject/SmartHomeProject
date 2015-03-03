@@ -1,1 +1,1 @@
-C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\SHEMS.csproj;neutral
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\SHEMS.csproj;neutral

@@ -123,19 +123,21 @@ namespace SHEMS
                     String humidity;
                     DataReader reader = new DataReader(clientSocket.InputStream);
                     reader.InputStreamOptions = InputStreamOptions.Partial;  //采用异步方式
-                    await reader.LoadAsync(1024);  //获取一定大小的数据流
+
                     int tempint;
 
                     while (acqflag)
                     {
+                        await reader.LoadAsync(1);  //获取一定大小的数据流
                         tempint = reader.ReadByte();
+
                         if (tempint == '%')
                         {
                             char[] ch = new char[] { ':' };
                             String[] tempstrs = sb.Split(ch);
                             string tempstr = tempstrs[1];
-                            temprature = tempstr.Substring(2, 6);
-                            humidity = tempstrs[1].Substring(9, 13);
+                            temprature = tempstr.Substring(2, 4);
+                            humidity = tempstrs[1].Substring(9, 4);
                             TextBox_Tmp.Text = temprature;
                             TextBox_Humid.Text = humidity;
                             sb = "";
@@ -143,10 +145,11 @@ namespace SHEMS
                         else
                         {
                             sb = sb + (char)tempint;
+
                         }
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     Debug.WriteLine(e.StackTrace);
                     clientSocket.Dispose();

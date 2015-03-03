@@ -7,55 +7,55 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>f327543d-cf87-4aee-a47c-3d16c821d505</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\bin\Debug\SHEMS.exe">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.exe">
       <PackagePath>SHEMS.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\Assets\SmallLogo.scale-240.png">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\Assets\WideLogo.scale-240.png">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\bin\Debug\BlankPage1.xbf">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\BlankPage1.xbf">
       <PackagePath>BlankPage1.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\bin\Debug\SHEMS.xr.xml">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.xr.xml">
       <PackagePath>SHEMS.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
