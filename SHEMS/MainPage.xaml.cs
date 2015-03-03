@@ -25,7 +25,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Networking.Sockets;
 using Windows.Networking;
 using Windows.Storage.Streams;
-
+using Windows.UI.Xaml.Media.Imaging;
 
 
 
@@ -256,10 +256,15 @@ namespace SHEMS
                  
                 String acmodestr = comboBoxACMode.SelectedItem as String;
                 textBlock1.Text = acmodestr;
+                BitmapImage bmp = new BitmapImage();
+
+                //bmp.UriSource = new Uri("Assets/ac_mode_cool.png", UriKind.Absolute);
+                //Img_ACMode.Source = bmp;
+                //Img_ACMode.Stretch = Stretch.Fill;
             }
         }
 
- 
+    
 
 
     }
