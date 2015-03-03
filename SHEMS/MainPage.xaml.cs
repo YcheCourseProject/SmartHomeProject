@@ -9,8 +9,9 @@ using System.Diagnostics;
 //线程相关
 using System.Threading;
 using System.Threading.Tasks;
+//自己代码
 using SHEMS.entities;
-
+ 
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -46,9 +47,13 @@ namespace SHEMS
         public MainPage()
         {
             this.InitializeComponent();
-
             this.NavigationCacheMode = NavigationCacheMode.Required;
             context = SynchronizationContext.Current;
+            List<string> acmodes = new List<string>
+            {
+                "Cool","Warm","Ventilate","Dehydrate"
+            };
+            comboBoxACMode.ItemsSource = acmodes;
         }
 
         /// <summary>
@@ -63,6 +68,11 @@ namespace SHEMS
             {
                 ThreadProcAcqTmpHumid();
             });
+             Task.Factory.StartNew(() =>
+            {
+                ThreadProcAcqSmartMeterData();
+            });
+           
             // TODO: If your application contains multiple pages, ensure that you are
             // handling the hardware Back button by registering for the
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
@@ -79,7 +89,26 @@ namespace SHEMS
             frame.Navigate(typeof(BlankPage1));
         }
 
+        public async void ThreadProcAcqSmartMeterData()
+        {
+            byte[] bholdregs1 = null;
+ 
+            TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106",context);
+            while(true)
+            { 
+            bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
+            Array.Reverse(bholdregs1);
+            float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
+            context.Post(async (s) =>
+            {
 
+                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+                TxtTest.Text = Energy1.ToString();
+            }, null);
+
+            await Task.Delay(2000);
+            }
+        }
         public void ThreadProcOnOffAC(bool isReadyOn)
         {
             context.Post(async (s) =>
@@ -178,6 +207,7 @@ namespace SHEMS
                     }
             }, null);
         }
+        
         private void Button_Click_OnAC(object sender, RoutedEventArgs e)
         {
             Task.Factory.StartNew(() =>
@@ -219,6 +249,17 @@ namespace SHEMS
             });
         }
 
+        private void comboBoxACMODE_DropDownClosed(object sender,object e)
+        {
+            if(comboBoxACMode.SelectedItem!=null)
+            {
+                 
+                String acmodestr = comboBoxACMode.SelectedItem as String;
+                textBlock1.Text = acmodestr;
+            }
+        }
+
+ 
 
 
     }

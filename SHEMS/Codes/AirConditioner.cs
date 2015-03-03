@@ -39,6 +39,8 @@ namespace SHEMS.entities
                 await writer.StoreAsync();
                 writer.DetachStream();
                 writer.Dispose();
+                clientSocket.Dispose();
+                clientSocket = null;
             }
             catch
             {

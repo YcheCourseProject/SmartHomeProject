@@ -17,9 +17,12 @@
         <Button x:ConnectionId='3' Content="温度下调" HorizontalAlignment="Left" Margin="24,281,0,0" VerticalAlignment="Top"                              />
         <Button x:ConnectionId='4' Content="温度上调" HorizontalAlignment="Left" Margin="158,281,0,0" VerticalAlignment="Top"                            />
         <Button x:ConnectionId='5' Content="关空调" HorizontalAlignment="Left" Margin="158,206,0,0" VerticalAlignment="Top"                            RenderTransformOrigin="0.52,1.126"/>
-        <TextBox HorizontalAlignment="Left" Margin="185,391,0,0" TextWrapping="Wrap" Text="温度" VerticalAlignment="Top" Name="TextBox_Tmp"/>
-        <TextBox HorizontalAlignment="Left" Margin="44,391,0,0" TextWrapping="Wrap" Text="湿度" VerticalAlignment="Top" Name="TextBox_Humid" />
-        <Button x:ConnectionId='6' Content="智能开关" HorizontalAlignment="Left" Margin="89,441,0,0" VerticalAlignment="Top"                        />
+        <TextBox HorizontalAlignment="Left" Margin="203,468,0,0" TextWrapping="Wrap" Text="温度" VerticalAlignment="Top" Name="TextBox_Tmp" RenderTransformOrigin="0.433,1.478"/>
+        <TextBox HorizontalAlignment="Left" Margin="72,468,0,0" TextWrapping="Wrap" Text="湿度" VerticalAlignment="Top" Name="TextBox_Humid" RenderTransformOrigin="1.05,2.539" />
+        <Button x:ConnectionId='6' Content="智能开关" HorizontalAlignment="Left" Margin="119,521,0,0" VerticalAlignment="Top"                         />
+        <ComboBox x:ConnectionId='7' Name="comboBoxACMode" HorizontalAlignment="Left" Margin="24,368,0,0" VerticalAlignment="Top" Width="120"                                                />
+        <Image HorizontalAlignment="Left" Height="100" Margin="164,348,0,0" VerticalAlignment="Top" Width="100" Name="Img_ACMode" Source="Assets/ac_mode_hot.png" />
+        <TextBox HorizontalAlignment="Left" Margin="287,183,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtTest"/>
     </Grid>
 </Page>
 
