@@ -22,8 +22,8 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ac.png">
       <PackagePath>Assets\ac.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ac_mode_arefaction.png">
-      <PackagePath>Assets\ac_mode_arefaction.png</PackagePath>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ac_mode_dehydrate.png">
+      <PackagePath>Assets\ac_mode_dehydrate.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ac_mode_cool.png">
       <PackagePath>Assets\ac_mode_cool.png</PackagePath>

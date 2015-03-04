@@ -31,9 +31,9 @@ namespace SHEMS.entities
         public byte[] read_floatRegisters(ushort startAddress1, ushort startAddress2)
         {
             byte[] bholdregs1= new byte[12];
-            sg.ReadHoldingRegisters(startAddress1, 6, bholdregs1);
+            bholdregs1=sg.ReadHoldingRegisters(startAddress1, 6, bholdregs1).Result;
             byte[] bholdregs2 = new byte[4];
-            sg.ReadHoldingRegisters(startAddress2, 2, bholdregs2);
+            bholdregs2=sg.ReadHoldingRegisters(startAddress2, 2, bholdregs2).Result;
 
             CTConver conver = new CTConver();
             byte[] bholdregs = new byte[16];
@@ -49,7 +49,7 @@ namespace SHEMS.entities
         public byte[] read_doubleRegisters(ushort startAddress)
         {
             byte[] bholdregs= new byte[32];
-            sg.ReadHoldingRegisters(startAddress, 16, bholdregs);
+            bholdregs=sg.ReadHoldingRegisters(startAddress, 16, bholdregs).Result;
             return bholdregs;
         }
         

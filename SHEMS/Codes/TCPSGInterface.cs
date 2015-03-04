@@ -188,14 +188,17 @@ namespace SHEMS.entities
         //}
         public async Task<byte[]> ReadHoldingRegisters(ushort startAddress, ushort numInputs, byte[] bholdregs)
         {
-      
+
             try
             {
-               
+                if(clientSocket==null)
+                { 
                 HostName serverHost = new HostName(this.meter_ipaddr);
                 clientSocket = new StreamSocket();
-                await clientSocket.ConnectAsync(serverHost, SEVER_PORT);
-                DataWriter writer = new DataWriter(clientSocket.OutputStream);
+                await clientSocket.ConnectAsync(serverHost, SEVER_PORT);      
+                }
+                DataWriter writer;
+                writer = new DataWriter(clientSocket.OutputStream);
                 byte[] tempbytes = getSendReadHoldingRegisternumsPackage(startAddress, numInputs);
                 writer.WriteBytes(tempbytes);
                 try

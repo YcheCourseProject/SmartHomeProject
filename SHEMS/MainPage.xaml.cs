@@ -44,6 +44,10 @@ namespace SHEMS
         SynchronizationContext context;
         bool acqflag = true;
         bool isReadyOn = true;
+        static String COOL = "Cool";
+        static String WARM = "Warm";
+        static String VENTILATE = "Ventilate";
+        static String DEHYDRATE = "Dehydrate";
         public MainPage()
         {
             this.InitializeComponent();
@@ -51,10 +55,13 @@ namespace SHEMS
             context = SynchronizationContext.Current;
             List<string> acmodes = new List<string>
             {
-                "Cool","Warm","Ventilate","Dehydrate"
+               COOL,WARM,VENTILATE,DEHYDRATE
             };
             comboBoxACMode.ItemsSource = acmodes;
+            comboBoxACMode.SelectedIndex = 1;
+            
         }
+
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
@@ -94,16 +101,30 @@ namespace SHEMS
             byte[] bholdregs1 = null;
  
             TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106",context);
+            TCPAmmeterData meterData1 = new TCPAmmeterData(meter1);
             while(true)
-            { 
-            bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
-            Array.Reverse(bholdregs1);
-            float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
+            {
+                CSmartMeterData csmartMeterData1 = new CSmartMeterData();
+                csmartMeterData1.getActive_Power(meterData1.read_active_Power());
+                csmartMeterData1.getReactive_Power(meterData1.read_Reactive_Power());
+                csmartMeterData1.getCurrent(meterData1.read_current());
+                csmartMeterData1.getVoltage_Vph_n(meterData1.read_voltage_Vph_n());
+                csmartMeterData1.getActive_Energy(meterData1.read_active_Energy());
+
+                float activePower1=csmartMeterData1.smartMeterData.Total_Active_Power_65;
+                float reactivePower1 = csmartMeterData1.smartMeterData.Reactive_Power_Total_67;
+                float current1 = csmartMeterData1.smartMeterData.Current_a_13;
+                float voltage1 = csmartMeterData1.smartMeterData.Voltage_Va_n_1;
+                double activeEnergy1 = csmartMeterData1.smartMeterData.Active_Energy_Import_Tariff_1_801;
+                //bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
+            //Array.Reverse(bholdregs1);
+            //float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
             context.Post(async (s) =>
             {
 
                 //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                TxtTest.Text = Energy1.ToString();
+                TxtTest.Text = activePower1.ToString()+"\n\r"+reactivePower1.ToString()
+                    +"\n\r"+current1.ToString()+"\n\r"+voltage1.ToString()+"\n\r"+activeEnergy1.ToString();
             }, null);
 
             await Task.Delay(2000);
@@ -133,6 +154,7 @@ namespace SHEMS
                     AirConditioner.downTemperature();
                 else
                     AirConditioner.upTemperature();
+                textBlock1.Text = AirConditioner.temperature.ToString();
             }, null);
         }
         public void ThreadProcAcqTmpHumid()
@@ -190,21 +212,22 @@ namespace SHEMS
         }
         public void ThreadProcOnOffSW(bool isReadyOn)
         {
+            //要考虑
+            if (isReadyOn == true)
+                for (int i = 0; i < 255; i++)
+                {
+                    SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_IP + i);
+                }
+
+            else
+                for (int i = 0; i < 255; i++)
+                {
+                    SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_IP + i);
+                }
             context.Post(async (s) =>
             {
 
-                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                if (isReadyOn == true)
-                    for (int i = 0; i < 255; i++)
-                    {
-                        SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_IP + i);
-                    }
-
-                else
-                    for (int i = 0; i < 255; i++)
-                    {
-                        SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_IP + i);
-                    }
+                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的            
             }, null);
         }
         
@@ -229,6 +252,7 @@ namespace SHEMS
             Task.Factory.StartNew(() =>
             {
                 ThreadProcUpDownAC(true);
+              
             });
         }
 
@@ -257,10 +281,19 @@ namespace SHEMS
                 String acmodestr = comboBoxACMode.SelectedItem as String;
                 textBlock1.Text = acmodestr;
                 BitmapImage bmp = new BitmapImage();
-
-                //bmp.UriSource = new Uri("Assets/ac_mode_cool.png", UriKind.Absolute);
-                //Img_ACMode.Source = bmp;
-                //Img_ACMode.Stretch = Stretch.Fill;
+                String ACmodeStr = comboBoxACMode.SelectedItem as String;
+                String picstr;
+                if (ACmodeStr == COOL)
+                    picstr = "ac_mode_cool.png";
+                else if (ACmodeStr == WARM)
+                    picstr = "ac_mode_hot.png";
+                else if (ACmodeStr == VENTILATE)
+                    picstr = "ac_mode_ventilate.png";
+                else
+                    picstr = "ac_mode_dehydrate.png";
+                bmp.UriSource = new Uri("ms-appx:///Assets/"+picstr, UriKind.RelativeOrAbsolute);
+                Img_ACMode.Source = bmp;
+                Img_ACMode.Stretch = Stretch.Fill;
             }
         }
 

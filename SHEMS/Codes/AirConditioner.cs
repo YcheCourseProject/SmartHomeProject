@@ -14,7 +14,7 @@ namespace SHEMS.entities
 {
     class AirConditioner
     {
-        static int temperature = 21;
+        static public int temperature = 21;
         static AC_MODE ac_mode = AC_MODE.WARM;
         static string HOST_IP = "10.0.0.151";
         static string SEVER_PORT = "60000";

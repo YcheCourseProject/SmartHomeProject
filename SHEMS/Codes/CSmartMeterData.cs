@@ -22,7 +22,10 @@ using System.Text;
         /// <param name="active_Power"></param>
         /// <param name="reactive_Power"></param>
         /// <param name="power_Factor"></param>
-
+        public CSmartMeterData()
+        {
+             smartMeterData = new CSmartMeterDataInfo();
+        }
         public CSmartMeterData(byte[] voltage_Vph_n, byte[] voltage_Vph_ph, byte[] current, byte[] active_Power, byte[] active_Energy)
         {
             getVoltage_Vph_n(voltage_Vph_n);
