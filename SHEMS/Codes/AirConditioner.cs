@@ -20,6 +20,9 @@ namespace SHEMS.entities
         static string SEVER_PORT = "60000";
         static byte AC_CODE_ON = (byte)0x55;
         static byte AC_CODE_OFF = (byte)0x80;
+        static public float COMFORT_TEMPERATURE = 21;
+        static public float COMFORT_RESTRAIN_BOUND = 1.5f;
+        static public bool isACOn = false;
          public enum AC_MODE
         {
             COLD, WARM, VENTILATION, DEHYDRATION
@@ -64,6 +67,11 @@ namespace SHEMS.entities
                 setACTemperatureMode(temperature, ac_mode);
             }
         }
+        public static void setTemperatureWithComfortT()
+        {
+            setACTemperatureMode((int)AirConditioner.COMFORT_TEMPERATURE, ac_mode);
+            temperature = (int)COMFORT_TEMPERATURE;
+        }
         public static void setACMode(AC_MODE mode)
         {
             setACTemperatureMode(temperature, mode);
@@ -94,6 +102,7 @@ namespace SHEMS.entities
                 temperature = 21;
             temp = (byte)(temp + (temperature - 16));
             setACSettings(temp);
+    
         }
         public static void onAC()
         {

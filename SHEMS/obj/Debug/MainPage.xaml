@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:ConnectionId='1' Content="Button" HorizontalAlignment="Left" Margin="89,105,0,0" VerticalAlignment="Top"                     />
+        <Button x:ConnectionId='1' Content="Button" HorizontalAlignment="Left" Margin="10,582,0,0" VerticalAlignment="Top"                     />
         <Canvas HorizontalAlignment="Left" Height="100" Margin="89,96,0,0" VerticalAlignment="Top" Width="109"/>
         <Button x:ConnectionId='2' Content="开空调" HorizontalAlignment="Left" Margin="24,206,0,0" VerticalAlignment="Top"                          />
         <TextBlock HorizontalAlignment="Left" Margin="119,183,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Name="textBlock1"/>
@@ -23,6 +23,10 @@
         <ComboBox x:ConnectionId='7' Name="comboBoxACMode" HorizontalAlignment="Left" Margin="24,368,0,0" VerticalAlignment="Top" Width="120"                                                />
         <Image HorizontalAlignment="Left" Height="100" Margin="164,348,0,0" VerticalAlignment="Top" Width="100" Name="Img_ACMode" Source="Assets/ac_mode_hot.png" />
         <TextBox HorizontalAlignment="Left" Margin="287,183,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtTest"/>
+        <RadioButton x:ConnectionId='8' Content="自动控制" HorizontalAlignment="Left" Margin="30,80,0,0" VerticalAlignment="Top" GroupName="AutoCtrlBtns"                              />
+        <RadioButton x:ConnectionId='9' Content="手动控制" HorizontalAlignment="Left" Margin="198,80,0,0" VerticalAlignment="Top" GroupName="AutoCtrlBtns"                                />
+        <TextBox HorizontalAlignment="Left" Margin="30,23,0,0" TextWrapping="Wrap" Text="21" VerticalAlignment="Top" RenderTransformOrigin="-0.499,0.515" Name="TxtBox_ComfortTemperature"/>
+        <Button x:ConnectionId='10' Content="改空调的舒适温度" HorizontalAlignment="Left" Margin="133,14,0,0" VerticalAlignment="Top"                                   />
     </Grid>
 </Page>
 

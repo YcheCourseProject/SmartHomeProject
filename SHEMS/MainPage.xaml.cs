@@ -42,7 +42,8 @@ namespace SHEMS
     {
         //上下文
         SynchronizationContext context;
-        bool acqflag = true;
+        bool acqflag = true;    //控制实时温湿度获取
+        bool isAutoControlFlag = false;   //自动控制
         bool isReadyOn = true;
         static String COOL = "Cool";
         static String WARM = "Warm";
@@ -157,71 +158,101 @@ namespace SHEMS
                 textBlock1.Text = AirConditioner.temperature.ToString();
             }, null);
         }
-        public void ThreadProcAcqTmpHumid()
+        public  async void ThreadProcAcqTmpHumid()
         {
-
-            context.Post(async (s) =>
+            StreamSocket clientSocket = new StreamSocket();
+            String temprature="";
+            String humidity="";
+            try
             {
+                HostName serverHost = new HostName(TmpHumidCtrl.TMP_HUM_SERVER_IP);
+                await clientSocket.ConnectAsync(serverHost, TmpHumidCtrl.TMP_HUM_PORT);
+                String sb = "";
+ 
+                DataReader reader = new DataReader(clientSocket.InputStream);
+                reader.InputStreamOptions = InputStreamOptions.Partial;  //采用异步方式
 
-                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                StreamSocket clientSocket = new StreamSocket();
-                try
+                int tempint;
+
+                while (acqflag)
                 {
-                    HostName serverHost = new HostName(TmpHumidCtrl.TMP_HUM_SERVER_IP);
-                    await clientSocket.ConnectAsync(serverHost, TmpHumidCtrl.TMP_HUM_PORT);
-                    String sb = "";
-                    String temprature;
-                    String humidity;
-                    DataReader reader = new DataReader(clientSocket.InputStream);
-                    reader.InputStreamOptions = InputStreamOptions.Partial;  //采用异步方式
+                    await reader.LoadAsync(1);  //获取一定大小的数据流
+                    tempint = reader.ReadByte();
 
-                    int tempint;
-
-                    while (acqflag)
+                    if (tempint == '%')
                     {
-                        await reader.LoadAsync(1);  //获取一定大小的数据流
-                        tempint = reader.ReadByte();
-
-                        if (tempint == '%')
+                        char[] ch = new char[] { ':' };
+                        String[] tempstrs = sb.Split(ch);
+                        string tempstr = tempstrs[1];
+                        temprature = tempstr.Substring(2, 4);
+                        humidity = tempstrs[1].Substring(9, 4);
+   
+                        sb = "";
+                        if (isAutoControlFlag)
                         {
-                            char[] ch = new char[] { ':' };
-                            String[] tempstrs = sb.Split(ch);
-                            string tempstr = tempstrs[1];
-                            temprature = tempstr.Substring(2, 4);
-                            humidity = tempstrs[1].Substring(9, 4);
+                            if (Single.Parse(temprature) - AirConditioner.COMFORT_TEMPERATURE > AirConditioner.COMFORT_RESTRAIN_BOUND)
+                            {
+                                if (AirConditioner.isACOn == true)
+                                {
+                                    AirConditioner.OffAC();
+                                    AirConditioner.isACOn = false;
+                                }
+                            }
+                            else if (Single.Parse(temprature) - AirConditioner.COMFORT_TEMPERATURE < -AirConditioner.COMFORT_RESTRAIN_BOUND)
+                            {
+                                if (AirConditioner.isACOn == false)
+                                {
+                                    //AirConditioner.onAC();
+                                    AirConditioner.setTemperatureWithComfortT();
+                                    AirConditioner.isACOn = true;
+                                }
+                            }
+
+                        }
+                        context.Post(async (s) =>
+                        {
+
+                            //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
                             TextBox_Tmp.Text = temprature;
                             TextBox_Humid.Text = humidity;
-                            sb = "";
-                        }
-                        else
-                        {
-                            sb = sb + (char)tempint;
+                            textBlock1.Text = AirConditioner.isACOn.ToString();
+                            // MessageDialog messageDialog = new MessageDialog("ThreadProc1");
+                            //await messageDialog.ShowAsync();
+                        }, null);
+                    }
+                    else
+                    {
+                        sb = sb + (char)tempint;
 
-                        }
                     }
                 }
-                catch (Exception e)
-                {
-                    Debug.WriteLine(e.StackTrace);
-                    clientSocket.Dispose();
-                    clientSocket = null;
-                }
-                // MessageDialog messageDialog = new MessageDialog("ThreadProc1");
-                //await messageDialog.ShowAsync();
-            }, null);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.StackTrace);
+                clientSocket.Dispose();
+                clientSocket = null;
+               
+            }
+           
         }
         public void ThreadProcOnOffSW(bool isReadyOn)
         {
             //要考虑
+            int i = 8;
             if (isReadyOn == true)
-                for (int i = 0; i < 255; i++)
-                {
-                    SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_IP + i);
-                }
+            //for (int i = 0; i < 255; i++)
+            //{
+            {
+               
+                SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_IP + i);
+
+            }//}
 
             else
-                for (int i = 0; i < 255; i++)
+                //for (int i = 0; i < 255; i++)
                 {
+                
                     SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_IP + i);
                 }
             context.Post(async (s) =>
@@ -293,9 +324,7 @@ namespace SHEMS
                     picstr = "ac_mode_cool.png";
                     Task.Factory.StartNew(() =>
                 {
-                    AirConditioner.setACMode(AirConditioner.AC_MODE.COLD);
-                
-                 
+                    AirConditioner.setACMode(AirConditioner.AC_MODE.COLD);   
                 });
 
 
@@ -334,6 +363,25 @@ namespace SHEMS
                 Img_ACMode.Source = bmp;
                 Img_ACMode.Stretch = Stretch.Fill;
 
+            }
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            isAutoControlFlag = true;
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            isAutoControlFlag = false;
+        }
+
+        private void Button_Click_ChangeComfort(object sender, RoutedEventArgs e)
+        {
+           
+            if(TxtBox_ComfortTemperature.Text!="")
+            {
+                AirConditioner.COMFORT_TEMPERATURE = Single.Parse(TxtBox_ComfortTemperature.Text);
             }
         }
 
