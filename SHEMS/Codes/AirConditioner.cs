@@ -20,8 +20,7 @@ namespace SHEMS.entities
         static string SEVER_PORT = "60000";
         static byte AC_CODE_ON = (byte)0x55;
         static byte AC_CODE_OFF = (byte)0x80;
-      
-        public enum AC_MODE
+         public enum AC_MODE
         {
             COLD, WARM, VENTILATION, DEHYDRATION
         }
@@ -64,6 +63,11 @@ namespace SHEMS.entities
                 temperature++;
                 setACTemperatureMode(temperature, ac_mode);
             }
+        }
+        public static void setACMode(AC_MODE mode)
+        {
+            setACTemperatureMode(temperature, mode);
+            ac_mode = mode;
         }
         public static void setACTemperatureMode(int temperature, AC_MODE mode)
         {

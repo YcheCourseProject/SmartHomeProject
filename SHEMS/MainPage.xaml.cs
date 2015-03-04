@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 //自己代码
 using SHEMS.entities;
- 
+
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -59,7 +59,7 @@ namespace SHEMS
             };
             comboBoxACMode.ItemsSource = acmodes;
             comboBoxACMode.SelectedIndex = 1;
-            
+
         }
 
 
@@ -75,11 +75,11 @@ namespace SHEMS
             {
                 ThreadProcAcqTmpHumid();
             });
-             Task.Factory.StartNew(() =>
-            {
-                ThreadProcAcqSmartMeterData();
-            });
-           
+            Task.Factory.StartNew(() =>
+           {
+               ThreadProcAcqSmartMeterData();
+           });
+
             // TODO: If your application contains multiple pages, ensure that you are
             // handling the hardware Back button by registering for the
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
@@ -99,10 +99,10 @@ namespace SHEMS
         public async void ThreadProcAcqSmartMeterData()
         {
             byte[] bholdregs1 = null;
- 
-            TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106",context);
+
+            TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106", context);
             TCPAmmeterData meterData1 = new TCPAmmeterData(meter1);
-            while(true)
+            while (true)
             {
                 CSmartMeterData csmartMeterData1 = new CSmartMeterData();
                 csmartMeterData1.getActive_Power(meterData1.read_active_Power());
@@ -111,49 +111,49 @@ namespace SHEMS
                 csmartMeterData1.getVoltage_Vph_n(meterData1.read_voltage_Vph_n());
                 csmartMeterData1.getActive_Energy(meterData1.read_active_Energy());
 
-                float activePower1=csmartMeterData1.smartMeterData.Total_Active_Power_65;
+                float activePower1 = csmartMeterData1.smartMeterData.Total_Active_Power_65;
                 float reactivePower1 = csmartMeterData1.smartMeterData.Reactive_Power_Total_67;
                 float current1 = csmartMeterData1.smartMeterData.Current_a_13;
                 float voltage1 = csmartMeterData1.smartMeterData.Voltage_Va_n_1;
                 double activeEnergy1 = csmartMeterData1.smartMeterData.Active_Energy_Import_Tariff_1_801;
                 //bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
-            //Array.Reverse(bholdregs1);
-            //float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
-            context.Post(async (s) =>
-            {
+                //Array.Reverse(bholdregs1);
+                //float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
+                context.Post(async (s) =>
+                {
 
-                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                TxtTest.Text = activePower1.ToString()+"\n\r"+reactivePower1.ToString()
-                    +"\n\r"+current1.ToString()+"\n\r"+voltage1.ToString()+"\n\r"+activeEnergy1.ToString();
-            }, null);
+                    //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+                    TxtTest.Text = activePower1.ToString() + "\n\r" + reactivePower1.ToString()
+                        + "\n\r" + current1.ToString() + "\n\r" + voltage1.ToString() + "\n\r" + activeEnergy1.ToString();
+                }, null);
 
-            await Task.Delay(2000);
+                await Task.Delay(2000);
             }
         }
         public void ThreadProcOnOffAC(bool isReadyOn)
         {
+            if (isReadyOn == true)
+                AirConditioner.onAC();
+            else
+                AirConditioner.OffAC();
+
             context.Post(async (s) =>
             {
-
-                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                if (isReadyOn == true)
-                    AirConditioner.onAC();
-                else
-                    AirConditioner.OffAC();
                 // MessageDialog messageDialog = new MessageDialog("ThreadProc1");
                 //await messageDialog.ShowAsync();
+                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+
             }, null);
         }
         public void ThreadProcUpDownAC(bool isReadyDown)
         {
+            if (isReadyDown == true)
+                AirConditioner.downTemperature();
+            else
+                AirConditioner.upTemperature();
             context.Post(async (s) =>
             {
-
                 //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                if (isReadyDown == true)
-                    AirConditioner.downTemperature();
-                else
-                    AirConditioner.upTemperature();
                 textBlock1.Text = AirConditioner.temperature.ToString();
             }, null);
         }
@@ -230,7 +230,8 @@ namespace SHEMS
                 //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的            
             }, null);
         }
-        
+ 
+
         private void Button_Click_OnAC(object sender, RoutedEventArgs e)
         {
             Task.Factory.StartNew(() =>
@@ -252,7 +253,7 @@ namespace SHEMS
             Task.Factory.StartNew(() =>
             {
                 ThreadProcUpDownAC(true);
-              
+
             });
         }
 
@@ -273,31 +274,70 @@ namespace SHEMS
             });
         }
 
-        private void comboBoxACMODE_DropDownClosed(object sender,object e)
+        private void comboBoxACMODE_DropDownClosed(object sender, object e)
         {
-            if(comboBoxACMode.SelectedItem!=null)
+
+
+            if (comboBoxACMode.SelectedItem != null)
             {
-                 
+
                 String acmodestr = comboBoxACMode.SelectedItem as String;
+
                 textBlock1.Text = acmodestr;
                 BitmapImage bmp = new BitmapImage();
                 String ACmodeStr = comboBoxACMode.SelectedItem as String;
                 String picstr;
+
                 if (ACmodeStr == COOL)
+                {
                     picstr = "ac_mode_cool.png";
+                    Task.Factory.StartNew(() =>
+                {
+                    AirConditioner.setACMode(AirConditioner.AC_MODE.COLD);
+                
+                 
+                });
+
+
+                }
                 else if (ACmodeStr == WARM)
+                {
                     picstr = "ac_mode_hot.png";
+                    Task.Factory.StartNew(() =>
+                {
+                    AirConditioner.setACMode(AirConditioner.AC_MODE.WARM);
+           
+              
+                });
+
+                }
                 else if (ACmodeStr == VENTILATE)
+                {
                     picstr = "ac_mode_ventilate.png";
+                    Task.Factory.StartNew(() =>
+            {
+                AirConditioner.setACMode(AirConditioner.AC_MODE.VENTILATION);
+            });
+
+                }
                 else
+                {
                     picstr = "ac_mode_dehydrate.png";
-                bmp.UriSource = new Uri("ms-appx:///Assets/"+picstr, UriKind.RelativeOrAbsolute);
+                    Task.Factory.StartNew(() =>
+                    {
+                        AirConditioner.setACMode(AirConditioner.AC_MODE.DEHYDRATION);
+                    });
+
+                }
+
+                bmp.UriSource = new Uri("ms-appx:///Assets/" + picstr, UriKind.RelativeOrAbsolute);
                 Img_ACMode.Source = bmp;
                 Img_ACMode.Stretch = Stretch.Fill;
+
             }
         }
 
-    
+
 
 
     }
