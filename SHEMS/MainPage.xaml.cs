@@ -79,6 +79,7 @@ namespace SHEMS
             Task.Factory.StartNew(() =>
            {
                ThreadProcAcqSmartMeterData();
+
            });
 
             // TODO: If your application contains multiple pages, ensure that you are

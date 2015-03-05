@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+//json
+using Windows.Data.Json;
 
 namespace SHEMS.entities
 {
@@ -10,6 +12,9 @@ namespace SHEMS.entities
     /// </summary>
     class CSmartMeterDataInfo
     {
+        private const string Total_Active_Power_65_Key = "Total_Active_Power_65";
+        private const string Reactive_Power_Total_67_Key = "Reactive_Power_Total_67";
+        private const string Active_Energy_Import_Tariff_1_801_Key = "Active_Energy_Import_Tariff_1_801";
         //相电压
         private float voltage_Va_n_1;
         private float voltage_Vb_n_3;
@@ -261,6 +266,15 @@ namespace SHEMS.entities
         {
             get { return active_Energy_Export_Tariff_2_813; }
             set { active_Energy_Export_Tariff_2_813 = value; }
+        }
+   
+        public string toLoadIdentificationInfoJson()
+        {
+            JsonObject jsonObject=new JsonObject();
+            jsonObject.SetNamedValue(Total_Active_Power_65_Key, JsonValue.CreateStringValue(Total_Active_Power_65.ToString()));
+            jsonObject.SetNamedValue(Reactive_Power_Total_67_Key, JsonValue.CreateStringValue(Reactive_Power_Total_67.ToString()));
+            jsonObject.SetNamedValue(Active_Energy_Import_Tariff_1_801_Key, JsonValue.CreateStringValue(Active_Energy_Import_Tariff_1_801.ToString()));
+            return jsonObject.Stringify();
         }
     }
 }

@@ -10,6 +10,8 @@
 
     <Grid>
         <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="117,270,0,0" VerticalAlignment="Top" />
+        <TextBox HorizontalAlignment="Left" Margin="82,317,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>
+        <TextBox HorizontalAlignment="Left" Margin="82,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList"/>
 
     </Grid>
 </Page>

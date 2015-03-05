@@ -90,10 +90,12 @@
     <Compile Include="Codes\CSmartMeterData.cs" />
     <Compile Include="Codes\CSmartMeterDataInfo.cs" />
     <Compile Include="Codes\CTConver.cs" />
+    <Compile Include="Codes\LoadIdentification.cs" />
     <Compile Include="Codes\TCPAmmeterData.cs" />
     <Compile Include="Codes\TCPSGInterface.cs" />
     <Compile Include="Codes\SwitchCtrl.cs" />
     <Compile Include="Codes\TmpHumidCtrl.cs" />
+    <Compile Include="Codes\Utilities.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
