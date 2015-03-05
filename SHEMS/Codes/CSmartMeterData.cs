@@ -139,10 +139,10 @@ using System.Text;
             CTConver conver = new CTConver();
             float[] temp = new float[4];
             temp = conver.ConvertToFloatArray(active_Power);
-            smartMeterData.Active_Power_a_25 = temp[3] * (-1);
-            smartMeterData.Active_Power_b_27 = temp[2] * (-1);
-            smartMeterData.Active_Power_c_29 = temp[1] * (-1);
-            smartMeterData.Total_Active_Power_65 = temp[0] * (-1);
+            smartMeterData.Active_Power_a_25 = temp[3] ;
+            smartMeterData.Active_Power_b_27 = temp[2] ;
+            smartMeterData.Active_Power_c_29 = temp[1] ;
+            smartMeterData.Total_Active_Power_65 = temp[0] ;
         }
 
         public void getReactive_Power(byte[] reactive_Power)

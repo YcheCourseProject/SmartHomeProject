@@ -9,9 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="117,270,0,0" VerticalAlignment="Top" />
-        <TextBox HorizontalAlignment="Left" Margin="82,317,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>
-        <TextBox HorizontalAlignment="Left" Margin="82,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList"/>
+       
+        <TextBox HorizontalAlignment="Left" Margin="27,318,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>
+        <TextBox HorizontalAlignment="Left" Margin="27,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList" RenderTransformOrigin="0.946,0.556"/>
+        <TextBox HorizontalAlignment="Left" Margin="27,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadStatus"/>
 
     </Grid>
 </Page>

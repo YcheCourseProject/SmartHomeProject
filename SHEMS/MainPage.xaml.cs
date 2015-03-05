@@ -42,6 +42,7 @@ namespace SHEMS
     {
         //上下文
         SynchronizationContext context;
+        bool meteracqflag = true;
         bool acqflag = true;    //控制实时温湿度获取
         bool isAutoControlFlag = false;   //自动控制
         bool isReadyOn = true;
@@ -71,6 +72,7 @@ namespace SHEMS
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            meteracqflag = true;
             // TODO: Prepare page for display here.
             Task.Factory.StartNew(() =>
             {
@@ -88,7 +90,11 @@ namespace SHEMS
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
         }
-
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            meteracqflag = false;
+        }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -104,7 +110,7 @@ namespace SHEMS
 
             TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106", context);
             TCPAmmeterData meterData1 = new TCPAmmeterData(meter1);
-            while (true)
+            while (meteracqflag)
             {
                 CSmartMeterData csmartMeterData1 = new CSmartMeterData();
                 csmartMeterData1.getActive_Power(meterData1.read_active_Power());

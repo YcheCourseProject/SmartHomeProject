@@ -12,6 +12,12 @@ namespace SHEMS.Codes
         static int WINDOW_NUM = 5;			//滑动平均滞后的时间      为WINDOW_NUM
         static float AP_THRESHOLD = 10;
         static float BASE_POWER_THRESHOLD = 5;
+        public static bool isLampOn = false;
+        public static bool isNoteBookOn = false;
+        public static bool isPotOn = false;
+        public static string POT = "电热水壶";
+        public static string LAMP = "节能灯";
+        public static string NOTEBOOK = "笔记本电脑";
         public class LoadData
         {
             float ap;
@@ -177,6 +183,40 @@ namespace SHEMS.Codes
             }
         }
 
+        private static String matchload(double loadinap, double loadinrp,bool isOnNow)
+        {
+           
+            if (loadinap > 1800 && loadinap < 1900)
+            {
+
+                isPotOn=isOnNow;    
+                return POT;
+            }
+
+            else if (loadinap > 5 && loadinap < 20)
+            {
+                isLampOn = isOnNow;
+                return LAMP;
+            }
+            else if (loadinap > 20 && loadinap < 50)
+            {
+                double absrp = Math.Abs(loadinrp);
+                if (absrp > 11 && absrp < 20)
+                {
+                    isNoteBookOn = isOnNow;
+                    return NOTEBOOK;
+                }
+                else
+                    return "未知的有功功率在20到50W的电器";
+            }
+            else if (loadinap < 5)
+            {
+                return "出现了毛刺和抖动";
+            }
+            else
+                return "未知的电器";
+        }
+
         public static List<String> handleHisLogDBMethodWindow(List<LoadData> loadDatalist)
         {
             List<String>  loadeventslist = new List<String>();
@@ -265,7 +305,7 @@ namespace SHEMS.Codes
                                     float loadap = Math.Abs(thelast.Ap - reference.Ap);
                                     float loadrp = -Math.Abs(thelast.Rp - reference.Rp);
                                     //先做一个匹配的检验    要从loginfo中匹配到才算ok
-
+                                   
                                     if (trueForIn)
                                     {
                                         tempstr = "Load detected：in\n";
@@ -279,7 +319,7 @@ namespace SHEMS.Codes
 
                                     //if (db_loginfo.match(loadap, loadrp) != null)
                                     {
-                                        identified_appliance = "Unknown";
+                                        identified_appliance = matchload(loadap, loadrp, trueForIn);
                                         //db_eventlog.insert(possibleInOrOut.getTime().getTime(), identified_appliance, event_status);
                                         loadeventslist.Add(tempstr + possibleInOrOut.Time.ToString()
                                         + "\n" + "ap:" + loadap + "W\nrp:" + loadrp + "Var" + "\n" + "maybe:" + identified_appliance);
