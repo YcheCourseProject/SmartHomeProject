@@ -1,1 +1,1 @@
-E:\wp8深入浅出\《深入浅出Windows Phone 8.1应用开发》\深入浅出Windows Phone 8.1应用开发_稿件整理20140409\源代码\第12章\Examples_12_2\HttpClientDemo\HttpClientDemo\HttpClientDemo.csproj;neutral
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\HttpClientDemo\HttpClientDemo\HttpClientDemo.csproj;neutral

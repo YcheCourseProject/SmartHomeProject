@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/CPS_System/!svn/ver/5/trunk/DataAcquireExp/ConsoleApplicationDataAcquire/lib
+END
+Modbus.dll
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/CPS_System/!svn/ver/5/trunk/DataAcquireExp/ConsoleApplicationDataAcquire/lib/Modbus.dll
+END
+Unme.Common.dll
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/CPS_System/!svn/ver/5/trunk/DataAcquireExp/ConsoleApplicationDataAcquire/lib/Unme.Common.dll
+END
+log4net.dll
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/CPS_System/!svn/ver/5/trunk/DataAcquireExp/ConsoleApplicationDataAcquire/lib/log4net.dll
+END
+Microsoft.Office.Interop.Excel.dll
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/CPS_System/!svn/ver/5/trunk/DataAcquireExp/ConsoleApplicationDataAcquire/lib/Microsoft.Office.Interop.Excel.dll
+END
+log4net.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/CPS_System/!svn/ver/5/trunk/DataAcquireExp/ConsoleApplicationDataAcquire/lib/log4net.xml
+END

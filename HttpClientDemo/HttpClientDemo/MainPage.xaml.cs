@@ -31,7 +31,7 @@ namespace HttpClientDemo
     public sealed partial class MainPage : Page
     {
 
-        private string server = "http://localhost/default.aspx";
+        private string server = "http://10.0.0.9:800/default.aspx";
         private HttpClient httpClient;
         private CancellationTokenSource cts;
         public MainPage()

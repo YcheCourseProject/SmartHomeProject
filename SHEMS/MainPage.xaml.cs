@@ -246,7 +246,7 @@ namespace SHEMS
         public void ThreadProcOnOffSW(bool isReadyOn)
         {
             //要考虑
-            int i = 8;
+            int i = 2;
             if (isReadyOn == true)
             //for (int i = 0; i < 255; i++)
             //{
