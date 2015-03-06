@@ -43,7 +43,11 @@ namespace ConsoleApplicationDataAcquire
 
         Program()
         {
- 
+            connect();
+         
+        }
+        void connect()
+        {
             try
             {
                 //电表连接
@@ -51,7 +55,8 @@ namespace ConsoleApplicationDataAcquire
                 MeterDataAccessor = new TCPAmmeterData(TcpMeter);
                 SmartMeterData = new CSmartMeterData();
                 //数据库连接
-                publicSQL = new PublicSQL(UID,PASSWD,DB);                
+                publicSQL = new PublicSQL(UID, PASSWD, DB);
+                error = false;
             }
             catch (Exception e)
             {
@@ -64,6 +69,7 @@ namespace ConsoleApplicationDataAcquire
             if (error)
             {
                 Console.WriteLine("Something error happened");
+                connect();
                 return;
             }
             try
@@ -81,6 +87,7 @@ namespace ConsoleApplicationDataAcquire
             catch (Exception e)
             {
                 Console.WriteLine("{0}", e.ToString());
+                connect();
             }
         
         }
@@ -99,6 +106,7 @@ namespace ConsoleApplicationDataAcquire
             Console.WriteLine("<Start>");
             while (RunFlag)
             {
+                
                 a.Data2mssql();
                 System.Threading.Thread.Sleep(1000);
             }
