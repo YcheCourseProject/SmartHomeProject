@@ -147,13 +147,17 @@ namespace SHEMS
 
         }
 
- 
 
-        private void Button_Click_Query24hPerDay(object sender, RoutedEventArgs e)
+
+        private void Button_Click_HoursPerDay(object sender, RoutedEventArgs e)
         {
             HttpRequestAsync(async () =>
             {
-                string resourceAddress = server + "?cacheable=1";
+                int year=DatePicker.Date.Year;
+                int month=DatePicker.Date.Month;
+                int day=DatePicker.Date.Day;
+ 
+                string resourceAddress = server + "?y="+year+"&m="+month+"&d="+day+"&type=HoursPerDay";
                 HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress)).AsTask(cts.Token);
                 string responseBody = await response.Content.ReadAsStringAsync().AsTask(cts.Token);
                 return responseBody;
@@ -187,11 +191,27 @@ namespace SHEMS
             });
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_DaysPerMonth(object sender, RoutedEventArgs e)
         {
             HttpRequestAsync(async () =>
             {
-                string resourceAddress = server + "?y=2015&m=3&d=6&type=HoursPerMonth";
+                int year = DatePicker.Date.Year;
+                int month = DatePicker.Date.Month;
+                string resourceAddress = server + "?y="+year+"&m="+month+"&type=DaysPerMonth";
+                HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress)).AsTask(cts.Token);
+                string responseBody = await response.Content.ReadAsStringAsync().AsTask(cts.Token);
+                return responseBody;
+            });
+        }
+
+        private void Button_Click_HoursPerMonth(object sender, RoutedEventArgs e)
+        {
+            HttpRequestAsync(async () =>
+            {
+                 int year = DatePicker.Date.Year;
+                int month = DatePicker.Date.Month;
+                string resourceAddress = server + "?y="+year+"&m="+month+"&type=HoursPerMonth";
+              
                 HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress)).AsTask(cts.Token);
                 string responseBody = await response.Content.ReadAsStringAsync().AsTask(cts.Token);
                 return responseBody;
