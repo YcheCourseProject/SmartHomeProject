@@ -12,6 +12,7 @@ using SHEMS.Codes;
 
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -19,7 +20,14 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
- 
+//
+using Windows.UI.Core;
+//Http
+using Windows.Web.Http;
+using Windows.Web.Http.Filters;
+using Windows.Security.Cryptography;
+using Windows.Storage.Streams;
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -30,12 +38,21 @@ namespace SHEMS
     /// </summary>
     public sealed partial class BlankPage1 : Page
     {
+        private string server = "http://10.0.0.5:800/WebForm1.aspx";
+        private HttpClient httpClient;
+        private CancellationTokenSource cts;
+        public static string TYPE_DAYSPERMONTH = "DaysPerMonth";
+        public static string TYPE_HOURSPERDAY = "HoursPerDay";
+        public static string TYPE_HOURSPERMONTH = "HoursPerMonth";
+
         bool meteracqflag = true;
         static int countMax = 50;
         SynchronizationContext context;
         public BlankPage1()
         {
             context = SynchronizationContext.Current;
+            httpClient = new HttpClient();
+            cts = new CancellationTokenSource();
             this.InitializeComponent();
 
         }
@@ -130,9 +147,55 @@ namespace SHEMS
 
         }
 
+ 
+
+        private void Button_Click_Query24hPerDay(object sender, RoutedEventArgs e)
+        {
+            HttpRequestAsync(async () =>
+            {
+                string resourceAddress = server + "?cacheable=1";
+                HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress)).AsTask(cts.Token);
+                string responseBody = await response.Content.ReadAsStringAsync().AsTask(cts.Token);
+                return responseBody;
+            });
+        }
+
+        private async void HttpRequestAsync(Func<Task<string>> httpRequestFuncAsync)
+        {
+            string responseBody;
+            //waiting.Visibility = Visibility.Visible;
+            try
+            {
+                responseBody = await httpRequestFuncAsync();
+                cts.Token.ThrowIfCancellationRequested();
+            }
+            catch (TaskCanceledException)
+            {
+                responseBody = "请求被取消";
+            }
+            catch (Exception ex)
+            {
+                responseBody = "异常消息" + ex.Message;
+            }
+            finally
+            {
+                //waiting.Visibility = Visibility.Collapsed;
+            }
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                await new MessageDialog(responseBody).ShowAsync();
+            });
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            HttpRequestAsync(async () =>
+            {
+                string resourceAddress = server + "?y=2015&m=3&d=6&type=HoursPerMonth";
+                HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress)).AsTask(cts.Token);
+                string responseBody = await response.Content.ReadAsStringAsync().AsTask(cts.Token);
+                return responseBody;
+            });
         }
 
     }
