@@ -8,8 +8,11 @@ Assets\air_power_on.png
 Assets\airconditioner.png
 Assets\clothwasher.png
 Assets\dishwasher.png
+Assets\Humidity.png
 Assets\ic_launcher.png
 Assets\icon_smarthome.png
+Assets\icon_smarthome120.scale-240.png
+Assets\icon_smarthome150.png
 Assets\icon_sp2.png
 Assets\Logo.scale-240.png
 Assets\SmallLogo.scale-240.png
@@ -30,3 +33,6 @@ App.xbf
 BlankPage1.xbf
 MainPage.xbf
 SHEMS.xr.xml
+Skin\logo.png
+Skin\PageBG.jpg
+Skin\PanoramaBG.jpg

@@ -49,8 +49,19 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\dishwasher.png">
       <PackagePath>Assets\dishwasher.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Humidity.png">
+      <PackagePath>Assets\Humidity.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_smarthome.png">
       <PackagePath>Assets\icon_smarthome.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_smarthome120.scale-240.png">
+      <PackagePath>Assets\icon_smarthome120.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_smarthome150.png">
+      <PackagePath>Assets\icon_smarthome150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_sp2.png">
       <PackagePath>Assets\icon_sp2.png</PackagePath>
@@ -60,7 +71,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
@@ -76,7 +86,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\switch_off_normal.png">
       <PackagePath>Assets\switch_off_normal.png</PackagePath>
@@ -103,11 +112,20 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Skin\logo.png">
+      <PackagePath>Skin\logo.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\temperature.jpg">
       <PackagePath>Assets\temperature.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\temperature_measure.jpg">
       <PackagePath>Assets\temperature_measure.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Skin\PageBG.jpg">
+      <PackagePath>Skin\PageBG.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Skin\PanoramaBG.jpg">
+      <PackagePath>Skin\PanoramaBG.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>

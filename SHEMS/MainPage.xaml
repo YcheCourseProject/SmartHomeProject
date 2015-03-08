@@ -6,26 +6,146 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    >
 
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="10,582,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Canvas HorizontalAlignment="Left" Height="100" Margin="89,96,0,0" VerticalAlignment="Top" Width="109"/>
-        <Button Content="开空调" HorizontalAlignment="Left" Margin="24,206,0,0" VerticalAlignment="Top" Click="Button_Click_OnAC"/>
-        <TextBlock HorizontalAlignment="Left" Margin="119,183,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Name="textBlock1"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="203,53,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="温度下调" HorizontalAlignment="Left" Margin="24,281,0,0" VerticalAlignment="Top"  Click="Button_Click_TmpDown"/>
-        <Button Content="温度上调" HorizontalAlignment="Left" Margin="158,281,0,0" VerticalAlignment="Top"  Click="Button_Click_TmpUp"/>
-        <Button Content="关空调" HorizontalAlignment="Left" Margin="158,206,0,0" VerticalAlignment="Top" Click="Button_Click_OffAC" RenderTransformOrigin="0.52,1.126"/>
-        <TextBox HorizontalAlignment="Left" Margin="203,468,0,0" TextWrapping="Wrap" Text="温度" VerticalAlignment="Top" Name="TextBox_Tmp" RenderTransformOrigin="0.433,1.478"/>
-        <TextBox HorizontalAlignment="Left" Margin="72,468,0,0" TextWrapping="Wrap" Text="湿度" VerticalAlignment="Top" Name="TextBox_Humid" RenderTransformOrigin="1.05,2.539" />
-        <Button Content="智能开关" HorizontalAlignment="Left" Margin="119,521,0,0" VerticalAlignment="Top" Click="Button_Click_SW" />
-        <ComboBox Name="comboBoxACMode" HorizontalAlignment="Left" Margin="24,368,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="comboBoxACMODE_DropDownClosed" />
-        <Image HorizontalAlignment="Left" Height="100" Margin="164,348,0,0" VerticalAlignment="Top" Width="100" Name="Img_ACMode" Source="Assets/ac_mode_hot.png" />
-        <TextBox HorizontalAlignment="Left" Margin="287,183,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtTest"/>
-        <RadioButton Content="自动控制" HorizontalAlignment="Left" Margin="30,80,0,0" VerticalAlignment="Top" GroupName="AutoCtrlBtns" Checked="RadioButton_Checked"/>
-        <RadioButton Content="手动控制" HorizontalAlignment="Left" Margin="198,80,0,0" VerticalAlignment="Top" GroupName="AutoCtrlBtns" Checked="RadioButton_Checked_1"/>
-        <TextBox HorizontalAlignment="Left" Margin="30,23,0,0" TextWrapping="Wrap" Text="21" VerticalAlignment="Top" RenderTransformOrigin="-0.499,0.515" Name="TxtBox_ComfortTemperature"/>
-        <Button Content="改空调的舒适温度" HorizontalAlignment="Left" Margin="133,14,0,0" VerticalAlignment="Top" Click="Button_Click_ChangeComfort"/>
+    <Page.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="Grid" Background="Black" Height="135" Width="120" Margin="0, 0, 12, 0" >
+                            <Border x:Name="Border">
+                                <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
+                                Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Margin="20,20,0,0" Stretch="UniformToFill" Height="80" Source="Assets/icon_smarthome.png" />
+                <StackPanel Orientation="Vertical" Margin="40,10,0,0">
+                    <TextBlock Margin="40,0,0,0" Foreground="White" FontSize="25" VerticalAlignment="Center" Text="Smart Control:" />
+                    <ToggleSwitch  FontSize="25" Header="" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" Toggled="ToggleSwitch_Toggled" Width="Auto"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+
+
+            </StackPanel>
+            <Pivot>
+                <PivotItem >
+                    <PivotItem.Header>
+                        <TextBlock Text="AirConditioner" FontSize="30" />
+                    </PivotItem.Header>
+                    <StackPanel HorizontalAlignment="Center">
+
+
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Button Click="Button_Click_OnOffAC" Style="{StaticResource ButtonStyle1}">
+                                <Grid>
+                                    <Image Source="Assets/switch_off_normal.png" Stretch="Uniform" Height="80" Name="Img_ACOnOFF"/>
+                                    <TextBlock Text="Press On"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20" Name="TxtOnOffStatus"></TextBlock>
+
+                                </Grid>
+                            </Button>
+                            <StackPanel VerticalAlignment="Center">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Image HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Center"   Name="Img_ACMode" Source="Assets/ac_mode_hot.png" />
+                                    <ComboBox Name="comboBoxACMode" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" DropDownClosed="comboBoxACMODE_DropDownClosed" />
+
+                                </StackPanel>
+                                <TextBlock Text="Change Mode"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
+                            </StackPanel>
+
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button Click="Button_Click_TmpDown" Style="{StaticResource ButtonStyle1}">
+                                <Grid>
+                                    <Image Source="Assets/temperature_down_normal.png" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="Press Down"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                </Grid>
+
+                            </Button>
+                            <StackPanel  VerticalAlignment="Center">
+                                <TextBlock Text="Set TMP:"  VerticalAlignment="Bottom" Margin="5" FontSize="20" HorizontalAlignment="Center"></TextBlock>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="21"  VerticalAlignment="Bottom" Margin="5" FontSize="20" HorizontalAlignment="Center" Name="Txt_SetT"></TextBlock>
+                                    <TextBlock Text="℃"  VerticalAlignment="Bottom" Margin="5" FontSize="20" HorizontalAlignment="Center" ></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                            <Button Click="Button_Click_TmpUp" Style="{StaticResource ButtonStyle1}">
+                                <Grid>
+                                    <Image Source="Assets/temperature_up_normal.png" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="Press Up"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                    <!--<TextBlock Text="{Binding SummaryExpenses}" x:Name="SummaryExpenses"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" FontSize="15"></TextBlock>-->
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                </PivotItem>
+                <PivotItem>
+
+                    <PivotItem.Header>
+                        <TextBlock Text="Humidifier" FontSize="30" />
+                    </PivotItem.Header>
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                         
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Click="Button_Click_SW" Style="{StaticResource ButtonStyle1}" >
+                                <Grid>
+                                    <Image Source="Assets/switch_off_normal.png" Stretch="Uniform" Height="80" Name="Img_SW"/>
+                                    <TextBlock Text="Press On"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20" Name="TxtHumidifierStatus"></TextBlock>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </PivotItem>
+
+            </Pivot>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button  Style="{StaticResource ButtonStyle1}">
+                        <Grid>
+                            <Image Source="Assets/temperature_measure.jpg" Stretch="Uniform" Height="80"/>
+                            <TextBlock Text="Temperature"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                            <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="温度" VerticalAlignment="Top" Name="TextBox_Tmp" RenderTransformOrigin="0.433,1.478" FontSize="20"/>
+                        </Grid>
+
+                    </Button>
+                    <StackPanel  VerticalAlignment="Center">
+
+                    </StackPanel>
+                    <Button   Style="{StaticResource ButtonStyle1}" Margin="60,0,0,0">
+                        <Grid>
+                            <Image Source="Assets/Humidity.png" Stretch="Uniform" Height="80"/>
+                            <TextBlock Text="Humidity"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                            <TextBlock HorizontalAlignment="Right" Margin="50,0,0,0" TextWrapping="Wrap" Text="湿度" VerticalAlignment="Top" Name="TextBox_Humid" RenderTransformOrigin="1.05,2.539" FontSize="20"/>
+
+                        </Grid>
+                    </Button>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
     </Grid>
+
+
+
 </Page>

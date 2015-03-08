@@ -11,6 +11,8 @@ using System.Threading;
 using System.Threading.Tasks;
 //自己代码
 using SHEMS.entities;
+//绑定UI和数据的
+using System.ComponentModel;
 
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -28,7 +30,6 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 
 
-
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
 namespace SHEMS
@@ -38,9 +39,11 @@ namespace SHEMS
     /// </summary>
     ///  
 
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage : Page, INotifyPropertyChanged
     {
         //上下文
+        public static string AC_STATUS_PRESS2On="Press On";
+        public static string AC_STATUS_PRESS2OFF = "Press Off";
         SynchronizationContext context;
         bool meteracqflag = true;
         bool acqflag = true;    //控制实时温湿度获取
@@ -50,6 +53,29 @@ namespace SHEMS
         static String WARM = "Warm";
         static String VENTILATE = "Ventilate";
         static String DEHYDRATE = "Dehydrate";
+
+        //用于绑定的数据属性
+        private string curSetTemperature;
+
+        public string CurSetTemperature
+        {
+            get { return "CurSetTemperature:\t"+curSetTemperature+"℃"; }
+            set { curSetTemperature = value; }
+        }
+        private string curMeasuredTemperature;
+
+        public string CurMeasuredTemperature
+        {
+            get { return curMeasuredTemperature; }
+            set { curMeasuredTemperature = value; }
+        }
+        private string curMeasuredHumidity;
+
+        public string CurMeasuredHumidity
+        {
+            get { return curMeasuredHumidity; }
+            set { curMeasuredHumidity = value; }
+        }
         public MainPage()
         {
             this.InitializeComponent();
@@ -59,6 +85,8 @@ namespace SHEMS
             {
                COOL,WARM,VENTILATE,DEHYDRATE
             };
+            //ACItem.DataContext = this;
+            
             comboBoxACMode.ItemsSource = acmodes;
             comboBoxACMode.SelectedIndex = 1;
 
@@ -78,11 +106,11 @@ namespace SHEMS
             {
                 ThreadProcAcqTmpHumid();
             });
-            Task.Factory.StartNew(() =>
-           {
-               ThreadProcAcqSmartMeterData();
+           // Task.Factory.StartNew(() =>
+           //{
+           //    ThreadProcAcqSmartMeterData();
 
-           });
+           //});
 
             // TODO: If your application contains multiple pages, ensure that you are
             // handling the hardware Back button by registering for the
@@ -104,40 +132,41 @@ namespace SHEMS
             frame.Navigate(typeof(BlankPage1));
         }
 
-        public async void ThreadProcAcqSmartMeterData()
-        {
-            byte[] bholdregs1 = null;
+        //public async void ThreadProcAcqSmartMeterData()
+        //{
+        //    byte[] bholdregs1 = null;
 
-            TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106", context);
-            TCPAmmeterData meterData1 = new TCPAmmeterData(meter1);
-            while (meteracqflag)
-            {
-                CSmartMeterData csmartMeterData1 = new CSmartMeterData();
-                csmartMeterData1.getActive_Power(meterData1.read_active_Power());
-                csmartMeterData1.getReactive_Power(meterData1.read_Reactive_Power());
-                csmartMeterData1.getCurrent(meterData1.read_current());
-                csmartMeterData1.getVoltage_Vph_n(meterData1.read_voltage_Vph_n());
-                csmartMeterData1.getActive_Energy(meterData1.read_active_Energy());
+        //    TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106", context);
+        //    TCPAmmeterData meterData1 = new TCPAmmeterData(meter1);
+        //    while (meteracqflag)
+        //    {
+        //        CSmartMeterData csmartMeterData1 = new CSmartMeterData();
+        //        csmartMeterData1.getActive_Power(meterData1.read_active_Power());
+        //        csmartMeterData1.getReactive_Power(meterData1.read_Reactive_Power());
+        //        csmartMeterData1.getCurrent(meterData1.read_current());
+        //        csmartMeterData1.getVoltage_Vph_n(meterData1.read_voltage_Vph_n());
+        //        csmartMeterData1.getActive_Energy(meterData1.read_active_Energy());
 
-                float activePower1 = csmartMeterData1.smartMeterData.Total_Active_Power_65;
-                float reactivePower1 = csmartMeterData1.smartMeterData.Reactive_Power_Total_67;
-                float current1 = csmartMeterData1.smartMeterData.Current_a_13;
-                float voltage1 = csmartMeterData1.smartMeterData.Voltage_Va_n_1;
-                double activeEnergy1 = csmartMeterData1.smartMeterData.Active_Energy_Import_Tariff_1_801;
-                //bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
-                //Array.Reverse(bholdregs1);
-                //float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
-                context.Post(async (s) =>
-                {
+        //        float activePower1 = csmartMeterData1.smartMeterData.Total_Active_Power_65;
+        //        float reactivePower1 = csmartMeterData1.smartMeterData.Reactive_Power_Total_67;
+        //        float current1 = csmartMeterData1.smartMeterData.Current_a_13;
+        //        float voltage1 = csmartMeterData1.smartMeterData.Voltage_Va_n_1;
+        //        double activeEnergy1 = csmartMeterData1.smartMeterData.Active_Energy_Import_Tariff_1_801;
+        //        //bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
+        //        //Array.Reverse(bholdregs1);
+        //        //float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
+        //        context.Post(async (s) =>
+        //        {
 
-                    //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                    TxtTest.Text = activePower1.ToString() + "\n\r" + reactivePower1.ToString()
-                        + "\n\r" + current1.ToString() + "\n\r" + voltage1.ToString() + "\n\r" + activeEnergy1.ToString();
-                }, null);
+        //            //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+        //            TxtTest.Text
+        //                = activePower1.ToString() + "\n\r" + reactivePower1.ToString()
+        //                + "\n\r" + current1.ToString() + "\n\r" + voltage1.ToString() + "\n\r" + activeEnergy1.ToString();
+        //        }, null);
 
-                await Task.Delay(2000);
-            }
-        }
+        //        await Task.Delay(2000);
+        //    }
+        //}
         public void ThreadProcOnOffAC(bool isReadyOn)
         {
             if (isReadyOn == true)
@@ -145,13 +174,7 @@ namespace SHEMS
             else
                 AirConditioner.OffAC();
 
-            context.Post(async (s) =>
-            {
-                // MessageDialog messageDialog = new MessageDialog("ThreadProc1");
-                //await messageDialog.ShowAsync();
-                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-
-            }, null);
+ 
         }
         public void ThreadProcUpDownAC(bool isReadyDown)
         {
@@ -159,10 +182,10 @@ namespace SHEMS
                 AirConditioner.downTemperature();
             else
                 AirConditioner.upTemperature();
-            context.Post(async (s) =>
+            context.Post(  (s) =>
             {
                 //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                textBlock1.Text = AirConditioner.temperature.ToString();
+                this.Txt_SetT.Text = AirConditioner.temperature.ToString();
             }, null);
         }
         public  async void ThreadProcAcqTmpHumid()
@@ -216,13 +239,13 @@ namespace SHEMS
                             }
 
                         }
-                        context.Post(async (s) =>
+                        context.Post(  (s) =>
                         {
 
                             //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                            TextBox_Tmp.Text = temprature;
-                            TextBox_Humid.Text = humidity;
-                            textBlock1.Text = AirConditioner.isACOn.ToString();
+                            this.TextBox_Tmp.Text = temprature+"℃";
+                            this.TextBox_Humid.Text= humidity+"%";
+                            //textBlock1.Text = AirConditioner.isACOn.ToString();
                             // MessageDialog messageDialog = new MessageDialog("ThreadProc1");
                             //await messageDialog.ShowAsync();
                         }, null);
@@ -245,6 +268,26 @@ namespace SHEMS
         }
         public void ThreadProcOnOffSW(bool isReadyOn)
         {
+            string picstr = "";
+            context.Post((s) =>
+            {
+
+                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+                if (isReadyOn == true)
+                {
+                    TxtHumidifierStatus.Text = AC_STATUS_PRESS2OFF;
+                    picstr = "switch_on_normal.png";
+                }
+                else
+                {
+                    TxtHumidifierStatus.Text = AC_STATUS_PRESS2On;
+                    picstr = "switch_off_normal.png";
+                }
+                BitmapImage bmp = new BitmapImage();
+                Img_SW.Source = bmp;
+
+                bmp.UriSource = new Uri("ms-appx:///Assets/" + picstr, UriKind.RelativeOrAbsolute);
+            }, null);
             //要考虑
             int i = 2;
             if (isReadyOn == true)
@@ -253,6 +296,7 @@ namespace SHEMS
             {
                
                 SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_IP + i);
+                
 
             }//}
 
@@ -262,29 +306,75 @@ namespace SHEMS
                 
                     SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_IP + i);
                 }
-            context.Post(async (s) =>
-            {
 
-                //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的            
-            }, null);
+                
         }
  
-
-        private void Button_Click_OnAC(object sender, RoutedEventArgs e)
+        private void Button_Click_OnOffAC(object sender,RoutedEventArgs e)
         {
             Task.Factory.StartNew(() =>
             {
-                ThreadProcOnOffAC(true);
-            });
-        }
+                 
+              
+                string picstr = "";
+                 string tempstr="";
+                context.Post(async (s) =>
+                {
 
-        private void Button_Click_OffAC(object sender, RoutedEventArgs e)
-        {
-            Task.Factory.StartNew(() =>
-            {
-                ThreadProcOnOffAC(false);
+                    //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+                   tempstr = TxtOnOffStatus.Text.ToString();
+                }, null);
+                bool isTextPress2On = true;
+                if (tempstr.Equals(AC_STATUS_PRESS2OFF))
+                {
+                    ThreadProcOnOffAC(false);
+                    isTextPress2On = true;
+                   
+                }
+                else if (tempstr.Equals(AC_STATUS_PRESS2On))
+                {
+                    ThreadProcOnOffAC(true);
+                    isTextPress2On = false;
+                }
+                else
+                    return;
+                context.Post(async (s) =>
+                {
+
+                    //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+                    if(isTextPress2On==true)
+                    {
+                        TxtOnOffStatus.Text = AC_STATUS_PRESS2On;
+                        picstr = "switch_off_normal.png";
+                    }
+                    else
+                    {
+                        TxtOnOffStatus.Text = AC_STATUS_PRESS2OFF;
+                        picstr = "switch_on_normal.png";
+                    }
+                    BitmapImage bmp = new BitmapImage();
+                    Img_ACOnOFF.Source = bmp;
+             
+                    bmp.UriSource = new Uri("ms-appx:///Assets/" + picstr, UriKind.RelativeOrAbsolute);
+                }, null);
+               
             });
         }
+        //private void Button_Click_OnAC(object sender, RoutedEventArgs e)
+        //{
+        //    Task.Factory.StartNew(() =>
+        //    {
+        //        ThreadProcOnOffAC(true);
+        //    });
+        //}
+
+        //private void Button_Click_OffAC(object sender, RoutedEventArgs e)
+        //{
+        //    Task.Factory.StartNew(() =>
+        //    {
+        //        ThreadProcOnOffAC(false);
+        //    });
+        //}
 
         private void Button_Click_TmpDown(object sender, RoutedEventArgs e)
         {
@@ -315,13 +405,13 @@ namespace SHEMS
         private void comboBoxACMODE_DropDownClosed(object sender, object e)
         {
 
-
+            
             if (comboBoxACMode.SelectedItem != null)
             {
 
                 String acmodestr = comboBoxACMode.SelectedItem as String;
 
-                textBlock1.Text = acmodestr;
+                //textBlock1.Text = acmodestr;
                 BitmapImage bmp = new BitmapImage();
                 String ACmodeStr = comboBoxACMode.SelectedItem as String;
                 String picstr;
@@ -383,16 +473,29 @@ namespace SHEMS
             isAutoControlFlag = false;
         }
 
-        private void Button_Click_ChangeComfort(object sender, RoutedEventArgs e)
-        {
+        //private void Button_Click_ChangeComfort(object sender, RoutedEventArgs e)
+        //{
            
-            if(TxtBox_ComfortTemperature.Text!="")
-            {
-                AirConditioner.COMFORT_TEMPERATURE = Single.Parse(TxtBox_ComfortTemperature.Text);
-            }
+        //    if(TxtBox_ComfortTemperature.Text!="")
+        //    {
+        //        AirConditioner.COMFORT_TEMPERATURE = Single.Parse(TxtBox_ComfortTemperature.Text);
+        //    }
+        //}
+
+        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+
         }
 
-
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
 
 
     }

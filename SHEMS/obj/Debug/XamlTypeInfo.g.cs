@@ -124,17 +124,19 @@ namespace SHEMS.SHEMS_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[5];
             _typeNameTable[0] = "SHEMS.BlankPage1";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "SHEMS.MainPage";
+            _typeNameTable[4] = "String";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[5];
             _typeTable[0] = typeof(global::SHEMS.BlankPage1);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::SHEMS.MainPage);
+            _typeTable[4] = typeof(global::System.String);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -200,19 +202,78 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             case 3:   //  SHEMS.MainPage
                 userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_MainPage;
+                userType.AddMemberName("CurSetTemperature");
+                userType.AddMemberName("CurMeasuredTemperature");
+                userType.AddMemberName("CurMeasuredHumidity");
                 userType.SetIsLocalType();
                 xamlType = userType;
+                break;
+
+            case 4:   //  String
+                xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
         }
 
 
+        private object get_0_MainPage_CurSetTemperature(object instance)
+        {
+            var that = (global::SHEMS.MainPage)instance;
+            return that.CurSetTemperature;
+        }
+        private void set_0_MainPage_CurSetTemperature(object instance, object Value)
+        {
+            var that = (global::SHEMS.MainPage)instance;
+            that.CurSetTemperature = (global::System.String)Value;
+        }
+        private object get_1_MainPage_CurMeasuredTemperature(object instance)
+        {
+            var that = (global::SHEMS.MainPage)instance;
+            return that.CurMeasuredTemperature;
+        }
+        private void set_1_MainPage_CurMeasuredTemperature(object instance, object Value)
+        {
+            var that = (global::SHEMS.MainPage)instance;
+            that.CurMeasuredTemperature = (global::System.String)Value;
+        }
+        private object get_2_MainPage_CurMeasuredHumidity(object instance)
+        {
+            var that = (global::SHEMS.MainPage)instance;
+            return that.CurMeasuredHumidity;
+        }
+        private void set_2_MainPage_CurMeasuredHumidity(object instance, object Value)
+        {
+            var that = (global::SHEMS.MainPage)instance;
+            that.CurMeasuredHumidity = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::SHEMS.SHEMS_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "SHEMS.MainPage.CurSetTemperature":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurSetTemperature", "String");
+                xamlMember.Getter = get_0_MainPage_CurSetTemperature;
+                xamlMember.Setter = set_0_MainPage_CurSetTemperature;
+                break;
+            case "SHEMS.MainPage.CurMeasuredTemperature":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurMeasuredTemperature", "String");
+                xamlMember.Getter = get_1_MainPage_CurMeasuredTemperature;
+                xamlMember.Setter = set_1_MainPage_CurMeasuredTemperature;
+                break;
+            case "SHEMS.MainPage.CurMeasuredHumidity":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurMeasuredHumidity", "String");
+                xamlMember.Getter = get_2_MainPage_CurMeasuredHumidity;
+                xamlMember.Setter = set_2_MainPage_CurMeasuredHumidity;
+                break;
+            }
             return xamlMember;
         }
     }

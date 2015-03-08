@@ -117,7 +117,10 @@
     <Content Include="Assets\air_power_on.png" />
     <Content Include="Assets\clothwasher.png" />
     <Content Include="Assets\dishwasher.png" />
+    <Content Include="Assets\Humidity.png" />
     <Content Include="Assets\icon_smarthome.png" />
+    <Content Include="Assets\icon_smarthome120.scale-240.png" />
+    <Content Include="Assets\icon_smarthome150.png" />
     <Content Include="Assets\icon_sp2.png" />
     <Content Include="Assets\ic_launcher.png" />
     <Content Include="Assets\Logo.scale-240.png" />
@@ -135,6 +138,9 @@
     <Content Include="Assets\temperature_up_press.png" />
     <Content Include="Assets\waterheater.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
+    <Content Include="Skin\logo.png" />
+    <Content Include="Skin\PageBG.jpg" />
+    <Content Include="Skin\PanoramaBG.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -149,6 +155,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Skin\Thumbs.db" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

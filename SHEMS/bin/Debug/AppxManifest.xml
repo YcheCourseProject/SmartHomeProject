@@ -12,7 +12,7 @@
   <Properties>
     <DisplayName>SHEMS</DisplayName>
     <PublisherDisplayName>CheYuLin</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <Logo>Assets\icon_smarthome120.png</Logo>
   </Properties>
   <Prerequisites>
     <OSMinVersion>6.3.1</OSMinVersion>
@@ -23,8 +23,12 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="SHEMS.exe" EntryPoint="SHEMS.App">
-      <m3:VisualElements DisplayName="SHEMS" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="SHEMS" ForegroundText="light" BackgroundColor="transparent">
-        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png" />
+      <m3:VisualElements DisplayName="SHEMS" Square150x150Logo="Assets\icon_smarthome150.png" Square44x44Logo="Assets\SmallLogo.png" Description="SHEMS" ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+          <m3:ShowNameOnTiles>
+            <m3:ShowOn Tile="square150x150Logo" />
+          </m3:ShowNameOnTiles>
+        </m3:DefaultTile>
         <m3:SplashScreen Image="Assets\SplashScreen.png" />
       </m3:VisualElements>
     </Application>
