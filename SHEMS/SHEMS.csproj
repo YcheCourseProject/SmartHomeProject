@@ -116,7 +116,9 @@
     <Content Include="Assets\air_power_off.png" />
     <Content Include="Assets\air_power_on.png" />
     <Content Include="Assets\clothwasher.png" />
+    <Content Include="Assets\DaysPerMonth.png" />
     <Content Include="Assets\dishwasher.png" />
+    <Content Include="Assets\HoursPerDay.png" />
     <Content Include="Assets\Humidity.png" />
     <Content Include="Assets\icon_smarthome.png" />
     <Content Include="Assets\icon_smarthome120.scale-240.png" />
@@ -160,6 +162,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Skin\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="QuickChartsWP">
+      <HintPath>..\chart\QuickChartsWP.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

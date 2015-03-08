@@ -72,3 +72,9 @@ E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\qual
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\qualifiers.txt.intermediate
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\ProjectArchitectures.txt
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\QuickChartsWP.dll
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\QuickChartsWP.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\QuickChartsWP.pri
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SHEMS.csprojResolveAssemblyReference.cache
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SHEMS.csproj.GenerateResource.Cache
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\QuickChartsWP.pri.xml

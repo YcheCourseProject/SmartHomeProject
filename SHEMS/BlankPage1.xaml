@@ -5,6 +5,7 @@
     xmlns:local="using:SHEMS"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:amq="using:AmCharts.Windows.QuickCharts"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
@@ -22,7 +23,20 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
+        <Style x:Key="ButtonStyle2" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="Grid" Background="Black" Height="135" Width="100" Margin="0, 0, 12, 0" >
+                            <Border x:Name="Border">
+                                <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
+                                Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
     <Grid>
         <StackPanel>
@@ -50,15 +64,52 @@
                         <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadStatus"/>
                     </StackPanel>
                 </PivotItem>
+                
                 <PivotItem>
                     <PivotItem.Header>
                         <TextBlock Text="E-Consumption" FontSize="30" />
                     </PivotItem.Header>
                     <StackPanel>
-                        <DatePicker HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Name="DatePicker"/>
-                        <Button Content="HoursPerMonth" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="Button_Click_HoursPerMonth"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Select Query Date:"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
+                            <DatePicker HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Name="DatePicker"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button   Style="{StaticResource ButtonStyle2}" Click="Button_Click_DaysPerMonth">
+                                <Grid>
+                                    <Image Source="Assets/DaysPerMonth.png" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="Days/M"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="20"></TextBlock>
+                                    <TextBlock Text="Press Get"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                </Grid>
+                            </Button>
+                            <Button   Style="{StaticResource ButtonStyle2}" Click="Button_Click_HoursPerMonth" Margin="10,0,0,0">
+                                <Grid>
+                                    <Image Source="Assets/DaysPerMonth.png" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="Hours/M"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="20"></TextBlock>
+                                    <TextBlock Text="Press Get"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                </Grid>
+                            </Button>
+                            <Button   Style="{StaticResource ButtonStyle2}" Click="Button_Click_HoursPerDay" Margin="10,0,0,0">
+                                <Grid>
+                                    <Image Source="Assets/HoursPerDay.png" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="Hours/D"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="20"></TextBlock>
+                                    <TextBlock Text="Press Get"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel>
+                            <amq:SerialChart x:Name="chart1" CategoryValueMemberPath="TypeName"
+                            AxisForeground="White"
+                            PlotAreaBackground="Black"
+                            GridStroke="DarkGray">
+                                <amq:SerialChart.Graphs>
+                                    <amq:ColumnGraph ValueMemberPath="Sum" Brush="#8000FF00" ColumnWidthAllocation="0.4" />
+                                </amq:SerialChart.Graphs>
+                            </amq:SerialChart>
+                        </StackPanel>
+                        <!--<Button Content="HoursPerMonth" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="Button_Click_HoursPerMonth"/>
                         <Button Content="DaysPerMonth" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="Button_Click_DaysPerMonth"/>
-                        <Button Content="HoursPerDay" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="Button_Click_HoursPerDay" />
+                        <Button Content="HoursPerDay" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="Button_Click_HoursPerDay" />-->
                         <TextBox HorizontalAlignment="Left" Margin="81,531,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTestt"/>
                     </StackPanel>
                 </PivotItem>

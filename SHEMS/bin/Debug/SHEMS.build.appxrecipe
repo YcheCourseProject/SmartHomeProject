@@ -19,6 +19,9 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.exe">
       <PackagePath>SHEMS.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP.dll">
+      <PackagePath>QuickChartsWP.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ac.png">
       <PackagePath>Assets\ac.png</PackagePath>
     </AppxPackagedFile>
@@ -46,8 +49,14 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\clothwasher.png">
       <PackagePath>Assets\clothwasher.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\DaysPerMonth.png">
+      <PackagePath>Assets\DaysPerMonth.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\dishwasher.png">
       <PackagePath>Assets\dishwasher.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\HoursPerDay.png">
+      <PackagePath>Assets\HoursPerDay.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Humidity.png">
       <PackagePath>Assets\Humidity.png</PackagePath>
@@ -144,6 +153,48 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.xr.xml">
       <PackagePath>SHEMS.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\QuickChartsWP.xr.xml">
+      <PackagePath>QuickChartsWP\QuickChartsWP.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\AreaGraph.xbf">
+      <PackagePath>QuickChartsWP\Themes\AreaGraph.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\Balloon.xbf">
+      <PackagePath>QuickChartsWP\Themes\Balloon.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\CategoryAxis.xbf">
+      <PackagePath>QuickChartsWP\Themes\CategoryAxis.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\ColumnGraph.xbf">
+      <PackagePath>QuickChartsWP\Themes\ColumnGraph.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\Generic.xbf">
+      <PackagePath>QuickChartsWP\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\Indicator.xbf">
+      <PackagePath>QuickChartsWP\Themes\Indicator.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\Legend.xbf">
+      <PackagePath>QuickChartsWP\Themes\Legend.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\LineGraph.xbf">
+      <PackagePath>QuickChartsWP\Themes\LineGraph.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\PieChart.xbf">
+      <PackagePath>QuickChartsWP\Themes\PieChart.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\SerialChart.xbf">
+      <PackagePath>QuickChartsWP\Themes\SerialChart.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\Slice.xbf">
+      <PackagePath>QuickChartsWP\Themes\Slice.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\ValueAxis.xbf">
+      <PackagePath>QuickChartsWP\Themes\ValueAxis.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP\Themes\ValueGrid.xbf">
+      <PackagePath>QuickChartsWP\Themes\ValueGrid.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
