@@ -31,10 +31,19 @@
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Image Margin="20,20,0,0" Stretch="UniformToFill" Height="80" Source="Assets/icon_smarthome.png" />
-                <StackPanel Orientation="Vertical" Margin="40,10,0,0">
-                    <TextBlock Margin="40,0,0,0" Foreground="White" FontSize="25" VerticalAlignment="Center" Text="Smart Control:" />
+                <StackPanel Orientation="Vertical" Margin="0,40,0,0">
+                    <TextBlock Margin="20,0,22,0" Foreground="White" FontSize="25" VerticalAlignment="Center" Text="Smart Control:" />
                     <ToggleSwitch  FontSize="25" Header="" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" Toggled="ToggleSwitch_Toggled" Width="Auto"/>
                 </StackPanel>
+                <Button Style="{StaticResource ButtonStyle1}" Click="Button_Click_toLoad">
+                    <Grid>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+                            <Image Source="Assets/RightArrow.jpg" Stretch="Uniform" Height="40"  />
+                            <TextBlock Text="ToLoad"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
+                        </StackPanel>
+
+                    </Grid>
+                </Button>
             </StackPanel>
             <StackPanel Orientation="Vertical">
 

@@ -123,7 +123,9 @@
     <Content Include="Assets\icon_smarthome150.png" />
     <Content Include="Assets\icon_sp2.png" />
     <Content Include="Assets\ic_launcher.png" />
+    <Content Include="Assets\LeftArrow.jpg" />
     <Content Include="Assets\Logo.scale-240.png" />
+    <Content Include="Assets\RightArrow.jpg" />
     <Content Include="Assets\SmallLogo.scale-240.png" />
     <Content Include="Assets\SplashScreen.scale-240.png" />
     <Content Include="Assets\Square71x71Logo.scale-240.png" />

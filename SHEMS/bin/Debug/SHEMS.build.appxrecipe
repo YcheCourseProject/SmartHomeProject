@@ -115,6 +115,12 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Skin\logo.png">
       <PackagePath>Skin\logo.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\LeftArrow.jpg">
+      <PackagePath>Assets\LeftArrow.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\RightArrow.jpg">
+      <PackagePath>Assets\RightArrow.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\temperature.jpg">
       <PackagePath>Assets\temperature.jpg</PackagePath>
     </AppxPackagedFile>

@@ -7,17 +7,68 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="Grid" Background="Black" Height="auto" Width="auto" Margin="0, 0,0, 0" >
+                            <Border x:Name="Border">
+                                <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
+                                Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
+    </Page.Resources>
     <Grid>
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Left" Margin="20,0,0,0">
+                <Button x:ConnectionId='4' Style="{StaticResource ButtonStyle1}"                                >
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Assets/LeftArrow.jpg" Stretch="Uniform" Height="40"  />
+                            <TextBlock Text="Back to Control"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
+                        </StackPanel>
+                        
+                    </Grid>
+                </Button>
+             
+            </StackPanel>
+            
+            <Pivot>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <TextBlock Text="Load-Profile" FontSize="30" />
+                    </PivotItem.Header>
+                    <StackPanel>
+                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>
+                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList" RenderTransformOrigin="0.946,0.556"/>
+                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadStatus"/>
+                    </StackPanel>
+                </PivotItem>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <TextBlock Text="E-Consumption" FontSize="30" />
+                    </PivotItem.Header>
+                    <StackPanel>
+                        <DatePicker HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Name="DatePicker"/>
+                        <Button x:ConnectionId='1' Content="HoursPerMonth" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"                                   />
+                        <Button x:ConnectionId='2' Content="DaysPerMonth" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"                                  />
+                        <Button x:ConnectionId='3' Content="HoursPerDay" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"                                  />
+                        <TextBox HorizontalAlignment="Left" Margin="81,531,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTestt"/>
+                    </StackPanel>
+                </PivotItem>
+            </Pivot>
+        </StackPanel>
+     
+
        
-        <TextBox HorizontalAlignment="Left" Margin="140,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList" RenderTransformOrigin="0.946,0.556"/>
-        <TextBox HorizontalAlignment="Left" Margin="69,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadStatus"/>
-        <Button x:ConnectionId='1' Content="HoursPerMonth" HorizontalAlignment="Left" Margin="37,429,0,0" VerticalAlignment="Top"                                   />
-        <Button x:ConnectionId='2' Content="DaysPerMonth" HorizontalAlignment="Left" Margin="37,386,0,0" VerticalAlignment="Top"                                  />
-        <Button x:ConnectionId='3' Content="HoursPerDay" HorizontalAlignment="Left" Margin="37,343,0,0" VerticalAlignment="Top"                                  />
-        <TextBox HorizontalAlignment="Left" Margin="81,531,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTestt"/>
-        <DatePicker HorizontalAlignment="Left" Margin="37,285,0,0" VerticalAlignment="Top" Name="DatePicker"/>
+      
+       
 
     </Grid>
 </Page>

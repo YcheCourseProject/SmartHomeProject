@@ -132,41 +132,7 @@ namespace SHEMS
             frame.Navigate(typeof(BlankPage1));
         }
 
-        //public async void ThreadProcAcqSmartMeterData()
-        //{
-        //    byte[] bholdregs1 = null;
-
-        //    TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106", context);
-        //    TCPAmmeterData meterData1 = new TCPAmmeterData(meter1);
-        //    while (meteracqflag)
-        //    {
-        //        CSmartMeterData csmartMeterData1 = new CSmartMeterData();
-        //        csmartMeterData1.getActive_Power(meterData1.read_active_Power());
-        //        csmartMeterData1.getReactive_Power(meterData1.read_Reactive_Power());
-        //        csmartMeterData1.getCurrent(meterData1.read_current());
-        //        csmartMeterData1.getVoltage_Vph_n(meterData1.read_voltage_Vph_n());
-        //        csmartMeterData1.getActive_Energy(meterData1.read_active_Energy());
-
-        //        float activePower1 = csmartMeterData1.smartMeterData.Total_Active_Power_65;
-        //        float reactivePower1 = csmartMeterData1.smartMeterData.Reactive_Power_Total_67;
-        //        float current1 = csmartMeterData1.smartMeterData.Current_a_13;
-        //        float voltage1 = csmartMeterData1.smartMeterData.Voltage_Va_n_1;
-        //        double activeEnergy1 = csmartMeterData1.smartMeterData.Active_Energy_Import_Tariff_1_801;
-        //        //bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
-        //        //Array.Reverse(bholdregs1);
-        //        //float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
-        //        context.Post(async (s) =>
-        //        {
-
-        //            //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-        //            TxtTest.Text
-        //                = activePower1.ToString() + "\n\r" + reactivePower1.ToString()
-        //                + "\n\r" + current1.ToString() + "\n\r" + voltage1.ToString() + "\n\r" + activeEnergy1.ToString();
-        //        }, null);
-
-        //        await Task.Delay(2000);
-        //    }
-        //}
+       
         public void ThreadProcOnOffAC(bool isReadyOn)
         {
             if (isReadyOn == true)
@@ -391,6 +357,12 @@ namespace SHEMS
             {
                 ThreadProcUpDownAC(false);
             });
+        }
+
+        private void Button_Click_toLoad(object sender, RoutedEventArgs e)
+        {
+            Frame frame = Window.Current.Content as Frame;
+            frame.Navigate(typeof(BlankPage1));
         }
 
         private void Button_Click_SW(object sender, RoutedEventArgs e)

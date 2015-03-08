@@ -38,7 +38,7 @@ namespace SHEMS
     /// </summary>
     public sealed partial class BlankPage1 : Page
     {
-        private string server = "http://10.0.0.5:800/WebForm1.aspx";
+        private string server = "http://10.0.0.3:800/WebForm1.aspx";
         private HttpClient httpClient;
         private CancellationTokenSource cts;
         public static string TYPE_DAYSPERMONTH = "DaysPerMonth";
@@ -121,7 +121,7 @@ namespace SHEMS
         {
             //重写回退键事件
             meteracqflag = true;
-            Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+            //Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
             Task.Factory.StartNew(() =>
             {
                 ThreadProcAcqSmartMeterData();
@@ -133,21 +133,25 @@ namespace SHEMS
             base.OnNavigatedFrom(e);
             meteracqflag = false;
         }
-        void HardwareButtons_BackPressed(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
+        //void HardwareButtons_BackPressed(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
+        //{
+
+        //    e.Handled = true;
+
+        //    Windows.Phone.UI.Input.HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
+
+        //    //Frame.GoBack();
+        //    Frame frame = Window.Current.Content as Frame;
+        //    frame.Navigate(typeof(MainPage));
+        //    // Navigate to a page
+
+        //}
+
+        private void Button_Click_BacktoCtrl(object sender, RoutedEventArgs e)
         {
-
-            e.Handled = true;
-
-            Windows.Phone.UI.Input.HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
-
-            //Frame.GoBack();
-            Frame frame = Window.Current.Content as Frame;
+             Frame frame = Window.Current.Content as Frame;
             frame.Navigate(typeof(MainPage));
-            // Navigate to a page
-
         }
-
-
 
         private void Button_Click_HoursPerDay(object sender, RoutedEventArgs e)
         {
