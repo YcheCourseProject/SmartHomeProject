@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 //json解析
 using System.Runtime.Serialization.Json;
 using System.IO;
+using Windows.Data.Json;
 
 namespace SHEMS.Codes
 {
@@ -26,5 +27,17 @@ namespace SHEMS.Codes
             }
             return result;
         }
+        public static T DataContractJsonDeSerializer<T>(string jsonString)
+        {
+           
+            var ds=new DataContractJsonSerializer(typeof(T));
+             
+            
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonString));
+            T obj = (T)ds.ReadObject(ms);
+            ms.Dispose();
+            return obj;
+        }
+     
     }
 }

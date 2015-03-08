@@ -59,6 +59,18 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -82,6 +94,18 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -124,19 +148,45 @@ namespace SHEMS.SHEMS_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[5];
-            _typeNameTable[0] = "SHEMS.BlankPage1";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "SHEMS.MainPage";
-            _typeNameTable[4] = "String";
+            _typeNameTable = new string[18];
+            _typeNameTable[0] = "AmCharts.Windows.QuickCharts.SerialChart";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[2] = "String";
+            _typeNameTable[3] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[4] = "AmCharts.Windows.QuickCharts.DiscreetClearObservableCollection`1<AmCharts.Windows.QuickCharts.SerialGraph>";
+            _typeNameTable[5] = "System.Collections.ObjectModel.ObservableCollection`1<AmCharts.Windows.QuickCharts.SerialGraph>";
+            _typeNameTable[6] = "System.Collections.ObjectModel.Collection`1<AmCharts.Windows.QuickCharts.SerialGraph>";
+            _typeNameTable[7] = "Object";
+            _typeNameTable[8] = "AmCharts.Windows.QuickCharts.SerialGraph";
+            _typeNameTable[9] = "System.Collections.IEnumerable";
+            _typeNameTable[10] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
+            _typeNameTable[11] = "Double";
+            _typeNameTable[12] = "Windows.UI.Xaml.Visibility";
+            _typeNameTable[13] = "AmCharts.Windows.QuickCharts.ColumnGraph";
+            _typeNameTable[14] = "SHEMS.BlankPage1";
+            _typeNameTable[15] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[16] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[17] = "SHEMS.MainPage";
 
-            _typeTable = new global::System.Type[5];
-            _typeTable[0] = typeof(global::SHEMS.BlankPage1);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::SHEMS.MainPage);
-            _typeTable[4] = typeof(global::System.String);
+            _typeTable = new global::System.Type[18];
+            _typeTable[0] = typeof(global::AmCharts.Windows.QuickCharts.SerialChart);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[2] = typeof(global::System.String);
+            _typeTable[3] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[4] = typeof(global::AmCharts.Windows.QuickCharts.DiscreetClearObservableCollection<global::AmCharts.Windows.QuickCharts.SerialGraph>);
+            _typeTable[5] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::AmCharts.Windows.QuickCharts.SerialGraph>);
+            _typeTable[6] = typeof(global::System.Collections.ObjectModel.Collection<global::AmCharts.Windows.QuickCharts.SerialGraph>);
+            _typeTable[7] = typeof(global::System.Object);
+            _typeTable[8] = typeof(global::AmCharts.Windows.QuickCharts.SerialGraph);
+            _typeTable[9] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[10] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
+            _typeTable[11] = typeof(global::System.Double);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Visibility);
+            _typeTable[13] = typeof(global::AmCharts.Windows.QuickCharts.ColumnGraph);
+            _typeTable[14] = typeof(global::SHEMS.BlankPage1);
+            _typeTable[15] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[17] = typeof(global::SHEMS.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -171,8 +221,38 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_BlankPage1() { return new global::SHEMS.BlankPage1(); }
-        private object Activate_3_MainPage() { return new global::SHEMS.MainPage(); }
+        private object Activate_0_SerialChart() { return new global::AmCharts.Windows.QuickCharts.SerialChart(); }
+        private object Activate_4_DiscreetClearObservableCollection() { return new global::AmCharts.Windows.QuickCharts.DiscreetClearObservableCollection<global::AmCharts.Windows.QuickCharts.SerialGraph>(); }
+        private object Activate_5_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::AmCharts.Windows.QuickCharts.SerialGraph>(); }
+        private object Activate_6_Collection() { return new global::System.Collections.ObjectModel.Collection<global::AmCharts.Windows.QuickCharts.SerialGraph>(); }
+        private object Activate_10_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
+        private object Activate_13_ColumnGraph() { return new global::AmCharts.Windows.QuickCharts.ColumnGraph(); }
+        private object Activate_14_BlankPage1() { return new global::SHEMS.BlankPage1(); }
+        private object Activate_17_MainPage() { return new global::SHEMS.MainPage(); }
+        private void VectorAdd_4_DiscreetClearObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::AmCharts.Windows.QuickCharts.SerialGraph>)instance;
+            var newItem = (global::AmCharts.Windows.QuickCharts.SerialGraph)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_5_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::AmCharts.Windows.QuickCharts.SerialGraph>)instance;
+            var newItem = (global::AmCharts.Windows.QuickCharts.SerialGraph)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_6_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::AmCharts.Windows.QuickCharts.SerialGraph>)instance;
+            var newItem = (global::AmCharts.Windows.QuickCharts.SerialGraph)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_10_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Media.Brush>)instance;
+            var newItem = (global::Windows.UI.Xaml.Media.Brush)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -184,65 +264,349 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  SHEMS.BlankPage1
+            case 0:   //  AmCharts.Windows.QuickCharts.SerialChart
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType.Activator = Activate_0_SerialChart;
+                userType.AddMemberName("CategoryValueMemberPath");
+                userType.AddMemberName("AxisForeground");
+                userType.AddMemberName("PlotAreaBackground");
+                userType.AddMemberName("GridStroke");
+                userType.AddMemberName("Graphs");
+                userType.AddMemberName("DataSource");
+                userType.AddMemberName("PresetBrushes");
+                userType.AddMemberName("MinimumValueGridStep");
+                userType.AddMemberName("MinimumCategoryGridStep");
+                userType.AddMemberName("LegendVisibility");
+                userType.AddMemberName("ValueFormatString");
+                xamlType = userType;
+                break;
+
+            case 1:   //  Windows.UI.Xaml.Controls.Control
+                xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 2:   //  String
+                xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  Windows.UI.Xaml.Media.Brush
+                xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 4:   //  AmCharts.Windows.QuickCharts.DiscreetClearObservableCollection`1<AmCharts.Windows.QuickCharts.SerialGraph>
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.ObservableCollection`1<AmCharts.Windows.QuickCharts.SerialGraph>"));
+                userType.CollectionAdd = VectorAdd_4_DiscreetClearObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 5:   //  System.Collections.ObjectModel.ObservableCollection`1<AmCharts.Windows.QuickCharts.SerialGraph>
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<AmCharts.Windows.QuickCharts.SerialGraph>"));
+                userType.Activator = Activate_5_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_5_ObservableCollection;
+                xamlType = userType;
+                break;
+
+            case 6:   //  System.Collections.ObjectModel.Collection`1<AmCharts.Windows.QuickCharts.SerialGraph>
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_6_Collection;
+                userType.CollectionAdd = VectorAdd_6_Collection;
+                xamlType = userType;
+                break;
+
+            case 7:   //  Object
+                xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  AmCharts.Windows.QuickCharts.SerialGraph
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType.AddMemberName("ValueMemberPath");
+                userType.AddMemberName("Title");
+                userType.AddMemberName("Brush");
+                xamlType = userType;
+                break;
+
+            case 9:   //  System.Collections.IEnumerable
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 10:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_10_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 11:   //  Double
+                xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 12:   //  Windows.UI.Xaml.Visibility
+                xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 13:   //  AmCharts.Windows.QuickCharts.ColumnGraph
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialGraph"));
+                userType.Activator = Activate_13_ColumnGraph;
+                userType.AddMemberName("ColumnWidthAllocation");
+                xamlType = userType;
+                break;
+
+            case 14:   //  SHEMS.BlankPage1
                 userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_BlankPage1;
+                userType.Activator = Activate_14_BlankPage1;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 15:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 16:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  SHEMS.MainPage
+            case 17:   //  SHEMS.MainPage
                 userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
+                userType.Activator = Activate_17_MainPage;
                 userType.AddMemberName("CurSetTemperature");
                 userType.AddMemberName("CurMeasuredTemperature");
                 userType.AddMemberName("CurMeasuredHumidity");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
-
-            case 4:   //  String
-                xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
             }
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    _otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::QuickChartsWP.QuickChartsWP_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                }
+                return _otherProviders;
+            }
+        }
 
-        private object get_0_MainPage_CurSetTemperature(object instance)
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private object get_0_SerialChart_CategoryValueMemberPath(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.CategoryValueMemberPath;
+        }
+        private void set_0_SerialChart_CategoryValueMemberPath(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.CategoryValueMemberPath = (global::System.String)Value;
+        }
+        private object get_1_SerialChart_AxisForeground(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.AxisForeground;
+        }
+        private void set_1_SerialChart_AxisForeground(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.AxisForeground = (global::Windows.UI.Xaml.Media.Brush)Value;
+        }
+        private object get_2_SerialChart_PlotAreaBackground(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.PlotAreaBackground;
+        }
+        private void set_2_SerialChart_PlotAreaBackground(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.PlotAreaBackground = (global::Windows.UI.Xaml.Media.Brush)Value;
+        }
+        private object get_3_SerialChart_GridStroke(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.GridStroke;
+        }
+        private void set_3_SerialChart_GridStroke(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.GridStroke = (global::Windows.UI.Xaml.Media.Brush)Value;
+        }
+        private object get_4_SerialChart_Graphs(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.Graphs;
+        }
+        private void set_4_SerialChart_Graphs(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.Graphs = (global::AmCharts.Windows.QuickCharts.DiscreetClearObservableCollection<global::AmCharts.Windows.QuickCharts.SerialGraph>)Value;
+        }
+        private object get_5_SerialGraph_ValueMemberPath(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialGraph)instance;
+            return that.ValueMemberPath;
+        }
+        private void set_5_SerialGraph_ValueMemberPath(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialGraph)instance;
+            that.ValueMemberPath = (global::System.String)Value;
+        }
+        private object get_6_SerialGraph_Title(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialGraph)instance;
+            return that.Title;
+        }
+        private void set_6_SerialGraph_Title(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialGraph)instance;
+            that.Title = (global::System.String)Value;
+        }
+        private object get_7_SerialGraph_Brush(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialGraph)instance;
+            return that.Brush;
+        }
+        private void set_7_SerialGraph_Brush(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialGraph)instance;
+            that.Brush = (global::Windows.UI.Xaml.Media.Brush)Value;
+        }
+        private object get_8_SerialChart_DataSource(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.DataSource;
+        }
+        private void set_8_SerialChart_DataSource(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.DataSource = (global::System.Collections.IEnumerable)Value;
+        }
+        private object get_9_SerialChart_PresetBrushes(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.PresetBrushes;
+        }
+        private object get_10_SerialChart_MinimumValueGridStep(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.MinimumValueGridStep;
+        }
+        private void set_10_SerialChart_MinimumValueGridStep(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.MinimumValueGridStep = (global::System.Double)Value;
+        }
+        private object get_11_SerialChart_MinimumCategoryGridStep(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.MinimumCategoryGridStep;
+        }
+        private void set_11_SerialChart_MinimumCategoryGridStep(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.MinimumCategoryGridStep = (global::System.Double)Value;
+        }
+        private object get_12_SerialChart_LegendVisibility(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.LegendVisibility;
+        }
+        private void set_12_SerialChart_LegendVisibility(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.LegendVisibility = (global::Windows.UI.Xaml.Visibility)Value;
+        }
+        private object get_13_SerialChart_ValueFormatString(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            return that.ValueFormatString;
+        }
+        private void set_13_SerialChart_ValueFormatString(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.SerialChart)instance;
+            that.ValueFormatString = (global::System.String)Value;
+        }
+        private object get_14_ColumnGraph_ColumnWidthAllocation(object instance)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.ColumnGraph)instance;
+            return that.ColumnWidthAllocation;
+        }
+        private void set_14_ColumnGraph_ColumnWidthAllocation(object instance, object Value)
+        {
+            var that = (global::AmCharts.Windows.QuickCharts.ColumnGraph)instance;
+            that.ColumnWidthAllocation = (global::System.Double)Value;
+        }
+        private object get_15_MainPage_CurSetTemperature(object instance)
         {
             var that = (global::SHEMS.MainPage)instance;
             return that.CurSetTemperature;
         }
-        private void set_0_MainPage_CurSetTemperature(object instance, object Value)
+        private void set_15_MainPage_CurSetTemperature(object instance, object Value)
         {
             var that = (global::SHEMS.MainPage)instance;
             that.CurSetTemperature = (global::System.String)Value;
         }
-        private object get_1_MainPage_CurMeasuredTemperature(object instance)
+        private object get_16_MainPage_CurMeasuredTemperature(object instance)
         {
             var that = (global::SHEMS.MainPage)instance;
             return that.CurMeasuredTemperature;
         }
-        private void set_1_MainPage_CurMeasuredTemperature(object instance, object Value)
+        private void set_16_MainPage_CurMeasuredTemperature(object instance, object Value)
         {
             var that = (global::SHEMS.MainPage)instance;
             that.CurMeasuredTemperature = (global::System.String)Value;
         }
-        private object get_2_MainPage_CurMeasuredHumidity(object instance)
+        private object get_17_MainPage_CurMeasuredHumidity(object instance)
         {
             var that = (global::SHEMS.MainPage)instance;
             return that.CurMeasuredHumidity;
         }
-        private void set_2_MainPage_CurMeasuredHumidity(object instance, object Value)
+        private void set_17_MainPage_CurMeasuredHumidity(object instance, object Value)
         {
             var that = (global::SHEMS.MainPage)instance;
             that.CurMeasuredHumidity = (global::System.String)Value;
@@ -255,23 +619,126 @@ namespace SHEMS.SHEMS_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "AmCharts.Windows.QuickCharts.SerialChart.CategoryValueMemberPath":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CategoryValueMemberPath", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_0_SerialChart_CategoryValueMemberPath;
+                xamlMember.Setter = set_0_SerialChart_CategoryValueMemberPath;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.AxisForeground":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "AxisForeground", "Windows.UI.Xaml.Media.Brush");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_1_SerialChart_AxisForeground;
+                xamlMember.Setter = set_1_SerialChart_AxisForeground;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.PlotAreaBackground":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "PlotAreaBackground", "Windows.UI.Xaml.Media.Brush");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_2_SerialChart_PlotAreaBackground;
+                xamlMember.Setter = set_2_SerialChart_PlotAreaBackground;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.GridStroke":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "GridStroke", "Windows.UI.Xaml.Media.Brush");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_3_SerialChart_GridStroke;
+                xamlMember.Setter = set_3_SerialChart_GridStroke;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.Graphs":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "Graphs", "AmCharts.Windows.QuickCharts.DiscreetClearObservableCollection`1<AmCharts.Windows.QuickCharts.SerialGraph>");
+                xamlMember.Getter = get_4_SerialChart_Graphs;
+                xamlMember.Setter = set_4_SerialChart_Graphs;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialGraph.ValueMemberPath":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialGraph");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "ValueMemberPath", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_SerialGraph_ValueMemberPath;
+                xamlMember.Setter = set_5_SerialGraph_ValueMemberPath;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialGraph.Title":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialGraph");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "Title", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_SerialGraph_Title;
+                xamlMember.Setter = set_6_SerialGraph_Title;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialGraph.Brush":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialGraph");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "Brush", "Windows.UI.Xaml.Media.Brush");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_SerialGraph_Brush;
+                xamlMember.Setter = set_7_SerialGraph_Brush;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.DataSource":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "DataSource", "System.Collections.IEnumerable");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_SerialChart_DataSource;
+                xamlMember.Setter = set_8_SerialChart_DataSource;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.PresetBrushes":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "PresetBrushes", "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>");
+                xamlMember.Getter = get_9_SerialChart_PresetBrushes;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.MinimumValueGridStep":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "MinimumValueGridStep", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_10_SerialChart_MinimumValueGridStep;
+                xamlMember.Setter = set_10_SerialChart_MinimumValueGridStep;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.MinimumCategoryGridStep":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "MinimumCategoryGridStep", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_11_SerialChart_MinimumCategoryGridStep;
+                xamlMember.Setter = set_11_SerialChart_MinimumCategoryGridStep;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.LegendVisibility":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "LegendVisibility", "Windows.UI.Xaml.Visibility");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_12_SerialChart_LegendVisibility;
+                xamlMember.Setter = set_12_SerialChart_LegendVisibility;
+                break;
+            case "AmCharts.Windows.QuickCharts.SerialChart.ValueFormatString":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.SerialChart");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "ValueFormatString", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_13_SerialChart_ValueFormatString;
+                xamlMember.Setter = set_13_SerialChart_ValueFormatString;
+                break;
+            case "AmCharts.Windows.QuickCharts.ColumnGraph.ColumnWidthAllocation":
+                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AmCharts.Windows.QuickCharts.ColumnGraph");
+                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "ColumnWidthAllocation", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_14_ColumnGraph_ColumnWidthAllocation;
+                xamlMember.Setter = set_14_ColumnGraph_ColumnWidthAllocation;
+                break;
             case "SHEMS.MainPage.CurSetTemperature":
                 userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
                 xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurSetTemperature", "String");
-                xamlMember.Getter = get_0_MainPage_CurSetTemperature;
-                xamlMember.Setter = set_0_MainPage_CurSetTemperature;
+                xamlMember.Getter = get_15_MainPage_CurSetTemperature;
+                xamlMember.Setter = set_15_MainPage_CurSetTemperature;
                 break;
             case "SHEMS.MainPage.CurMeasuredTemperature":
                 userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
                 xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurMeasuredTemperature", "String");
-                xamlMember.Getter = get_1_MainPage_CurMeasuredTemperature;
-                xamlMember.Setter = set_1_MainPage_CurMeasuredTemperature;
+                xamlMember.Getter = get_16_MainPage_CurMeasuredTemperature;
+                xamlMember.Setter = set_16_MainPage_CurMeasuredTemperature;
                 break;
             case "SHEMS.MainPage.CurMeasuredHumidity":
                 userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
                 xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurMeasuredHumidity", "String");
-                xamlMember.Getter = get_2_MainPage_CurMeasuredHumidity;
-                xamlMember.Setter = set_2_MainPage_CurMeasuredHumidity;
+                xamlMember.Getter = get_17_MainPage_CurMeasuredHumidity;
+                xamlMember.Setter = set_17_MainPage_CurMeasuredHumidity;
                 break;
             }
             return xamlMember;

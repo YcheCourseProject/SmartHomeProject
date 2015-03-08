@@ -27,6 +27,8 @@ using Windows.Web.Http;
 using Windows.Web.Http.Filters;
 using Windows.Security.Cryptography;
 using Windows.Storage.Streams;
+//集合类
+using System.Collections.ObjectModel;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -192,6 +194,19 @@ namespace SHEMS
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
                 await new MessageDialog(responseBody).ShowAsync();
+                List<ConsumptionStatistics> array = Utilities.DataContractJsonDeSerializer<List<ConsumptionStatistics>>(responseBody);
+                ObservableCollection<ConsumptionStatistics> collecion = new ObservableCollection<ConsumptionStatistics>();
+                
+              
+                foreach (var item in array)
+                {
+                     
+          
+                    collecion.Add(item);
+                }
+               
+                chart1.DataSource = collecion;
+             
             });
         }
 
@@ -222,5 +237,23 @@ namespace SHEMS
             });
         }
 
+        //private void bindDataForChart()
+        //{
+        //    ObservableCollection<ChartData> collecion = new ObservableCollection<ChartData>();
+          
+        //    IEnumerable<string> enumerable2 = (from c in allRecords select c.Category).Distinct<string>();
+        //    foreach (var item in enumerable2)
+        //    {
+        //        IEnumerable<double> enumerable3 = from c in allRecords.Where<Voucher>(c => c.Category == item) select c.Money;
+        //        ChartData data = new ChartData
+        //        {
+        //            Sum = enumerable3.Sum(),
+        //            TypeName = item
+        //        };
+        //        collecion.Add(data);
+        //    }
+        //    pie1.DataSource = collecion;
+        //    chart1.DataSource = collecion;
+        //}
     }
 }

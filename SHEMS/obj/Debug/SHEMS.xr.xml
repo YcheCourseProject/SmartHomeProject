@@ -77,6 +77,7 @@
     </RootType>
     <RootType FullName="AmCharts.Windows.QuickCharts.SerialChart">
       <RootProperty Name="CategoryValueMemberPath" />
+      <RootProperty Name="Height" />
       <RootProperty Name="AxisForeground" />
       <RootProperty Name="PlotAreaBackground" />
       <RootProperty Name="GridStroke" />

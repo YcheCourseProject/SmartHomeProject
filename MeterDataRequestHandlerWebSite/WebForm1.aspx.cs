@@ -14,10 +14,11 @@ namespace MeterDataRequestHandlerWebSite
         protected void Page_Load(object sender, EventArgs e)
         {
             // 为了方便测试和客户端取消网络操作，后台服务延迟2秒钟再执行相关的操作
-            System.Threading.Thread.Sleep(2000);
+            ///System.Threading.Thread.Sleep(2000);
 
             // 返回请求的内容
            //Response.Write("客户端请求的数据内容：");
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("UTF-8");
             if(Request.QueryString["y"]!=null&Request.QueryString["m"]!=null)
             {
                 if(Request.QueryString["type"]!=null)

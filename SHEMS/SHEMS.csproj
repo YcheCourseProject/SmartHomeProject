@@ -87,6 +87,7 @@
       <DependentUpon>BlankPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Codes\AirConditioner.cs" />
+    <Compile Include="Codes\ConsumptionStatistics.cs" />
     <Compile Include="Codes\CSmartMeterData.cs" />
     <Compile Include="Codes\CSmartMeterDataInfo.cs" />
     <Compile Include="Codes\CTConver.cs" />

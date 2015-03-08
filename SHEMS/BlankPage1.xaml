@@ -97,13 +97,13 @@
                                 </Grid>
                             </Button>
                         </StackPanel>
-                        <StackPanel>
-                            <amq:SerialChart x:Name="chart1" CategoryValueMemberPath="TypeName"
+                        <StackPanel >
+                            <amq:SerialChart x:Name="chart1" CategoryValueMemberPath="H"  Height="300"
                             AxisForeground="White"
-                            PlotAreaBackground="Black"
+                            PlotAreaBackground="Green"
                             GridStroke="DarkGray">
                                 <amq:SerialChart.Graphs>
-                                    <amq:ColumnGraph ValueMemberPath="Sum" Brush="#8000FF00" ColumnWidthAllocation="0.4" />
+                                    <amq:ColumnGraph  ValueMemberPath="Consumption" Brush="#8000FF00" ColumnWidthAllocation="0.4"/>
                                 </amq:SerialChart.Graphs>
                             </amq:SerialChart>
                         </StackPanel>
