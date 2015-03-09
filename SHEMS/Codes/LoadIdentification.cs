@@ -12,12 +12,17 @@ namespace SHEMS.Codes
         static int WINDOW_NUM = 5;			//滑动平均滞后的时间      为WINDOW_NUM
         static float AP_THRESHOLD = 10;
         static float BASE_POWER_THRESHOLD = 5;
+ 
+        public enum EVENT_TYPE
+        {
+            ON,OFF
+        }
         public static bool isLampOn = false;
         public static bool isNoteBookOn = false;
         public static bool isPotOn = false;
-        public static string POT = "电热水壶";
-        public static string LAMP = "节能灯";
-        public static string NOTEBOOK = "笔记本电脑";
+        public static string NAME_POT = "电热水壶";
+        public static string NAME_LAMP = "节能灯";
+        public static string NAME_NOTEBOOK = "笔记本电脑";
         public class LoadData
         {
             float ap;
@@ -56,6 +61,63 @@ namespace SHEMS.Codes
 
         }
 
+        private static string mapName2ImgPath(string name)
+        {
+            string imgPath = "ms-appx:///Assets/";
+            if(name.Equals(NAME_LAMP))
+            {
+                imgPath += "lamp.png";
+            }
+            else if(name.Equals(NAME_POT))
+            {
+                imgPath += "";
+            }
+            else if(name.Equals(NAME_NOTEBOOK))
+            {
+                imgPath += "";
+            }
+            else
+            {
+                imgPath += "";
+            }
+            return imgPath;
+        }
+      
+        public class LoadIDResult
+        {
+            private string name;
+
+            public string Name
+            {
+                get { return name; }
+                set { name = value; }
+            }
+            private string imgpath;
+
+            public string Imgpath
+            {
+                get { return imgpath; }
+                set { imgpath = value; }
+            }
+            private DateTime datetime;
+
+            public DateTime Datetime
+            {
+                get { return datetime; }
+                set { datetime = value; }
+            }
+            private EVENT_TYPE event_type;
+
+            public EVENT_TYPE Event_type
+            {
+                get { return event_type; }
+                set { event_type = value; }
+            }
+            public LoadIDResult()
+            {
+
+            }
+        }
         private class WindowOperator // 用来方便做平滑处理的类
         {
             /**
@@ -190,13 +252,13 @@ namespace SHEMS.Codes
             {
 
                 isPotOn=isOnNow;    
-                return POT;
+                return NAME_POT;
             }
 
             else if (loadinap > 5 && loadinap < 20)
             {
                 isLampOn = isOnNow;
-                return LAMP;
+                return NAME_LAMP;
             }
             else if (loadinap > 20 && loadinap < 50)
             {
@@ -204,7 +266,7 @@ namespace SHEMS.Codes
                 if (absrp > 11 && absrp < 20)
                 {
                     isNoteBookOn = isOnNow;
-                    return NOTEBOOK;
+                    return NAME_NOTEBOOK;
                 }
                 else
                     return "未知的有功功率在20到50W的电器";
@@ -217,9 +279,10 @@ namespace SHEMS.Codes
                 return "未知的电器";
         }
 
-        public static List<String> handleHisLogDBMethodWindow(List<LoadData> loadDatalist)
+        public static List<LoadIDResult> handleHisLogDBMethodWindow(List<LoadData> loadDatalist)
         {
-            List<String>  loadeventslist = new List<String>();
+            //List<String>  loadeventslist = new List<String>();
+            List<LoadIDResult> loadeventslist = new List<LoadIDResult>();
             WindowOperator window_operator = new WindowOperator();
             LoadData former = null;
             LoadData latter = null;
@@ -299,7 +362,7 @@ namespace SHEMS.Codes
                                     String tempstr = null;
                                     bool trueForIn = thelast.Ap > reference.Ap;
                                     String event_status = null;
-                                    String identified_appliance = null;
+                                    String ApplianceNameStr = null;
 
                                     //							db_loadinfo=new LoadInfoDB(this);
                                     float loadap = Math.Abs(thelast.Ap - reference.Ap);
@@ -309,29 +372,26 @@ namespace SHEMS.Codes
                                     if (trueForIn)
                                     {
                                         tempstr = "Load detected：in\n";
-                                        //event_status = Event//LogDB.STATUS_IN;
+                                    
                                     }
                                     else
                                     {
                                         tempstr = "Load detected: out\n ";
-                                        //event_status = Event//LogDB.STATUS_OUT;
+                                   
                                     }
-
-                                    //if (db_loginfo.match(loadap, loadrp) != null)
+                                   
                                     {
-                                        identified_appliance = matchload(loadap, loadrp, trueForIn);
-                                        //db_eventlog.insert(possibleInOrOut.getTime().getTime(), identified_appliance, event_status);
-                                        loadeventslist.Add(tempstr + possibleInOrOut.Time.ToString()
-                                        + "\n" + "ap:" + loadap + "W\nrp:" + loadrp + "Var" + "\n" + "maybe:" + identified_appliance);
+                                        ApplianceNameStr = matchload(loadap, loadrp, trueForIn);
+                                        LoadIDResult loadIDResult=new LoadIDResult{
+                                            Name=ApplianceNameStr,
+                                            Imgpath=mapName2ImgPath(ApplianceNameStr),
+                                            Datetime=reference.Time
+                                        };
+                                        loadeventslist.Add(loadIDResult);
+                                        //loadeventslist.Add(tempstr + possibleInOrOut.Time.ToString()
+                                        //+ "\n" + "ap:" + loadap + "W\nrp:" + loadrp + "Var" + "\n" + "maybe:" + identified_appliance);
                                     }
-                                    //else
-                                    //{
-                                        //loadeventslist.add(tempstr + possibleInOrOut.getTime().
-                                        //toLocaleString() + "\n" + "ap:" + loadap + "W\nrp:" + loadrp + "Var");
-                                    //}
-                                    //							db_eventlog.insert(new Date().getTime(), "fdsfsd", "in");
-                                    //							loadeventslist.add(tempstr+possibleInOrOut.getTime().
-                                    //							toLocaleString()+"\n"+"ap:"+loadap+"W\nrp:"+loadrp+"Var");							
+      					
 
                                 }
 
@@ -342,10 +402,7 @@ namespace SHEMS.Codes
 
                 }
             }
-
-            //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-            //        R.layout.item_load_events, loadeventslist);
-            //setListAdapter(adapter);
+ 
             return loadeventslist;
         }
 

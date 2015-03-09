@@ -107,10 +107,12 @@ namespace SHEMS.entities
         public static void onAC()
         {
             setACSettings(AC_CODE_ON);
+            isACOn = true;
         }
         public static void OffAC()
         {
             setACSettings(AC_CODE_OFF);
+            isACOn = false;
         }
     }
 }

@@ -72,6 +72,8 @@ namespace SHEMS
             TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106", context);
             TCPAmmeterData meterData1 = new TCPAmmeterData(meter1);
             List<LoadIdentification.LoadData> loadDatalist = new List<LoadIdentification.LoadData>();
+            List<LoadIdentification.LoadIDResult> currentLoadList = null;
+            List<LoadIdentification.LoadIDResult> loadIDResultList = null;
             int currentCount = 0;
             while (meteracqflag)
             {
@@ -90,29 +92,57 @@ namespace SHEMS
                 DateTime dt = DateTime.Now;
                 loadDatalist.Add(new LoadIdentification.LoadData(activePower1, reactivePower1, dt));
                 currentCount++;
-                List<String> strlist = null;
+
                 if (currentCount == 10)
                 {
-                    strlist = LoadIdentification.handleHisLogDBMethodWindow(loadDatalist);
+                    loadIDResultList = LoadIdentification.handleHisLogDBMethodWindow(loadDatalist);
                     currentCount = 0;
-                    loadDatalist = new List<LoadIdentification.LoadData>();
+                    if (loadIDResultList!=null)
+                    { 
+                    foreach(var item in loadIDResultList)
+                    {
+                        if (currentLoadList != null)
+                        {
+                            foreach (var curitem in currentLoadList)
+                            {
+                                if (curitem.Name.Equals(item.Name))
+                                {
+                                    if (item.Event_type == LoadIdentification.EVENT_TYPE.OFF)
+                                        currentLoadList.Remove(curitem);
+                                }
+                                else
+                                {
+                                    if (item.Event_type == LoadIdentification.EVENT_TYPE.ON)
+                                        currentLoadList.Add(item);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            currentLoadList = loadIDResultList;
+                        }
+                    }
+                    }
+                  
+                    //loadDatalist = new List<LoadIdentification.LoadData>();
                 }
-                //bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
-                //Array.Reverse(bholdregs1);
-                //float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
-                context.Post(  (s) =>
+
+                context.Post((s) =>
                 {
 
                     //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的
-                    if (strlist != null)
-                    {
-                        String tempstr = "";
-                        foreach (String str in strlist)
-                            tempstr += str;
-                        TxtBoxLoadList.Text = tempstr;
-                        TxtBoxLoadStatus.Text="Lamp Status:"+LoadIdentification.isLampOn.ToString();
-                    }
-                    TxtBoxTest.Text = csmartMeterData1.smartMeterData.toLoadIdentificationInfoJson();
+                    //if (strlist != null)
+                    //{
+                    //    String tempstr = "";
+                    //    foreach (String str in strlist)
+                    //        tempstr += str;
+                    //    TxtBoxLoadList.Text = tempstr;
+                    //    TxtBoxLoadStatus.Text = "Lamp Status:" + LoadIdentification.isLampOn.ToString();
+                    //}
+                    TxtAP.Text = String.Format("{0:F}", activePower1)  + "W";
+                    TxtRP.Text = String.Format("{0:F}", reactivePower1) + "Var";
+                    listLoads.ItemsSource = currentLoadList;
+                    //TxtBoxTest.Text = csmartMeterData1.smartMeterData.toLoadIdentificationInfoJson();
                 }, null);
 
                 await Task.Delay(500);
@@ -191,9 +221,9 @@ namespace SHEMS
             {
                 //waiting.Visibility = Visibility.Collapsed;
             }
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal,  () =>
             {
-                await new MessageDialog(responseBody).ShowAsync();
+                //await new MessageDialog(responseBody).ShowAsync();
                 List<ConsumptionStatistics> array = Utilities.DataContractJsonDeSerializer<List<ConsumptionStatistics>>(responseBody);
                 ObservableCollection<ConsumptionStatistics> collecion = new ObservableCollection<ConsumptionStatistics>();
                 

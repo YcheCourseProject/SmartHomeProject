@@ -3,6 +3,7 @@ Assets\ac_mode_cool.png
 Assets\ac_mode_dehydrate.png
 Assets\ac_mode_hot.png
 Assets\ac_mode_ventilate.png
+Assets\ActivePower.png
 Assets\air_power_off.png
 Assets\air_power_on.png
 Assets\airconditioner.png
@@ -16,8 +17,10 @@ Assets\icon_smarthome.png
 Assets\icon_smarthome120.scale-240.png
 Assets\icon_smarthome150.png
 Assets\icon_sp2.png
+Assets\lamp.png
 Assets\LeftArrow.jpg
 Assets\Logo.scale-240.png
+Assets\ReactivePower.png
 Assets\RightArrow.jpg
 Assets\SmallLogo.scale-240.png
 Assets\SplashScreen.scale-240.png

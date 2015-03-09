@@ -42,7 +42,7 @@ namespace SHEMS
     public sealed partial class MainPage : Page, INotifyPropertyChanged
     {
         //上下文
-        public static string AC_STATUS_PRESS2On="Press On";
+        public static string AC_STATUS_PRESS2On = "Press On";
         public static string AC_STATUS_PRESS2OFF = "Press Off";
         SynchronizationContext context;
         bool meteracqflag = true;
@@ -54,7 +54,7 @@ namespace SHEMS
         static String VENTILATE = "Ventilate";
         static String DEHYDRATE = "Dehydrate";
 
-      
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -65,7 +65,7 @@ namespace SHEMS
                COOL,WARM,VENTILATE,DEHYDRATE
             };
             //ACItem.DataContext = this;
-            
+
             comboBoxACMode.ItemsSource = acmodes;
             comboBoxACMode.SelectedIndex = 1;
 
@@ -85,11 +85,11 @@ namespace SHEMS
             {
                 ThreadProcAcqTmpHumid();
             });
-           // Task.Factory.StartNew(() =>
-           //{
-           //    ThreadProcAcqSmartMeterData();
+            // Task.Factory.StartNew(() =>
+            //{
+            //    ThreadProcAcqSmartMeterData();
 
-           //});
+            //});
 
             // TODO: If your application contains multiple pages, ensure that you are
             // handling the hardware Back button by registering for the
@@ -111,7 +111,7 @@ namespace SHEMS
             frame.Navigate(typeof(BlankPage1));
         }
 
-       
+
         public void ThreadProcOnOffAC(bool isReadyOn)
         {
             if (isReadyOn == true)
@@ -119,7 +119,7 @@ namespace SHEMS
             else
                 AirConditioner.OffAC();
 
- 
+
         }
         public void ThreadProcUpDownAC(bool isReadyDown)
         {
@@ -127,23 +127,23 @@ namespace SHEMS
                 AirConditioner.downTemperature();
             else
                 AirConditioner.upTemperature();
-            context.Post(  (s) =>
+            context.Post((s) =>
             {
                 //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
                 this.Txt_SetT.Text = AirConditioner.temperature.ToString();
             }, null);
         }
-        public  async void ThreadProcAcqTmpHumid()
+        public async void ThreadProcAcqTmpHumid()
         {
             StreamSocket clientSocket = new StreamSocket();
-            String temprature="";
-            String humidity="";
+            String temprature = "";
+            String humidity = "";
             try
             {
                 HostName serverHost = new HostName(TmpHumidCtrl.TMP_HUM_SERVER_IP);
                 await clientSocket.ConnectAsync(serverHost, TmpHumidCtrl.TMP_HUM_PORT);
                 String sb = "";
- 
+
                 DataReader reader = new DataReader(clientSocket.InputStream);
                 reader.InputStreamOptions = InputStreamOptions.Partial;  //采用异步方式
 
@@ -161,7 +161,7 @@ namespace SHEMS
                         string tempstr = tempstrs[1];
                         temprature = tempstr.Substring(2, 4);
                         humidity = tempstrs[1].Substring(9, 4);
-   
+
                         sb = "";
                         if (isAutoControlFlag)
                         {
@@ -170,7 +170,8 @@ namespace SHEMS
                                 if (AirConditioner.isACOn == true)
                                 {
                                     AirConditioner.OffAC();
-                                    AirConditioner.isACOn = false;
+                                     
+                                    changeACONOFFIMAGE(false);
                                 }
                             }
                             else if (Single.Parse(temprature) - AirConditioner.COMFORT_TEMPERATURE < -AirConditioner.COMFORT_RESTRAIN_BOUND)
@@ -179,17 +180,18 @@ namespace SHEMS
                                 {
                                     //AirConditioner.onAC();
                                     AirConditioner.setTemperatureWithComfortT();
-                                    AirConditioner.isACOn = true;
+                                 
+                                    changeACONOFFIMAGE(true);
                                 }
                             }
 
                         }
-                        context.Post(  (s) =>
+                        context.Post((s) =>
                         {
 
                             //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                            this.TextBox_Tmp.Text = temprature+"℃";
-                            this.TextBox_Humid.Text= humidity+"%";
+                            this.TextBox_Tmp.Text = temprature + "℃";
+                            this.TextBox_Humid.Text = humidity + "%";
                             //textBlock1.Text = AirConditioner.isACOn.ToString();
                             // MessageDialog messageDialog = new MessageDialog("ThreadProc1");
                             //await messageDialog.ShowAsync();
@@ -207,9 +209,9 @@ namespace SHEMS
                 Debug.WriteLine(e.StackTrace);
                 clientSocket.Dispose();
                 clientSocket = null;
-               
+
             }
-           
+
         }
         public void ThreadProcOnOffSW(bool isReadyOn)
         {
@@ -239,42 +241,36 @@ namespace SHEMS
             //for (int i = 0; i < 255; i++)
             //{
             {
-               
+
                 SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_IP + i);
-                
+
 
             }//}
 
             else
-                //for (int i = 0; i < 255; i++)
-                {
-                
-                    SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_IP + i);
-                }
+            //for (int i = 0; i < 255; i++)
+            {
 
-                
+                SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_IP + i);
+            }
+
+
         }
- 
-        private void Button_Click_OnOffAC(object sender,RoutedEventArgs e)
+
+        private void Button_Click_OnOffAC(object sender, RoutedEventArgs e)
         {
+            string picstr = "";
+            string tempstr = "";
+            tempstr = TxtOnOffStatus.Text.ToString();
             Task.Factory.StartNew(() =>
             {
-                 
-              
-                string picstr = "";
-                 string tempstr="";
-                context.Post(  (s) =>
-                {
 
-                    //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                   tempstr = TxtOnOffStatus.Text.ToString();
-                }, null);
                 bool isTextPress2On = true;
                 if (tempstr.Equals(AC_STATUS_PRESS2OFF))
                 {
                     ThreadProcOnOffAC(false);
                     isTextPress2On = true;
-                   
+
                 }
                 else if (tempstr.Equals(AC_STATUS_PRESS2On))
                 {
@@ -283,11 +279,11 @@ namespace SHEMS
                 }
                 else
                     return;
-                context.Post(  (s) =>
+                context.Post((s) =>
                 {
 
                     //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                    if(isTextPress2On==true)
+                    if (isTextPress2On == true)
                     {
                         TxtOnOffStatus.Text = AC_STATUS_PRESS2On;
                         picstr = "switch_off_normal.png";
@@ -299,11 +295,32 @@ namespace SHEMS
                     }
                     BitmapImage bmp = new BitmapImage();
                     Img_ACOnOFF.Source = bmp;
-             
+
                     bmp.UriSource = new Uri("ms-appx:///Assets/" + picstr, UriKind.RelativeOrAbsolute);
                 }, null);
-               
+
             });
+        }
+
+        private void changeACONOFFIMAGE(bool isReadyOn)
+        {
+         
+             string picstr;
+            string hinttext;
+            if(isReadyOn)
+            { 
+               picstr = "switch_on_normal.png";
+               hinttext=  AC_STATUS_PRESS2OFF;
+            }
+            else
+            {
+                picstr = "switch_off_normal.png";
+                hinttext = AC_STATUS_PRESS2On;
+            }
+            BitmapImage bmp = new BitmapImage();
+            Img_ACOnOFF.Source = bmp;
+            bmp.UriSource = new Uri("ms-appx:///Assets/" + picstr, UriKind.RelativeOrAbsolute);
+            TxtOnOffStatus.Text =hinttext;
         }
         //private void Button_Click_OnAC(object sender, RoutedEventArgs e)
         //{
@@ -323,11 +340,14 @@ namespace SHEMS
 
         private void Button_Click_TmpDown(object sender, RoutedEventArgs e)
         {
+           
             Task.Factory.StartNew(() =>
             {
                 ThreadProcUpDownAC(true);
-
+               
             });
+            AirConditioner.isACOn = true;
+            changeACONOFFIMAGE(true);
         }
 
         private void Button_Click_TmpUp(object sender, RoutedEventArgs e)
@@ -335,7 +355,11 @@ namespace SHEMS
             Task.Factory.StartNew(() =>
             {
                 ThreadProcUpDownAC(false);
+               
+               
             });
+
+            changeACONOFFIMAGE(true);
         }
 
         private void Button_Click_toLoad(object sender, RoutedEventArgs e)
@@ -356,7 +380,7 @@ namespace SHEMS
         private void comboBoxACMODE_DropDownClosed(object sender, object e)
         {
 
-            
+
             if (comboBoxACMode.SelectedItem != null)
             {
 
@@ -372,7 +396,7 @@ namespace SHEMS
                     picstr = "ac_mode_cool.png";
                     Task.Factory.StartNew(() =>
                 {
-                    AirConditioner.setACMode(AirConditioner.AC_MODE.COLD);   
+                    AirConditioner.setACMode(AirConditioner.AC_MODE.COLD);
                 });
 
 
@@ -383,8 +407,8 @@ namespace SHEMS
                     Task.Factory.StartNew(() =>
                 {
                     AirConditioner.setACMode(AirConditioner.AC_MODE.WARM);
-           
-              
+
+
                 });
 
                 }
@@ -411,6 +435,7 @@ namespace SHEMS
                 Img_ACMode.Source = bmp;
                 Img_ACMode.Stretch = Stretch.Fill;
 
+                changeACONOFFIMAGE(true);
             }
         }
 
@@ -426,7 +451,7 @@ namespace SHEMS
 
         //private void Button_Click_ChangeComfort(object sender, RoutedEventArgs e)
         //{
-           
+
         //    if(TxtBox_ComfortTemperature.Text!="")
         //    {
         //        AirConditioner.COMFORT_TEMPERATURE = Single.Parse(TxtBox_ComfortTemperature.Text);

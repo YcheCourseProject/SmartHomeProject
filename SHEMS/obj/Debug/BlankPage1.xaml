@@ -37,11 +37,25 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ButtonStyle3" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="Grid" Background="Black" Height="155" Width="155" Margin="0, 0, 12, 0" >
+                            <Border x:Name="Border">
+                                <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
+                                Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
     <Grid>
         <StackPanel>
             <StackPanel HorizontalAlignment="Left" Margin="20,0,0,0">
-                <Button x:ConnectionId='4' Style="{StaticResource ButtonStyle1}"                                >
+                <Button x:ConnectionId='6' Style="{StaticResource ButtonStyle1}"                                >
                     <Grid>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Assets/LeftArrow.jpg" Stretch="Uniform" Height="40"  />
@@ -64,21 +78,21 @@
                             <DatePicker HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Name="DatePicker"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Button x:ConnectionId='1'   Style="{StaticResource ButtonStyle2}"                                  >
+                            <Button x:ConnectionId='3'   Style="{StaticResource ButtonStyle2}"                                  >
                                 <Grid>
                                     <Image Source="Assets/DaysPerMonth.png" Stretch="Uniform" Height="80"/>
                                     <TextBlock Text="Days/M"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="20"></TextBlock>
                                     <TextBlock Text="Press Get"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
                                 </Grid>
                             </Button>
-                            <Button x:ConnectionId='2'   Style="{StaticResource ButtonStyle2}"                                    Margin="10,0,0,0">
+                            <Button x:ConnectionId='4'   Style="{StaticResource ButtonStyle2}"                                    Margin="10,0,0,0">
                                 <Grid>
                                     <Image Source="Assets/DaysPerMonth.png" Stretch="Uniform" Height="80"/>
                                     <TextBlock Text="Hours/M"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="20"></TextBlock>
                                     <TextBlock Text="Press Get"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
                                 </Grid>
                             </Button>
-                            <Button x:ConnectionId='3'   Style="{StaticResource ButtonStyle2}"                                  Margin="10,0,0,0">
+                            <Button x:ConnectionId='5'   Style="{StaticResource ButtonStyle2}"                                  Margin="10,0,0,0">
                                 <Grid>
                                     <Image Source="Assets/HoursPerDay.png" Stretch="Uniform" Height="80"/>
                                     <TextBlock Text="Hours/D"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="20"></TextBlock>
@@ -109,9 +123,37 @@
                         <TextBlock Text="Load-Profile" FontSize="30" />
                     </PivotItem.Header>
                     <StackPanel>
-                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>
-                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList" RenderTransformOrigin="0.946,0.556"/>
-                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadStatus"/>
+                        <!--<TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>-->
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:ConnectionId='1'   Style="{StaticResource ButtonStyle3}"                                  Margin="10,0,0,0">
+                                <Grid>
+                                    <Image Source="Assets/ActivePower.png" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="ap"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" FontSize="20" Name="TxtAP"></TextBlock>
+                                    <TextBlock Text="ActiveP"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20" ></TextBlock>
+                                </Grid>
+                            </Button>
+                            <Button x:ConnectionId='2'   Style="{StaticResource ButtonStyle3}"                                  Margin="10,0,0,0">
+                                <Grid>
+                                    <Image Source="Assets/ReactivePower.png" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="rp"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" FontSize="20" Name="TxtRP"></TextBlock>
+                                    <TextBlock Text="ReactiveP"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+                        <TextBlock Text="Current Loads:" FontSize="25" />
+                        <ListView x:Name="listLoads" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="12,0,0,0">
+                                        <Image Source="{Binding Imgpath}" Stretch="Uniform" Height="80"  />
+                                        <TextBlock  Foreground="White" FontSize="20" Text="{Binding Name}" TextWrapping="NoWrap" HorizontalAlignment="Left" VerticalAlignment="Center" Width="85"  Margin="50,0,0,0"/>
+                                        <TextBlock  Foreground="White" FontSize="20" Text="{Binding Datetime}" TextWrapping="NoWrap" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Width="70"   Margin="50,0,0,0" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <!--<TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList" RenderTransformOrigin="0.946,0.556"/>
+                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadStatus"/>-->
                     </StackPanel>
                 </PivotItem>
                 

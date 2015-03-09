@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\ac.png" />
+    <Content Include="Assets\ActivePower.png" />
     <Content Include="Assets\ac_mode_dehydrate.png" />
     <Content Include="Assets\ac_mode_cool.png" />
     <Content Include="Assets\ac_mode_hot.png" />
@@ -126,8 +127,10 @@
     <Content Include="Assets\icon_smarthome150.png" />
     <Content Include="Assets\icon_sp2.png" />
     <Content Include="Assets\ic_launcher.png" />
+    <Content Include="Assets\lamp.png" />
     <Content Include="Assets\LeftArrow.jpg" />
     <Content Include="Assets\Logo.scale-240.png" />
+    <Content Include="Assets\ReactivePower.png" />
     <Content Include="Assets\RightArrow.jpg" />
     <Content Include="Assets\SmallLogo.scale-240.png" />
     <Content Include="Assets\SplashScreen.scale-240.png" />
