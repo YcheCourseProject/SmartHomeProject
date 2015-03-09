@@ -30,9 +30,7 @@ namespace SHEMS.Codes
         public static T DataContractJsonDeSerializer<T>(string jsonString)
         {
            
-            var ds=new DataContractJsonSerializer(typeof(T));
-             
-            
+            var ds=new DataContractJsonSerializer(typeof(T));     
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonString));
             T obj = (T)ds.ReadObject(ms);
             ms.Dispose();

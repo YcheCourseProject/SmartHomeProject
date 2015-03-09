@@ -56,17 +56,6 @@
             <Pivot>
                 <PivotItem>
                     <PivotItem.Header>
-                        <TextBlock Text="Load-Profile" FontSize="30" />
-                    </PivotItem.Header>
-                    <StackPanel>
-                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>
-                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList" RenderTransformOrigin="0.946,0.556"/>
-                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadStatus"/>
-                    </StackPanel>
-                </PivotItem>
-                
-                <PivotItem>
-                    <PivotItem.Header>
                         <TextBlock Text="E-Consumption" FontSize="30" />
                     </PivotItem.Header>
                     <StackPanel>
@@ -99,8 +88,9 @@
                         </StackPanel>
                         <StackPanel >
                             <TextBlock Text="Consumption Diagram:"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
-                            <amq:SerialChart x:Name="chart1" CategoryValueMemberPath="H"  Height="300"
+                            <amq:SerialChart x:Name="chart1" CategoryValueMemberPath="H"  Height="260"
                             AxisForeground="White"
+                            
                             PlotAreaBackground="Transparent"
                             GridStroke="DarkGray">
                                 <amq:SerialChart.Graphs>
@@ -114,6 +104,18 @@
                         <TextBox HorizontalAlignment="Left" Margin="81,531,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTestt"/>
                     </StackPanel>
                 </PivotItem>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <TextBlock Text="Load-Profile" FontSize="30" />
+                    </PivotItem.Header>
+                    <StackPanel>
+                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxTest"/>
+                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadList" RenderTransformOrigin="0.946,0.556"/>
+                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Name="TxtBoxLoadStatus"/>
+                    </StackPanel>
+                </PivotItem>
+                
+            
             </Pivot>
         </StackPanel>
      

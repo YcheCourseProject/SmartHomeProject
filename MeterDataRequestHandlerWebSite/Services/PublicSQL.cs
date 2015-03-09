@@ -31,11 +31,11 @@ namespace MeterDataRequestHandlerWebSite.Services
             cmd.Parameters.Clear();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = 
-            " select sum(Consumption) as consumption,d" +
+            " select sum(Consumption) as Consumption,D" +
             " from ConsumptionPerHour" +
             " where y=@y and m=@m" +
-            " group by d" +
-            " order by d asc";
+            " group by D" +
+            " order by D asc";
             cmd.Parameters.AddWithValue("@y",year);
             cmd.Parameters.AddWithValue("@m",month);
 
@@ -79,11 +79,11 @@ namespace MeterDataRequestHandlerWebSite.Services
             cmd.Parameters.Clear();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText =
-            " select sum(Consumption) as consumption,h" +
+            " select sum(Consumption) as Consumption,H" +
             " from ConsumptionPerHour" +
             " where y=@y and m=@m and d=@d" +
-            " group by h" +
-            " order by h asc";
+            " group by H" +
+            " order by H asc";
             cmd.Parameters.AddWithValue("@y", year);
             cmd.Parameters.AddWithValue("@m", month);
             cmd.Parameters.AddWithValue("@d", day);

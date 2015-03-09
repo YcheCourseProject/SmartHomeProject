@@ -22,6 +22,15 @@ namespace SHEMS.Codes
             get { return h; }
             set { h = value; }
         }
+
+        private string d;
+
+        public string D
+        {
+            get { return d; }
+            set { d = value; }
+        }
+
         public ConsumptionStatistics()
         {
 

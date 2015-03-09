@@ -196,16 +196,28 @@ namespace SHEMS
                 await new MessageDialog(responseBody).ShowAsync();
                 List<ConsumptionStatistics> array = Utilities.DataContractJsonDeSerializer<List<ConsumptionStatistics>>(responseBody);
                 ObservableCollection<ConsumptionStatistics> collecion = new ObservableCollection<ConsumptionStatistics>();
-                      
-                foreach (var item in array)
+                
+                if(array.Count>0)
                 {
-                     
-          
-                    collecion.Add(item);
+                    bool isFirstIn = true;
+                    foreach (var item in array)
+                    {
+                        if (isFirstIn)
+                        { 
+                            if (item.D != null)
+                                chart1.CategoryValueMemberPath = "D";
+                            else
+                                chart1.CategoryValueMemberPath = "H";
+                            isFirstIn = false;
+                        }
+                        collecion.Add(item);
+                    }
+
+                    chart1.DataSource = collecion;
+                    
                 }
                
-                chart1.DataSource = collecion;
-             
+                
             });
         }
 
