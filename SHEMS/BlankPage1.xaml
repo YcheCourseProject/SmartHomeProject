@@ -98,9 +98,10 @@
                             </Button>
                         </StackPanel>
                         <StackPanel >
+                            <TextBlock Text="Consumption Diagram:"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
                             <amq:SerialChart x:Name="chart1" CategoryValueMemberPath="H"  Height="300"
                             AxisForeground="White"
-                            PlotAreaBackground="Green"
+                            PlotAreaBackground="Transparent"
                             GridStroke="DarkGray">
                                 <amq:SerialChart.Graphs>
                                     <amq:ColumnGraph  ValueMemberPath="Consumption" Brush="#8000FF00" ColumnWidthAllocation="0.4"/>

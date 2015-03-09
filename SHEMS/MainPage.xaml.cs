@@ -54,28 +54,7 @@ namespace SHEMS
         static String VENTILATE = "Ventilate";
         static String DEHYDRATE = "Dehydrate";
 
-        //用于绑定的数据属性
-        private string curSetTemperature;
-
-        public string CurSetTemperature
-        {
-            get { return "CurSetTemperature:\t"+curSetTemperature+"℃"; }
-            set { curSetTemperature = value; }
-        }
-        private string curMeasuredTemperature;
-
-        public string CurMeasuredTemperature
-        {
-            get { return curMeasuredTemperature; }
-            set { curMeasuredTemperature = value; }
-        }
-        private string curMeasuredHumidity;
-
-        public string CurMeasuredHumidity
-        {
-            get { return curMeasuredHumidity; }
-            set { curMeasuredHumidity = value; }
-        }
+      
         public MainPage()
         {
             this.InitializeComponent();
@@ -284,7 +263,7 @@ namespace SHEMS
               
                 string picstr = "";
                  string tempstr="";
-                context.Post(async (s) =>
+                context.Post(  (s) =>
                 {
 
                     //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
@@ -304,7 +283,7 @@ namespace SHEMS
                 }
                 else
                     return;
-                context.Post(async (s) =>
+                context.Post(  (s) =>
                 {
 
                     //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
@@ -456,7 +435,17 @@ namespace SHEMS
 
         private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
         {
+            //改是否自动控制的状态
 
+            var toggle = sender as ToggleSwitch;
+            if (toggle.IsOn)
+            {
+                isAutoControlFlag = true;
+            }
+            else
+            {
+                isAutoControlFlag = false;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -467,6 +456,18 @@ namespace SHEMS
             {
                 handler(this, new PropertyChangedEventArgs(name));
             }
+        }
+
+        private void Button_Click_ChangeHumidityComfort(object sender, RoutedEventArgs e)
+        {
+            SwitchCtrl.COMFORT_HUMID = Single.Parse(TxtBox_ComfortHumidity.Text);
+            Text_SetHumid.Text = SwitchCtrl.COMFORT_HUMID.ToString() + "%";
+        }
+
+        private void Button_Click_ChangeComfort(object sender, RoutedEventArgs e)
+        {
+            AirConditioner.COMFORT_TEMPERATURE = Single.Parse(TxtBox_ComfortTemperature.Text);
+            Text_SetTmp.Text = AirConditioner.COMFORT_TEMPERATURE.ToString() + "℃";
         }
 
 

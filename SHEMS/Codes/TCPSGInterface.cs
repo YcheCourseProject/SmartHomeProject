@@ -204,12 +204,12 @@ namespace SHEMS.entities
                 try
                 {
                     await writer.StoreAsync();
-                    context.Post(async (s) =>
-                    {
+                    //context.Post((s) =>
+                    //{
 
-                        //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                        //await new MessageDialog("发送成功").ShowAsync();
-                    }, null);               
+                    //    //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+                    //    //await new MessageDialog("发送成功").ShowAsync();
+                    //}, null);               
                 }
                 catch (Exception exception)
                 {

@@ -114,7 +114,7 @@
 
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
-                         
+
                         </StackPanel>
                         <StackPanel>
                             <Button Click="Button_Click_SW" Style="{StaticResource ButtonStyle1}" >
@@ -126,7 +126,41 @@
                         </StackPanel>
                     </StackPanel>
                 </PivotItem>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <TextBlock Text="AutoSeetings" FontSize="30" />
 
+                    </PivotItem.Header>
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Button  Style="{StaticResource ButtonStyle1}">
+                                <Grid>
+                                    <Image Source="Assets/temperature_measure.jpg" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="Target Temp"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="16"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="温度" VerticalAlignment="Top" Name="Text_SetTmp" RenderTransformOrigin="0.433,1.478" FontSize="20"/>
+                                </Grid>
+                               
+                            </Button>
+                            <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="21"   Name="TxtBox_ComfortTemperature"/>
+                            <Button VerticalAlignment="Center" Content="Set Target Temp" HorizontalAlignment="Left" Margin="10,0,0,0"   Click="Button_Click_ChangeComfort"/>
+                        </StackPanel>
+                        <StackPanel  VerticalAlignment="Center">
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                        <Button   Style="{StaticResource ButtonStyle1}" Margin="0,0,0,0">
+                            <Grid>
+                                <Image Source="Assets/Humidity.png" Stretch="Uniform" Height="80"/>
+                                <TextBlock Text="Target Humid"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="16"></TextBlock>
+                                <TextBlock HorizontalAlignment="Right" Margin="50,0,0,0" TextWrapping="Wrap" Text="湿度" VerticalAlignment="Top" Name="Text_SetHumid" RenderTransformOrigin="1.05,2.539" FontSize="20"/>
+
+                            </Grid>
+                        </Button>
+                        <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="35"   Name="TxtBox_ComfortHumidity"/>
+                        <Button VerticalAlignment="Center" Content="Set Target Humid" HorizontalAlignment="Left" Margin="10,0,0,0"   Click="Button_Click_ChangeHumidityComfort"/>
+                        </StackPanel>
+                    </StackPanel>
+                </PivotItem>
             </Pivot>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">

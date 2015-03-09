@@ -11,7 +11,7 @@ namespace SHEMS.entities
 {
     class SwitchCtrl
     {
- 
+        static public float COMFORT_HUMID= 35;
         static byte[] ON_SWITCH_BYTES = { (byte) 0x5a, (byte) 0xa5, (byte) 0xaa,
 		(byte) 0x55, (byte) 0x5a, (byte) 0xa5, (byte) 0xaa, (byte) 0x55,
 		(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,

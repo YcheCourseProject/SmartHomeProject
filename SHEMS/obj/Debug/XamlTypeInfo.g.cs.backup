@@ -372,9 +372,6 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             case 17:   //  SHEMS.MainPage
                 userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_17_MainPage;
-                userType.AddMemberName("CurSetTemperature");
-                userType.AddMemberName("CurMeasuredTemperature");
-                userType.AddMemberName("CurMeasuredHumidity");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -581,36 +578,6 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             var that = (global::AmCharts.Windows.QuickCharts.ColumnGraph)instance;
             that.ColumnWidthAllocation = (global::System.Double)Value;
         }
-        private object get_15_MainPage_CurSetTemperature(object instance)
-        {
-            var that = (global::SHEMS.MainPage)instance;
-            return that.CurSetTemperature;
-        }
-        private void set_15_MainPage_CurSetTemperature(object instance, object Value)
-        {
-            var that = (global::SHEMS.MainPage)instance;
-            that.CurSetTemperature = (global::System.String)Value;
-        }
-        private object get_16_MainPage_CurMeasuredTemperature(object instance)
-        {
-            var that = (global::SHEMS.MainPage)instance;
-            return that.CurMeasuredTemperature;
-        }
-        private void set_16_MainPage_CurMeasuredTemperature(object instance, object Value)
-        {
-            var that = (global::SHEMS.MainPage)instance;
-            that.CurMeasuredTemperature = (global::System.String)Value;
-        }
-        private object get_17_MainPage_CurMeasuredHumidity(object instance)
-        {
-            var that = (global::SHEMS.MainPage)instance;
-            return that.CurMeasuredHumidity;
-        }
-        private void set_17_MainPage_CurMeasuredHumidity(object instance, object Value)
-        {
-            var that = (global::SHEMS.MainPage)instance;
-            that.CurMeasuredHumidity = (global::System.String)Value;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -721,24 +688,6 @@ namespace SHEMS.SHEMS_XamlTypeInfo
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_14_ColumnGraph_ColumnWidthAllocation;
                 xamlMember.Setter = set_14_ColumnGraph_ColumnWidthAllocation;
-                break;
-            case "SHEMS.MainPage.CurSetTemperature":
-                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
-                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurSetTemperature", "String");
-                xamlMember.Getter = get_15_MainPage_CurSetTemperature;
-                xamlMember.Setter = set_15_MainPage_CurSetTemperature;
-                break;
-            case "SHEMS.MainPage.CurMeasuredTemperature":
-                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
-                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurMeasuredTemperature", "String");
-                xamlMember.Getter = get_16_MainPage_CurMeasuredTemperature;
-                xamlMember.Setter = set_16_MainPage_CurMeasuredTemperature;
-                break;
-            case "SHEMS.MainPage.CurMeasuredHumidity":
-                userType = (global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SHEMS.MainPage");
-                xamlMember = new global::SHEMS.SHEMS_XamlTypeInfo.XamlMember(this, "CurMeasuredHumidity", "String");
-                xamlMember.Getter = get_17_MainPage_CurMeasuredHumidity;
-                xamlMember.Setter = set_17_MainPage_CurMeasuredHumidity;
                 break;
             }
             return xamlMember;

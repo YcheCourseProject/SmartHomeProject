@@ -21,7 +21,7 @@ namespace SHEMS.entities
         static byte AC_CODE_ON = (byte)0x55;
         static byte AC_CODE_OFF = (byte)0x80;
         static public float COMFORT_TEMPERATURE = 21;
-        static public float COMFORT_RESTRAIN_BOUND = 1.5f;
+        static public float COMFORT_RESTRAIN_BOUND = 0.5f;
         static public bool isACOn = false;
          public enum AC_MODE
         {

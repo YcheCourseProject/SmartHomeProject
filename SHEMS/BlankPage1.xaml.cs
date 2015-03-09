@@ -100,7 +100,7 @@ namespace SHEMS
                 //bholdregs1 = meter1.ReadHoldingRegisters(65, 2, bholdregs1).Result;
                 //Array.Reverse(bholdregs1);
                 //float Energy1 = BitConverter.ToSingle(bholdregs1, 0);
-                context.Post(async (s) =>
+                context.Post(  (s) =>
                 {
 
                     //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的
@@ -196,8 +196,7 @@ namespace SHEMS
                 await new MessageDialog(responseBody).ShowAsync();
                 List<ConsumptionStatistics> array = Utilities.DataContractJsonDeSerializer<List<ConsumptionStatistics>>(responseBody);
                 ObservableCollection<ConsumptionStatistics> collecion = new ObservableCollection<ConsumptionStatistics>();
-                
-              
+                      
                 foreach (var item in array)
                 {
                      
