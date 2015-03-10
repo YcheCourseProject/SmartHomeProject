@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 //自己代码
 using SHEMS.entities;
 using SHEMS.Codes;
+//绑定UI和数据的
+using System.ComponentModel;
 
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -38,7 +40,7 @@ namespace SHEMS
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BlankPage1 : Page
+    public sealed partial class BlankPage1 : Page, INotifyPropertyChanged
     {
         private string server = "http://10.0.0.3:800/WebForm1.aspx";
         private HttpClient httpClient;
@@ -46,7 +48,8 @@ namespace SHEMS
         public static string TYPE_DAYSPERMONTH = "DaysPerMonth";
         public static string TYPE_HOURSPERDAY = "HoursPerDay";
         public static string TYPE_HOURSPERMONTH = "HoursPerMonth";
-
+        ObservableCollection<LoadIDResult> currentLoadList = new ObservableCollection<LoadIDResult>();
+        List<LoadIDResult> loadIDResultList = new List<LoadIDResult>();
         bool meteracqflag = true;
         static int countMax = 50;
         SynchronizationContext context;
@@ -56,7 +59,7 @@ namespace SHEMS
             httpClient = new HttpClient();
             cts = new CancellationTokenSource();
             this.InitializeComponent();
-
+            cvs1.Source = currentLoadList;
         }
 
         /// <summary>
@@ -71,9 +74,9 @@ namespace SHEMS
 
             TCPSGInterface meter1 = new TCPSGInterface("192.168.1.106", context);
             TCPAmmeterData meterData1 = new TCPAmmeterData(meter1);
-            List<LoadIdentification.LoadData> loadDatalist = new List<LoadIdentification.LoadData>();
-            List<LoadIdentification.LoadIDResult> currentLoadList = null;
-            List<LoadIdentification.LoadIDResult> loadIDResultList = null;
+            List<LoadData> loadDatalist = new List<LoadData>();
+
+            List<LoadIDResult> loadIDResultListForDisBug = null;
             int currentCount = 0;
             while (meteracqflag)
             {
@@ -90,60 +93,70 @@ namespace SHEMS
                 float voltage1 = csmartMeterData1.smartMeterData.Voltage_Va_n_1;
                 double activeEnergy1 = csmartMeterData1.smartMeterData.Active_Energy_Import_Tariff_1_801;
                 DateTime dt = DateTime.Now;
-                loadDatalist.Add(new LoadIdentification.LoadData(activePower1, reactivePower1, dt));
+                loadDatalist.Add(new LoadData(activePower1, reactivePower1, dt));
                 currentCount++;
-
+                LoadIDResult itemtest = new LoadIDResult();
                 if (currentCount == 10)
                 {
                     loadIDResultList = LoadIdentification.handleHisLogDBMethodWindow(loadDatalist);
+                    //string ApplianceNameStr = LoadIdentification.NAME_LAMP;
+                    //     item = new LoadIDResult {
+                    //    Name = ApplianceNameStr,
+                    //    Imgpath = LoadIdentification.mapName2ImgPath(ApplianceNameStr),
+                    //    Datetime = DateTime.Now,
+                    //    Event_type = EVENT_TYPE.ON
+                    //};
+                    //loadIDResultList.Add(item);
+
                     currentCount = 0;
-                    if (loadIDResultList!=null)
-                    { 
-                    foreach(var item in loadIDResultList)
-                    {
-                        if (currentLoadList != null)
-                        {
-                            foreach (var curitem in currentLoadList)
-                            {
-                                if (curitem.Name.Equals(item.Name))
-                                {
-                                    if (item.Event_type == LoadIdentification.EVENT_TYPE.OFF)
-                                        currentLoadList.Remove(curitem);
-                                }
-                                else
-                                {
-                                    if (item.Event_type == LoadIdentification.EVENT_TYPE.ON)
-                                        currentLoadList.Add(item);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            currentLoadList = loadIDResultList;
-                        }
-                    }
-                    }
-                  
-                    //loadDatalist = new List<LoadIdentification.LoadData>();
+
+                    loadDatalist = new List<LoadData>();
                 }
 
                 context.Post((s) =>
                 {
-
                     //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的
-                    //if (strlist != null)
-                    //{
-                    //    String tempstr = "";
-                    //    foreach (String str in strlist)
-                    //        tempstr += str;
-                    //    TxtBoxLoadList.Text = tempstr;
-                    //    TxtBoxLoadStatus.Text = "Lamp Status:" + LoadIdentification.isLampOn.ToString();
-                    //}
-                    TxtAP.Text = String.Format("{0:F}", activePower1)  + "W";
+                    TxtAP.Text = String.Format("{0:F}", activePower1) + "W";
                     TxtRP.Text = String.Format("{0:F}", reactivePower1) + "Var";
-                    listLoads.ItemsSource = currentLoadList;
-                    //TxtBoxTest.Text = csmartMeterData1.smartMeterData.toLoadIdentificationInfoJson();
-                }, null);
+                    if (currentCount == 0)
+                    {
+                        if (loadIDResultList.Count > 0)
+                        {
+                            foreach (LoadIDResult item in loadIDResultList)
+                            {
+
+                                if (currentLoadList.Count > 0)
+                                {
+                                    try
+                                    { 
+                                    foreach (LoadIDResult curitem in currentLoadList)
+                                    {
+                                        if (curitem.Name.Equals(item.Name))
+                                        {
+                                            if (item.Event_type != curitem.Event_type)
+                                            {
+                                                currentLoadList.Remove(curitem);
+                                            }
+                                        }
+                                    }
+                                     }
+                                    catch
+                                    {
+
+                                    }
+                                }
+
+                                if (item.Event_type == EVENT_TYPE.ON)
+                                {
+
+                                    currentLoadList.Add(item);
+                                }
+                            }
+
+                        }
+                    }
+                }
+            , null);
 
                 await Task.Delay(500);
             }
@@ -181,7 +194,7 @@ namespace SHEMS
 
         private void Button_Click_BacktoCtrl(object sender, RoutedEventArgs e)
         {
-             Frame frame = Window.Current.Content as Frame;
+            Frame frame = Window.Current.Content as Frame;
             frame.Navigate(typeof(MainPage));
         }
 
@@ -189,11 +202,11 @@ namespace SHEMS
         {
             HttpRequestAsync(async () =>
             {
-                int year=DatePicker.Date.Year;
-                int month=DatePicker.Date.Month;
-                int day=DatePicker.Date.Day;
- 
-                string resourceAddress = server + "?y="+year+"&m="+month+"&d="+day+"&type=HoursPerDay";
+                int year = DatePicker.Date.Year;
+                int month = DatePicker.Date.Month;
+                int day = DatePicker.Date.Day;
+
+                string resourceAddress = server + "?y=" + year + "&m=" + month + "&d=" + day + "&type=HoursPerDay";
                 HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress)).AsTask(cts.Token);
                 string responseBody = await response.Content.ReadAsStringAsync().AsTask(cts.Token);
                 return responseBody;
@@ -221,19 +234,19 @@ namespace SHEMS
             {
                 //waiting.Visibility = Visibility.Collapsed;
             }
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal,  () =>
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 //await new MessageDialog(responseBody).ShowAsync();
                 List<ConsumptionStatistics> array = Utilities.DataContractJsonDeSerializer<List<ConsumptionStatistics>>(responseBody);
                 ObservableCollection<ConsumptionStatistics> collecion = new ObservableCollection<ConsumptionStatistics>();
-                
-                if(array.Count>0)
+
+                if (array.Count > 0)
                 {
                     bool isFirstIn = true;
                     foreach (var item in array)
                     {
                         if (isFirstIn)
-                        { 
+                        {
                             if (item.D != null)
                                 chart1.CategoryValueMemberPath = "D";
                             else
@@ -244,10 +257,10 @@ namespace SHEMS
                     }
 
                     chart1.DataSource = collecion;
-                    
+
                 }
-               
-                
+
+
             });
         }
 
@@ -257,7 +270,7 @@ namespace SHEMS
             {
                 int year = DatePicker.Date.Year;
                 int month = DatePicker.Date.Month;
-                string resourceAddress = server + "?y="+year+"&m="+month+"&type=DaysPerMonth";
+                string resourceAddress = server + "?y=" + year + "&m=" + month + "&type=DaysPerMonth";
                 HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress)).AsTask(cts.Token);
                 string responseBody = await response.Content.ReadAsStringAsync().AsTask(cts.Token);
                 return responseBody;
@@ -268,20 +281,29 @@ namespace SHEMS
         {
             HttpRequestAsync(async () =>
             {
-                 int year = DatePicker.Date.Year;
+                int year = DatePicker.Date.Year;
                 int month = DatePicker.Date.Month;
-                string resourceAddress = server + "?y="+year+"&m="+month+"&type=HoursPerMonth";
-              
+                string resourceAddress = server + "?y=" + year + "&m=" + month + "&type=HoursPerMonth";
+
                 HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress)).AsTask(cts.Token);
                 string responseBody = await response.Content.ReadAsStringAsync().AsTask(cts.Token);
                 return responseBody;
             });
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
         //private void bindDataForChart()
         //{
         //    ObservableCollection<ChartData> collecion = new ObservableCollection<ChartData>();
-          
+
         //    IEnumerable<string> enumerable2 = (from c in allRecords select c.Category).Distinct<string>();
         //    foreach (var item in enumerable2)
         //    {

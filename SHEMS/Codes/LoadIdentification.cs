@@ -6,6 +6,85 @@ using System.Threading.Tasks;
 
 namespace SHEMS.Codes
 {
+    public enum EVENT_TYPE
+    {
+        ON, OFF
+    }
+
+    public class LoadIDResult
+    {
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        private string imgpath;
+
+        public string Imgpath
+        {
+            get { return imgpath; }
+            set { imgpath = value; }
+        }
+        private DateTime datetime;
+
+        public DateTime Datetime
+        {
+            get { return datetime; }
+            set { datetime = value; }
+        }
+        private EVENT_TYPE event_type;
+
+        public EVENT_TYPE Event_type
+        {
+            get { return event_type; }
+            set { event_type = value; }
+        }
+        public LoadIDResult()
+        {
+
+        }
+    }
+   
+    public class LoadData
+    {
+        float ap;
+
+        public float Ap
+        {
+            get { return ap; }
+            set { ap = value; }
+        }
+        float rp;
+
+        public float Rp
+        {
+            get { return rp; }
+            set { rp = value; }
+        }
+
+        DateTime time;
+
+        public DateTime Time
+        {
+            get { return time; }
+            set { time = value; }
+        }
+
+        public LoadData(float ap, float rp, DateTime time)
+        {
+
+            this.ap = ap;
+            this.rp = rp;
+
+            this.time = time;
+        }
+
+
+
+    }
+    
     public class LoadIdentification
     {
         static float THRESHOLD = 0.1f;
@@ -13,55 +92,16 @@ namespace SHEMS.Codes
         static float AP_THRESHOLD = 10;
         static float BASE_POWER_THRESHOLD = 5;
  
-        public enum EVENT_TYPE
-        {
-            ON,OFF
-        }
+    
         public static bool isLampOn = false;
         public static bool isNoteBookOn = false;
         public static bool isPotOn = false;
         public static string NAME_POT = "电热水壶";
         public static string NAME_LAMP = "节能灯";
         public static string NAME_NOTEBOOK = "笔记本电脑";
-        public class LoadData
-        {
-            float ap;
+        
 
-            public float Ap
-            {
-                get { return ap; }
-                set { ap = value; }
-            }
-            float rp;
-
-            public float Rp
-            {
-                get { return rp; }
-                set { rp = value; }
-            }
-
-            DateTime time;
-
-            public DateTime Time
-            {
-                get { return time; }
-                set { time = value; }
-            }
-
-            public LoadData(float ap, float rp, DateTime time)
-            {
-
-                this.ap = ap;
-                this.rp = rp;
-
-                this.time = time;
-            }
-
-
-
-        }
-
-        private static string mapName2ImgPath(string name)
+        public static string mapName2ImgPath(string name)
         {
             string imgPath = "ms-appx:///Assets/";
             if(name.Equals(NAME_LAMP))
@@ -78,46 +118,12 @@ namespace SHEMS.Codes
             }
             else
             {
-                imgPath += "";
+                imgPath += null;
             }
             return imgPath;
         }
       
-        public class LoadIDResult
-        {
-            private string name;
-
-            public string Name
-            {
-                get { return name; }
-                set { name = value; }
-            }
-            private string imgpath;
-
-            public string Imgpath
-            {
-                get { return imgpath; }
-                set { imgpath = value; }
-            }
-            private DateTime datetime;
-
-            public DateTime Datetime
-            {
-                get { return datetime; }
-                set { datetime = value; }
-            }
-            private EVENT_TYPE event_type;
-
-            public EVENT_TYPE Event_type
-            {
-                get { return event_type; }
-                set { event_type = value; }
-            }
-            public LoadIDResult()
-            {
-
-            }
-        }
+       
         private class WindowOperator // 用来方便做平滑处理的类
         {
             /**
@@ -269,14 +275,14 @@ namespace SHEMS.Codes
                     return NAME_NOTEBOOK;
                 }
                 else
-                    return "未知的有功功率在20到50W的电器";
+                    return "Unknow";
             }
             else if (loadinap < 5)
             {
-                return "出现了毛刺和抖动";
+                return "Unknow";
             }
             else
-                return "未知的电器";
+                return "Unknow";
         }
 
         public static List<LoadIDResult> handleHisLogDBMethodWindow(List<LoadData> loadDatalist)
@@ -368,16 +374,16 @@ namespace SHEMS.Codes
                                     float loadap = Math.Abs(thelast.Ap - reference.Ap);
                                     float loadrp = -Math.Abs(thelast.Rp - reference.Rp);
                                     //先做一个匹配的检验    要从loginfo中匹配到才算ok
-                                   
+                                   EVENT_TYPE eventType;
                                     if (trueForIn)
                                     {
                                         tempstr = "Load detected：in\n";
-                                    
+                                        eventType = EVENT_TYPE.ON;
                                     }
                                     else
                                     {
                                         tempstr = "Load detected: out\n ";
-                                   
+                                        eventType = EVENT_TYPE.OFF;
                                     }
                                    
                                     {
@@ -385,9 +391,11 @@ namespace SHEMS.Codes
                                         LoadIDResult loadIDResult=new LoadIDResult{
                                             Name=ApplianceNameStr,
                                             Imgpath=mapName2ImgPath(ApplianceNameStr),
-                                            Datetime=reference.Time
+                                            Datetime=reference.Time,
+                                            Event_type=eventType
                                         };
-                                        loadeventslist.Add(loadIDResult);
+                                        if (!loadIDResult.Name.Equals("Unknow"))
+                                            loadeventslist.Add(loadIDResult);
                                         //loadeventslist.Add(tempstr + possibleInOrOut.Time.ToString()
                                         //+ "\n" + "ap:" + loadap + "W\nrp:" + loadrp + "Var" + "\n" + "maybe:" + identified_appliance);
                                     }
