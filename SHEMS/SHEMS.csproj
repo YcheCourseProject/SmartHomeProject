@@ -125,6 +125,8 @@
     <Content Include="Assets\icon_smarthome.png" />
     <Content Include="Assets\icon_smarthome120.scale-240.png" />
     <Content Include="Assets\icon_smarthome150.png" />
+    <Content Include="Assets\icon_smarthome44.png" />
+    <Content Include="Assets\icon_smarthome71.png" />
     <Content Include="Assets\icon_sp2.png" />
     <Content Include="Assets\ic_launcher.png" />
     <Content Include="Assets\lamp.png" />

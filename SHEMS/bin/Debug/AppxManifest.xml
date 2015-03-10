@@ -23,13 +23,13 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="SHEMS.exe" EntryPoint="SHEMS.App">
-      <m3:VisualElements DisplayName="SHEMS" Square150x150Logo="Assets\icon_smarthome150.png" Square44x44Logo="Assets\SmallLogo.png" Description="SHEMS" ForegroundText="light" BackgroundColor="transparent">
-        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+      <m3:VisualElements DisplayName="SHEMS" Square150x150Logo="Assets\icon_smarthome150.png" Square44x44Logo="Assets\icon_smarthome44.png" Description="SHEMS" ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\icon_smarthome71.png">
           <m3:ShowNameOnTiles>
             <m3:ShowOn Tile="square150x150Logo" />
           </m3:ShowNameOnTiles>
         </m3:DefaultTile>
-        <m3:SplashScreen Image="Assets\SplashScreen.png" />
+        <m3:SplashScreen Image="Assets\icon_smarthome.png" />
       </m3:VisualElements>
     </Application>
   </Applications>

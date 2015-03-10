@@ -66,6 +66,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_smarthome.png">
       <PackagePath>Assets\icon_smarthome.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_smarthome120.scale-240.png">
       <PackagePath>Assets\icon_smarthome120.scale-240.png</PackagePath>
@@ -73,6 +74,14 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_smarthome150.png">
       <PackagePath>Assets\icon_smarthome150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_smarthome44.png">
+      <PackagePath>Assets\icon_smarthome44.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_smarthome71.png">
+      <PackagePath>Assets\icon_smarthome71.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\icon_sp2.png">
@@ -92,15 +101,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
