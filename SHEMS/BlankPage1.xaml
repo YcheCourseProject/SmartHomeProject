@@ -13,7 +13,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Grid x:Name="Grid" Background="Black" Height="auto" Width="auto" Margin="0, 0,0, 0" >
+                        <Grid x:Name="Grid" Background="Transparent" Height="auto" Width="auto" Margin="0, 0,0, 0" >
                             <Border x:Name="Border">
                                 <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
                                 Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
@@ -27,7 +27,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Grid x:Name="Grid" Background="Black" Height="135" Width="100" Margin="0, 0, 12, 0" >
+                        <Grid x:Name="Grid" Background="Transparent" Height="135" Width="100" Margin="0, 0, 12, 0" >
                             <Border x:Name="Border">
                                 <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
                                 Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
@@ -41,7 +41,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Grid x:Name="Grid" Background="Black" Height="155" Width="155" Margin="0, 0, 12, 0" >
+                        <Grid x:Name="Grid" Background="Transparent" Height="155" Width="155" Margin="0, 0, 12, 0" >
                             <Border x:Name="Border">
                                 <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
                                 Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
@@ -104,12 +104,12 @@
                         <StackPanel >
                             <TextBlock Text="Consumption Diagram:"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
                             <amq:SerialChart x:Name="chart1" CategoryValueMemberPath="H"  Height="260"
-                            AxisForeground="White"
+                            AxisForeground="Blue"
                             
                             PlotAreaBackground="Transparent"
-                            GridStroke="DarkGray">
+                            GridStroke="Purple">
                                 <amq:SerialChart.Graphs>
-                                    <amq:ColumnGraph  ValueMemberPath="Consumption" Brush="#8000FF00" ColumnWidthAllocation="0.4"/>
+                                    <amq:ColumnGraph  ValueMemberPath="Consumption" Brush="Gold" ColumnWidthAllocation="0.4"/>
                                 </amq:SerialChart.Graphs>
                             </amq:SerialChart>
                         </StackPanel>
@@ -148,8 +148,8 @@
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" Margin="12,0,0,0">
                                         <Image Source="{Binding Imgpath}" Stretch="Uniform" Height="60"  />
-                                        <TextBlock  Foreground="White" FontSize="20" Text="{Binding Name}" TextWrapping="NoWrap" HorizontalAlignment="Left" VerticalAlignment="Center"   Margin="10,0,0,0"/>
-                                        <TextBlock  Foreground="White" FontSize="20" Text="{Binding Datetime}" TextWrapping="NoWrap" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center"    Margin="10,0,0,0" />
+                                        <TextBlock  Foreground="Blue" FontSize="20" Text="{Binding Name}" TextWrapping="NoWrap" HorizontalAlignment="Left" VerticalAlignment="Center"   Margin="10,0,0,0"/>
+                                        <TextBlock  Foreground="Blue" FontSize="20" Text="{Binding Datetime}" TextWrapping="NoWrap" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center"    Margin="10,0,0,0" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
