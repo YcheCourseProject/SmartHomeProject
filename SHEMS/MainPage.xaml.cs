@@ -395,7 +395,7 @@ namespace SHEMS
             BitmapImage bmp = new BitmapImage();
             Img_SW.Source = bmp;
             bmp.UriSource = new Uri("ms-appx:///Assets/" + picstr, UriKind.RelativeOrAbsolute);
-            TxtOnOffStatus.Text =hinttext;
+            TxtHumidifierStatus.Text = hinttext;
         }
 
         private void changeACONOFFIMAGE(bool isReadyOn)
