@@ -12,6 +12,8 @@ namespace SHEMS.entities
     class SwitchCtrl
     {
         static public float COMFORT_HUMID= 35;
+        static public float COMFORT_RESTRAIN_BOUND = 5;
+        static public bool isSwitchOn = false;
         static byte[] ON_SWITCH_BYTES = { (byte) 0x5a, (byte) 0xa5, (byte) 0xaa,
 		(byte) 0x55, (byte) 0x5a, (byte) 0xa5, (byte) 0xaa, (byte) 0x55,
 		(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
@@ -44,6 +46,7 @@ namespace SHEMS.entities
 		(byte) 0x30, (byte) 0xe4, (byte) 0xbc, (byte) 0xd8, (byte) 0x59,
 		(byte) 0x29, (byte) 0x3c, (byte) 0x4a, (byte) 0x53, };
 
+        static public string SW_SERVER_CURIP = "10.0.0.2";
         static public String SW_SERVER_IP = "10.0.0.";
         static string QUIC_PORT = "80";
         static StreamSocket clientSocket = null;
@@ -60,6 +63,7 @@ namespace SHEMS.entities
                 DataWriter writer = new DataWriter(outputStream);
                 writer.WriteBytes(ON_SWITCH_BYTES);
                 await writer.StoreAsync();
+                isSwitchOn = true;
             }
             catch (Exception exception)
             {
@@ -79,6 +83,7 @@ namespace SHEMS.entities
                 DataWriter writer = new DataWriter(outputStream);
                 writer.WriteBytes(OFF_SWITCH_BYTES);
                 await writer.StoreAsync();
+                isSwitchOn = false;
             }
             catch (Exception exception)
             {

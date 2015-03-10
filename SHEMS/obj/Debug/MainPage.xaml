@@ -90,7 +90,7 @@
                             <StackPanel  VerticalAlignment="Center">
                                 <TextBlock Text="Set TMP:"  VerticalAlignment="Bottom" Margin="5" FontSize="20" HorizontalAlignment="Center"></TextBlock>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock Text="21"  VerticalAlignment="Bottom" Margin="5" FontSize="20" HorizontalAlignment="Center" Name="Txt_SetT"></TextBlock>
+                                    <TextBlock Text="{Binding SetTemperature,Mode=TwoWay}"  VerticalAlignment="Bottom" Margin="5" FontSize="20" HorizontalAlignment="Center" Name="Txt_SetT"></TextBlock>
                                     <TextBlock Text="℃"  VerticalAlignment="Bottom" Margin="5" FontSize="20" HorizontalAlignment="Center" ></TextBlock>
                                 </StackPanel>
                             </StackPanel>

@@ -4,6 +4,7 @@
     <RootPropertyPathName Name="Datetime" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Imgpath" />
+    <RootPropertyPathName Name="SetTemperature" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -81,6 +82,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
+      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.DataTemplate">

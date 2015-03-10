@@ -71,6 +71,7 @@ namespace SHEMS.entities
         {
             setACTemperatureMode((int)AirConditioner.COMFORT_TEMPERATURE, ac_mode);
             temperature = (int)COMFORT_TEMPERATURE;
+            isACOn = true;
         }
         public static void setACMode(AC_MODE mode)
         {

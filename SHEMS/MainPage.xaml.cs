@@ -34,6 +34,34 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace SHEMS
 {
+    //AtmosphereData用于跟UI数据绑定
+    public class AtmosphereData: INotifyPropertyChanged
+    {
+        private string setTemperature;
+
+        public string SetTemperature
+        {
+            get { return setTemperature; }
+            set { setTemperature = value;
+            OnPropertyChanged("SetTemperature");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        public AtmosphereData()
+        {
+
+        }
+    }
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -55,6 +83,7 @@ namespace SHEMS
         static String DEHYDRATE = "Dehydrate";
 
 
+        AtmosphereData atmosphereData = new AtmosphereData();
         public MainPage()
         {
             this.InitializeComponent();
@@ -65,10 +94,15 @@ namespace SHEMS
                COOL,WARM,VENTILATE,DEHYDRATE
             };
             //ACItem.DataContext = this;
-
+            
+            this.DataContext = atmosphereData;
             comboBoxACMode.ItemsSource = acmodes;
             comboBoxACMode.SelectedIndex = 1;
-
+            Text_SetTmp.Text = TxtBox_ComfortTemperature.Text+"℃";
+            Text_SetHumid.Text = TxtBox_ComfortHumidity.Text + "%";
+            //Text_SetTmp.Text = TextBox_Tmp.Text + "℃";
+            //Text_SetTmp.Text = TextBox_Humid.Text + "%";
+            atmosphereData.SetTemperature = "21";
         }
 
 
@@ -130,7 +164,8 @@ namespace SHEMS
             context.Post((s) =>
             {
                 //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
-                this.Txt_SetT.Text = AirConditioner.temperature.ToString();
+                atmosphereData.SetTemperature = AirConditioner.temperature.ToString();
+                
             }, null);
         }
         public async void ThreadProcAcqTmpHumid()
@@ -163,38 +198,79 @@ namespace SHEMS
                         humidity = tempstrs[1].Substring(9, 4);
 
                         sb = "";
+                        bool isReadyChangeACSwitch = false;
+                        bool isReadyChangeSW = false;
+                        bool isReadyChangeSetT=false;
+                        bool isReadySWON = false;
                         if (isAutoControlFlag)
                         {
+                           //空调的自动控制
                             if (Single.Parse(temprature) - AirConditioner.COMFORT_TEMPERATURE > AirConditioner.COMFORT_RESTRAIN_BOUND)
                             {
                                 if (AirConditioner.isACOn == true)
                                 {
-                                    AirConditioner.OffAC();
-                                     
-                                    changeACONOFFIMAGE(false);
+                                    AirConditioner.OffAC();                                     
+                                    isReadyChangeSetT = false;
+                                    isReadyChangeACSwitch = true;
                                 }
                             }
                             else if (Single.Parse(temprature) - AirConditioner.COMFORT_TEMPERATURE < -AirConditioner.COMFORT_RESTRAIN_BOUND)
                             {
                                 if (AirConditioner.isACOn == false)
                                 {
-                                    //AirConditioner.onAC();
                                     AirConditioner.setTemperatureWithComfortT();
-                                 
-                                    changeACONOFFIMAGE(true);
+                                    isReadyChangeSetT = true;
+                                    isReadyChangeACSwitch = true;
                                 }
                             }
 
+                            //...
+                            if (Single.Parse(humidity) - SwitchCtrl.COMFORT_HUMID > SwitchCtrl.COMFORT_RESTRAIN_BOUND)
+                            {
+                                if (SwitchCtrl.isSwitchOn == true)
+                                {
+                                    SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_CURIP);
+                                    //changeACONOFFIMAGE(false);
+                                    isReadyChangeSW = true;
+                                    isReadySWON = false;
+                                }
+                            }
+                            else if (Single.Parse(humidity) - SwitchCtrl.COMFORT_HUMID < -SwitchCtrl.COMFORT_RESTRAIN_BOUND)
+                            {
+                                if (SwitchCtrl.isSwitchOn == false)
+                                {
+                                    SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_CURIP);
+                                    isReadyChangeSW = true;
+                                    isReadySWON = true;
+                                    //changeACONOFFIMAGE(true);
+                                    //isReadyChangeSetT = true;
+                                }
+                            }
                         }
-                        context.Post((s) =>
+                        context.Post(async(s) =>
                         {
 
                             //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
                             this.TextBox_Tmp.Text = temprature + "℃";
                             this.TextBox_Humid.Text = humidity + "%";
-                            //textBlock1.Text = AirConditioner.isACOn.ToString();
-                            // MessageDialog messageDialog = new MessageDialog("ThreadProc1");
-                            //await messageDialog.ShowAsync();
+                            //更新空调开关的UI
+                            if(isReadyChangeACSwitch)
+                                changeACONOFFIMAGE(isReadyChangeSetT);
+                            //更新设定温度
+                            if (isReadyChangeSetT)
+                            {
+                                isReadyChangeSetT = false;
+                                atmosphereData.SetTemperature = AirConditioner.COMFORT_TEMPERATURE.ToString();
+                                //MessageDialog messageDialog = new MessageDialog("ThreadProc1");
+                                //await messageDialog.ShowAsync();
+                            }
+                            if (isReadyChangeSW)
+                            {
+                                changeHumidifierONOFFIMAGE(isReadySWON);
+                                //MessageDialog messageDialog = new MessageDialog("ThreadProc1");
+                                //await messageDialog.ShowAsync();
+                                isReadyChangeSW = false;
+                            }
                         }, null);
                     }
                     else
@@ -302,10 +378,29 @@ namespace SHEMS
             });
         }
 
-        private void changeACONOFFIMAGE(bool isReadyOn)
+        private void changeHumidifierONOFFIMAGE(bool isReadyOn)
         {
-         
-             string picstr;
+            string picstr;
+            string hinttext;
+            if(isReadyOn)
+            { 
+               picstr = "switch_on_normal.png";
+               hinttext=  AC_STATUS_PRESS2OFF;
+            }
+            else
+            {
+                picstr = "switch_off_normal.png";
+                hinttext = AC_STATUS_PRESS2On;
+            }
+            BitmapImage bmp = new BitmapImage();
+            Img_SW.Source = bmp;
+            bmp.UriSource = new Uri("ms-appx:///Assets/" + picstr, UriKind.RelativeOrAbsolute);
+            TxtOnOffStatus.Text =hinttext;
+        }
+
+        private void changeACONOFFIMAGE(bool isReadyOn)
+        {         
+            string picstr;
             string hinttext;
             if(isReadyOn)
             { 
@@ -439,15 +534,7 @@ namespace SHEMS
             }
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            isAutoControlFlag = true;
-        }
-
-        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
-        {
-            isAutoControlFlag = false;
-        }
+ 
 
         //private void Button_Click_ChangeComfort(object sender, RoutedEventArgs e)
         //{
@@ -493,6 +580,8 @@ namespace SHEMS
         {
             AirConditioner.COMFORT_TEMPERATURE = Single.Parse(TxtBox_ComfortTemperature.Text);
             Text_SetTmp.Text = AirConditioner.COMFORT_TEMPERATURE.ToString() + "℃";
+
+            //atmosphereData.SetTemperature = AirConditioner.COMFORT_TEMPERATURE.ToString();
         }
 
 
