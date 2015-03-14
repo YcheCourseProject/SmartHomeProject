@@ -287,17 +287,13 @@ namespace SHEMS.Codes
 
         public static List<LoadIDResult> handleHisLogDBMethodWindow(List<LoadData> loadDatalist)
         {
-            //List<String>  loadeventslist = new List<String>();
             List<LoadIDResult> loadeventslist = new List<LoadIDResult>();
             WindowOperator window_operator = new WindowOperator();
             LoadData former = null;
             LoadData latter = null;
             Queue<LoadData> loadDataQue;
             loadDataQue = new Queue<LoadData>();			//主要用来存储出现可疑点的
-            //db_eventlog = new EventLogDB(this);
-            //LoadInfoDB db_loginfo = new LoadInfoDB(this);
 
-            //while (cursor.moveToNext())
             int index = -1;
             while (loadDatalist.Count > (index++)+1)
             {
@@ -330,7 +326,6 @@ namespace SHEMS.Codes
                                 time = loadDatalist[index].Time;
                                 ap = loadDatalist[index].Ap;
                                 rp = loadDatalist[index].Rp;
-
                                 thelast = tempOperator.addData(ap, rp, time);		//做平滑处理
                             }
                             else
@@ -352,19 +347,11 @@ namespace SHEMS.Codes
                                 cursormovetime = 0;
                                 break;												//否决的话就不做下去了
                             }
-
                             else
                             {
                                 //第三步：如果做到了最后一个判断
                                 if (move == WINDOW_NUM - 2)					//到了最后的把关点的判断正确就要进行显示或者存数据库的相关操作
                                 {
-                                    ////Log.i("oki", cursormovetime + "");
-                                    //游标不应该回退
-                                    //							for(int j=0;j<cursormovetime;j++)
-                                    //							{
-                                    //								cursor.moveToPrevious();			//游标回退             
-                                    //							}		
-
                                     String tempstr = null;
                                     bool trueForIn = thelast.Ap > reference.Ap;
                                     String event_status = null;
@@ -396,8 +383,6 @@ namespace SHEMS.Codes
                                         };
                                         if (!loadIDResult.Name.Equals("Unknow"))
                                             loadeventslist.Add(loadIDResult);
-                                        //loadeventslist.Add(tempstr + possibleInOrOut.Time.ToString()
-                                        //+ "\n" + "ap:" + loadap + "W\nrp:" + loadrp + "Var" + "\n" + "maybe:" + identified_appliance);
                                     }
       					
 

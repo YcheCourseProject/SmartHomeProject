@@ -80,18 +80,21 @@ namespace SHEMS
             int currentCount = 0;
             while (meteracqflag)
             {
+                try
+                { 
                 CSmartMeterData csmartMeterData1 = new CSmartMeterData();
                 csmartMeterData1.getActive_Power(meterData1.read_active_Power());
                 csmartMeterData1.getReactive_Power(meterData1.read_Reactive_Power());
                 csmartMeterData1.getCurrent(meterData1.read_current());
                 csmartMeterData1.getVoltage_Vph_n(meterData1.read_voltage_Vph_n());
                 csmartMeterData1.getActive_Energy(meterData1.read_active_Energy());
-
+             
                 float activePower1 = csmartMeterData1.smartMeterData.Total_Active_Power_65;
                 float reactivePower1 = csmartMeterData1.smartMeterData.Reactive_Power_Total_67;
                 float current1 = csmartMeterData1.smartMeterData.Current_a_13;
                 float voltage1 = csmartMeterData1.smartMeterData.Voltage_Va_n_1;
-                double activeEnergy1 = csmartMeterData1.smartMeterData.Active_Energy_Import_Tariff_1_801;
+                double activeEnergy1 = csmartMeterData1.smartMeterData.Active_Energy_Import_Tariff_1_801; 
+           
                 DateTime dt = DateTime.Now;
                 loadDatalist.Add(new LoadData(activePower1, reactivePower1, dt));
                 currentCount++;
@@ -157,7 +160,11 @@ namespace SHEMS
                     }
                 }
             , null);
+                }
+                catch
+                {
 
+                }
                 await Task.Delay(500);
             }
         }
@@ -237,6 +244,7 @@ namespace SHEMS
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 //await new MessageDialog(responseBody).ShowAsync();
+ 
                 List<ConsumptionStatistics> array = Utilities.DataContractJsonDeSerializer<List<ConsumptionStatistics>>(responseBody);
                 ObservableCollection<ConsumptionStatistics> collecion = new ObservableCollection<ConsumptionStatistics>();
 
@@ -259,8 +267,6 @@ namespace SHEMS
                     chart1.DataSource = collecion;
 
                 }
-
-
             });
         }
 
