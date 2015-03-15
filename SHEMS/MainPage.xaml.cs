@@ -229,7 +229,15 @@ namespace SHEMS
                             {
                                 if (SwitchCtrl.isSwitchOn == true)
                                 {
-                                    SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_CURIP);
+                                    for (int i = 0; i < 255; i++)
+                                    {
+                                        {
+
+                                            SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_IP + i);
+
+
+                                        }
+                                    }
                                     //changeACONOFFIMAGE(false);
                                     isReadyChangeSW = true;
                                     isReadySWON = false;
@@ -239,7 +247,15 @@ namespace SHEMS
                             {
                                 if (SwitchCtrl.isSwitchOn == false)
                                 {
-                                    SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_CURIP);
+                                    for (int i = 0; i < 255; i++)
+                                    {
+                                        {
+
+                                            SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_IP + i);
+
+
+                                        }
+                                    }
                                     isReadyChangeSW = true;
                                     isReadySWON = true;
                                     //changeACONOFFIMAGE(true);
@@ -312,19 +328,20 @@ namespace SHEMS
                 bmp.UriSource = new Uri("ms-appx:///Assets/" + picstr, UriKind.RelativeOrAbsolute);
             }, null);
             //要考虑
-            int i = 2;
+            //int i = 2;
             if (isReadyOn == true)
-            //for (int i = 0; i < 255; i++)
-            //{
+            for (int i = 0; i < 255; i++)
+            {
             {
 
                 SwitchCtrl.switchOn(SwitchCtrl.SW_SERVER_IP + i);
 
 
-            }//}
+            }
+            }
 
             else
-            //for (int i = 0; i < 255; i++)
+            for (int i = 0; i < 255; i++)
             {
 
                 SwitchCtrl.switchOff(SwitchCtrl.SW_SERVER_IP + i);

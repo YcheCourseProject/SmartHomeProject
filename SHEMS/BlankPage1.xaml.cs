@@ -42,7 +42,7 @@ namespace SHEMS
     /// </summary>
     public sealed partial class BlankPage1 : Page, INotifyPropertyChanged
     {
-        private string server = "http://10.0.0.3:800/WebForm1.aspx";
+        private string server = "http://10.0.0.4:800/WebForm1.aspx";
         private HttpClient httpClient;
         private CancellationTokenSource cts;
         public static string TYPE_DAYSPERMONTH = "DaysPerMonth";
