@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Timers;
 using System.IO;
 //.......
-using Services;
+using MeterDataAcq.Services;
 using MeterDataAcq.Models;
 
 namespace ConsoleApplicationDataAcquire

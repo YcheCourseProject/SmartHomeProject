@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
 
-namespace MeterDataRequestHandlerWebSite.Services
+namespace MeterDataAcq.Services
 {
     public class PublicSQL
     {

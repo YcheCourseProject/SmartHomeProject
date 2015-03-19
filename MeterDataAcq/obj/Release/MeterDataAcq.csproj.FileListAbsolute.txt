@@ -1,0 +1,13 @@
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Release\MeterDataAcq.csprojResolveAssemblyReference.cache
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Release\MeterDataAcq.exe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Release\MeterDataAcq.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Release\Modbus.dll
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Release\log4net.dll
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Release\Unme.Common.dll
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Release\log4net.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Release\MeterDataAcq.exe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Release\MeterDataAcq.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Release\MeterDataAcq.exe.manifest
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Release\MeterDataAcq.application
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Release\MeterDataAcq.exe.manifest
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Release\MeterDataAcq.application
