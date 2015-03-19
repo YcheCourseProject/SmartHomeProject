@@ -35,3 +35,46 @@ C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Release\
 C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Release\qualifiers.txt.intermediate
 C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Release\MultipleQualifiersPerDimensionFound.txt
 C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Release\ProjectArchitectures.txt
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\SHEMS.csprojResolveAssemblyReference.cache
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\App.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\App.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\BlankPage1.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\BlankPage1.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\MainPage.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\MainPage.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\XamlTypeInfo.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\App.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\BlankPage1.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\MainPage.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\App.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\BlankPage1.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\MainPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\XamlSaveStateFile.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\SHEMS.exe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\SHEMS.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\App.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\BlankPage1.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\MainPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\SHEMS.xr.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\SHEMS.exe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\SHEMS.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\resources.pri
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\AppxManifest.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\SHEMS.build.appxrecipe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\QuickChartsWP.dll
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\QuickChartsWP.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\QuickChartsWP.pri
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\SHEMS.csproj.GenerateResource.Cache
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\priconfig.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\priconfig.xml.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\layout.resfiles
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\layout.resfiles.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\resources.resfiles
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\resources.resfiles.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\pri.resfiles
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\pri.resfiles.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\qualifiers.txt
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\qualifiers.txt.intermediate
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\MultipleQualifiersPerDimensionFound.txt
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\QuickChartsWP.pri.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Release\ProjectArchitectures.txt

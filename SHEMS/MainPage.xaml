@@ -12,6 +12,7 @@
         <Style x:Key="ButtonStyle1" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
+                    
                     <ControlTemplate TargetType="Button">
                         <Grid x:Name="Grid" Background="Transparent" Height="135" Width="120" Margin="0, 0, 12, 0" >
                             <Border x:Name="Border">

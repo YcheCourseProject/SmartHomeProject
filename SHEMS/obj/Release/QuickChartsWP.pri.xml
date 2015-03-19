@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="QuickChartsWP" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Files">
+			<ResourceMapSubtree name="QuickChartsWP">
+				<NamedResource name="QuickChartsWP.xr.xml" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/QuickChartsWP.xr.xml">
+					<Candidate type="Path">
+						<Value>QuickChartsWP\QuickChartsWP.xr.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="Themes">
+					<NamedResource name="AreaGraph.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/AreaGraph.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\AreaGraph.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Balloon.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/Balloon.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Balloon.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="CategoryAxis.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/CategoryAxis.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\CategoryAxis.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ColumnGraph.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/ColumnGraph.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\ColumnGraph.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Generic.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/Generic.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Generic.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Indicator.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/Indicator.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Indicator.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Legend.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/Legend.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Legend.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="LineGraph.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/LineGraph.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\LineGraph.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="PieChart.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/PieChart.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\PieChart.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="SerialChart.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/SerialChart.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\SerialChart.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Slice.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/Slice.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Slice.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ValueAxis.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/ValueAxis.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\ValueAxis.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ValueGrid.xbf" uri="ms-resource://QuickChartsWP/Files/QuickChartsWP/Themes/ValueGrid.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\ValueGrid.xbf</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

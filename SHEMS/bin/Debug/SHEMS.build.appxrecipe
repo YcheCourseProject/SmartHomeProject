@@ -6,7 +6,7 @@
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <PackageIdentityName>f327543d-cf87-4aee-a47c-3d16c821d505</PackageIdentityName>
+    <PackageIdentityName>f0c7407b-a93f-4a52-8ee0-65309deb6083</PackageIdentityName>
     <IntermediateOutputPath>E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>

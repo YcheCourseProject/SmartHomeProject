@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="46703SHEMS.SHEMS" version="1.0" primary="true">
+		<Qualifiers>
+			<Scale>240</Scale>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="App.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/App.xbf">
+				<Candidate type="Path">
+					<Value>App.xbf</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="BlankPage1.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/BlankPage1.xbf">
+				<Candidate type="Path">
+					<Value>BlankPage1.xbf</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MainPage.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/MainPage.xbf">
+				<Candidate type="Path">
+					<Value>MainPage.xbf</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SHEMS.xr.xml" uri="ms-resource://46703SHEMS.SHEMS/Files/SHEMS.xr.xml">
+				<Candidate type="Path">
+					<Value>SHEMS.xr.xml</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="Assets">
+				<NamedResource name="ac.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ac.png">
+					<Candidate type="Path">
+						<Value>Assets\ac.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ActivePower.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ActivePower.png">
+					<Candidate type="Path">
+						<Value>Assets\ActivePower.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ac_mode_cool.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ac_mode_cool.png">
+					<Candidate type="Path">
+						<Value>Assets\ac_mode_cool.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ac_mode_dehydrate.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ac_mode_dehydrate.png">
+					<Candidate type="Path">
+						<Value>Assets\ac_mode_dehydrate.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ac_mode_hot.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ac_mode_hot.png">
+					<Candidate type="Path">
+						<Value>Assets\ac_mode_hot.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ac_mode_ventilate.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ac_mode_ventilate.png">
+					<Candidate type="Path">
+						<Value>Assets\ac_mode_ventilate.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="airconditioner.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/airconditioner.png">
+					<Candidate type="Path">
+						<Value>Assets\airconditioner.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="air_power_off.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/air_power_off.png">
+					<Candidate type="Path">
+						<Value>Assets\air_power_off.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="air_power_on.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/air_power_on.png">
+					<Candidate type="Path">
+						<Value>Assets\air_power_on.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="clothwasher.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/clothwasher.png">
+					<Candidate type="Path">
+						<Value>Assets\clothwasher.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="DaysPerMonth.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/DaysPerMonth.png">
+					<Candidate type="Path">
+						<Value>Assets\DaysPerMonth.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="dishwasher.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/dishwasher.png">
+					<Candidate type="Path">
+						<Value>Assets\dishwasher.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="HoursPerDay.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/HoursPerDay.png">
+					<Candidate type="Path">
+						<Value>Assets\HoursPerDay.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Humidity.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/Humidity.png">
+					<Candidate type="Path">
+						<Value>Assets\Humidity.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="icon_smarthome 310x150.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/icon_smarthome%20310x150.png">
+					<Candidate type="Path">
+						<Value>Assets\icon_smarthome 310x150.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="icon_smarthome 480x800.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/icon_smarthome%20480x800.png">
+					<Candidate type="Path">
+						<Value>Assets\icon_smarthome 480x800.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="icon_smarthome.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/icon_smarthome.png">
+					<Candidate type="Path">
+						<Value>Assets\icon_smarthome.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="icon_smarthome120.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/icon_smarthome120.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>Assets\icon_smarthome120.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="icon_smarthome150.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/icon_smarthome150.png">
+					<Candidate type="Path">
+						<Value>Assets\icon_smarthome150.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="icon_smarthome44.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/icon_smarthome44.png">
+					<Candidate type="Path">
+						<Value>Assets\icon_smarthome44.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="icon_smarthome71.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/icon_smarthome71.png">
+					<Candidate type="Path">
+						<Value>Assets\icon_smarthome71.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="icon_sp2.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/icon_sp2.png">
+					<Candidate type="Path">
+						<Value>Assets\icon_sp2.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="lamp.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/lamp.png">
+					<Candidate type="Path">
+						<Value>Assets\lamp.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LeftArrow.jpg" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/LeftArrow.jpg">
+					<Candidate type="Path">
+						<Value>Assets\LeftArrow.jpg</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ReactivePower.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ReactivePower.png">
+					<Candidate type="Path">
+						<Value>Assets\ReactivePower.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="RightArrow.jpg" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/RightArrow.jpg">
+					<Candidate type="Path">
+						<Value>Assets\RightArrow.jpg</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/StoreLogo.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>Assets\StoreLogo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="switch_off_normal.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/switch_off_normal.png">
+					<Candidate type="Path">
+						<Value>Assets\switch_off_normal.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="switch_on_normal.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/switch_on_normal.png">
+					<Candidate type="Path">
+						<Value>Assets\switch_on_normal.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="temperature.jpg" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/temperature.jpg">
+					<Candidate type="Path">
+						<Value>Assets\temperature.jpg</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="temperature_down_normal.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/temperature_down_normal.png">
+					<Candidate type="Path">
+						<Value>Assets\temperature_down_normal.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="temperature_down_press.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/temperature_down_press.png">
+					<Candidate type="Path">
+						<Value>Assets\temperature_down_press.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="temperature_measure.jpg" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/temperature_measure.jpg">
+					<Candidate type="Path">
+						<Value>Assets\temperature_measure.jpg</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="temperature_up_normal.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/temperature_up_normal.png">
+					<Candidate type="Path">
+						<Value>Assets\temperature_up_normal.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="temperature_up_press.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/temperature_up_press.png">
+					<Candidate type="Path">
+						<Value>Assets\temperature_up_press.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="waterheater.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/waterheater.png">
+					<Candidate type="Path">
+						<Value>Assets\waterheater.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="QuickChartsWP">
+				<NamedResource name="QuickChartsWP.xr.xml" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/QuickChartsWP.xr.xml">
+					<Candidate type="Path">
+						<Value>QuickChartsWP\QuickChartsWP.xr.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="Themes">
+					<NamedResource name="AreaGraph.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/AreaGraph.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\AreaGraph.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Balloon.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/Balloon.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Balloon.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="CategoryAxis.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/CategoryAxis.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\CategoryAxis.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ColumnGraph.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/ColumnGraph.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\ColumnGraph.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Generic.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/Generic.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Generic.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Indicator.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/Indicator.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Indicator.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Legend.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/Legend.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Legend.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="LineGraph.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/LineGraph.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\LineGraph.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="PieChart.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/PieChart.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\PieChart.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="SerialChart.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/SerialChart.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\SerialChart.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Slice.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/Slice.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\Slice.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ValueAxis.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/ValueAxis.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\ValueAxis.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ValueGrid.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/QuickChartsWP/Themes/ValueGrid.xbf">
+						<Candidate type="Path">
+							<Value>QuickChartsWP\Themes\ValueGrid.xbf</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>
