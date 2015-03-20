@@ -22,9 +22,6 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\chart\QuickChartsWP.dll">
       <PackagePath>QuickChartsWP.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ac.png">
-      <PackagePath>Assets\ac.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ActivePower.png">
       <PackagePath>Assets\ActivePower.png</PackagePath>
     </AppxPackagedFile>
@@ -42,12 +39,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\airconditioner.png">
       <PackagePath>Assets\airconditioner.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\air_power_off.png">
-      <PackagePath>Assets\air_power_off.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\air_power_on.png">
-      <PackagePath>Assets\air_power_on.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\clothwasher.png">
       <PackagePath>Assets\clothwasher.png</PackagePath>
@@ -100,9 +91,6 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ReactivePower.png">
       <PackagePath>Assets\ReactivePower.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\StoreLogo.scale-240.png">
-      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\switch_off_normal.png">
       <PackagePath>Assets\switch_off_normal.png</PackagePath>
     </AppxPackagedFile>
@@ -130,20 +118,20 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\RightArrow.jpg">
       <PackagePath>Assets\RightArrow.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\temperature.jpg">
-      <PackagePath>Assets\temperature.jpg</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\temperature_measure.jpg">
       <PackagePath>Assets\temperature_measure.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\BlankPage1.xbf">
-      <PackagePath>BlankPage1.xbf</PackagePath>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\ACScheduleInfoPage.xbf">
+      <PackagePath>ACScheduleInfoPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\LoadAnalysisPage.xbf">
+      <PackagePath>LoadAnalysisPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\SmartContrlPage.xbf">
+      <PackagePath>SmartContrlPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\SHEMS.xr.xml">
       <PackagePath>SHEMS.xr.xml</PackagePath>

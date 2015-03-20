@@ -7,7 +7,7 @@ using Windows.Storage.Streams;
 using Windows.Networking.Sockets;
 using Windows.Networking;
 
-namespace SHEMS.entities
+namespace SHEMS.Codes
 {
     class SwitchCtrl
     {

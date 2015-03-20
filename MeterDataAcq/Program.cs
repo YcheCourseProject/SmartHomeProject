@@ -11,7 +11,7 @@ using System.IO;
 //.......
 using MeterDataAcq.Services;
 using MeterDataAcq.Models;
-
+using MeterDataAcq;
 namespace ConsoleApplicationDataAcquire
 {
     class Program
@@ -21,14 +21,15 @@ namespace ConsoleApplicationDataAcquire
         public TCPAmmeterData MeterDataAccessor;
         public CSmartMeterData SmartMeterData;
         public PublicSQL publicSQL;
-        public static String UID = "cyl";
-        public static String PASSWD = "cyl";
-        public static String DB = "SmartHomeDB";
+        
+        public static String UID = Constants.DB_USER_NAME;
+        public static String PASSWD = Constants.DB_USER_PASSWD;
+        public static String DB = Constants.DB_NAME;
         //
         //bool FirstFlag = true;
         bool error=false;
  
-        System.Timers.Timer aTimer;
+     
 
         //检测程序是否停止
         //public void DetectStopFunc()
@@ -75,7 +76,8 @@ namespace ConsoleApplicationDataAcquire
             try
             {
                 //从电表读取数据,并解析到对象
-                Console.WriteLine("s");
+               // Console.WriteLine("s");
+                
                 SmartMeterData.getActive_Energy(MeterDataAccessor.read_active_Energy());
                 SmartMeterData.getActive_Power(MeterDataAccessor.read_active_Power());
                 SmartMeterData.getReactive_Power(MeterDataAccessor.read_Reactive_Power());
@@ -83,6 +85,13 @@ namespace ConsoleApplicationDataAcquire
                 CSmartMeterDataInfo datainfo=SmartMeterData.smartMeterData;
                 UserfulMeterData userfulMeterData = new UserfulMeterData(datainfo.Total_Active_Power_65, datainfo.Reactive_Power_Total_67, datainfo.Active_Energy_Import_Tariff_1_801, datetime);
                 publicSQL.DataOperate(userfulMeterData, PublicSQL.MODE_INSERT);
+                string tempstr = "---GetData:" + "\nTime:" +
+                    userfulMeterData.DateTime + "\nActivePower:" +
+                    String.Format("{0:F}", userfulMeterData.ActivePower) +
+                    "W\tReactivePower:" +
+                    String.Format("{0:F}", userfulMeterData.ReactivePower) +
+                    "Var\nEnergy:" + String.Format("{0:F}", userfulMeterData.ActiveEnergy)+"\n";
+                Console.WriteLine(tempstr);
             }
             catch (Exception e)
             {

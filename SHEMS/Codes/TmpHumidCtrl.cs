@@ -9,12 +9,12 @@ using Windows.Storage.Streams;
 using Windows.Networking.Sockets;
 using Windows.Networking;
 
-namespace SHEMS.entities
+namespace SHEMS.Codes
 {
     class TmpHumidCtrl
     {
-        public static String TMP_HUM_PORT = "8000";
-        public static String TMP_HUM_SERVER_IP = "10.0.0.152";
+        public static String TMP_HUM_PORT = Constants.TMP_HUM_PUSH_SERVER_PORT;
+        public static String TMP_HUM_SERVER_IP = Constants.TMP_HUM_PUSH_SERVER_IP;
         static StreamSocket clientSocket = null;
   
         private static async void receiveMsg()

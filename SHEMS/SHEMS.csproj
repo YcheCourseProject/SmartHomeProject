@@ -84,25 +84,32 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ACScheduleInfoPage.xaml.cs">
+      <DependentUpon>ACScheduleInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BlankPage1.xaml.cs">
-      <DependentUpon>BlankPage1.xaml</DependentUpon>
+    <Compile Include="Codes\ACScheduleAlgorithm.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Entities\ElectricPrice.cs" />
+    <Compile Include="Entities\HBA.cs" />
+    <Compile Include="LoadAnalysisPage.xaml.cs">
+      <DependentUpon>LoadAnalysisPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Codes\AirConditioner.cs" />
-    <Compile Include="Codes\ConsumptionStatistics.cs" />
-    <Compile Include="Codes\CSmartMeterData.cs" />
-    <Compile Include="Codes\CSmartMeterDataInfo.cs" />
+    <Compile Include="Entities\ConsumptionStatistics.cs" />
+    <Compile Include="Entities\CSmartMeterData.cs" />
+    <Compile Include="Entities\CSmartMeterDataInfo.cs" />
     <Compile Include="Codes\CTConver.cs" />
-    <Compile Include="Codes\LoadIdentification.cs" />
-    <Compile Include="Codes\TCPAmmeterData.cs" />
-    <Compile Include="Codes\TCPSGInterface.cs" />
+    <Compile Include="Entities\LoadIdentification.cs" />
+    <Compile Include="Entities\TCPAmmeterData.cs" />
+    <Compile Include="Entities\TCPSGInterface.cs" />
     <Compile Include="Codes\SwitchCtrl.cs" />
     <Compile Include="Codes\TmpHumidCtrl.cs" />
     <Compile Include="Codes\Utilities.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="SmartContrlPage.xaml.cs">
+      <DependentUpon>SmartContrlPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,15 +119,12 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\ac.png" />
     <Content Include="Assets\ActivePower.png" />
     <Content Include="Assets\ac_mode_dehydrate.png" />
     <Content Include="Assets\ac_mode_cool.png" />
     <Content Include="Assets\ac_mode_hot.png" />
     <Content Include="Assets\ac_mode_ventilate.png" />
     <Content Include="Assets\airconditioner.png" />
-    <Content Include="Assets\air_power_off.png" />
-    <Content Include="Assets\air_power_on.png" />
     <Content Include="Assets\clothwasher.png" />
     <Content Include="Assets\DaysPerMonth.png" />
     <Content Include="Assets\dishwasher.png" />
@@ -138,10 +142,8 @@
     <Content Include="Assets\LeftArrow.jpg" />
     <Content Include="Assets\ReactivePower.png" />
     <Content Include="Assets\RightArrow.jpg" />
-    <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\switch_off_normal.png" />
     <Content Include="Assets\switch_on_normal.png" />
-    <Content Include="Assets\temperature.jpg" />
     <Content Include="Assets\temperature_down_normal.png" />
     <Content Include="Assets\temperature_down_press.png" />
     <Content Include="Assets\temperature_measure.jpg" />
@@ -155,11 +157,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="BlankPage1.xaml">
+    <Page Include="ACScheduleInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="LoadAnalysisPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SmartContrlPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

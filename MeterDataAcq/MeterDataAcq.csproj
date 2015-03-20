@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -74,15 +74,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Models\CSmartMeterData.cs" />
     <Compile Include="Models\CSmartMeterDataInfo.cs" />
-    <Compile Include="CTConver.cs" />
+    <Compile Include="MeterInterface\CTConver.cs" />
     <Compile Include="Models\UserfulMeterData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PublicSQL.cs" />
-    <Compile Include="TCPAmmeterData.cs" />
-    <Compile Include="TCPSGInterface.cs" />
+    <Compile Include="MeterInterface\TCPAmmeterData.cs" />
+    <Compile Include="MeterInterface\TCPSGInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MeterDataAcq_TemporaryKey.pfx" />

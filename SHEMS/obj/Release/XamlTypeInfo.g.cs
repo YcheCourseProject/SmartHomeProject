@@ -148,7 +148,7 @@ namespace SHEMS.SHEMS_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[18];
+            _typeNameTable = new string[19];
             _typeNameTable[0] = "AmCharts.Windows.QuickCharts.SerialChart";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Control";
             _typeNameTable[2] = "String";
@@ -163,12 +163,13 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             _typeNameTable[11] = "Double";
             _typeNameTable[12] = "Windows.UI.Xaml.Visibility";
             _typeNameTable[13] = "AmCharts.Windows.QuickCharts.ColumnGraph";
-            _typeNameTable[14] = "SHEMS.BlankPage1";
+            _typeNameTable[14] = "SHEMS.ACScheduleInfoPage";
             _typeNameTable[15] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[16] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[17] = "SHEMS.MainPage";
+            _typeNameTable[17] = "SHEMS.LoadAnalysisPage";
+            _typeNameTable[18] = "SHEMS.SmartContrlPage";
 
-            _typeTable = new global::System.Type[18];
+            _typeTable = new global::System.Type[19];
             _typeTable[0] = typeof(global::AmCharts.Windows.QuickCharts.SerialChart);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Control);
             _typeTable[2] = typeof(global::System.String);
@@ -183,10 +184,11 @@ namespace SHEMS.SHEMS_XamlTypeInfo
             _typeTable[11] = typeof(global::System.Double);
             _typeTable[12] = typeof(global::Windows.UI.Xaml.Visibility);
             _typeTable[13] = typeof(global::AmCharts.Windows.QuickCharts.ColumnGraph);
-            _typeTable[14] = typeof(global::SHEMS.BlankPage1);
+            _typeTable[14] = typeof(global::SHEMS.ACScheduleInfoPage);
             _typeTable[15] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[17] = typeof(global::SHEMS.MainPage);
+            _typeTable[17] = typeof(global::SHEMS.LoadAnalysisPage);
+            _typeTable[18] = typeof(global::SHEMS.SmartContrlPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -227,8 +229,9 @@ namespace SHEMS.SHEMS_XamlTypeInfo
         private object Activate_6_Collection() { return new global::System.Collections.ObjectModel.Collection<global::AmCharts.Windows.QuickCharts.SerialGraph>(); }
         private object Activate_10_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
         private object Activate_13_ColumnGraph() { return new global::AmCharts.Windows.QuickCharts.ColumnGraph(); }
-        private object Activate_14_BlankPage1() { return new global::SHEMS.BlankPage1(); }
-        private object Activate_17_MainPage() { return new global::SHEMS.MainPage(); }
+        private object Activate_14_ACScheduleInfoPage() { return new global::SHEMS.ACScheduleInfoPage(); }
+        private object Activate_17_LoadAnalysisPage() { return new global::SHEMS.LoadAnalysisPage(); }
+        private object Activate_18_SmartContrlPage() { return new global::SHEMS.SmartContrlPage(); }
         private void VectorAdd_4_DiscreetClearObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::AmCharts.Windows.QuickCharts.SerialGraph>)instance;
@@ -354,9 +357,9 @@ namespace SHEMS.SHEMS_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 14:   //  SHEMS.BlankPage1
+            case 14:   //  SHEMS.ACScheduleInfoPage
                 userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_BlankPage1;
+                userType.Activator = Activate_14_ACScheduleInfoPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -369,9 +372,16 @@ namespace SHEMS.SHEMS_XamlTypeInfo
                 xamlType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 17:   //  SHEMS.MainPage
+            case 17:   //  SHEMS.LoadAnalysisPage
                 userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_MainPage;
+                userType.Activator = Activate_17_LoadAnalysisPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 18:   //  SHEMS.SmartContrlPage
+                userType = new global::SHEMS.SHEMS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_18_SmartContrlPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

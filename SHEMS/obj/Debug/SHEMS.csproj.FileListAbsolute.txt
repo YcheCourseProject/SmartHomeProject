@@ -36,8 +36,6 @@ C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Debug\Bl
 C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Debug\BlankPage1.xaml
 C:\Users\CheYuLin\documents\visual studio 2013\Projects\SHEMS\SHEMS\obj\Debug\BlankPage1.xbf
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\App.xbf
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\BlankPage1.xbf
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\MainPage.xbf
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.xr.xml
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.exe
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.pdb
@@ -46,17 +44,9 @@ E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\Appx
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SHEMS.build.appxrecipe
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\App.g.i.cs
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\App.g.cs
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\BlankPage1.g.i.cs
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\BlankPage1.g.cs
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MainPage.g.i.cs
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MainPage.g.cs
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\XamlTypeInfo.g.cs
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\App.xaml
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\BlankPage1.xaml
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MainPage.xaml
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\App.xbf
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\BlankPage1.xbf
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\MainPage.xbf
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\XamlSaveStateFile.xml
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SHEMS.exe
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SHEMS.pdb
@@ -78,3 +68,18 @@ E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\Quic
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SHEMS.csprojResolveAssemblyReference.cache
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SHEMS.csproj.GenerateResource.Cache
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\QuickChartsWP.pri.xml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\LoadAnalysisPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\SmartContrlPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\LoadAnalysisPage.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\LoadAnalysisPage.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SmartContrlPage.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SmartContrlPage.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\LoadAnalysisPage.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SmartContrlPage.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\LoadAnalysisPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\SmartContrlPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Debug\ACScheduleInfoPage.xbf
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\ACScheduleInfoPage.g.i.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\ACScheduleInfoPage.g.cs
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\ACScheduleInfoPage.xaml
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\obj\Debug\ACScheduleInfoPage.xbf

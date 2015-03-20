@@ -20,7 +20,7 @@ namespace MeterDataRequestHandlerWebSite.Services
         protected SqlCommand cmd = new SqlCommand();
         public PublicSQL(string uid, string passwd, string database)
         {
-            cnn.ConnectionString = "server=192.168.1.151;uid=" + uid + ";pwd=" + passwd + ";database=" + database;
+            cnn.ConnectionString = "server="+Constants.DB_SERVER_IP+";uid=" + uid + ";pwd=" + passwd + ";database=" + database;
             cmd.Connection = cnn;
         }
 

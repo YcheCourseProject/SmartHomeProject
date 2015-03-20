@@ -7,3 +7,7 @@ E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Deb
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Debug\log4net.xml
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Debug\MeterDataAcq.exe
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Debug\MeterDataAcq.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Debug\MeterDataAcq.exe.manifest
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Debug\MeterDataAcq.application
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Debug\MeterDataAcq.exe.manifest
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Debug\MeterDataAcq.application

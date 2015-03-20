@@ -10,14 +10,14 @@ using Windows.Networking.Sockets;
 using Windows.Networking;
 
 
-namespace SHEMS.entities
+namespace SHEMS.Codes
 {
     class AirConditioner
     {
         static public int temperature = 21;
         static AC_MODE ac_mode = AC_MODE.WARM;
-        static string HOST_IP = "10.0.0.151";
-        static string SEVER_PORT = "60000";
+        static string HOST_IP =Constants.AC_CTRL_SERVER_IP;
+        static string SEVER_PORT = Constants.AC_CTRL_SERVER_PORT;
         static byte AC_CODE_ON = (byte)0x55;
         static byte AC_CODE_OFF = (byte)0x80;
         static public float COMFORT_TEMPERATURE = 21;
