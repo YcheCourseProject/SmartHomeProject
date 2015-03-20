@@ -208,20 +208,44 @@ namespace SHEMS
                            //空调的自动控制
                             if (Single.Parse(temprature) - AirConditioner.COMFORT_TEMPERATURE > AirConditioner.COMFORT_RESTRAIN_BOUND)
                             {
+                             if(AirConditioner.ac_mode==AirConditioner.AC_MODE.WARM)
+                             {
                                 if (AirConditioner.isACOn == true)
                                 {
                                     AirConditioner.OffAC();                                     
                                     isReadyChangeSetT = false;
                                     isReadyChangeACSwitch = true;
                                 }
+                             }
+                             else if(AirConditioner.ac_mode==AirConditioner.AC_MODE.COLD)
+                             {
+                                 if (AirConditioner.isACOn == false)
+                                 {
+                                     AirConditioner.setTemperatureWithComfortT();
+                                     isReadyChangeSetT = true;
+                                     isReadyChangeACSwitch = true;
+                                 }
+                             }
                             }
                             else if (Single.Parse(temprature) - AirConditioner.COMFORT_TEMPERATURE < -AirConditioner.COMFORT_RESTRAIN_BOUND)
                             {
-                                if (AirConditioner.isACOn == false)
+                                if (AirConditioner.ac_mode == AirConditioner.AC_MODE.WARM)
                                 {
-                                    AirConditioner.setTemperatureWithComfortT();
-                                    isReadyChangeSetT = true;
-                                    isReadyChangeACSwitch = true;
+                                    if (AirConditioner.isACOn == false)
+                                    {
+                                        AirConditioner.setTemperatureWithComfortT();
+                                        isReadyChangeSetT = true;
+                                        isReadyChangeACSwitch = true;
+                                    }
+                                }
+                                else if (AirConditioner.ac_mode == AirConditioner.AC_MODE.COLD)
+                                {
+                                    if (AirConditioner.isACOn == true)
+                                    {
+                                        AirConditioner.OffAC();
+                                        isReadyChangeSetT = false;
+                                        isReadyChangeACSwitch = true;
+                                    }
                                 }
                             }
 

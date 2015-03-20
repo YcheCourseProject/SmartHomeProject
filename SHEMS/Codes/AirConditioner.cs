@@ -15,7 +15,7 @@ namespace SHEMS.Codes
     class AirConditioner
     {
         static public int temperature = 21;
-        static AC_MODE ac_mode = AC_MODE.WARM;
+        public static AC_MODE ac_mode = AC_MODE.WARM;
         static string HOST_IP =Constants.AC_CTRL_SERVER_IP;
         static string SEVER_PORT = Constants.AC_CTRL_SERVER_PORT;
         static byte AC_CODE_ON = (byte)0x55;
