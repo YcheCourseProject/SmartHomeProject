@@ -6,6 +6,10 @@
     <RootPropertyPathName Name="Datetime" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Imgpath" />
+    <RootPropertyPathName Name="Humanstatus" />
+    <RootPropertyPathName Name="Firestatus" />
+    <RootPropertyPathName Name="Gas" />
+    <RootPropertyPathName Name="Light" />
     <RootPropertyPathName Name="SetTemperature" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>

@@ -19,6 +19,12 @@ namespace MeterDataRequestHandlerWebSite
             // 返回请求的内容
            //Response.Write("客户端请求的数据内容：");
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("UTF-8");
+            if(Request.QueryString["sensorData"]!=null)
+            {
+                PublicSQL publicSQL = new PublicSQL(Constants.DB_USER_NAME, Constants.DB_USER_PASSWD, Constants.DB_NAME);
+                String jsonstr = publicSQL.getSensorData();
+                Response.Write(jsonstr);
+            }
             if(Request.QueryString["y"]!=null&Request.QueryString["m"]!=null)
             {
                 if(Request.QueryString["type"]!=null)

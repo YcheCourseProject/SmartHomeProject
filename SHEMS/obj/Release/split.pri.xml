@@ -5,19 +5,19 @@
 			<Scale>240</Scale>
 		</Qualifiers>
 		<ResourceMapSubtree name="Files">
+			<NamedResource name="ACScheduleInfoPage.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/ACScheduleInfoPage.xbf">
+				<Candidate type="Path">
+					<Value>ACScheduleInfoPage.xbf</Value>
+				</Candidate>
+			</NamedResource>
 			<NamedResource name="App.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/App.xbf">
 				<Candidate type="Path">
 					<Value>App.xbf</Value>
 				</Candidate>
 			</NamedResource>
-			<NamedResource name="BlankPage1.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/BlankPage1.xbf">
+			<NamedResource name="LoadAnalysisPage.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/LoadAnalysisPage.xbf">
 				<Candidate type="Path">
-					<Value>BlankPage1.xbf</Value>
-				</Candidate>
-			</NamedResource>
-			<NamedResource name="MainPage.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/MainPage.xbf">
-				<Candidate type="Path">
-					<Value>MainPage.xbf</Value>
+					<Value>LoadAnalysisPage.xbf</Value>
 				</Candidate>
 			</NamedResource>
 			<NamedResource name="SHEMS.xr.xml" uri="ms-resource://46703SHEMS.SHEMS/Files/SHEMS.xr.xml">
@@ -25,12 +25,12 @@
 					<Value>SHEMS.xr.xml</Value>
 				</Candidate>
 			</NamedResource>
+			<NamedResource name="SmartContrlPage.xbf" uri="ms-resource://46703SHEMS.SHEMS/Files/SmartContrlPage.xbf">
+				<Candidate type="Path">
+					<Value>SmartContrlPage.xbf</Value>
+				</Candidate>
+			</NamedResource>
 			<ResourceMapSubtree name="Assets">
-				<NamedResource name="ac.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ac.png">
-					<Candidate type="Path">
-						<Value>Assets\ac.png</Value>
-					</Candidate>
-				</NamedResource>
 				<NamedResource name="ActivePower.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/ActivePower.png">
 					<Candidate type="Path">
 						<Value>Assets\ActivePower.png</Value>
@@ -59,16 +59,6 @@
 				<NamedResource name="airconditioner.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/airconditioner.png">
 					<Candidate type="Path">
 						<Value>Assets\airconditioner.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="air_power_off.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/air_power_off.png">
-					<Candidate type="Path">
-						<Value>Assets\air_power_off.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="air_power_on.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/air_power_on.png">
-					<Candidate type="Path">
-						<Value>Assets\air_power_on.png</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="clothwasher.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/clothwasher.png">
@@ -156,11 +146,6 @@
 						<Value>Assets\RightArrow.jpg</Value>
 					</Candidate>
 				</NamedResource>
-				<NamedResource name="StoreLogo.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/StoreLogo.png">
-					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
-						<Value>Assets\StoreLogo.scale-240.png</Value>
-					</Candidate>
-				</NamedResource>
 				<NamedResource name="switch_off_normal.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/switch_off_normal.png">
 					<Candidate type="Path">
 						<Value>Assets\switch_off_normal.png</Value>
@@ -169,11 +154,6 @@
 				<NamedResource name="switch_on_normal.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/switch_on_normal.png">
 					<Candidate type="Path">
 						<Value>Assets\switch_on_normal.png</Value>
-					</Candidate>
-				</NamedResource>
-				<NamedResource name="temperature.jpg" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/temperature.jpg">
-					<Candidate type="Path">
-						<Value>Assets\temperature.jpg</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="temperature_down_normal.png" uri="ms-resource://46703SHEMS.SHEMS/Files/Assets/temperature_down_normal.png">

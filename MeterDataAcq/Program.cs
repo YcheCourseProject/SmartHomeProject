@@ -8,6 +8,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Timers;
 using System.IO;
+using System.Net;
+using System.Net.Sockets;
+ 
+using System.Collections;
+using System.Runtime.InteropServices;
 //.......
 using MeterDataAcq.Services;
 using MeterDataAcq.Models;
@@ -16,32 +21,29 @@ namespace ConsoleApplicationDataAcquire
 {
     class Program
     {
+        #region tcpserver
+        public static Thread myThread;       //声明一个线程实例
+        public static Socket newsock;        //声明一个Socket实例
+        public static Socket server1;
+        public static Socket Client;
+        public static Hashtable _sessionTable;
+        public static IPEndPoint localEP;
+        public static EndPoint remote;
+        public static int setPort;
+        #endregion
+
         static bool RunFlag = true;
         public TCPSGInterface TcpMeter;
         public TCPAmmeterData MeterDataAccessor;
         public CSmartMeterData SmartMeterData;
-        public PublicSQL publicSQL;
+        public static PublicSQL publicSQL;
         
         public static String UID = Constants.DB_USER_NAME;
         public static String PASSWD = Constants.DB_USER_PASSWD;
         public static String DB = Constants.DB_NAME;
-        //
-        //bool FirstFlag = true;
+
         bool error=false;
  
-     
-
-        //检测程序是否停止
-        //public void DetectStopFunc()
-        //{
-        //    Console.ReadKey(true);
-        //    RunFlag = !RunFlag;
-        //    if(!RunFlag)
-        //        Console.WriteLine("Process stopped.Press any key to continue");
-        //    else
-        //        Console.WriteLine("Process started.Press any key to stop");
-        //}
-
         Program()
         {
             connect();
@@ -52,7 +54,7 @@ namespace ConsoleApplicationDataAcquire
             try
             {
                 //电表连接
-                TcpMeter = new TCPSGInterface("192.168.1.106");
+                TcpMeter = new TCPSGInterface(Constants.METER_IP);
                 MeterDataAccessor = new TCPAmmeterData(TcpMeter);
                 SmartMeterData = new CSmartMeterData();
                 //数据库连接
@@ -62,9 +64,11 @@ namespace ConsoleApplicationDataAcquire
             catch (Exception e)
             {
                 error = true;
-                Console.WriteLine("{0}", e.ToString());
+                //Console.WriteLine("{0}", e.ToString());
+                Console.WriteLine("Connect Fail");
             }
         }
+        
         void Data2mssql()
         {
             if (error)
@@ -75,9 +79,7 @@ namespace ConsoleApplicationDataAcquire
             }
             try
             {
-                //从电表读取数据,并解析到对象
-               // Console.WriteLine("s");
-                
+                //从电表读取数据,并解析到对象                
                 SmartMeterData.getActive_Energy(MeterDataAccessor.read_active_Energy());
                 SmartMeterData.getActive_Power(MeterDataAccessor.read_active_Power());
                 SmartMeterData.getReactive_Power(MeterDataAccessor.read_Reactive_Power());
@@ -100,6 +102,10 @@ namespace ConsoleApplicationDataAcquire
             }
         
         }
+ 
+        
+
+
 
         /// <summary>
         /// 程序入口
@@ -110,17 +116,16 @@ namespace ConsoleApplicationDataAcquire
             Console.WriteLine("SmartMemte DataAcquire Program");
             Console.WriteLine("waiting......");
             Program a = new Program();
-            //Thread aThread = new Thread(new ThreadStart(a.DetectStopFunc));
-            //aThread.Start();
             Console.WriteLine("<Start>");
+
+          
             while (RunFlag)
             {
                 
                 a.Data2mssql();
                 System.Threading.Thread.Sleep(1000);
             }
-            Console.WriteLine("Quit");
-            Console.ReadKey(true);
+        
         }
 
 

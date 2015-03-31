@@ -1,2 +1,2 @@
-MainPackage=E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\SHEMS_1.1.0.5_Bundle\SHEMS_1.1.0.5_AnyCPU.appx
-SymbolPackage=E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\AppPackages\SHEMS_1.1.0.5_Test\SHEMS_1.1.0.5_AnyCPU.appxsym
+MainPackage=E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\bin\Release\SHEMS_1.1.0.8_Bundle\SHEMS_1.1.0.8_AnyCPU.appx
+SymbolPackage=E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\AppPackages\SHEMS_1.1.0.8_Test\SHEMS_1.1.0.8_AnyCPU.appxsym

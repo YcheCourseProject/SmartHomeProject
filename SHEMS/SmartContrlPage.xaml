@@ -162,6 +162,55 @@
                         </StackPanel>
                     </StackPanel>
                 </PivotItem>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <TextBlock Text="Environment" FontSize="30" />
+
+                    </PivotItem.Header>
+                    <StackPanel>
+                        <!--<TextBlock Text="{Binding Light,Mode=TwoWay}" FontSize="30" Name="Txt_Light"/>
+                        <TextBlock Text="{Binding Gas,Mode=TwoWay}" FontSize="30" Name="Txt_Gas"/>
+                        <TextBlock Text="{Binding Humanstatus,Mode=TwoWay}" FontSize="30" Name="Txt_HumanStatus"/>
+                        <TextBlock Text="{Binding Firestatus,Mode=TwoWay}" FontSize="30" Name="Txt_FireStatus"/>-->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button   Style="{StaticResource ButtonStyle1}" Margin="0,0,0,0">
+                                <Grid>
+                                    <Image Source="Assets/Light.png" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="Light"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Light,Mode=TwoWay}" VerticalAlignment="Top"   RenderTransformOrigin="1.05,2.539" FontSize="20"/>
+
+                                </Grid>
+                            </Button>
+                            <Button   Style="{StaticResource ButtonStyle1}" Margin="70,0,0,0">
+                                <Grid>
+                                    <Image Source="Assets/Air.jpg" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="GasQuality"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Gas,Mode=TwoWay}" VerticalAlignment="Top"  RenderTransformOrigin="1.05,2.539" FontSize="20"/>
+
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button   Style="{StaticResource ButtonStyle1}" Margin="0,0,0,0">
+                                <Grid>
+                                    <Image Source="Assets/Fire.jpg" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="FireStatus"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Firestatus,Mode=TwoWay}" VerticalAlignment="Top"  RenderTransformOrigin="1.05,2.539" FontSize="20"/>
+
+                                </Grid>
+                            </Button>
+                            <Button   Style="{StaticResource ButtonStyle1}" Margin="70,0,0,0">
+                                <Grid>
+                                    <Image Source="Assets/Human.jpg" Stretch="Uniform" Height="80"/>
+                                    <TextBlock Text="InOutStatus"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Humanstatus,Mode=TwoWay}" VerticalAlignment="Top"   RenderTransformOrigin="1.05,2.539" FontSize="20"/>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </PivotItem>
             </Pivot>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
@@ -169,7 +218,7 @@
                         <Grid>
                             <Image Source="Assets/temperature_measure.jpg" Stretch="Uniform" Height="80"/>
                             <TextBlock Text="Temperature"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
-                            <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="温度" VerticalAlignment="Top" Name="TextBox_Tmp" RenderTransformOrigin="0.433,1.478" FontSize="20"/>
+                            <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="TextBox_Tmp" RenderTransformOrigin="0.433,1.478" FontSize="20"/>
                         </Grid>
 
                     </Button>
@@ -180,7 +229,7 @@
                         <Grid>
                             <Image Source="Assets/Humidity.png" Stretch="Uniform" Height="80"/>
                             <TextBlock Text="Humidity"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
-                            <TextBlock HorizontalAlignment="Right" Margin="50,0,0,0" TextWrapping="Wrap" Text="湿度" VerticalAlignment="Top" Name="TextBox_Humid" RenderTransformOrigin="1.05,2.539" FontSize="20"/>
+                            <TextBlock HorizontalAlignment="Right" Margin="50,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="TextBox_Humid" RenderTransformOrigin="1.05,2.539" FontSize="20"/>
 
                         </Grid>
                     </Button>

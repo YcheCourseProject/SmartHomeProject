@@ -52,6 +52,7 @@ namespace MeterInterface
         /// </summary>
         ~TCPSGInterface()
         {
+            if (client != null)
             client.Close();
         }
         /// <summary>
@@ -59,6 +60,7 @@ namespace MeterInterface
         /// </summary>
         public void close()
         {
+            if (client != null)
             client.Close();
         }
         

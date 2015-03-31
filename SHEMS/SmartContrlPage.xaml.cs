@@ -17,6 +17,7 @@ using System.ComponentModel;
 
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -29,8 +30,12 @@ using Windows.Networking.Sockets;
 using Windows.Networking;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
-
-
+//Http
+using Windows.Web.Http;
+using Windows.Web.Http.Filters;
+using Windows.Security.Cryptography;
+using Windows.Storage.Streams;
+using SHEMS.Entities;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
 namespace SHEMS
@@ -48,6 +53,60 @@ namespace SHEMS
             }
         }
 
+        private string light;
+
+        public string Light
+        {
+            get { return light; }
+            set { light = value;
+            OnPropertyChanged("Light");
+            }
+        }
+        private string gas;
+
+        public string Gas
+        {
+            get {
+                double gasval = Double.Parse(gas);
+                if (gasval < 200)
+                    return "safe";
+                else
+                    return "unsafe";
+            }
+            set { gas = value;
+            OnPropertyChanged("Gas");
+            }
+        }
+        private string humanstatus;
+
+        public string Humanstatus
+        {
+            get {
+                if (humanstatus.Equals("0"))
+                    return "Out";
+                else
+                    return "In";
+             }
+            set { humanstatus = value;
+            OnPropertyChanged("Humanstatus");
+            }
+        }
+        private string firestatus;
+
+        public string Firestatus
+        {
+            get {
+                if (firestatus.Equals("0"))
+                    return "safe";
+                else
+                    return "unsafe";
+            }
+            set
+            {
+                firestatus = value;
+                OnPropertyChanged("Firestatus");
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string name)
         {
@@ -68,9 +127,12 @@ namespace SHEMS
     /// </summary>
     ///  
 
-    public sealed partial class SmartContrlPage : Page, INotifyPropertyChanged
+    public sealed partial class SmartContrlPage : Page
+        //, INotifyPropertyChanged
     {
         //上下文
+        private HttpClient httpClient;
+       
         public static string AC_STATUS_PRESS2On = "Press On";
         public static string AC_STATUS_PRESS2OFF = "Press Off";
         SynchronizationContext context;
@@ -88,6 +150,8 @@ namespace SHEMS
         public SmartContrlPage()
         {
             this.InitializeComponent();
+            httpClient = new HttpClient();
+            
             this.NavigationCacheMode = NavigationCacheMode.Required;
             context = SynchronizationContext.Current;
             List<string> acmodes = new List<string>
@@ -114,7 +178,9 @@ namespace SHEMS
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+             
             meteracqflag = true;
+            acqflag = true;
             // TODO: Prepare page for display here.
             Task.Factory.StartNew(() =>
             {
@@ -125,7 +191,15 @@ namespace SHEMS
             //    ThreadProcAcqSmartMeterData();
 
             //});
-
+            Task.Factory.StartNew(async () =>
+            {
+                while (acqflag)
+                {
+                //ThreadProcAcqSensorData();
+                GetMeterDataHttpClient();
+                await Task.Delay(2000);
+                }
+            });
             // TODO: If your application contains multiple pages, ensure that you are
             // handling the hardware Back button by registering for the
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
@@ -136,9 +210,54 @@ namespace SHEMS
         {
             base.OnNavigatedFrom(e);
             meteracqflag = false;
+            acqflag = false;
         }
 
+        private void ThreadProcAcqSensorData()
+        {
+            try
+            { 
+             HttpRequestAsync(async () =>
+            {
+                string resourceAddress = "http://10.0.0.154:800/WebFormLoadService.aspx" + "?sensorData=true";
+                HttpResponseMessage response = await httpClient.GetAsync(new Uri(resourceAddress));
+                string responseBody = await response.Content.ReadAsStringAsync();
+                return responseBody;
+            });
+            }
+            catch
+            {
 
+            }   
+        }
+        private async void HttpRequestAsync(Func<Task<string>> httpRequestFuncAsync)
+        {
+            string responseBody;
+            //waiting.Visibility = Visibility.Visible;
+            try
+            {
+                responseBody = await httpRequestFuncAsync();
+              
+            }
+          
+            catch (Exception ex)
+            {
+                responseBody = "异常消息" + ex.Message;
+            }
+            finally
+            {
+                //waiting.Visibility = Visibility.Collapsed;
+            }
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                List<SensorData> sensorDataList = Utilities.DataContractJsonDeSerializer<List<SensorData>>(responseBody);
+                SensorData sensorData = sensorDataList[0];
+                atmosphereData.Light =  sensorData.LightData ;
+                atmosphereData.Gas =  sensorData.GasData ;
+                atmosphereData.Humanstatus = sensorData.HumanStatus;
+                atmosphereData.Firestatus =   sensorData.FireData;
+            });
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Frame frame = Window.Current.Content as Frame;
@@ -146,7 +265,34 @@ namespace SHEMS
             frame.Navigate(typeof(LoadAnalysisPage));
         }
 
+        private async void GetMeterDataHttpClient()
+        {
+            string str=DateTime.Now.ToString();
+            Uri uri = new Uri(Constants.SENSOR_DATA_SERVER_ADDR + str); 
+            HttpClient httpClient = new HttpClient();    // 获取网络的返回的字符串数据    string result = await
+            
+            try
+            {
+                string result = await httpClient.GetStringAsync(uri);
+                List<SensorData> sensorDataList = Utilities.DataContractJsonDeSerializer<List<SensorData>>(result);
+                SensorData sensorData = sensorDataList[0];
+                context.Post((s) =>
+                {
+                    //可以在此访问UI线程中的对象，因为代理本身是在UI线程的上下文中执行的  
+                    atmosphereData.Light = sensorData.LightData;
+                    atmosphereData.Gas = sensorData.GasData;
+                    atmosphereData.Humanstatus = sensorData.HumanStatus;
+                    atmosphereData.Firestatus = sensorData.FireData;
 
+                }, null);
+               
+            }
+            catch
+            {
+
+            }
+      
+        }
         public void ThreadProcOnOffAC(bool isReadyOn)
         {
             if (isReadyOn == true)
@@ -374,7 +520,7 @@ namespace SHEMS
 
 
         }
-
+      
         private void Button_Click_OnOffAC(object sender, RoutedEventArgs e)
         {
             string picstr = "";
@@ -602,15 +748,15 @@ namespace SHEMS
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string name)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(name));
-            }
-        }
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //public void OnPropertyChanged(string name)
+        //{
+        //    PropertyChangedEventHandler handler = PropertyChanged;
+        //    if (handler != null)
+        //    {
+        //        handler(this, new PropertyChangedEventArgs(name));
+        //    }
+        //}
 
         private void Button_Click_ChangeHumidityComfort(object sender, RoutedEventArgs e)
         {

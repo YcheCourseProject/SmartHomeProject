@@ -9,11 +9,25 @@
         xmlns:amq="using:AmCharts.Windows.QuickCharts"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="Grid" Background="Transparent" Height="auto" Width="auto" Margin="0, 0,0, 0" >
+                            <Border x:Name="Border">
+                                <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
+                                Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style x:Key="ButtonStyle2" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Grid x:Name="Grid" Background="Transparent" Height="135" Width="100" Margin="0, 0, 12, 0" >
+                        <Grid x:Name="Grid" Background="Transparent" Height="105" Width="100" Margin="0, 0, 12, 0" >
                             <Border x:Name="Border">
                                 <ContentPresenter x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}"                              
                                 Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
@@ -40,10 +54,25 @@
     </Page.Resources>
     <Grid>
         <StackPanel Orientation="Vertical">
+            <StackPanel Margin="20,0,0,0" Orientation="Horizontal"  >
+                <StackPanel>
+                    <Button x:ConnectionId='4' Style="{StaticResource ButtonStyle1}"                                    >
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Assets/LeftArrow.jpg" Stretch="Uniform" Height="40"  />
+                                <TextBlock Text="Back to LoadInfo"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
+                            </StackPanel>
+
+                        </Grid>
+                    </Button>
+                </StackPanel>
+
+                
+            </StackPanel>
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Dynamic E-Price:"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
-                <amq:SerialChart x:Name="chartEprice" CategoryValueMemberPath="Number"  Height="200"
-                            AxisForeground="Blue"          
+                <amq:SerialChart x:Name="chartEprice" CategoryValueMemberPath="Number"  Height="150"
+                            AxisForeground="Blue"  
                             PlotAreaBackground="Transparent"
                             GridStroke="Purple">
                     <amq:SerialChart.Graphs>
@@ -55,26 +84,43 @@
                 <Button  Style="{StaticResource ButtonStyle2}">
                     <Grid>
                         <Image Source="Assets/temperature_measure.jpg" Stretch="Uniform" Height="80"/>
-                        <TextBlock Text="Target Temp"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="16"></TextBlock>
+                        <TextBlock Text="Target Temp"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" FontSize="16"></TextBlock>
                         <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="温度" VerticalAlignment="Top" Name="Text_SetTmp" RenderTransformOrigin="0.433,1.478" FontSize="20"/>
                     </Grid>
                 </Button>
                 <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="21"   Name="TxtBox_ComfortTemperature"/>
-                <Button x:ConnectionId='2' VerticalAlignment="Center" Content="Set Target Temp" HorizontalAlignment="Left" Margin="10,0,0,0"                                     />
+                <Button x:ConnectionId='3' VerticalAlignment="Center" Content="Set Target Temp" HorizontalAlignment="Left" Margin="10,0,0,0"                                     />
             </StackPanel>
-            <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TEST"   Name="TxtBox_TEST"/>
-            <GridView x:ConnectionId='1' x:Name="listHBAs" Background="AliceBlue"                                                                                  IsItemClickEnabled="True">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                <Button x:ConnectionId='2' Content="StartOPT" HorizontalAlignment="Stretch"  Margin="10,0,30,0" VerticalAlignment="Stretch"                                />
+                <!--<TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TEST"   Name="TxtBox_TEST"/>-->
+                <TextBlock Text="In/Out Home Status:"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
+                
+            </StackPanel>
+           
+            <GridView x:ConnectionId='1' x:Name="listHBAs" Background="AliceBlue"                                       IsItemClickEnabled="True" BorderThickness="1" BorderBrush="Green"  HorizontalAlignment="Center">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapGrid Orientation="Horizontal" MaximumRowsOrColumns="6"></WrapGrid>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
                 <GridView.ItemTemplate>
+                    
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Margin="2,0,0,0" Width="50" Background="Brown">
-                            <TextBlock Text="{Binding IsInHome}"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" FontSize="16" ></TextBlock>
-                            <!--<Button text>
+                        <Border BorderBrush="Blue" BorderThickness="2" Margin="3, 3, 0, 0">
+                            <Grid Height="55" Width="55" Background="{Binding getBGColor}">
+                                <TextBlock Text="{Binding IsInHome}"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" FontSize="16" ></TextBlock>
+                            </Grid>
+                        </Border>
+                        <!--<StackPanel Orientation="Horizontal" Margin="2,0,0,0" Width="60" Height="auto" Background="Yellow">
+                           
+                            --><!--<Button text>
                                 --><!--<Grid>
                                     --><!--<Image Source="Assets/temperature_measure.jpg" Stretch="Uniform" Height="60" Width="60"/>--><!--
                                     <TextBlock Text="{Binding IsInHome}"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" FontSize="16"></TextBlock>                                  
                                 </Grid>--><!--
-                            </Button>-->
-                        </StackPanel>
+                            </Button>--><!--
+                        </StackPanel>-->
                     </DataTemplate>
                 </GridView.ItemTemplate>
             </GridView>

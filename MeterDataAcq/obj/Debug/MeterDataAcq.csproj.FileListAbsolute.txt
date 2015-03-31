@@ -11,3 +11,5 @@ E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Deb
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Debug\MeterDataAcq.application
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Debug\MeterDataAcq.exe.manifest
 E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\obj\Debug\MeterDataAcq.application
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Debug\tcpServer.dll
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\MeterDataAcq\bin\Debug\tcpServer.pdb

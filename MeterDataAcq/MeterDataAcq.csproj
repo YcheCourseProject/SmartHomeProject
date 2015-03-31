@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>E:\智能家居相关文章\TiaoZhanBei\test\</PublishUrl>
+    <PublishUrl>E:\智能家居相关文章\SmartHomeEnergyManagementSystem\部署文件\Release-MeterDataAcq-final\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -78,6 +78,7 @@
     <Compile Include="Models\CSmartMeterData.cs" />
     <Compile Include="Models\CSmartMeterDataInfo.cs" />
     <Compile Include="MeterInterface\CTConver.cs" />
+    <Compile Include="Models\SensorData.cs" />
     <Compile Include="Models\UserfulMeterData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +110,12 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TcpServer\tcpServer.csproj">
+      <Project>{537d46b1-f453-4ee7-b0f9-0336d7af745a}</Project>
+      <Name>tcpServer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,6 +10,7 @@ namespace MeterDataAcq
         public static string DB_USER_NAME = "cyl";
         public static string DB_USER_PASSWD = "cyl";
         public static string DB_NAME = "SmartHomeDB";
-        public static string DB_SERVER_IP = "10.0.0.10";
+        public static string DB_SERVER_IP = "10.0.0.13";
+        public static string METER_IP = "10.0.0.106";
     }
 }

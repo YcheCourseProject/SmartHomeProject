@@ -1,0 +1,6 @@
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SensorDataAcq\bin\Debug\SensorDataAcq.exe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SensorDataAcq\bin\Debug\SensorDataAcq.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SensorDataAcq\bin\Debug\tcpServer.dll
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SensorDataAcq\bin\Debug\tcpServer.pdb
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SensorDataAcq\obj\Debug\SensorDataAcq.exe
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SensorDataAcq\obj\Debug\SensorDataAcq.pdb

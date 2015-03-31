@@ -55,17 +55,30 @@
     </Page.Resources>
     <Grid>
         <StackPanel>
-            <StackPanel HorizontalAlignment="Left" Margin="20,0,0,0">
-                <Button x:ConnectionId='6' Style="{StaticResource ButtonStyle1}"                                >
-                    <Grid>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="Assets/LeftArrow.jpg" Stretch="Uniform" Height="40"  />
-                            <TextBlock Text="Back to Control"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
-                        </StackPanel>
-                        
-                    </Grid>
-                </Button>
-             
+            <StackPanel  HorizontalAlignment="Left" Margin="20,0,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:ConnectionId='6' Style="{StaticResource ButtonStyle1}"                                >
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Assets/LeftArrow.jpg" Stretch="Uniform" Height="40"  />
+                                <TextBlock Text="Back to Control"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
+                            </StackPanel>
+
+                        </Grid>
+                    </Button>
+
+                    <Button x:ConnectionId='7' Style="{StaticResource ButtonStyle1}"                               Margin="60,0,0,0">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" >
+                                <Image Source="Assets/RightArrow.jpg" Stretch="Uniform" Height="40"  />
+                                <TextBlock Text="To ACOpt"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+               
+
+               
             </StackPanel>
             
             <Pivot>

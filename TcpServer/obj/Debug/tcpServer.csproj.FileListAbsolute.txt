@@ -1,0 +1,7 @@
+C:\Users\CheYuLin\Desktop\TcpServer-src\tcpServer\bin\Debug\tcpServer.dll
+C:\Users\CheYuLin\Desktop\TcpServer-src\tcpServer\bin\Debug\tcpServer.pdb
+C:\Users\CheYuLin\Desktop\TcpServer-src\tcpServer\obj\Debug\tcpServer.csprojResolveAssemblyReference.cache
+C:\Users\CheYuLin\Desktop\TcpServer-src\tcpServer\obj\Debug\tcpServer.TcpServer.resources
+C:\Users\CheYuLin\Desktop\TcpServer-src\tcpServer\obj\Debug\tcpServer.csproj.GenerateResource.Cache
+C:\Users\CheYuLin\Desktop\TcpServer-src\tcpServer\obj\Debug\tcpServer.dll
+C:\Users\CheYuLin\Desktop\TcpServer-src\tcpServer\obj\Debug\tcpServer.pdb

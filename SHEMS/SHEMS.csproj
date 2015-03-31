@@ -94,6 +94,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Entities\ElectricPrice.cs" />
     <Compile Include="Entities\HBA.cs" />
+    <Compile Include="Entities\SensorData.cs" />
     <Compile Include="LoadAnalysisPage.xaml.cs">
       <DependentUpon>LoadAnalysisPage.xaml</DependentUpon>
     </Compile>
@@ -124,11 +125,14 @@
     <Content Include="Assets\ac_mode_cool.png" />
     <Content Include="Assets\ac_mode_hot.png" />
     <Content Include="Assets\ac_mode_ventilate.png" />
+    <Content Include="Assets\Air.jpg" />
     <Content Include="Assets\airconditioner.png" />
     <Content Include="Assets\clothwasher.png" />
     <Content Include="Assets\DaysPerMonth.png" />
     <Content Include="Assets\dishwasher.png" />
+    <Content Include="Assets\Fire.jpg" />
     <Content Include="Assets\HoursPerDay.png" />
+    <Content Include="Assets\Human.jpg" />
     <Content Include="Assets\Humidity.png" />
     <Content Include="Assets\icon_smarthome 310x150.png" />
     <Content Include="Assets\icon_smarthome 480x800.png" />
@@ -140,6 +144,7 @@
     <Content Include="Assets\icon_sp2.png" />
     <Content Include="Assets\lamp.png" />
     <Content Include="Assets\LeftArrow.jpg" />
+    <Content Include="Assets\Light.png" />
     <Content Include="Assets\ReactivePower.png" />
     <Content Include="Assets\RightArrow.jpg" />
     <Content Include="Assets\switch_off_normal.png" />

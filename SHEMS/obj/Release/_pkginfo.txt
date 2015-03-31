@@ -1,1 +1,1 @@
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\AppPackages\SHEMS_1.1.0.5_Test\SHEMS_1.1.0.5_AnyCPU.appxbundle
+E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\AppPackages\SHEMS_1.1.0.8_Test\SHEMS_1.1.0.8_AnyCPU.appxbundle

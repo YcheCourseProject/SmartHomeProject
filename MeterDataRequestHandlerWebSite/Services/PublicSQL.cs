@@ -16,12 +16,32 @@ namespace MeterDataRequestHandlerWebSite.Services
         public static string TYPE_DAYSPERMONTH = "DaysPerMonth";
         public static string TYPE_HOURSPERDAY = "HoursPerDay";
         public static string TYPE_HOURSPERMONTH = "HoursPerMonth";
+        
         protected SqlConnection cnn = new SqlConnection();
         protected SqlCommand cmd = new SqlCommand();
         public PublicSQL(string uid, string passwd, string database)
         {
             cnn.ConnectionString = "server="+Constants.DB_SERVER_IP+";uid=" + uid + ";pwd=" + passwd + ";database=" + database;
             cmd.Connection = cnn;
+        }
+        public string getSensorData()
+        {
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            cmd.Parameters.Clear();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText =
+            " select top 1 dateTime as DateTime,temperatureData as TemperatureData," +
+            " humidityData as HumidityData,gasData as GasData,lightData as LightData," +
+            " humanStatus as HumanStatus,fireData as FireData"+
+            " from SensorData"+
+            " order by dateTime desc";
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset);
+            DataTable dt = dataset.Tables[0];
+            cnn.Close();
+            return Utilities.ToJson(dt);
         }
 
         public string getDaysPerMonth(string year,string month)

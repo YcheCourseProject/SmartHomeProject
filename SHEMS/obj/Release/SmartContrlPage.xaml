@@ -34,9 +34,9 @@
                 <Image Margin="20,20,0,0" Stretch="UniformToFill" Height="80" Source="Assets/icon_smarthome.png" />
                 <StackPanel Orientation="Vertical" Margin="0,40,0,0">
                     <TextBlock Margin="20,0,22,0" Foreground="#479FDD" FontSize="25" VerticalAlignment="Center" Text="Smart Control:" />
-                    <ToggleSwitch x:ConnectionId='9'  FontSize="25" Header="" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top"                                Width="Auto"/>
+                    <ToggleSwitch x:ConnectionId='10'  FontSize="25" Header="" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top"                                Width="Auto"/>
                 </StackPanel>
-                <Button x:ConnectionId='8' Style="{StaticResource ButtonStyle1}"                            >
+                <Button x:ConnectionId='9' Style="{StaticResource ButtonStyle1}"                            >
                     <Grid>
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
                             <Image Source="Assets/RightArrow.jpg" Stretch="Uniform" Height="40"  />
@@ -60,7 +60,7 @@
 
 
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <Button x:ConnectionId='6'                              Style="{StaticResource ButtonStyle1}">
+                            <Button x:ConnectionId='7'                              Style="{StaticResource ButtonStyle1}">
                                 <Grid>
                                     <Image Source="Assets/switch_off_normal.png" Stretch="Uniform" Height="80" Name="Img_ACOnOFF"/>
                                     <TextBlock Text="Press On"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20" Name="TxtOnOffStatus"></TextBlock>
@@ -71,7 +71,7 @@
 
                                 <StackPanel Orientation="Horizontal">
                                     <Image HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Center"   Name="Img_ACMode" Source="Assets/ac_mode_hot.png" />
-                                    <ComboBox x:ConnectionId='7' Name="comboBoxACMode" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120"                                                />
+                                    <ComboBox x:ConnectionId='8' Name="comboBoxACMode" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120"                                                />
 
                                 </StackPanel>
                                 <TextBlock Text="Change Mode"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontSize="20"></TextBlock>
@@ -81,7 +81,7 @@
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
-                            <Button x:ConnectionId='4'                              Style="{StaticResource ButtonStyle1}">
+                            <Button x:ConnectionId='5'                              Style="{StaticResource ButtonStyle1}">
                                 <Grid>
                                     <Image Source="Assets/temperature_down_normal.png" Stretch="Uniform" Height="80"/>
                                     <TextBlock Text="Press Down"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
@@ -95,7 +95,7 @@
                                     <TextBlock Text="℃"  VerticalAlignment="Bottom" Margin="5" FontSize="20" HorizontalAlignment="Center" ></TextBlock>
                                 </StackPanel>
                             </StackPanel>
-                            <Button x:ConnectionId='5'                            Style="{StaticResource ButtonStyle1}">
+                            <Button x:ConnectionId='6'                            Style="{StaticResource ButtonStyle1}">
                                 <Grid>
                                     <Image Source="Assets/temperature_up_normal.png" Stretch="Uniform" Height="80"/>
                                     <TextBlock Text="Press Up"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20"></TextBlock>
@@ -118,7 +118,7 @@
 
                         </StackPanel>
                         <StackPanel>
-                            <Button x:ConnectionId='3'                         Style="{StaticResource ButtonStyle1}" >
+                            <Button x:ConnectionId='4'                         Style="{StaticResource ButtonStyle1}" >
                                 <Grid>
                                     <Image Source="Assets/switch_off_normal.png" Stretch="Uniform" Height="80" Name="Img_SW"/>
                                     <TextBlock Text="Press On"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="20" Name="TxtHumidifierStatus"></TextBlock>
@@ -143,7 +143,7 @@
                                
                             </Button>
                             <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="21"   Name="TxtBox_ComfortTemperature"/>
-                            <Button x:ConnectionId='2' VerticalAlignment="Center" Content="Set Target Temp" HorizontalAlignment="Left" Margin="10,0,0,0"                                     />
+                            <Button x:ConnectionId='3' VerticalAlignment="Center" Content="Set Target Temp" HorizontalAlignment="Left" Margin="10,0,0,0"                                     />
                         </StackPanel>
                         <StackPanel  VerticalAlignment="Center">
 
@@ -158,8 +158,21 @@
                             </Grid>
                         </Button>
                         <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="35"   Name="TxtBox_ComfortHumidity"/>
-                        <Button x:ConnectionId='1' VerticalAlignment="Center" Content="Set Target Humid" HorizontalAlignment="Left" Margin="10,0,0,0"                                             />
+                        <Button x:ConnectionId='2' VerticalAlignment="Center" Content="Set Target Humid" HorizontalAlignment="Left" Margin="10,0,0,0"                                             />
                         </StackPanel>
+                    </StackPanel>
+                </PivotItem>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <TextBlock Text="Environment" FontSize="30" />
+
+                    </PivotItem.Header>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Light,Mode=TwoWay}" FontSize="30" Name="Txt_Light"/>
+                        <TextBlock Text="{Binding Gas,Mode=TwoWay}" FontSize="30" Name="Txt_Gas"/>
+                        <TextBlock Text="{Binding Humanstatus,Mode=TwoWay}" FontSize="30" Name="Txt_HumanStatus"/>
+                        <TextBlock Text="{Binding Firestatus,Mode=TwoWay}" FontSize="30" Name="Txt_FireStatus"/>
+                        <Button x:ConnectionId='1' Content="fdsfd"            ></Button>
                     </StackPanel>
                 </PivotItem>
             </Pivot>

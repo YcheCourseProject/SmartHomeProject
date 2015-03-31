@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="46703SHEMS.SHEMS" Publisher="CN=859CE887-CC9C-4778-9C0F-1C55F5D80CD1" Version="1.1.0.7" ProcessorArchitecture="neutral" />
+  <Identity Name="46703SHEMS.SHEMS" Publisher="CN=859CE887-CC9C-4778-9C0F-1C55F5D80CD1" Version="1.1.0.9" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="f0c7407b-a93f-4a52-8ee0-65309deb6083" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>SHEMS</DisplayName>

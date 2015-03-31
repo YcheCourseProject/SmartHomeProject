@@ -6,17 +6,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>E:\智能家居相关文章\SmartHomeEnergyManagementSystem\部署文件\WebSite</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\智能家居相关文章\SmartHomeEnergyManagementSystem\部署文件\Release-MeterDataRequestHandlerWebSiteFInal</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/MeterDataRequestHandlerWebSite.dll">
-      <publishTime>03/19/2015 16:44:32</publishTime>
+      <publishTime>03/31/2015 21:23:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/19/2015 16:44:33</publishTime>
+      <publishTime>03/31/2015 21:23:00</publishTime>
     </File>
     <File Include="WebForm1.aspx">
-      <publishTime>03/07/2015 09:33:53</publishTime>
+      <publishTime>03/31/2015 18:50:12</publishTime>
+    </File>
+    <File Include="WebFormLoadService.aspx">
+      <publishTime>03/19/2015 21:37:48</publishTime>
     </File>
   </ItemGroup>
 </Project>
