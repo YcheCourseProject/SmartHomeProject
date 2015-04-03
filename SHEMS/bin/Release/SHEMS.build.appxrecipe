@@ -88,6 +88,9 @@
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\lamp.png">
       <PackagePath>Assets\lamp.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Light.png">
+      <PackagePath>Assets\Light.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\ReactivePower.png">
       <PackagePath>Assets\ReactivePower.png</PackagePath>
     </AppxPackagedFile>
@@ -111,6 +114,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\waterheater.png">
       <PackagePath>Assets\waterheater.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Air.jpg">
+      <PackagePath>Assets\Air.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Fire.jpg">
+      <PackagePath>Assets\Fire.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\Human.jpg">
+      <PackagePath>Assets\Human.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\智能家居相关文章\SmartHomeEnergyManagementSystem\SHEMS\Assets\LeftArrow.jpg">
       <PackagePath>Assets\LeftArrow.jpg</PackagePath>

@@ -3,11 +3,14 @@ Assets\ac_mode_dehydrate.png
 Assets\ac_mode_hot.png
 Assets\ac_mode_ventilate.png
 Assets\ActivePower.png
+Assets\Air.jpg
 Assets\airconditioner.png
 Assets\clothwasher.png
 Assets\DaysPerMonth.png
 Assets\dishwasher.png
+Assets\Fire.jpg
 Assets\HoursPerDay.png
+Assets\Human.jpg
 Assets\Humidity.png
 Assets\icon_smarthome 310x150.png
 Assets\icon_smarthome 480x800.png
@@ -19,6 +22,7 @@ Assets\icon_smarthome71.png
 Assets\icon_sp2.png
 Assets\lamp.png
 Assets\LeftArrow.jpg
+Assets\Light.png
 Assets\ReactivePower.png
 Assets\RightArrow.jpg
 Assets\switch_off_normal.png

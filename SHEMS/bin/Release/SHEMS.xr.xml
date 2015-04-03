@@ -6,8 +6,8 @@
     <RootPropertyPathName Name="Datetime" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Imgpath" />
-    <RootPropertyPathName Name="Firestatus" />
     <RootPropertyPathName Name="Humanstatus" />
+    <RootPropertyPathName Name="Firestatus" />
     <RootPropertyPathName Name="Gas" />
     <RootPropertyPathName Name="Light" />
     <RootPropertyPathName Name="SetTemperature" />
@@ -95,10 +95,10 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Name" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="RenderTransformOrigin" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="TextAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">

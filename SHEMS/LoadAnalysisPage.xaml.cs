@@ -186,6 +186,7 @@ namespace SHEMS
 
         private void Button_Click_HoursPerDay(object sender, RoutedEventArgs e)
         {
+
             HttpRequestAsync(async () =>
             {
                 int year = DatePicker.Date.Year;
@@ -201,6 +202,10 @@ namespace SHEMS
 
         private async void HttpRequestAsync(Func<Task<string>> httpRequestFuncAsync)
         {
+            try
+            {
+
+           
             string responseBody;
             //waiting.Visibility = Visibility.Visible;
             try
@@ -247,6 +252,11 @@ namespace SHEMS
 
                 }
             });
+                 }
+            catch
+            {
+
+            }
         }
 
         private void Button_Click_DaysPerMonth(object sender, RoutedEventArgs e)

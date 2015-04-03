@@ -109,7 +109,7 @@
                     <DataTemplate>
                         <Border BorderBrush="Blue" BorderThickness="2" Margin="3, 3, 0, 0">
                             <Grid Height="55" Width="55" Background="{Binding getBGColor}">
-                                <TextBlock Text="{Binding IsInHome}"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" FontSize="16" ></TextBlock>
+                                <TextBlock Text="{Binding IsInHome}"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" FontSize="16" Foreground="Purple"></TextBlock>
                             </Grid>
                         </Border>
                         <!--<StackPanel Orientation="Horizontal" Margin="2,0,0,0" Width="60" Height="auto" Background="Yellow">

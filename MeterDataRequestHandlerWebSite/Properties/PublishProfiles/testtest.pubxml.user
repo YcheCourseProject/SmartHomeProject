@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/MeterDataRequestHandlerWebSite.dll">
-      <publishTime>03/31/2015 21:23:00</publishTime>
+      <publishTime>03/31/2015 23:51:02</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>03/31/2015 21:23:00</publishTime>
