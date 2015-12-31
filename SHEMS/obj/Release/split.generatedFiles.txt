@@ -1,2 +1,0 @@
-obj\Release\split.pri
-obj\Release\split.map.txt

@@ -1,4 +1,0 @@
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\TCPClient\bin\Release\TCPClient.exe
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\TCPClient\bin\Release\TCPClient.pdb
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\TCPClient\obj\Release\TCPClient.exe
-E:\智能家居相关文章\SmartHomeEnergyManagementSystem\TCPClient\obj\Release\TCPClient.pdb
