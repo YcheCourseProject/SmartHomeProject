@@ -1,0 +1,238 @@
+.text:0000B550 ; =============== S U B R O U T I N E =======================================
+.text:0000B550
+.text:0000B550
+.text:0000B550                 EXPORT entry_advanced_send
+.text:0000B550 entry_advanced_send                     ; CODE XREF: Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1add_1iot+178p
+.text:0000B550                                         ; Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1del_1iot+B2p ...
+.text:0000B550
+.text:0000B550 var_610         = -0x610
+.text:0000B550 var_60C         = -0x60C
+.text:0000B550 var_608         = -0x608
+.text:0000B550 var_600         = -0x600
+.text:0000B550 var_5FC         = -0x5FC
+.text:0000B550 var_5F8         = -0x5F8
+.text:0000B550 var_5F4         = -0x5F4
+.text:0000B550 var_5F0         = -0x5F0
+.text:0000B550 var_5EC         = -0x5EC
+.text:0000B550 var_5E8         = -0x5E8
+.text:0000B550 var_5E4         = -0x5E4
+.text:0000B550 tv              = -0x5E0
+.text:0000B550 tz              = -0x5D8
+.text:0000B550 s               = -0x5D0
+.text:0000B550
+.text:0000B550                 PUSH    {R4-R7,LR}
+.text:0000B552                 LDR     R4, =0xFFFFFA04
+.text:0000B554                 LDR     R5, =(__stack_chk_guard_ptr - 0xB56C)
+.text:0000B556                 MOVS    R0, R1
+.text:0000B558                 ADD     SP, R4
+.text:0000B55A                 STR     R3, [SP,#0x610+var_5FC]
+.text:0000B55C                 MOVS    R3, #0x610
+.text:0000B560                 ADD     R3, SP
+.text:0000B562                 LDRH    R7, [R3]
+.text:0000B564                 LDR     R3, =0x614
+.text:0000B566                 STR     R2, [SP,#0x610+var_600]
+.text:0000B568                 ADD     R5, PC ; __stack_chk_guard_ptr
+.text:0000B56A                 ADD     R3, SP
+.text:0000B56C                 LDRH    R3, [R3]
+.text:0000B56E                 MOVS    R2, #0xC4
+.text:0000B570                 LDR     R5, [R5] ; __stack_chk_guard
+.text:0000B572                 STR     R3, [SP,#0x610+var_5F4]
+.text:0000B574                 MOVS    R3, #0x618
+.text:0000B578                 ADD     R3, SP
+.text:0000B57A                 LDRH    R3, [R3]
+.text:0000B57C                 LSLS    R2, R2, #3
+.text:0000B57E                 ADD     R2, SP
+.text:0000B580                 STR     R3, [SP,#0x610+var_5F8]
+.text:0000B582                 LDR     R3, =0x61C
+.text:0000B584                 LDR     R6, [R2]
+.text:0000B586                 LDR     R2, =0x5F4
+.text:0000B588                 ADD     R3, SP
+.text:0000B58A                 LDRB    R3, [R3]
+.text:0000B58C                 ADD     R2, SP
+.text:0000B58E                 STR     R3, [SP,#0x610+var_5F0]
+.text:0000B590                 LDR     R3, [R5]
+.text:0000B592                 STR     R3, [R2]
+.text:0000B594                 BL      sub_B178
+.text:0000B598                 STR     R5, [SP,#0x610+var_5EC]
+.text:0000B59A                 MOVS    R4, R0
+.text:0000B59C                 CMP     R0, #0
+.text:0000B59E                 BEQ     loc_B684
+.text:0000B5A0                 LDR     R1, [R0,#0x34]  ; c
+.text:0000B5A2                 CMP     R1, #0
+.text:0000B5A4                 BNE     loc_B684
+.text:0000B5A6                 MOVS    R5, R4
+.text:0000B5A8                 LDR     R2, =0x5B4      ; n
+.text:0000B5AA                 ADD     R0, SP, #0x610+s ; s
+.text:0000B5AC                 ADDS    R5, #0xC
+.text:0000B5AE                 BLX     memset
+.text:0000B5B2                 MOVS    R0, R5          ; mutex
+.text:0000B5B4                 BLX     pthread_mutex_lock
+.text:0000B5B8                 MOVS    R3, R4
+.text:0000B5BA                 ADDS    R3, #0x72
+.text:0000B5BC                 LDRH    R3, [R3]
+.text:0000B5BE                 LDR     R1, =0x2710
+.text:0000B5C0                 CMP     R3, R1
+.text:0000B5C2                 BHI     loc_B5D0
+.text:0000B5C4                 MOVS    R3, R4
+.text:0000B5C6                 ADDS    R3, #0xE8
+.text:0000B5C8                 LDRH    R2, [R3]
+.text:0000B5CA                 ADDS    R2, #1
+.text:0000B5CC                 STRH    R2, [R3]
+.text:0000B5CE                 B       loc_B5EC
+.text:0000B5D0 ; ---------------------------------------------------------------------------
+.text:0000B5D0
+.text:0000B5D0 loc_B5D0                                ; CODE XREF: entry_advanced_send+72j
+.text:0000B5D0                 ADD     R1, SP, #0x610+tz ; tz
+.text:0000B5D2                 ADD     R0, SP, #0x610+tv ; tv
+.text:0000B5D4                 BLX     gettimeofday
+.text:0000B5D8                 MOVS    R1, #0xFA
+.text:0000B5DA                 LDR     R0, [SP,#0x610+tv.tv_usec]
+.text:0000B5DC                 LSLS    R1, R1, #2
+.text:0000B5DE                 BLX     __divsi3
+.text:0000B5E2                 LDR     R3, =0xFFFF8000
+.text:0000B5E4                 ORRS    R0, R3
+.text:0000B5E6                 MOVS    R3, R4
+.text:0000B5E8                 ADDS    R3, #0xE8
+.text:0000B5EA                 STRH    R0, [R3]
+.text:0000B5EC
+.text:0000B5EC loc_B5EC                                ; CODE XREF: entry_advanced_send+7Ej
+.text:0000B5EC                 MOVS    R0, R5          ; mutex
+.text:0000B5EE                 BLX     pthread_mutex_unlock
+.text:0000B5F2                 MOVS    R2, R4
+.text:0000B5F4                 MOVS    R3, R4
+.text:0000B5F6                 ADDS    R2, #0x48
+.text:0000B5F8                 ADDS    R3, #0x72
+.text:0000B5FA                 MOVS    R5, #0
+.text:0000B5FC                 STR     R2, [SP,#0x610+var_5E8]
+.text:0000B5FE                 STR     R3, [SP,#0x610+var_5E4]
+.text:0000B600                 B       loc_B67A
+.text:0000B602 ; ---------------------------------------------------------------------------
+.text:0000B602
+.text:0000B602 loc_B602                                ; CODE XREF: entry_advanced_send+12Ej
+.text:0000B602                 LDR     R3, [R4,#0x14]
+.text:0000B604                 CMP     R3, #1
+.text:0000B606                 BNE     loc_B618
+.text:0000B608                 LDR     R2, [SP,#0x610+var_5F4]
+.text:0000B60A                 MOVS    R1, R4
+.text:0000B60C                 ADDS    R1, #0x38
+.text:0000B60E                 STR     R7, [SP,#0x610+var_610]
+.text:0000B610                 STR     R2, [SP,#0x610+var_60C]
+.text:0000B612                 STR     R6, [SP,#0x610+var_608]
+.text:0000B614                 MOVS    R0, R4
+.text:0000B616                 B       loc_B65E
+.text:0000B618 ; ---------------------------------------------------------------------------
+.text:0000B618
+.text:0000B618 loc_B618                                ; CODE XREF: entry_advanced_send+B6j
+.text:0000B618                 CMP     R3, #2
+.text:0000B61A                 BNE     loc_B668
+.text:0000B61C                 LDRH    R3, [R4,#0x26]
+.text:0000B61E                 CMP     R3, #0
+.text:0000B620                 BEQ     loc_B652
+.text:0000B622                 LDRH    R3, [R4,#0x2E]
+.text:0000B624                 CMP     R3, #0
+.text:0000B626                 BEQ     loc_B652
+.text:0000B628                 LDR     R1, [SP,#0x610+var_5E4]
+.text:0000B62A                 LDR     R2, =0x2710
+.text:0000B62C                 LDRH    R3, [R1]
+.text:0000B62E                 CMP     R3, R2
+.text:0000B630                 BLS     loc_B69C
+.text:0000B632                 LDRH    R3, [R4,#0x1E]
+.text:0000B634                 CMP     R3, #0
+.text:0000B636                 BNE     loc_B69C
+.text:0000B638                 LDR     R1, [SP,#0x610+var_5F8]
+.text:0000B63A                 MOVS    R3, R4
+.text:0000B63C                 ADDS    R3, #0xE8
+.text:0000B63E                 LDRH    R3, [R3]
+.text:0000B640                 MOVS    R0, R4
+.text:0000B642                 STR     R1, [SP,#0x610+var_60C]
+.text:0000B644                 LDR     R2, [SP,#0x610+var_5FC]
+.text:0000B646                 LDR     R1, [SP,#0x610+var_600]
+.text:0000B648                 STR     R7, [SP,#0x610+var_610]
+.text:0000B64A                 STR     R6, [SP,#0x610+var_608]
+.text:0000B64C                 BL      tcp_cmd_send
+.text:0000B650                 B       loc_B672
+.text:0000B652 ; ---------------------------------------------------------------------------
+.text:0000B652
+.text:0000B652 loc_B652                                ; CODE XREF: entry_advanced_send+D0j
+.text:0000B652                                         ; entry_advanced_send+D6j
+.text:0000B652                 LDR     R2, [SP,#0x610+var_5F8]
+.text:0000B654                 LDR     R1, [SP,#0x610+var_5E8]
+.text:0000B656                 STR     R7, [SP,#0x610+var_610]
+.text:0000B658                 STR     R2, [SP,#0x610+var_60C]
+.text:0000B65A                 STR     R6, [SP,#0x610+var_608]
+.text:0000B65C                 ADDS    R0, R4, #0
+.text:0000B65E
+.text:0000B65E loc_B65E                                ; CODE XREF: entry_advanced_send+C6j
+.text:0000B65E                 LDR     R2, [SP,#0x610+var_600]
+.text:0000B660                 LDR     R3, [SP,#0x610+var_5FC]
+.text:0000B662                 BL      udp_cmd_send
+.text:0000B666                 B       loc_B672
+.text:0000B668 ; ---------------------------------------------------------------------------
+.text:0000B668
+.text:0000B668 loc_B668                                ; CODE XREF: entry_advanced_send+CAj
+.text:0000B668                 CMP     R3, #0
+.text:0000B66A                 BEQ     loc_B698
+.text:0000B66C                 CMP     R3, #3
+.text:0000B66E                 BNE     loc_B678
+.text:0000B670                 B       loc_B69C
+.text:0000B672 ; ---------------------------------------------------------------------------
+.text:0000B672
+.text:0000B672 loc_B672                                ; CODE XREF: entry_advanced_send+100j
+.text:0000B672                                         ; entry_advanced_send+116j
+.text:0000B672                 MOVS    R3, R0
+.text:0000B674                 ADDS    R3, #0x64
+.text:0000B676                 BNE     loc_B688
+.text:0000B678
+.text:0000B678 loc_B678                                ; CODE XREF: entry_advanced_send+11Ej
+.text:0000B678                 ADDS    R5, #1
+.text:0000B67A
+.text:0000B67A loc_B67A                                ; CODE XREF: entry_advanced_send+B0j
+.text:0000B67A                 LDR     R1, [SP,#0x610+var_5F0]
+.text:0000B67C                 CMP     R5, R1
+.text:0000B67E                 BLE     loc_B602
+.text:0000B680                 MOVS    R0, #0x64
+.text:0000B682                 B       loc_B686
+.text:0000B684 ; ---------------------------------------------------------------------------
+.text:0000B684
+.text:0000B684 loc_B684                                ; CODE XREF: entry_advanced_send+4Ej
+.text:0000B684                                         ; entry_advanced_send+54j
+.text:0000B684                 MOVS    R0, #0x65
+.text:0000B686
+.text:0000B686 loc_B686                                ; CODE XREF: entry_advanced_send+132j
+.text:0000B686                                         ; entry_advanced_send+14Aj ...
+.text:0000B686                 NEGS    R0, R0
+.text:0000B688
+.text:0000B688 loc_B688                                ; CODE XREF: entry_advanced_send+126j
+.text:0000B688                 LDR     R3, =0x5F4
+.text:0000B68A                 LDR     R1, [SP,#0x610+var_5EC]
+.text:0000B68C                 ADD     R3, SP
+.text:0000B68E                 LDR     R2, [R3]
+.text:0000B690                 LDR     R3, [R1]
+.text:0000B692                 CMP     R2, R3
+.text:0000B694                 BEQ     loc_B6A4
+.text:0000B696                 B       loc_B6A0
+.text:0000B698 ; ---------------------------------------------------------------------------
+.text:0000B698
+.text:0000B698 loc_B698                                ; CODE XREF: entry_advanced_send+11Aj
+.text:0000B698                 MOVS    R0, #0x67
+.text:0000B69A                 B       loc_B686
+.text:0000B69C ; ---------------------------------------------------------------------------
+.text:0000B69C
+.text:0000B69C loc_B69C                                ; CODE XREF: entry_advanced_send+E0j
+.text:0000B69C                                         ; entry_advanced_send+E6j ...
+.text:0000B69C                 MOVS    R0, #3
+.text:0000B69E                 B       loc_B686
+.text:0000B6A0 ; ---------------------------------------------------------------------------
+.text:0000B6A0
+.text:0000B6A0 loc_B6A0                                ; CODE XREF: entry_advanced_send+146j
+.text:0000B6A0                 BLX     __stack_chk_fail
+.text:0000B6A4 ; ---------------------------------------------------------------------------
+.text:0000B6A4
+.text:0000B6A4 loc_B6A4                                ; CODE XREF: entry_advanced_send+144j
+.text:0000B6A4                 LDR     R3, =0x5FC
+.text:0000B6A6                 ADD     SP, R3
+.text:0000B6A8                 POP     {R4-R7,PC}
+.text:0000B6A8 ; End of function entry_advanced_send
+.text:0000B6A8
+.text:0000B6A8 ; ---------------------------------------------------------------------------
+.text:0000B6AA                 ALIGN 4

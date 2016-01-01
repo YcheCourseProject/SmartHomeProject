@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="46703SHEMS.SHEMS" Publisher="CN=859CE887-CC9C-4778-9C0F-1C55F5D80CD1" Version="1.1.0.9" />
+  <mp:PhoneIdentity PhoneProductId="f0c7407b-a93f-4a52-8ee0-65309deb6083" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>SHEMS</DisplayName>
+    <PublisherDisplayName>SHEMS</PublisherDisplayName>
+    <Logo>Assets\icon_smarthome120.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="SHEMS.App">
+      <m3:VisualElements DisplayName="SHEMS" Square150x150Logo="Assets\icon_smarthome150.png" Square44x44Logo="Assets\icon_smarthome44.png" Description="SHEMS" ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Wide310x150Logo="Assets\icon_smarthome 310x150.png" Square71x71Logo="Assets\icon_smarthome71.png">
+          <m3:ShowNameOnTiles>
+            <m3:ShowOn Tile="square150x150Logo" />
+          </m3:ShowNameOnTiles>
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="Assets\icon_smarthome 480x800.png" />
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+</Package>

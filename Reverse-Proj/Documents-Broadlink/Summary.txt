@@ -1,0 +1,121 @@
+//(int)4 byte[0-3]
+//返回byte[0-3]
+public byte[] BLSP2GetCurrentPowerBytes()
+  {
+    return sp2_get_current_power_bytes();
+  }
+
+//功能：解析当前的有功功率，存入BLSP2CurrentPower类对象的power域
+//power=byte[4-7]
+  public BLSP2CurrentPower BLSP2GetCurrentPowerResultParse(byte[] paramArrayOfByte)
+  {
+    return sp2_get_current_power_parse(paramArrayOfByte);
+  }
+
+//功能：读取BLSP2EnergyList对应的数据
+//头4个字节不读   var4c为第几个也就是索引值 从0开始
+//首先构建一个ArrayList然后new一些对象，每个对象中
+//读取次数(lengthOf(byte[])-4)/16
+//peakEnergy的值为   (int)byte[var4c*16+4  ~  var4c*16+7]  
+//lowEnergy的值为    (int)byte[var4c*16+8  ~  var4c*16+B]
+//onTime的值为       (int)byte[var4c*16+C  ~  var4c*16+F]
+//stanbyEnergy的值为 (int)byte[var4c*16+0x10 ~var4c*16+0x13]
+  public BLSP2EnergyList BLSP2GetEnergyListResultParse(byte[] paramArrayOfByte)
+  {
+    return sp2_get_energy_list_parse(paramArrayOfByte);
+
+//(int)7 byte[0-3]
+//（半字paramInt1,paramInt2） byte[4-7]
+//返回byte[0-7]
+  public byte[] BLSP2GetMonthEnergyBytes(int paramInt1, int paramInt2)
+  {
+    return sp2_get_month_energy_bytes(paramInt1, paramInt2);
+  }
+
+  public byte[] BLSP2GetStandbyPowerBytes()
+  {
+    return sp2_get_standby_power_bytes();
+  }
+  
+//功能：解析BLSP2AutoSaveInfo类对象的standbyPower，standbyEnable域
+//BLSP2AutoSaveInfo类对象中:
+//standbyPower=(int)byte[4-7]
+//standbyEnable=(int)byte[12-15]
+  public BLSP2AutoSaveInfo BLSP2GetStandbyPowerResultParse(byte[] paramArrayOfByte)
+  {
+    return sp2_get_standby_power_parse(paramArrayOfByte);
+  }
+
+  public byte[] BLSP2GetWeekEnergyBytes(int paramInt)
+  {
+    return sp2_get_week_energy_bytes(paramInt);
+  }
+
+//(int)8               转为byte[0-3]  
+//(int)paramInt        转为byte[4-7]
+//返回byte[0-7]
+  public byte[] BLSP2GetYearEnergyBytes(int paramInt)
+  {
+    return sp2_get_year_energy_bytes(paramInt);
+  }
+
+//(int)1 转为byte[0-3]
+//返回byte[0-3]
+  public byte[] BLSP2RefreshBytes()
+  {
+    return sp2_refresh_bytes();
+  }
+
+//功能：处理336个字节，传入BLSP2Info对象中，内存栈从-0x1D到-0x16C对应了byte[335-0]
+//PeriodTaskInfo个数 (-0x161~-0x164)    (int)byte[8-11]      应该为8
+//TimerTaskInfo个数(-0xdd~-0xe0)        (int)byte[140-143]   应该为8
+//int switchState（-0x168）             (int)byte[4]
+//int deviceLock(-0xe1)                 (int)byte[139]
+//byte[] deviceName(-0xe2~-0x120)       (byte[])byte[76-138]
+//PeriodTaskInfo类数组相关内容(-0x121~-0x160)  byte[12-75] 共8组，以8bytes为一组
+////------------组织结构（按栈指针从低地址-0x16c到高地址-0x1d的顺序）
+// enable,int[]weeks,onTimeDown,offTimeDone,onHour,onMin,offHour,OffMin的顺序,每个1个byte
+//TimerTaskInfo类数组相关内容(-0x1d~-0xdc)   byte[144-335]
+////------------组织结构按栈指针从低地址-0x16c到高地址-0x1d的顺序）
+//Ontime.second 1个byte  
+//Ontime.minute 1个byte
+//Ontime.hour   1个byte
+//Ontime.weekday 1个byte
+//Ontime.day 1个byte
+//Ontime.month 1个byte
+//Ontime.year 2个byte
+//OnEnable 4个byte
+//Offtime.second 1个byte  
+//Offtime.minute 1个byte
+//Offtime.hour   1个byte
+//Offtime.weekday 1个byte
+//Offtime.day 1个byte
+//Offtime.month 1个byte
+//Offtime.year 2个byte
+//OffEnable 4个byte
+  public BLSP2Info BLSP2RefreshResultParse(byte[] paramArrayOfByte)
+  {
+    return sp2_refresh_result_parse(paramArrayOfByte);
+  }
+
+  public byte[] BLSP2SetPeakTimeBytes(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
+  {
+    return sp2_set_peak_time_bytes(paramInt1, paramInt2, paramInt3, paramInt4);
+  }
+
+  public byte[] BLSP2SetStandbyPowerBytes(int paramInt1, int paramInt2)
+  {
+    return sp2_set_standby_power_bytes(paramInt1, paramInt2);
+  }
+
+  public byte[] BLSP2SetTimerBytes(BLSP2TimerConfig paramBLSP2TimerConfig)
+  {
+    return sp2_set_timer_bytes(paramBLSP2TimerConfig);
+  }
+
+//(int)2      转为byte[0-3]
+//paramInt    转为byte[4-7]
+//返回byte[0-7]
+  public byte[] BLSP2SwitchControlBytes(int paramInt)
+  {
+    return sp2_switch_control_bytes(paramInt);

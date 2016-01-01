@@ -1,0 +1,274 @@
+.text:00008A80 Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1send_1data
+.text:00008A80
+.text:00008A80 var_78          = -0x78
+.text:00008A80 var_74          = -0x74
+.text:00008A80 var_70          = -0x70
+.text:00008A80 var_6C          = -0x6C
+.text:00008A80 var_68          = -0x68
+.text:00008A80 var_60          = -0x60
+.text:00008A80 s               = -0x5C
+.text:00008A80 var_58          = -0x58
+.text:00008A80 var_54          = -0x54
+.text:00008A80 var_50          = -0x50
+.text:00008A80 var_4C          = -0x4C
+.text:00008A80 var_44          = -0x44
+.text:00008A80 var_3C          = -0x3C
+.text:00008A80 var_30          = -0x30
+.text:00008A80 var_2C          = -0x2C
+.text:00008A80 var_28          = -0x28
+.text:00008A80 var_24          = -0x24
+.text:00008A80 var_20          = -0x20
+.text:00008A80 var_1C          = -0x1C
+.text:00008A80 arg_0           =  0
+.text:00008A80 arg_4           =  4
+.text:00008A80 arg_8           =  8
+.text:00008A80
+.text:00008A80                 PUSH    {R4-R7,LR}
+.text:00008A82                 SUB     SP, SP, #0x64
+.text:00008A84                 STR     R2, [SP,#0x78+var_58]
+.text:00008A86                 LDR     R2, [R0]
+.text:00008A88                 MOVS    R6, R3
+.text:00008A8A                 MOVS    R3, #0x2A4
+.text:00008A8E                 LDR     R3, [R2,R3]
+.text:00008A90                 LDR     R1, [SP,#0x78+var_58]
+.text:00008A92                 MOVS    R2, #0
+.text:00008A94                 MOVS    R5, R0
+.text:00008A96                 BLX     R3
+.text:00008A98                 LDR     R2, [R5]
+.text:00008A9A                 MOVS    R3, #0x2A0
+.text:00008A9E                 LDR     R3, [R2,R3]
+.text:00008AA0                 STR     R0, [SP,#0x78+s]
+.text:00008AA2                 LDR     R1, [SP,#0x78+var_58]
+.text:00008AA4                 MOVS    R0, R5
+.text:00008AA6                 BLX     R3
+.text:00008AA8                 ADD     R3, SP, #0x78+var_24
+.text:00008AAA                 LDR     R1, =(a02x02x02x02x02 - 0x8ABA)
+.text:00008AAC                 STR     R3, [SP,#0x78+var_78]
+.text:00008AAE                 ADD     R3, SP, #0x78+var_28
+.text:00008AB0                 STR     R3, [SP,#0x78+var_74]
+.text:00008AB2                 ADD     R3, SP, #0x78+var_2C
+.text:00008AB4                 STR     R3, [SP,#0x78+var_70]
+.text:00008AB6                 ADD     R1, PC          ; "%02x%02x%02x%02x%02x%02x"
+.text:00008AB8                 ADD     R3, SP, #0x78+var_20
+.text:00008ABA                 ADD     R4, SP, #0x78+var_30
+.text:00008ABC                 LDR     R0, [SP,#0x78+s] ; s
+.text:00008ABE                 ADD     R2, SP, #0x78+var_1C
+.text:00008AC0                 STR     R4, [SP,#0x78+var_6C]
+.text:00008AC2                 BLX     sscanf
+.text:00008AC6                 MOVS    R3, #0
+.text:00008AC8
+.text:00008AC8 loc_8AC8                                ; CODE XREF: Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1send_1data+52j
+.text:00008AC8                 LDMIA   R4!, {R1}
+.text:00008ACA                 ADD     R2, SP, #0x78+var_44
+.text:00008ACC                 STRB    R1, [R3,R2]
+.text:00008ACE                 ADDS    R3, #1
+.text:00008AD0                 CMP     R3, #6
+.text:00008AD2                 BNE     loc_8AC8
+.text:00008AD4                 CMP     R6, #0
+.text:00008AD6                 BEQ     loc_8AFC
+.text:00008AD8                 LDR     R2, [R5]
+.text:00008ADA                 MOVS    R3, #0x2E0
+.text:00008ADE                 LDR     R3, [R2,R3]
+.text:00008AE0                 MOVS    R1, R6
+.text:00008AE2                 MOVS    R2, #0
+.text:00008AE4                 MOVS    R0, R5
+.text:00008AE6                 BLX     R3
+.text:00008AE8                 LDR     R2, [R5]
+.text:00008AEA                 MOVS    R3, #0x2AC
+.text:00008AEE                 STR     R0, [SP,#0x78+var_60]
+.text:00008AF0                 LDR     R3, [R2,R3]
+.text:00008AF2                 MOVS    R0, R5
+.text:00008AF4                 MOVS    R1, R6
+.text:00008AF6                 BLX     R3
+.text:00008AF8                 MOVS    R4, R0
+.text:00008AFA                 B       loc_8B00
+.text:00008AFC ; ---------------------------------------------------------------------------
+.text:00008AFC
+.text:00008AFC loc_8AFC                                ; CODE XREF: Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1send_1data+56j
+.text:00008AFC                 MOVS    R4, R6
+.text:00008AFE                 STR     R6, [SP,#0x78+var_60]
+.text:00008B00
+.text:00008B00 loc_8B00                                ; CODE XREF: Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1send_1data+7Aj
+.text:00008B00                 ADD     R7, SP, #0x78+var_3C
+.text:00008B02                 MOVS    R1, #0          ; c
+.text:00008B04                 MOVS    R2, #0xC        ; n
+.text:00008B06                 MOVS    R0, R7          ; s
+.text:00008B08                 BLX     memset
+.text:00008B0C                 MOVS    R3, #0x6A
+.text:00008B0E                 LDR     R2, [SP,#0x78+arg_0]
+.text:00008B10                 STR     R3, [SP,#0x78+var_78]
+.text:00008B12                 MOVS    R3, #0x3E8
+.text:00008B16                 MULS    R2, R3
+.text:00008B18                 LSLS    R2, R2, #0x10
+.text:00008B1A                 LSRS    R2, R2, #0x10
+.text:00008B1C                 STR     R2, [SP,#0x78+var_74]
+.text:00008B1E                 LDR     R2, [SP,#0x78+arg_4]
+.text:00008B20                 LDR     R0, =(current_thread_ptr - 0x8B32)
+.text:00008B22                 ADD     R1, SP, #0x78+var_44
+.text:00008B24                 MULS    R3, R2
+.text:00008B26                 LSLS    R3, R3, #0x10
+.text:00008B28                 LSRS    R3, R3, #0x10
+.text:00008B2A                 STR     R3, [SP,#0x78+var_70]
+.text:00008B2C                 LDR     R3, [SP,#0x78+arg_8]
+.text:00008B2E                 ADD     R0, PC ; current_thread_ptr
+.text:00008B30                 LDR     R2, [SP,#0x78+var_60]
+.text:00008B32                 LSLS    R3, R3, #0x18
+.text:00008B34                 LSRS    R3, R3, #0x18
+.text:00008B36                 STR     R3, [SP,#0x78+var_6C]
+.text:00008B38                 LDR     R0, [R0] ; current_thread
+.text:00008B3A                 MOVS    R3, R4
+.text:00008B3C                 STR     R7, [SP,#0x78+var_68]
+.text:00008B3E                 BL      entry_advanced_send
+.text:00008B42                 LDR     R2, [R5]
+.text:00008B44                 MOVS    R3, #0x300
+.text:00008B48                 LDR     R4, [R2,R3]
+.text:00008B4A                 STR     R0, [SP,#0x78+var_54]
+.text:00008B4C                 MOVS    R1, R6
+.text:00008B4E                 MOVS    R0, R5
+.text:00008B50                 LDR     R2, [SP,#0x78+var_60]
+.text:00008B52                 MOVS    R3, #0
+.text:00008B54                 BLX     R4
+.text:00008B56                 LDR     R2, [R5]
+.text:00008B58                 MOVS    R3, #0x2A8
+.text:00008B5C                 LDR     R3, [R2,R3]
+.text:00008B5E                 MOVS    R0, R5
+.text:00008B60                 LDR     R1, [SP,#0x78+var_58]
+.text:00008B62                 LDR     R2, [SP,#0x78+s]
+.text:00008B64                 BLX     R3
+.text:00008B66                 LDR     R3, [R5]
+.text:00008B68                 LDR     R1, =(aCnComBroadli_5 - 0x8B72)
+.text:00008B6A                 MOVS    R0, R5
+.text:00008B6C                 LDR     R3, [R3,#0x18]
+.text:00008B6E                 ADD     R1, PC          ; "cn/com/broadlink/blnetworkunit/SendData"...
+.text:00008B70                 BLX     R3
+.text:00008B72                 STR     R0, [SP,#0x78+var_60]
+.text:00008B74                 CMP     R0, #0
+.text:00008B76                 BNE     loc_8B84
+.text:00008B78                 LDR     R0, [R7,#8]     ; ptr
+.text:00008B7A                 BLX     free
+.text:00008B7E                 LDR     R2, [SP,#0x78+var_60]
+.text:00008B80                 STR     R2, [SP,#0x78+s]
+.text:00008B82                 B       loc_8C70
+.text:00008B84 ; ---------------------------------------------------------------------------
+.text:00008B84
+.text:00008B84 loc_8B84                                ; CODE XREF: Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1send_1data+F6j
+.text:00008B84                 LDR     R1, [R5]
+.text:00008B86                 LDR     R2, =(aInit - 0x8B92)
+.text:00008B88                 LDR     R3, =(aV - 0x8B94)
+.text:00008B8A                 ADDS    R1, #8
+.text:00008B8C                 LDR     R4, [R1,#0x7C]
+.text:00008B8E                 ADD     R2, PC          ; "<init>"
+.text:00008B90                 ADD     R3, PC          ; "()V"
+.text:00008B92                 LDR     R1, [SP,#0x78+var_60]
+.text:00008B94                 MOVS    R0, R5
+.text:00008B96                 BLX     R4
+.text:00008B98                 LDR     R3, [R5]
+.text:00008B9A                 MOVS    R2, R0
+.text:00008B9C                 LDR     R1, [SP,#0x78+var_60]
+.text:00008B9E                 LDR     R3, [R3,#0x70]
+.text:00008BA0                 MOVS    R0, R5
+.text:00008BA2                 BLX     R3
+.text:00008BA4                 LDR     R1, [R5]
+.text:00008BA6                 LDR     R2, =(aResultcode - 0x8BB4)
+.text:00008BA8                 LDR     R3, =(aI - 0x8BB6)
+.text:00008BAA                 ADDS    R1, #0xFC
+.text:00008BAC                 LDR     R4, [R1,#0x7C]
+.text:00008BAE                 STR     R0, [SP,#0x78+s]
+.text:00008BB0                 ADD     R2, PC          ; "resultCode"
+.text:00008BB2                 ADD     R3, PC          ; "I"
+.text:00008BB4                 LDR     R1, [SP,#0x78+var_60]
+.text:00008BB6                 MOVS    R0, R5
+.text:00008BB8                 BLX     R4
+.text:00008BBA                 LDR     R1, [R5]
+.text:00008BBC                 LDR     R2, =(aData - 0x8BCA)
+.text:00008BBE                 LDR     R3, =(aB - 0x8BCC)
+.text:00008BC0                 ADDS    R1, #0xFC
+.text:00008BC2                 LDR     R4, [R1,#0x7C]
+.text:00008BC4                 STR     R0, [SP,#0x78+var_50]
+.text:00008BC6                 ADD     R2, PC          ; "data"
+.text:00008BC8                 ADD     R3, PC          ; "[B"
+.text:00008BCA                 LDR     R1, [SP,#0x78+var_60]
+.text:00008BCC                 MOVS    R0, R5
+.text:00008BCE                 BLX     R4
+.text:00008BD0                 LDR     R1, [R5]
+.text:00008BD2                 LDR     R2, =(aMsgtype - 0x8BE0)
+.text:00008BD4                 LDR     R3, =(aS - 0x8BE2)
+.text:00008BD6                 ADDS    R1, #0xFC
+.text:00008BD8                 LDR     R4, [R1,#0x7C]
+.text:00008BDA                 STR     R0, [SP,#0x78+var_4C]
+.text:00008BDC                 ADD     R2, PC          ; "msgType"
+.text:00008BDE                 ADD     R3, PC          ; "S"
+.text:00008BE0                 LDR     R1, [SP,#0x78+var_60]
+.text:00008BE2                 MOVS    R0, R5
+.text:00008BE4                 BLX     R4
+.text:00008BE6                 LDR     R2, [R5]
+.text:00008BE8                 MOVS    R3, #0x1B4
+.text:00008BEC                 LDR     R4, [R2,R3]
+.text:00008BEE                 MOVS    R6, R0
+.text:00008BF0                 LDR     R2, [SP,#0x78+var_50]
+.text:00008BF2                 MOVS    R0, R5
+.text:00008BF4                 LDR     R1, [SP,#0x78+s]
+.text:00008BF6                 LDR     R3, [SP,#0x78+var_54]
+.text:00008BF8                 BLX     R4
+.text:00008BFA                 LDR     R1, [R5]
+.text:00008BFC                 MOVS    R2, #4
+.text:00008BFE                 LDRSH   R3, [R7,R2]
+.text:00008C00                 MOVS    R2, #0x1B0
+.text:00008C04                 LDR     R4, [R1,R2]
+.text:00008C06                 MOVS    R0, R5
+.text:00008C08                 MOVS    R2, R6
+.text:00008C0A                 LDR     R1, [SP,#0x78+s]
+.text:00008C0C                 BLX     R4
+.text:00008C0E                 LDR     R2, [R5]
+.text:00008C10                 MOVS    R3, #0x2C0
+.text:00008C14                 LDR     R3, [R2,R3]
+.text:00008C16                 LDR     R1, [SP,#0x78+var_3C]
+.text:00008C18                 MOVS    R0, R5
+.text:00008C1A                 BLX     R3
+.text:00008C1C                 LDR     R3, [R7,#8]
+.text:00008C1E                 LDR     R2, [R5]
+.text:00008C20                 MOVS    R6, R0
+.text:00008C22                 STR     R3, [SP,#0x78+var_78]
+.text:00008C24                 MOVS    R3, #0x340
+.text:00008C28                 LDR     R4, [R2,R3]
+.text:00008C2A                 MOVS    R0, R5
+.text:00008C2C                 MOVS    R1, R6
+.text:00008C2E                 MOVS    R2, #0
+.text:00008C30                 LDR     R3, [SP,#0x78+var_3C]
+.text:00008C32                 BLX     R4
+.text:00008C34                 LDR     R2, [R5]
+.text:00008C36                 MOVS    R3, #0x1A0
+.text:00008C3A                 LDR     R4, [R2,R3]
+.text:00008C3C                 LDR     R1, [SP,#0x78+s]
+.text:00008C3E                 LDR     R2, [SP,#0x78+var_4C]
+.text:00008C40                 MOVS    R3, R6
+.text:00008C42                 MOVS    R0, R5
+.text:00008C44                 BLX     R4
+.text:00008C46                 LDR     R0, [R7,#8]     ; ptr
+.text:00008C48                 BLX     free
+.text:00008C4C                 MOVS    R3, #0
+.text:00008C4E                 STR     R3, [R7,#8]
+.text:00008C50                 STR     R3, [SP,#0x78+var_3C]
+.text:00008C52                 LDR     R3, [R5]
+.text:00008C54                 MOVS    R0, R5
+.text:00008C56                 MOVS    R1, R6
+.text:00008C58                 LDR     R3, [R3,#0x5C]
+.text:00008C5A                 BLX     R3
+.text:00008C5C                 LDR     R3, [R5]
+.text:00008C5E                 MOVS    R0, R5
+.text:00008C60                 LDR     R1, [SP,#0x78+var_58]
+.text:00008C62                 LDR     R3, [R3,#0x5C]
+.text:00008C64                 BLX     R3
+.text:00008C66                 LDR     R3, [R5]
+.text:00008C68                 MOVS    R0, R5
+.text:00008C6A                 LDR     R1, [SP,#0x78+var_60]
+.text:00008C6C                 LDR     R3, [R3,#0x5C]
+.text:00008C6E                 BLX     R3
+.text:00008C70
+.text:00008C70 loc_8C70                                ; CODE XREF: Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1send_1data+102j
+.text:00008C70                 LDR     R0, [SP,#0x78+s]
+.text:00008C72                 ADD     SP, SP, #0x64
+.text:00008C74                 POP     {R4-R7,PC}
+.text:00008C74 ; End of function Java_cn_com_broadlink_blnetworkunit_BLNetworkUnit_broadlink_1network_1send_1data
+.text:00008C74
+.text:00008C74 ; ---------------------------------------------------------------------------

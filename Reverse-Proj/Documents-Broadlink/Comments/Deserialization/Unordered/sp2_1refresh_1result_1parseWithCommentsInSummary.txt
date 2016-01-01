@@ -1,0 +1,262 @@
+@GetByteArrayElements
+
+@GetArrayLength
+
+@ReleaseByteArrayElements
+
+@FindClass
+
+@@@@ "<init>"
+@@@@ "()V"
+@GetMethodID
+
+@NewObject
+
+@@@@ "I"
+@@@@ "switchState"
+@GetFieldID
+
+@@@@ "deviceName"
+@@@@ "[B"
+@GetFieldID
+
+@@@@ "deviceLock"
+@GetFieldID
+
+@@@@ "Ljava/util/ArrayList
+@@@@ "periodicTaskList"
+@GetFieldID
+
+@@@@ "timerTaskList"
+@GetFieldID
+
+@@@@ "java/util/ArrayList"
+@FindClass
+
+@GetMethodID
+
+@NewObject
+
+@NewObject
+
+@@@@ "add"
+@@@@ "(Ljava/lang/Object
+@GetMethodID
+
+@FindClass
+
+@GetMethodID
+
+@@@@ "enable"
+@GetFieldID
+
+@@@@ "onHour"
+@GetFieldID
+
+@@@@ "onMin"
+@GetFieldID
+
+@@@@ "onTimeDone"
+@GetFieldID
+
+@@@@ "offHour"
+@GetFieldID
+
+@@@@ "offMin"
+@GetFieldID
+
+@@@@ "offTimeDone"
+@GetFieldID
+
+@@@@ "weeks"
+@@@@ "[I"
+@GetFieldID
+
+@@@@ "<init>"
+@@@@ "()V"
+@@@@ "I"
+@@@@ "switchState"
+@@@@ "deviceName"
+@@@@ "[B"
+@@@@ "deviceLock"
+@@@@ "Ljava/util/ArrayList
+@@@@ "periodicTaskList"
+@@@@ "timerTaskList"
+@@@@ "java/util/ArrayList"
+@@@@ "add"
+@@@@ "(Ljava/lang/Object
+@@@@ "enable"
+@@@@ "onHour"
+@@@@ "onMin"
+@@@@ "onTimeDone"
+@@@@ "offHour"
+@@@@ "offMin"
+@@@@ "offTimeDone"
+@@@@ "weeks"
+@@@@ "[I"
+@NewIntArray
+
+@SetIntArrayRegion
+
+@NewObject
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetObjectField
+
+@CallBooleanMethod
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@FindClass
+
+@@@@ "<init>"
+@@@@ "()V"
+@GetMethodID
+
+@@@@ "I"
+@@@@ "onEnable"
+@GetFieldID
+
+@@@@ "onTime"
+@GetFieldID
+
+@@@@ "offEnable"
+@GetFieldID
+
+@@@@ "offTime"
+@GetFieldID
+
+@FindClass
+
+@GetMethodID
+
+@@@@ "year"
+@GetFieldID
+
+@@@@ "month"
+@GetFieldID
+
+@@@@ "day"
+@GetFieldID
+
+@@@@ "hour"
+@GetFieldID
+
+@@@@ "minute"
+@GetFieldID
+
+@@@@ "second"
+@GetFieldID
+
+@@@@ "weekday"
+@GetFieldID
+
+@@@@ "<init>"
+@@@@ "()V"
+@@@@ "I"
+@@@@ "onEnable"
+@@@@ "onTime"
+@@@@ "offEnable"
+@@@@ "offTime"
+@@@@ "year"
+@@@@ "month"
+@@@@ "day"
+@@@@ "hour"
+@@@@ "minute"
+@@@@ "second"
+@@@@ "weekday"
+@NewObject
+
+@NewObject
+
+@NewObject
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetIntField
+
+@SetObjectField
+
+@SetObjectField
+
+@CallBooleanMethod
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@NewByteArray
+
+@CallLongMethod
+
+@SetIntField
+
+@SetObjectField
+
+@SetIntField
+
+@SetObjectField
+
+@SetObjectField
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+
+@DeleteLocalRef
+

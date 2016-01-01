@@ -1,0 +1,1080 @@
+.text:00004A3C ; =============== S U B R O U T I N E =======================================
+.text:00004A3C
+.text:00004A3C
+.text:00004A3C                 EXPORT Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse
+.text:00004A3C Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse
+.text:00004A3C
+.text:00004A3C var_218         = -0x218
+.text:00004A3C var_20C         = -0x20C
+.text:00004A3C var_208         = -0x208
+.text:00004A3C var_204         = -0x204
+.text:00004A3C var_200         = -0x200
+.text:00004A3C var_1FC         = -0x1FC
+.text:00004A3C var_1F8         = -0x1F8
+.text:00004A3C var_1F4         = -0x1F4
+.text:00004A3C var_1F0         = -0x1F0
+.text:00004A3C var_1EC         = -0x1EC
+.text:00004A3C var_1E8         = -0x1E8
+.text:00004A3C var_1E4         = -0x1E4
+.text:00004A3C var_1E0         = -0x1E0
+.text:00004A3C var_1DC         = -0x1DC
+.text:00004A3C var_1D8         = -0x1D8
+.text:00004A3C var_1D4         = -0x1D4
+.text:00004A3C var_1D0         = -0x1D0
+.text:00004A3C var_1CC         = -0x1CC
+.text:00004A3C var_1C8         = -0x1C8
+.text:00004A3C var_1C4         = -0x1C4
+.text:00004A3C var_1C0         = -0x1C0
+.text:00004A3C var_1BC         = -0x1BC
+.text:00004A3C var_1B8         = -0x1B8
+.text:00004A3C var_1B4         = -0x1B4
+.text:00004A3C var_1B0         = -0x1B0
+.text:00004A3C var_1AC         = -0x1AC
+.text:00004A3C var_1A8         = -0x1A8
+.text:00004A3C var_1A4         = -0x1A4
+.text:00004A3C var_1A0         = -0x1A0
+.text:00004A3C var_19C         = -0x19C
+.text:00004A3C var_198         = -0x198
+.text:00004A3C var_194         = -0x194
+.text:00004A3C var_190         = -0x190
+.text:00004A3C var_18C         = -0x18C
+.text:00004A3C var_188         = -0x188
+.text:00004A3C s               = -0x16C
+.text:00004A3C var_168         = -0x168
+.text:00004A3C var_164         = -0x164
+.text:00004A3C var_160         = -0x160
+.text:00004A3C var_120         = -0x120
+.text:00004A3C var_E0          = -0xE0
+.text:00004A3C var_1C          = -0x1C
+.text:00004A3C
+.text:00004A3C                 PUSH    {R0,R1,R4-R7,LR}
+.text:00004A3E                 LDR     R4, =(__stack_chk_guard_ptr - 0x4A48)
+.text:00004A40                 SUB     SP, SP, #0x1FC
+.text:00004A42                 MOVS    R6, R2
+.text:00004A44                 ADD     R4, PC ; __stack_chk_guard_ptr
+.text:00004A46                 LDR     R4, [R4] ; __stack_chk_guard
+.text:00004A48                 LDR     R2, [R0]
+.text:00004A4A                 MOVS    R1, R6
+.text:00004A4C                 LDR     R3, [R4]
+.text:00004A4E                 MOVS    R5, R0
+.text:00004A50                 STR     R3, [SP,#0x218+var_1C]
+.text:00004A52                 MOVS    R3, #0x2E0
+.text:00004A56                 LDR     R3, [R2,R3]
+.text:00004A58                 MOVS    R2, #0
+.text:00004A5A                 BLX     R3							@GetByteArrayElements
+.text:00004A5C                 LDR     R2, [R5]
+.text:00004A5E                 MOVS    R3, #0x2AC
+.text:00004A62                 LDR     R3, [R2,R3]
+.text:00004A64                 MOVS    R7, R0
+.text:00004A66                 MOVS    R1, R6
+.text:00004A68                 MOVS    R0, R5
+.text:00004A6A                 BLX     R3							@GetArrayLength
+.text:00004A6C                 LDR     R3, =0x14F
+.text:00004A6E                 STR     R4, [SP,#0x218+var_18C]
+.text:00004A70                 MOVS    R4, #0
+.text:00004A72                 STR     R4, [SP,#0x218+var_1FC]
+.text:00004A74                 CMP     R0, R3
+.text:00004A76                 BHI     loc_4A7A
+.text:00004A78                 B       loc_520A
+.text:00004A7A ; ---------------------------------------------------------------------------
+.text:00004A7A
+.text:00004A7A loc_4A7A                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3Aj
+.text:00004A7A                 MOVS    R2, #0xA8
+.text:00004A7C                 MOVS    R1, R4          ; c
+.text:00004A7E                 LSLS    R2, R2, #1
+.text:00004A80                 ADD     R0, SP, #0x218+s ; s
+.text:00004A82                 BLX     memset
+.text:00004A86                 MOVS    R2, #0xA8
+.text:00004A88                 MOVS    R1, R7          ; src
+.text:00004A8A                 LSLS    R2, R2, #1
+.text:00004A8C                 ADD     R0, SP, #0x218+s ; dest
+.text:00004A8E                 BLX     memcpy
+.text:00004A92                 LDR     R2, [R5]
+.text:00004A94                 MOVS    R3, #0x300
+.text:00004A98                 LDR     R4, [R2,R3]
+.text:00004A9A                 MOVS    R1, R6
+.text:00004A9C                 MOVS    R2, R7
+.text:00004A9E                 MOVS    R0, R5
+.text:00004AA0                 LDR     R3, [SP,#0x218+var_1FC]
+.text:00004AA2                 BLX     R4							@ReleaseByteArrayElements
+.text:00004AA4                 LDR     R3, [R5]
+.text:00004AA6                 LDR     R1, =(aCnComBroadli_1 - 0x4AB0)
+.text:00004AA8                 MOVS    R0, R5
+.text:00004AAA                 LDR     R3, [R3,#0x18]
+.text:00004AAC                 ADD     R1, PC          ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00004AAE                 BLX     R3							@FindClass
+.text:00004AB0                 LDR     R4, =(aInit - 0x4ABA)
+.text:00004AB2                 LDR     R3, [R5]
+.text:00004AB4                 STR     R0, [SP,#0x218+var_1F4]
+.text:00004AB6                 ADD     R4, PC          ; "<init>"
+.text:00004AB8                 STR     R4, [SP,#0x218+var_208]
+.text:00004ABA                 LDR     R4, =(aV - 0x4AC4)
+.text:00004ABC                 ADDS    R3, #8
+.text:00004ABE                 LDR     R1, [SP,#0x218+var_1F4]
+.text:00004AC0                 ADD     R4, PC          ; "()V"
+.text:00004AC2                 STR     R4, [SP,#0x218+var_20C]
+.text:00004AC4                 LDR     R2, [SP,#0x218+var_208]
+.text:00004AC6                 LDR     R4, [R3,#0x7C]
+.text:00004AC8                 MOVS    R0, R5
+.text:00004ACA                 LDR     R3, [SP,#0x218+var_20C]
+.text:00004ACC                 BLX     R4							@GetMethodID
+.text:00004ACE                 LDR     R3, [R5]
+.text:00004AD0                 MOVS    R2, R0
+.text:00004AD2                 LDR     R1, [SP,#0x218+var_1F4]
+.text:00004AD4                 LDR     R3, [R3,#0x70]
+.text:00004AD6                 MOVS    R0, R5
+.text:00004AD8                 BLX     R3							@NewObject
+.text:00004ADA                 LDR     R7, =(aI - 0x4AE4)
+.text:00004ADC                 LDR     R3, [R5]
+.text:00004ADE                 LDR     R2, =(aSwitchstate - 0x4AEE)
+.text:00004AE0                 ADD     R7, PC          ; "I"
+.text:00004AE2                 ADDS    R3, #0xFC
+.text:00004AE4                 LDR     R4, [R3,#0x7C]
+.text:00004AE6                 STR     R0, [SP,#0x218+var_1FC]
+.text:00004AE8                 MOVS    R3, R7
+.text:00004AEA                 ADD     R2, PC          ; "switchState"
+.text:00004AEC                 LDR     R1, [SP,#0x218+var_1F4]
+.text:00004AEE                 MOVS    R0, R5
+.text:00004AF0                 BLX     R4							@GetFieldID
+.text:00004AF2                 LDR     R1, [R5]
+.text:00004AF4                 LDR     R2, =(aDevicename - 0x4B02)
+.text:00004AF6                 LDR     R3, =(aB - 0x4B04)
+.text:00004AF8                 ADDS    R1, #0xFC
+.text:00004AFA                 LDR     R4, [R1,#0x7C]
+.text:00004AFC                 STR     R0, [SP,#0x218+var_1B4]
+.text:00004AFE                 ADD     R2, PC          ; "deviceName"
+.text:00004B00                 ADD     R3, PC          ; "[B"
+.text:00004B02                 LDR     R1, [SP,#0x218+var_1F4]
+.text:00004B04                 MOVS    R0, R5
+.text:00004B06                 BLX     R4							@GetFieldID
+.text:00004B08                 LDR     R3, [R5]
+.text:00004B0A                 LDR     R2, =(aDevicelock - 0x4B16)
+.text:00004B0C                 STR     R0, [SP,#0x218+var_1B0]
+.text:00004B0E                 ADDS    R3, #0xFC
+.text:00004B10                 LDR     R4, [R3,#0x7C]
+.text:00004B12                 ADD     R2, PC          ; "deviceLock"
+.text:00004B14                 MOVS    R3, R7
+.text:00004B16                 LDR     R1, [SP,#0x218+var_1F4]
+.text:00004B18                 MOVS    R0, R5
+.text:00004B1A                 BLX     R4							@GetFieldID
+.text:00004B1C                 LDR     R6, =(aLjavaUtilArray - 0x4B26)
+.text:00004B1E                 LDR     R3, [R5]
+.text:00004B20                 LDR     R2, =(aPeriodictaskli - 0x4B2E)
+.text:00004B22                 ADD     R6, PC          ; "Ljava/util/ArrayList;"
+.text:00004B24                 ADDS    R3, #0xFC
+.text:00004B26                 LDR     R4, [R3,#0x7C]
+.text:00004B28                 STR     R0, [SP,#0x218+var_1AC]
+.text:00004B2A                 ADD     R2, PC          ; "periodicTaskList"
+.text:00004B2C                 LDR     R1, [SP,#0x218+var_1F4]
+.text:00004B2E                 MOVS    R3, R6
+.text:00004B30                 MOVS    R0, R5
+.text:00004B32                 BLX     R4							@GetFieldID
+.text:00004B34                 LDR     R3, [R5]
+.text:00004B36                 LDR     R2, =(aTimertasklist - 0x4B40)
+.text:00004B38                 STR     R0, [SP,#0x218+var_1A8]
+.text:00004B3A                 ADDS    R3, #0xFC
+.text:00004B3C                 ADD     R2, PC          ; "timerTaskList"
+.text:00004B3E                 LDR     R4, [R3,#0x7C]
+.text:00004B40                 LDR     R1, [SP,#0x218+var_1F4]
+.text:00004B42                 MOVS    R3, R6
+.text:00004B44                 MOVS    R0, R5
+.text:00004B46                 BLX     R4							@GetFieldID
+.text:00004B48                 LDR     R3, [R5]
+.text:00004B4A                 LDR     R1, =(aJavaUtilArrayl - 0x4B54)
+.text:00004B4C                 STR     R0, [SP,#0x218+var_1A4]
+.text:00004B4E                 LDR     R3, [R3,#0x18]
+.text:00004B50                 ADD     R1, PC          ; "java/util/ArrayList"
+.text:00004B52                 MOVS    R0, R5
+.text:00004B54                 BLX     R3							@FindClass
+.text:00004B56                 LDR     R3, [R5]
+.text:00004B58                 STR     R0, [SP,#0x218+var_1E4]
+.text:00004B5A                 LDR     R1, [SP,#0x218+var_1E4]
+.text:00004B5C                 ADDS    R3, #8
+.text:00004B5E                 LDR     R4, [R3,#0x7C]
+.text:00004B60                 LDR     R2, [SP,#0x218+var_208]
+.text:00004B62                 LDR     R3, [SP,#0x218+var_20C]
+.text:00004B64                 MOVS    R0, R5
+.text:00004B66                 BLX     R4							@GetMethodID
+.text:00004B68                 LDR     R3, [R5]
+.text:00004B6A                 MOVS    R4, R0
+.text:00004B6C                 MOVS    R2, R4
+.text:00004B6E                 LDR     R3, [R3,#0x70]
+.text:00004B70                 LDR     R1, [SP,#0x218+var_1E4]
+.text:00004B72                 MOVS    R0, R5
+.text:00004B74                 BLX     R3							@NewObject
+.text:00004B76                 LDR     R3, [R5]
+.text:00004B78                 MOVS    R2, R4
+.text:00004B7A                 STR     R0, [SP,#0x218+var_1D0]
+.text:00004B7C                 LDR     R3, [R3,#0x70]
+.text:00004B7E                 LDR     R1, [SP,#0x218+var_1E4]
+.text:00004B80                 MOVS    R0, R5
+.text:00004B82                 BLX     R3							@NewObject
+.text:00004B84                 LDR     R1, [R5]
+.text:00004B86                 LDR     R2, =(aAdd - 0x4B90)
+.text:00004B88                 LDR     R3, =(aLjavaLangObjec - 0x4B96)
+.text:00004B8A                 ADDS    R1, #8
+.text:00004B8C                 ADD     R2, PC          ; "add"
+.text:00004B8E                 LDR     R4, [R1,#0x7C]
+.text:00004B90                 STR     R0, [SP,#0x218+var_1CC]
+.text:00004B92                 ADD     R3, PC          ; "(Ljava/lang/Object;)Z"
+.text:00004B94                 LDR     R1, [SP,#0x218+var_1E4]
+.text:00004B96                 MOVS    R0, R5
+.text:00004B98                 BLX     R4							@GetMethodID
+.text:00004B9A                 LDR     R3, [R5]
+.text:00004B9C                 LDR     R1, =(aCnComBroadli_2 - 0x4BA6)
+.text:00004B9E                 STR     R0, [SP,#0x218+var_1C8]
+.text:00004BA0                 LDR     R3, [R3,#0x18]
+.text:00004BA2                 ADD     R1, PC          ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00004BA4                 MOVS    R0, R5
+.text:00004BA6                 BLX     R3							@FindClass
+.text:00004BA8                 LDR     R3, [R5]
+.text:00004BAA                 STR     R0, [SP,#0x218+var_200]
+.text:00004BAC                 LDR     R1, [SP,#0x218+var_200]
+.text:00004BAE                 ADDS    R3, #8
+.text:00004BB0                 LDR     R4, [R3,#0x7C]
+.text:00004BB2                 LDR     R2, [SP,#0x218+var_208]
+.text:00004BB4                 LDR     R3, [SP,#0x218+var_20C]
+.text:00004BB6                 MOVS    R0, R5
+.text:00004BB8                 BLX     R4							@GetMethodID
+.text:00004BBA                 LDR     R3, [R5]
+.text:00004BBC                 LDR     R2, =(aEnable - 0x4BC8)
+.text:00004BBE                 STR     R0, [SP,#0x218+var_204]
+.text:00004BC0                 ADDS    R3, #0xFC
+.text:00004BC2                 LDR     R4, [R3,#0x7C]
+.text:00004BC4                 ADD     R2, PC          ; "enable"
+.text:00004BC6                 MOVS    R3, R7
+.text:00004BC8                 LDR     R1, [SP,#0x218+var_200]
+.text:00004BCA                 MOVS    R0, R5
+.text:00004BCC                 BLX     R4							@GetFieldID
+.text:00004BCE                 LDR     R3, [R5]
+.text:00004BD0                 LDR     R2, =(aOnhour - 0x4BDC)
+.text:00004BD2                 STR     R0, [SP,#0x218+var_1F8]
+.text:00004BD4                 ADDS    R3, #0xFC
+.text:00004BD6                 LDR     R4, [R3,#0x7C]
+.text:00004BD8                 ADD     R2, PC          ; "onHour"
+.text:00004BDA                 MOVS    R3, R7
+.text:00004BDC                 LDR     R1, [SP,#0x218+var_200]
+.text:00004BDE                 MOVS    R0, R5
+.text:00004BE0                 BLX     R4							@GetFieldID
+.text:00004BE2                 LDR     R3, [R5]
+.text:00004BE4                 LDR     R2, =(aOnmin - 0x4BF0)
+.text:00004BE6                 STR     R0, [SP,#0x218+var_1F0]
+.text:00004BE8                 ADDS    R3, #0xFC
+.text:00004BEA                 LDR     R4, [R3,#0x7C]
+.text:00004BEC                 ADD     R2, PC          ; "onMin"
+.text:00004BEE                 MOVS    R3, R7
+.text:00004BF0                 LDR     R1, [SP,#0x218+var_200]
+.text:00004BF2                 MOVS    R0, R5
+.text:00004BF4                 BLX     R4							@GetFieldID
+.text:00004BF6                 LDR     R3, [R5]
+.text:00004BF8                 LDR     R2, =(aOntimedone - 0x4C04)
+.text:00004BFA                 STR     R0, [SP,#0x218+var_1EC]
+.text:00004BFC                 ADDS    R3, #0xFC
+.text:00004BFE                 LDR     R4, [R3,#0x7C]
+.text:00004C00                 ADD     R2, PC          ; "onTimeDone"
+.text:00004C02                 MOVS    R3, R7
+.text:00004C04                 LDR     R1, [SP,#0x218+var_200]
+.text:00004C06                 MOVS    R0, R5
+.text:00004C08                 BLX     R4							@GetFieldID
+.text:00004C0A                 LDR     R3, [R5]
+.text:00004C0C                 LDR     R2, =(aOffhour - 0x4C18)
+.text:00004C0E                 STR     R0, [SP,#0x218+var_1E8]
+.text:00004C10                 ADDS    R3, #0xFC
+.text:00004C12                 LDR     R4, [R3,#0x7C]
+.text:00004C14                 ADD     R2, PC          ; "offHour"
+.text:00004C16                 MOVS    R3, R7
+.text:00004C18                 LDR     R1, [SP,#0x218+var_200]
+.text:00004C1A                 MOVS    R0, R5
+.text:00004C1C                 BLX     R4							@GetFieldID
+.text:00004C1E                 LDR     R3, [R5]
+.text:00004C20                 LDR     R2, =(aOffmin - 0x4C2C)
+.text:00004C22                 STR     R0, [SP,#0x218+var_1E0]
+.text:00004C24                 ADDS    R3, #0xFC
+.text:00004C26                 LDR     R4, [R3,#0x7C]
+.text:00004C28                 ADD     R2, PC          ; "offMin"
+.text:00004C2A                 MOVS    R3, R7
+.text:00004C2C                 LDR     R1, [SP,#0x218+var_200]
+.text:00004C2E                 MOVS    R0, R5
+.text:00004C30                 BLX     R4							@GetFieldID
+.text:00004C32                 LDR     R3, [R5]
+.text:00004C34                 LDR     R2, =(aOfftimedone - 0x4C40)
+.text:00004C36                 STR     R0, [SP,#0x218+var_1DC]
+.text:00004C38                 ADDS    R3, #0xFC
+.text:00004C3A                 LDR     R4, [R3,#0x7C]
+.text:00004C3C                 ADD     R2, PC          ; "offTimeDone"
+.text:00004C3E                 MOVS    R3, R7
+.text:00004C40                 LDR     R1, [SP,#0x218+var_200]
+.text:00004C42                 MOVS    R0, R5
+.text:00004C44                 BLX     R4							@GetFieldID
+.text:00004C46                 LDR     R1, [R5]
+.text:00004C48                 LDR     R2, =(aWeeks - 0x4C56)
+.text:00004C4A                 LDR     R3, =(aI_0 - 0x4C58)
+.text:00004C4C                 ADDS    R1, #0xFC
+.text:00004C4E                 LDR     R4, [R1,#0x7C]
+.text:00004C50                 STR     R0, [SP,#0x218+var_1D8]
+.text:00004C52                 ADD     R2, PC          ; "weeks"
+.text:00004C54                 ADD     R3, PC          ; "[I"
+.text:00004C56                 MOVS    R0, R5
+.text:00004C58                 LDR     R1, [SP,#0x218+var_200]
+.text:00004C5A                 BLX     R4							@GetFieldID
+.text:00004C5C                 MOVS    R4, #0
+.text:00004C5E                 STR     R0, [SP,#0x218+var_1D4]
+.text:00004C60                 ADD     R7, SP, #0x218+var_160
+.text:00004C62                 STR     R4, [SP,#0x218+var_208]
+.text:00004C64                 B       loc_4DE4
+.text:00004C64 ; ---------------------------------------------------------------------------
+.text:00004C66                 ALIGN 4
+.text:00004C68 off_4C68        DCD __stack_chk_guard_ptr - 0x4A48
+.text:00004C68                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+2r
+.text:00004C6C dword_4C6C      DCD 0x14F               ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+30r
+.text:00004C70 off_4C70        DCD aCnComBroadli_1 - 0x4AB0
+.text:00004C70                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+6Ar
+.text:00004C70                                         ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00004C74 off_4C74        DCD aInit - 0x4ABA      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+74r
+.text:00004C74                                         ; "<init>"
+.text:00004C78 off_4C78        DCD aV - 0x4AC4         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+7Er
+.text:00004C78                                         ; "()V"
+.text:00004C7C off_4C7C        DCD aI - 0x4AE4         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+9Er
+.text:00004C7C                                         ; "I"
+.text:00004C80 off_4C80        DCD aSwitchstate - 0x4AEE
+.text:00004C80                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+A2r
+.text:00004C80                                         ; "switchState"
+.text:00004C84 off_4C84        DCD aDevicename - 0x4B02
+.text:00004C84                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+B8r
+.text:00004C84                                         ; "deviceName"
+.text:00004C88 off_4C88        DCD aB - 0x4B04         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+BAr
+.text:00004C88                                         ; "[B"
+.text:00004C8C off_4C8C        DCD aDevicelock - 0x4B16
+.text:00004C8C                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+CEr
+.text:00004C8C                                         ; "deviceLock"
+.text:00004C90 off_4C90        DCD aLjavaUtilArray - 0x4B26
+.text:00004C90                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+E0r
+.text:00004C90                                         ; "Ljava/util/ArrayList;"
+.text:00004C94 off_4C94        DCD aPeriodictaskli - 0x4B2E
+.text:00004C94                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+E4r
+.text:00004C94                                         ; "periodicTaskList"
+.text:00004C98 off_4C98        DCD aTimertasklist - 0x4B40
+.text:00004C98                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+FAr
+.text:00004C98                                         ; "timerTaskList"
+.text:00004C9C off_4C9C        DCD aJavaUtilArrayl - 0x4B54
+.text:00004C9C                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+10Er
+.text:00004C9C                                         ; "java/util/ArrayList"
+.text:00004CA0 off_4CA0        DCD aAdd - 0x4B90       ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+14Ar
+.text:00004CA0                                         ; "add"
+.text:00004CA4 off_4CA4        DCD aLjavaLangObjec - 0x4B96
+.text:00004CA4                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+14Cr
+.text:00004CA4                                         ; "(Ljava/lang/Object;)Z"
+.text:00004CA8 off_4CA8        DCD aCnComBroadli_2 - 0x4BA6
+.text:00004CA8                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+160r
+.text:00004CA8                                         ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00004CAC off_4CAC        DCD aEnable - 0x4BC8    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+180r
+.text:00004CAC                                         ; "enable"
+.text:00004CB0 off_4CB0        DCD aOnhour - 0x4BDC    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+194r
+.text:00004CB0                                         ; "onHour"
+.text:00004CB4 off_4CB4        DCD aOnmin - 0x4BF0     ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+1A8r
+.text:00004CB4                                         ; "onMin"
+.text:00004CB8 off_4CB8        DCD aOntimedone - 0x4C04
+.text:00004CB8                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+1BCr
+.text:00004CB8                                         ; "onTimeDone"
+.text:00004CBC off_4CBC        DCD aOffhour - 0x4C18   ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+1D0r
+.text:00004CBC                                         ; "offHour"
+.text:00004CC0 off_4CC0        DCD aOffmin - 0x4C2C    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+1E4r
+.text:00004CC0                                         ; "offMin"
+.text:00004CC4 off_4CC4        DCD aOfftimedone - 0x4C40
+.text:00004CC4                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+1F8r
+.text:00004CC4                                         ; "offTimeDone"
+.text:00004CC8 off_4CC8        DCD aWeeks - 0x4C56     ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+20Cr
+.text:00004CC8                                         ; "weeks"
+.text:00004CCC off_4CCC        DCD aI_0 - 0x4C58       ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+20Er
+.text:00004CCC                                         ; "[I"
+.text:00004CD0 ; ---------------------------------------------------------------------------
+.text:00004CD0
+.text:00004CD0 loc_4CD0                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3B0j
+.text:00004CD0                 MOVS    R1, #0          ; c
+.text:00004CD2                 MOVS    R2, #0x1C       ; n
+.text:00004CD4                 ADD     R0, SP, #0x218+var_188 ; s
+.text:00004CD6                 BLX     memset
+.text:00004CDA                 LDR     R2, [R5]
+.text:00004CDC                 MOVS    R3, #0x2CC
+.text:00004CE0                 LDR     R3, [R2,R3]
+.text:00004CE2                 MOVS    R1, #7
+.text:00004CE4                 MOVS    R0, R5
+.text:00004CE6                 BLX     R3							@NewIntArray
+.text:00004CE8                 LDRB    R1, [R7,#1]
+.text:00004CEA                 STR     R0, [SP,#0x218+var_20C]
+.text:00004CEC                 MOVS    R3, #0
+.text:00004CEE                 MOVS    R2, #1
+.text:00004CF0
+.text:00004CF0 loc_4CF0                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+2C8j
+.text:00004CF0                 MOVS    R0, R1
+.text:00004CF2                 ASRS    R0, R3
+.text:00004CF4                 TST     R0, R2
+.text:00004CF6                 BEQ     loc_4D00
+.text:00004CF8                 LSLS    R0, R3, #2
+.text:00004CFA                 ADDS    R0, #0x90
+.text:00004CFC                 MOV     R4, SP
+.text:00004CFE                 STR     R2, [R0,R4]
+.text:00004D00
+.text:00004D00 loc_4D00                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+2BAj
+.text:00004D00                 ADDS    R3, #1
+.text:00004D02                 CMP     R3, #7
+.text:00004D04                 BNE     loc_4CF0
+.text:00004D06                 LDR     R1, [R5]
+.text:00004D08                 ADD     R2, SP, #0x218+var_188
+.text:00004D0A                 STR     R2, [SP,#0x218+var_218]
+.text:00004D0C                 MOVS    R2, #0x34C
+.text:00004D10                 LDR     R4, [R1,R2]
+.text:00004D12                 MOVS    R0, R5
+.text:00004D14                 LDR     R1, [SP,#0x218+var_20C]
+.text:00004D16                 MOVS    R2, #0
+.text:00004D18                 BLX     R4							@SetIntArrayRegion
+.text:00004D1A                 LDR     R3, [R5]
+.text:00004D1C                 LDR     R1, [SP,#0x218+var_200]
+.text:00004D1E                 LDR     R2, [SP,#0x218+var_204]
+.text:00004D20                 LDR     R3, [R3,#0x70]
+.text:00004D22                 MOVS    R0, R5
+.text:00004D24                 BLX     R3							@NewObject
+.text:00004D26                 LDR     R2, [R5]
+.text:00004D28                 MOVS    R1, #0xDA
+.text:00004D2A                 MOVS    R6, R0
+.text:00004D2C                 LSLS    R1, R1, #1
+.text:00004D2E                 LDR     R4, [R2,R1]
+.text:00004D30                 LDRB    R3, [R7]
+.text:00004D32                 MOVS    R0, R5
+.text:00004D34                 MOVS    R1, R6
+.text:00004D36                 LDR     R2, [SP,#0x218+var_1F8]
+.text:00004D38                 BLX     R4							@SetIntField
+.text:00004D3A                 LDR     R2, [R5]
+.text:00004D3C                 MOVS    R1, #0x1B4
+.text:00004D40                 LDR     R4, [R2,R1]
+.text:00004D42                 LDRB    R3, [R7,#4]
+.text:00004D44                 MOVS    R0, R5
+.text:00004D46                 MOVS    R1, R6
+.text:00004D48                 LDR     R2, [SP,#0x218+var_1F0]
+.text:00004D4A                 BLX     R4							@SetIntField
+.text:00004D4C                 LDR     R2, [R5]
+.text:00004D4E                 MOVS    R1, #0x1B4
+.text:00004D52                 LDR     R4, [R2,R1]
+.text:00004D54                 LDRB    R3, [R7,#5]
+.text:00004D56                 MOVS    R0, R5
+.text:00004D58                 MOVS    R1, R6
+.text:00004D5A                 LDR     R2, [SP,#0x218+var_1EC]
+.text:00004D5C                 BLX     R4							@SetIntField
+.text:00004D5E                 LDR     R2, [R5]
+.text:00004D60                 MOVS    R1, #0x1B4
+.text:00004D64                 LDR     R4, [R2,R1]
+.text:00004D66                 LDRB    R3, [R7,#2]
+.text:00004D68                 MOVS    R0, R5
+.text:00004D6A                 MOVS    R1, R6
+.text:00004D6C                 LDR     R2, [SP,#0x218+var_1E8]
+.text:00004D6E                 BLX     R4							@SetIntField
+.text:00004D70                 LDR     R2, [R5]
+.text:00004D72                 MOVS    R1, #0x1B4
+.text:00004D76                 LDR     R4, [R2,R1]
+.text:00004D78                 LDRB    R3, [R7,#6]
+.text:00004D7A                 MOVS    R0, R5
+.text:00004D7C                 MOVS    R1, R6
+.text:00004D7E                 LDR     R2, [SP,#0x218+var_1E0]
+.text:00004D80                 BLX     R4							@SetIntField
+.text:00004D82                 LDR     R2, [R5]
+.text:00004D84                 MOVS    R1, #0x1B4
+.text:00004D88                 LDR     R4, [R2,R1]
+.text:00004D8A                 LDRB    R3, [R7,#7]
+.text:00004D8C                 MOVS    R0, R5
+.text:00004D8E                 MOVS    R1, R6
+.text:00004D90                 LDR     R2, [SP,#0x218+var_1DC]
+.text:00004D92                 BLX     R4							@SetIntField
+.text:00004D94                 LDR     R2, [R5]
+.text:00004D96                 MOVS    R1, #0x1B4
+.text:00004D9A                 LDR     R4, [R2,R1]
+.text:00004D9C                 LDRB    R3, [R7,#3]
+.text:00004D9E                 MOVS    R0, R5
+.text:00004DA0                 MOVS    R1, R6
+.text:00004DA2                 LDR     R2, [SP,#0x218+var_1D8]
+.text:00004DA4                 BLX     R4							@SetIntField
+.text:00004DA6                 LDR     R2, [R5]
+.text:00004DA8                 MOVS    R3, #0x1A0
+.text:00004DAC                 LDR     R4, [R2,R3]
+.text:00004DAE                 MOVS    R0, R5
+.text:00004DB0                 MOVS    R1, R6
+.text:00004DB2                 LDR     R2, [SP,#0x218+var_1D4]
+.text:00004DB4                 LDR     R3, [SP,#0x218+var_20C]
+.text:00004DB6                 BLX     R4							@SetObjectField
+.text:00004DB8                 LDR     R3, [R5]
+.text:00004DBA                 LDR     R2, [SP,#0x218+var_1C8]
+.text:00004DBC                 LDR     R1, [SP,#0x218+var_1D0]
+.text:00004DBE                 ADDS    R3, #0x94
+.text:00004DC0                 LDR     R4, [R3]
+.text:00004DC2                 MOVS    R0, R5
+.text:00004DC4                 MOVS    R3, R6
+.text:00004DC6                 BLX     R4							@CallBooleanMethod
+.text:00004DC8                 LDR     R3, [R5]
+.text:00004DCA                 MOVS    R0, R5
+.text:00004DCC                 MOVS    R1, R6
+.text:00004DCE                 LDR     R3, [R3,#0x5C]
+.text:00004DD0                 BLX     R3							@DeleteLocalRef
+.text:00004DD2                 LDR     R3, [R5]
+.text:00004DD4                 MOVS    R0, R5
+.text:00004DD6                 LDR     R1, [SP,#0x218+var_20C]
+.text:00004DD8                 LDR     R3, [R3,#0x5C]
+.text:00004DDA                 BLX     R3							@DeleteLocalRef
+.text:00004DDC                 LDR     R4, [SP,#0x218+var_208]
+.text:00004DDE                 ADDS    R7, #8
+.text:00004DE0                 ADDS    R4, #1
+.text:00004DE2                 STR     R4, [SP,#0x218+var_208]
+.text:00004DE4
+.text:00004DE4 loc_4DE4                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+228j
+.text:00004DE4                 LDR     R3, [SP,#0x218+var_164]
+.text:00004DE6                 LDR     R4, [SP,#0x218+var_208]
+.text:00004DE8                 CMP     R4, R3
+.text:00004DEA                 BCS     loc_4DEE
+.text:00004DEC                 B       loc_4CD0
+.text:00004DEE ; ---------------------------------------------------------------------------
+.text:00004DEE ; ---------------------------------------------------------------------------
+.text:00004DEE
+.text:00004DEE loc_4DEE                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3AEj
+.text:00004DEE                 LDR     R3, [R5]
+.text:00004DF0                 LDR     R1, =(aCnComBroadli_3 - 0x4DFA)
+.text:00004DF2                 MOVS    R0, R5
+.text:00004DF4                 LDR     R3, [R3,#0x18]
+.text:00004DF6                 ADD     R1, PC          ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00004DF8                 BLX     R3							@FindClass
+.text:00004DFA                 LDR     R4, =(aInit - 0x4E04)
+.text:00004DFC                 LDR     R3, [R5]
+.text:00004DFE                 STR     R0, [SP,#0x218+var_1F8]
+.text:00004E00                 ADD     R4, PC          ; "<init>"
+.text:00004E02                 STR     R4, [SP,#0x218+var_20C]
+.text:00004E04                 LDR     R4, =(aV - 0x4E0E)
+.text:00004E06                 ADDS    R3, #8
+.text:00004E08                 LDR     R1, [SP,#0x218+var_1F8]
+.text:00004E0A                 ADD     R4, PC          ; "()V"
+.text:00004E0C                 STR     R4, [SP,#0x218+var_204]
+.text:00004E0E                 LDR     R2, [SP,#0x218+var_20C]
+.text:00004E10                 LDR     R4, [R3,#0x7C]
+.text:00004E12                 MOVS    R0, R5
+.text:00004E14                 LDR     R3, [SP,#0x218+var_204]
+.text:00004E16                 BLX     R4							@GetMethodID
+.text:00004E18                 LDR     R6, =(aI - 0x4E22)
+.text:00004E1A                 LDR     R3, [R5]
+.text:00004E1C                 LDR     R2, =(aOnenable - 0x4E2C)
+.text:00004E1E                 ADD     R6, PC          ; "I"
+.text:00004E20                 ADDS    R3, #0xFC
+.text:00004E22                 LDR     R4, [R3,#0x7C]
+.text:00004E24                 STR     R0, [SP,#0x218+var_1A0]
+.text:00004E26                 MOVS    R3, R6
+.text:00004E28                 ADD     R2, PC          ; "onEnable"
+.text:00004E2A                 LDR     R1, [SP,#0x218+var_1F8]
+.text:00004E2C                 MOVS    R0, R5
+.text:00004E2E                 BLX     R4							@GetFieldID
+.text:00004E30                 LDR     R7, =(aLcnComBroadlin - 0x4E3A)
+.text:00004E32                 LDR     R3, [R5]
+.text:00004E34                 LDR     R2, =(aOntime - 0x4E44)
+.text:00004E36                 ADD     R7, PC          ; "Lcn/com/broadlink/blnetworkdataparse/Ti"...
+.text:00004E38                 ADDS    R3, #0xFC
+.text:00004E3A                 LDR     R4, [R3,#0x7C]
+.text:00004E3C                 STR     R0, [SP,#0x218+var_19C]
+.text:00004E3E                 MOVS    R3, R7
+.text:00004E40                 ADD     R2, PC          ; "onTime"
+.text:00004E42                 LDR     R1, [SP,#0x218+var_1F8]
+.text:00004E44                 MOVS    R0, R5
+.text:00004E46                 BLX     R4							@GetFieldID
+.text:00004E48                 LDR     R3, [R5]
+.text:00004E4A                 LDR     R2, =(aOffenable - 0x4E56)
+.text:00004E4C                 STR     R0, [SP,#0x218+var_198]
+.text:00004E4E                 ADDS    R3, #0xFC
+.text:00004E50                 LDR     R4, [R3,#0x7C]
+.text:00004E52                 ADD     R2, PC          ; "offEnable"
+.text:00004E54                 MOVS    R3, R6
+.text:00004E56                 LDR     R1, [SP,#0x218+var_1F8]
+.text:00004E58                 MOVS    R0, R5
+.text:00004E5A                 BLX     R4							@GetFieldID
+.text:00004E5C                 LDR     R3, [R5]
+.text:00004E5E                 LDR     R2, =(aOfftime - 0x4E68)
+.text:00004E60                 STR     R0, [SP,#0x218+var_194]
+.text:00004E62                 ADDS    R3, #0xFC
+.text:00004E64                 ADD     R2, PC          ; "offTime"
+.text:00004E66                 LDR     R4, [R3,#0x7C]
+.text:00004E68                 LDR     R1, [SP,#0x218+var_1F8]
+.text:00004E6A                 MOVS    R3, R7
+.text:00004E6C                 MOVS    R0, R5
+.text:00004E6E                 BLX     R4							@GetFieldID
+.text:00004E70                 LDR     R3, [R5]
+.text:00004E72                 LDR     R1, =(aCnComBroadli_4 - 0x4E7C)
+.text:00004E74                 STR     R0, [SP,#0x218+var_190]
+.text:00004E76                 LDR     R3, [R3,#0x18]
+.text:00004E78                 ADD     R1, PC          ; "cn/com/broadlink/blnetworkdataparse/Tim"...
+.text:00004E7A                 MOVS    R0, R5
+.text:00004E7C                 BLX     R3							@FindClass
+.text:00004E7E                 LDR     R3, [R5]
+.text:00004E80                 STR     R0, [SP,#0x218+var_208]
+.text:00004E82                 LDR     R1, [SP,#0x218+var_208]
+.text:00004E84                 ADDS    R3, #8
+.text:00004E86                 LDR     R4, [R3,#0x7C]
+.text:00004E88                 LDR     R2, [SP,#0x218+var_20C]
+.text:00004E8A                 LDR     R3, [SP,#0x218+var_204]
+.text:00004E8C                 MOVS    R0, R5
+.text:00004E8E                 BLX     R4							@GetMethodID
+.text:00004E90                 LDR     R3, [R5]
+.text:00004E92                 LDR     R2, =(aYear - 0x4E9E)
+.text:00004E94                 STR     R0, [SP,#0x218+var_1E0]
+.text:00004E96                 ADDS    R3, #0xFC
+.text:00004E98                 LDR     R4, [R3,#0x7C]
+.text:00004E9A                 ADD     R2, PC          ; "year"
+.text:00004E9C                 MOVS    R3, R6
+.text:00004E9E                 LDR     R1, [SP,#0x218+var_208]
+.text:00004EA0                 MOVS    R0, R5
+.text:00004EA2                 BLX     R4							@GetFieldID
+.text:00004EA4                 LDR     R3, [R5]
+.text:00004EA6                 LDR     R2, =(aMonth - 0x4EB2)
+.text:00004EA8                 STR     R0, [SP,#0x218+var_1DC]
+.text:00004EAA                 ADDS    R3, #0xFC
+.text:00004EAC                 LDR     R4, [R3,#0x7C]
+.text:00004EAE                 ADD     R2, PC          ; "month"
+.text:00004EB0                 MOVS    R3, R6
+.text:00004EB2                 LDR     R1, [SP,#0x218+var_208]
+.text:00004EB4                 MOVS    R0, R5
+.text:00004EB6                 BLX     R4							@GetFieldID
+.text:00004EB8                 LDR     R3, [R5]
+.text:00004EBA                 LDR     R2, =(aDay - 0x4EC6)
+.text:00004EBC                 STR     R0, [SP,#0x218+var_1D8]
+.text:00004EBE                 ADDS    R3, #0xFC
+.text:00004EC0                 LDR     R4, [R3,#0x7C]
+.text:00004EC2                 ADD     R2, PC          ; "day"
+.text:00004EC4                 MOVS    R3, R6
+.text:00004EC6                 LDR     R1, [SP,#0x218+var_208]
+.text:00004EC8                 MOVS    R0, R5
+.text:00004ECA                 BLX     R4							@GetFieldID
+.text:00004ECC                 LDR     R3, [R5]
+.text:00004ECE                 LDR     R2, =(aHour - 0x4EDA)
+.text:00004ED0                 STR     R0, [SP,#0x218+var_1D4]
+.text:00004ED2                 ADDS    R3, #0xFC
+.text:00004ED4                 LDR     R4, [R3,#0x7C]
+.text:00004ED6                 ADD     R2, PC          ; "hour"
+.text:00004ED8                 MOVS    R3, R6
+.text:00004EDA                 LDR     R1, [SP,#0x218+var_208]
+.text:00004EDC                 MOVS    R0, R5
+.text:00004EDE                 BLX     R4							@GetFieldID
+.text:00004EE0                 LDR     R3, [R5]
+.text:00004EE2                 LDR     R2, =(aMinute - 0x4EEE)
+.text:00004EE4                 STR     R0, [SP,#0x218+var_1C4]
+.text:00004EE6                 ADDS    R3, #0xFC
+.text:00004EE8                 LDR     R4, [R3,#0x7C]
+.text:00004EEA                 ADD     R2, PC          ; "minute"
+.text:00004EEC                 MOVS    R3, R6
+.text:00004EEE                 LDR     R1, [SP,#0x218+var_208]
+.text:00004EF0                 MOVS    R0, R5
+.text:00004EF2                 BLX     R4							@GetFieldID
+.text:00004EF4                 LDR     R3, [R5]
+.text:00004EF6                 LDR     R2, =(aSecond - 0x4F02)
+.text:00004EF8                 STR     R0, [SP,#0x218+var_1C0]
+.text:00004EFA                 ADDS    R3, #0xFC
+.text:00004EFC                 LDR     R4, [R3,#0x7C]
+.text:00004EFE                 ADD     R2, PC          ; "second"
+.text:00004F00                 MOVS    R3, R6
+.text:00004F02                 LDR     R1, [SP,#0x218+var_208]
+.text:00004F04                 MOVS    R0, R5
+.text:00004F06                 BLX     R4							@GetFieldID
+.text:00004F08                 LDR     R3, [R5]
+.text:00004F0A                 LDR     R2, =(aWeekday - 0x4F16)
+.text:00004F0C                 STR     R0, [SP,#0x218+var_1BC]
+.text:00004F0E                 ADDS    R3, #0xFC
+.text:00004F10                 LDR     R4, [R3,#0x7C]
+.text:00004F12                 ADD     R2, PC          ; "weekday"
+.text:00004F14                 MOVS    R3, R6
+.text:00004F16                 MOVS    R0, R5
+.text:00004F18                 LDR     R1, [SP,#0x218+var_208]
+.text:00004F1A                 BLX     R4							@GetFieldID
+.text:00004F1C                 MOVS    R6, #0xDA
+.text:00004F1E                 MOVS    R4, #0
+.text:00004F20                 STR     R0, [SP,#0x218+var_1B8]
+.text:00004F22                 ADD     R7, SP, #0x218+s
+.text:00004F24                 STR     R4, [SP,#0x218+var_1EC]
+.text:00004F26                 LSLS    R6, R6, #1
+.text:00004F28                 B       loc_511C
+.text:00004F28 ; ---------------------------------------------------------------------------
+.text:00004F2A                 ALIGN 4
+.text:00004F2C off_4F2C        DCD aCnComBroadli_3 - 0x4DFA
+.text:00004F2C                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3B4r
+.text:00004F2C                                         ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00004F30 off_4F30        DCD aInit - 0x4E04      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3BEr
+.text:00004F30                                         ; "<init>"
+.text:00004F34 off_4F34        DCD aV - 0x4E0E         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3C8r
+.text:00004F34                                         ; "()V"
+.text:00004F38 off_4F38        DCD aI - 0x4E22         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3DCr
+.text:00004F38                                         ; "I"
+.text:00004F3C off_4F3C        DCD aOnenable - 0x4E2C  ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3E0r
+.text:00004F3C                                         ; "onEnable"
+.text:00004F40 off_4F40        DCD aLcnComBroadlin - 0x4E3A
+.text:00004F40                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3F4r
+.text:00004F40                                         ; "Lcn/com/broadlink/blnetworkdataparse/Ti"...
+.text:00004F44 off_4F44        DCD aOntime - 0x4E44    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3F8r
+.text:00004F44                                         ; "onTime"
+.text:00004F48 off_4F48        DCD aOffenable - 0x4E56 ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+40Er
+.text:00004F48                                         ; "offEnable"
+.text:00004F4C off_4F4C        DCD aOfftime - 0x4E68   ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+422r
+.text:00004F4C                                         ; "offTime"
+.text:00004F50 off_4F50        DCD aCnComBroadli_4 - 0x4E7C
+.text:00004F50                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+436r
+.text:00004F50                                         ; "cn/com/broadlink/blnetworkdataparse/Tim"...
+.text:00004F54 off_4F54        DCD aYear - 0x4E9E      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+456r
+.text:00004F54                                         ; "year"
+.text:00004F58 off_4F58        DCD aMonth - 0x4EB2     ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+46Ar
+.text:00004F58                                         ; "month"
+.text:00004F5C off_4F5C        DCD aDay - 0x4EC6       ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+47Er
+.text:00004F5C                                         ; "day"
+.text:00004F60 off_4F60        DCD aHour - 0x4EDA      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+492r
+.text:00004F60                                         ; "hour"
+.text:00004F64 off_4F64        DCD aMinute - 0x4EEE    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+4A6r
+.text:00004F64                                         ; "minute"
+.text:00004F68 off_4F68        DCD aSecond - 0x4F02    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+4BAr
+.text:00004F68                                         ; "second"
+.text:00004F6C off_4F6C        DCD aWeekday - 0x4F16   ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+4CEr
+.text:00004F6C                                         ; "weekday"
+.text:00004F70 ; ---------------------------------------------------------------------------
+.text:00004F70
+.text:00004F70 loc_4F70                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+6ECj
+.text:00004F70                 LDR     R3, [R4,#0x70]
+.text:00004F72                 LDR     R1, [SP,#0x218+var_1F8]
+.text:00004F74                 LDR     R2, [SP,#0x218+var_1A0]
+.text:00004F76                 MOVS    R0, R5
+.text:00004F78                 BLX     R3							@NewObject
+.text:00004F7A                 LDR     R3, [R5]
+.text:00004F7C                 STR     R0, [SP,#0x218+var_1F0]
+.text:00004F7E                 LDR     R1, [SP,#0x218+var_208]
+.text:00004F80                 LDR     R3, [R3,#0x70]
+.text:00004F82                 LDR     R2, [SP,#0x218+var_1E0]
+.text:00004F84                 MOVS    R0, R5
+.text:00004F86                 BLX     R3							@NewObject
+.text:00004F88                 LDR     R3, [R5]
+.text:00004F8A                 STR     R0, [SP,#0x218+var_20C]
+.text:00004F8C                 LDR     R1, [SP,#0x218+var_208]
+.text:00004F8E                 LDR     R3, [R3,#0x70]
+.text:00004F90                 LDR     R2, [SP,#0x218+var_1E0]
+.text:00004F92                 MOVS    R0, R5
+.text:00004F94                 BLX     R3							@NewObject
+.text:00004F96                 LDR     R4, [SP,#0x218+var_1EC]
+.text:00004F98                 MOVS    R3, #0x18
+.text:00004F9A                 LDR     R2, [R5]
+.text:00004F9C                 MULS    R3, R4
+.text:00004F9E                 ADD     R4, SP, #0x218+s
+.text:00004FA0                 ADDS    R4, R4, R3
+.text:00004FA2                 MOVS    R3, R4
+.text:00004FA4                 STR     R0, [SP,#0x218+var_204]
+.text:00004FA6                 STR     R4, [SP,#0x218+var_1E8]
+.text:00004FA8                 ADDS    R3, #0x88
+.text:00004FAA                 LDR     R4, [R2,R6]
+.text:00004FAC                 LDRH    R3, [R3,#8]
+.text:00004FAE                 MOVS    R0, R5
+.text:00004FB0                 LDR     R1, [SP,#0x218+var_20C]
+.text:00004FB2                 LDR     R2, [SP,#0x218+var_1DC]
+.text:00004FB4                 BLX     R4							@SetIntField
+.text:00004FB6                 LDR     R2, [R5]
+.text:00004FB8                 MOVS    R3, R7
+.text:00004FBA                 ADDS    R3, #0x7F
+.text:00004FBC                 LDR     R4, [R2,R6]
+.text:00004FBE                 LDRB    R3, [R3]
+.text:00004FC0                 MOVS    R0, R5
+.text:00004FC2                 LDR     R1, [SP,#0x218+var_20C]
+.text:00004FC4                 LDR     R2, [SP,#0x218+var_1D8]
+.text:00004FC6                 BLX     R4							@SetIntField
+.text:00004FC8                 LDR     R2, [R5]
+.text:00004FCA                 MOVS    R3, R7
+.text:00004FCC                 ADDS    R3, #0x7E
+.text:00004FCE                 LDR     R4, [R2,R6]
+.text:00004FD0                 LDRB    R3, [R3]
+.text:00004FD2                 MOVS    R0, R5
+.text:00004FD4                 LDR     R1, [SP,#0x218+var_20C]
+.text:00004FD6                 LDR     R2, [SP,#0x218+var_1D4]
+.text:00004FD8                 BLX     R4							@SetIntField
+.text:00004FDA                 LDR     R2, [R5]
+.text:00004FDC                 MOVS    R3, R7
+.text:00004FDE                 ADDS    R3, #0x7C
+.text:00004FE0                 LDR     R4, [R2,R6]
+.text:00004FE2                 LDRB    R3, [R3]
+.text:00004FE4                 MOVS    R0, R5
+.text:00004FE6                 LDR     R1, [SP,#0x218+var_20C]
+.text:00004FE8                 LDR     R2, [SP,#0x218+var_1C4]
+.text:00004FEA                 BLX     R4							@SetIntField
+.text:00004FEC                 LDR     R2, [R5]
+.text:00004FEE                 MOVS    R3, R7
+.text:00004FF0                 ADDS    R3, #0x7B
+.text:00004FF2                 LDR     R4, [R2,R6]
+.text:00004FF4                 LDRB    R3, [R3]
+.text:00004FF6                 MOVS    R0, R5
+.text:00004FF8                 LDR     R1, [SP,#0x218+var_20C]
+.text:00004FFA                 LDR     R2, [SP,#0x218+var_1C0]
+.text:00004FFC                 BLX     R4							@SetIntField
+.text:00004FFE                 LDR     R2, [R5]
+.text:00005000                 MOVS    R3, R7
+.text:00005002                 ADDS    R3, #0x7A
+.text:00005004                 LDR     R4, [R2,R6]
+.text:00005006                 LDRB    R3, [R3]
+.text:00005008                 MOVS    R0, R5
+.text:0000500A                 LDR     R1, [SP,#0x218+var_20C]
+.text:0000500C                 LDR     R2, [SP,#0x218+var_1BC]
+.text:0000500E                 BLX     R4							@SetIntField
+.text:00005010                 LDR     R2, [R5]
+.text:00005012                 MOVS    R3, R7
+.text:00005014                 ADDS    R3, #0x7D
+.text:00005016                 LDR     R4, [R2,R6]
+.text:00005018                 LDRB    R3, [R3]
+.text:0000501A                 MOVS    R0, R5
+.text:0000501C                 LDR     R1, [SP,#0x218+var_20C]
+.text:0000501E                 LDR     R2, [SP,#0x218+var_1B8]
+.text:00005020                 BLX     R4							@SetIntField
+.text:00005022                 LDR     R3, [SP,#0x218+var_1E8]
+.text:00005024                 LDR     R2, [R5]
+.text:00005026                 MOVS    R0, R5
+.text:00005028                 ADDS    R3, #0x90
+.text:0000502A                 LDR     R4, [R2,R6]
+.text:0000502C                 LDRH    R3, [R3,#0xC]
+.text:0000502E                 LDR     R1, [SP,#0x218+var_204]
+.text:00005030                 LDR     R2, [SP,#0x218+var_1DC]
+.text:00005032                 BLX     R4							@SetIntField
+.text:00005034                 LDR     R2, [R5]
+.text:00005036                 MOVS    R3, R7
+.text:00005038                 ADDS    R3, #0x8B
+.text:0000503A                 LDR     R4, [R2,R6]
+.text:0000503C                 LDRB    R3, [R3]
+.text:0000503E                 MOVS    R0, R5
+.text:00005040                 LDR     R1, [SP,#0x218+var_204]
+.text:00005042                 LDR     R2, [SP,#0x218+var_1D8]
+.text:00005044                 BLX     R4							@SetIntField
+.text:00005046                 LDR     R2, [R5]
+.text:00005048                 MOVS    R3, R7
+.text:0000504A                 ADDS    R3, #0x8A
+.text:0000504C                 LDR     R4, [R2,R6]
+.text:0000504E                 LDRB    R3, [R3]
+.text:00005050                 MOVS    R0, R5
+.text:00005052                 LDR     R1, [SP,#0x218+var_204]
+.text:00005054                 LDR     R2, [SP,#0x218+var_1D4]
+.text:00005056                 BLX     R4							@SetIntField
+.text:00005058                 LDR     R2, [R5]
+.text:0000505A                 MOVS    R3, R7
+.text:0000505C                 ADDS    R3, #0x88
+.text:0000505E                 LDR     R4, [R2,R6]
+.text:00005060                 LDRB    R3, [R3]
+.text:00005062                 MOVS    R0, R5
+.text:00005064                 LDR     R1, [SP,#0x218+var_204]
+.text:00005066                 LDR     R2, [SP,#0x218+var_1C4]
+.text:00005068                 BLX     R4							@SetIntField
+.text:0000506A                 LDR     R2, [R5]
+.text:0000506C                 MOVS    R3, R7
+.text:0000506E                 ADDS    R3, #0x87
+.text:00005070                 LDR     R4, [R2,R6]
+.text:00005072                 LDRB    R3, [R3]
+.text:00005074                 MOVS    R0, R5
+.text:00005076                 LDR     R1, [SP,#0x218+var_204]
+.text:00005078                 LDR     R2, [SP,#0x218+var_1C0]
+.text:0000507A                 BLX     R4							@SetIntField
+.text:0000507C                 LDR     R2, [R5]
+.text:0000507E                 MOVS    R3, R7
+.text:00005080                 ADDS    R3, #0x86
+.text:00005082                 LDR     R4, [R2,R6]
+.text:00005084                 LDRB    R3, [R3]
+.text:00005086                 MOVS    R0, R5
+.text:00005088                 LDR     R1, [SP,#0x218+var_204]
+.text:0000508A                 LDR     R2, [SP,#0x218+var_1BC]
+.text:0000508C                 BLX     R4							@SetIntField
+.text:0000508E                 LDR     R2, [R5]
+.text:00005090                 MOVS    R3, R7
+.text:00005092                 ADDS    R3, #0x89
+.text:00005094                 LDR     R4, [R2,R6]
+.text:00005096                 LDRB    R3, [R3]
+.text:00005098                 MOVS    R0, R5
+.text:0000509A                 LDR     R1, [SP,#0x218+var_204]
+.text:0000509C                 LDR     R2, [SP,#0x218+var_1B8]
+.text:0000509E                 BLX     R4							@SetIntField
+.text:000050A0                 LDR     R3, [SP,#0x218+var_1E8]
+.text:000050A2                 LDR     R2, [R5]
+.text:000050A4                 MOVS    R0, R5
+.text:000050A6                 ADDS    R3, #0x98
+.text:000050A8                 LDR     R4, [R2,R6]
+.text:000050AA                 LDR     R3, [R3]
+.text:000050AC                 LDR     R1, [SP,#0x218+var_1F0]
+.text:000050AE                 LDR     R2, [SP,#0x218+var_19C]
+.text:000050B0                 BLX     R4							@SetIntField
+.text:000050B2                 LDR     R3, [SP,#0x218+var_1E8]
+.text:000050B4                 LDR     R2, [R5]
+.text:000050B6                 MOVS    R0, R5
+.text:000050B8                 ADDS    R3, #0xA4
+.text:000050BA                 LDR     R4, [R2,R6]
+.text:000050BC                 LDR     R3, [R3]
+.text:000050BE                 LDR     R1, [SP,#0x218+var_1F0]
+.text:000050C0                 LDR     R2, [SP,#0x218+var_194]
+.text:000050C2                 BLX     R4							@SetIntField
+.text:000050C4                 LDR     R3, [R5]
+.text:000050C6                 MOVS    R1, #0x1A0
+.text:000050CA                 LDR     R4, [R3,R1]
+.text:000050CC                 MOVS    R0, R5
+.text:000050CE                 LDR     R1, [SP,#0x218+var_1F0]
+.text:000050D0                 LDR     R2, [SP,#0x218+var_198]
+.text:000050D2                 LDR     R3, [SP,#0x218+var_20C]
+.text:000050D4                 BLX     R4							@SetObjectField
+.text:000050D6                 LDR     R3, [R5]
+.text:000050D8                 MOVS    R2, #0x1A0
+.text:000050DC                 LDR     R4, [R3,R2]
+.text:000050DE                 MOVS    R0, R5
+.text:000050E0                 LDR     R1, [SP,#0x218+var_1F0]
+.text:000050E2                 LDR     R2, [SP,#0x218+var_190]
+.text:000050E4                 LDR     R3, [SP,#0x218+var_204]
+.text:000050E6                 BLX     R4							@SetObjectField
+.text:000050E8                 LDR     R3, [R5]
+.text:000050EA                 LDR     R2, [SP,#0x218+var_1C8]
+.text:000050EC                 LDR     R1, [SP,#0x218+var_1CC]
+.text:000050EE                 ADDS    R3, #0x94
+.text:000050F0                 LDR     R4, [R3]
+.text:000050F2                 MOVS    R0, R5
+.text:000050F4                 LDR     R3, [SP,#0x218+var_1F0]
+.text:000050F6                 BLX     R4							@CallBooleanMethod
+.text:000050F8                 LDR     R3, [R5]
+.text:000050FA                 MOVS    R0, R5
+.text:000050FC                 LDR     R1, [SP,#0x218+var_20C]
+.text:000050FE                 LDR     R3, [R3,#0x5C]
+.text:00005100                 BLX     R3							@DeleteLocalRef
+.text:00005102                 LDR     R3, [R5]
+.text:00005104                 MOVS    R0, R5
+.text:00005106                 LDR     R1, [SP,#0x218+var_204]
+.text:00005108                 LDR     R3, [R3,#0x5C]
+.text:0000510A                 BLX     R3							@DeleteLocalRef
+.text:0000510C                 LDR     R3, [R5]
+.text:0000510E                 MOVS    R0, R5
+.text:00005110                 LDR     R1, [SP,#0x218+var_1F0]
+.text:00005112                 LDR     R3, [R3,#0x5C]
+.text:00005114                 BLX     R3							@DeleteLocalRef
+.text:00005116                 LDR     R4, [SP,#0x218+var_1EC]
+.text:00005118                 ADDS    R4, #1
+.text:0000511A                 STR     R4, [SP,#0x218+var_1EC]
+.text:0000511C
+.text:0000511C loc_511C                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+4ECj
+.text:0000511C                 LDR     R3, [SP,#0x218+var_E0]
+.text:0000511E                 LDR     R1, [SP,#0x218+var_1EC]
+.text:00005120                 ADDS    R7, #0x18
+.text:00005122                 LDR     R4, [R5]
+.text:00005124                 CMP     R1, R3
+.text:00005126                 BCS     loc_512A
+.text:00005128                 B       loc_4F70
+.text:0000512A ; ---------------------------------------------------------------------------
+.text:0000512A
+.text:0000512A loc_512A                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+6EAj
+.text:0000512A                 ADD     R6, SP, #0x218+var_120
+.text:0000512C                 MOVS    R0, R6          ; s
+.text:0000512E                 BLX     strlen
+.text:00005132                 MOVS    R3, #0x2C0
+.text:00005136                 MOVS    R1, R0
+.text:00005138                 LDR     R3, [R4,R3]
+.text:0000513A                 MOVS    R0, R5
+.text:0000513C                 BLX     R3							@NewByteArray
+.text:0000513E                 MOVS    R7, R0
+.text:00005140                 MOVS    R0, R6          ; s
+.text:00005142                 BLX     strlen
+.text:00005146                 LDR     R2, [R5]
+.text:00005148                 MOVS    R1, #0xD0
+.text:0000514A                 STR     R6, [SP,#0x218+var_218]
+.text:0000514C                 LSLS    R1, R1, #2
+.text:0000514E                 LDR     R4, [R2,R1]
+.text:00005150                 MOVS    R3, R0
+.text:00005152                 MOVS    R1, R7
+.text:00005154                 MOVS    R0, R5
+.text:00005156                 MOVS    R2, #0
+.text:00005158                 BLX     R4							@CallLongMethod
+.text:0000515A                 LDR     R2, [R5]
+.text:0000515C                 MOVS    R1, #0x1B4
+.text:00005160                 LDR     R4, [R2,R1]
+.text:00005162                 LDR     R3, [SP,#0x218+var_168]
+.text:00005164                 MOVS    R0, R5
+.text:00005166                 LDR     R1, [SP,#0x218+var_1FC]
+.text:00005168                 LDR     R2, [SP,#0x218+var_1B4]
+.text:0000516A                 BLX     R4							@SetIntField
+.text:0000516C                 LDR     R3, [R5]
+.text:0000516E                 MOVS    R2, #0x1A0
+.text:00005172                 LDR     R4, [R3,R2]
+.text:00005174                 MOVS    R0, R5
+.text:00005176                 LDR     R1, [SP,#0x218+var_1FC]
+.text:00005178                 LDR     R2, [SP,#0x218+var_1B0]
+.text:0000517A                 MOVS    R3, R7
+.text:0000517C                 BLX     R4							@SetObjectField
+.text:0000517E                 LDR     R2, [R5]
+.text:00005180                 MOV     R3, SP
+.text:00005182                 ADDS    R3, #0x38
+.text:00005184                 MOVS    R1, #0x1B4
+.text:00005188                 ADDS    R3, #0xFF
+.text:0000518A                 LDR     R4, [R2,R1]
+.text:0000518C                 LDRB    R3, [R3]
+.text:0000518E                 MOVS    R0, R5
+.text:00005190                 LDR     R1, [SP,#0x218+var_1FC]
+.text:00005192                 LDR     R2, [SP,#0x218+var_1AC]
+.text:00005194                 BLX     R4							@SetIntField
+.text:00005196                 LDR     R3, [R5]
+.text:00005198                 MOVS    R2, #0x1A0
+.text:0000519C                 LDR     R4, [R3,R2]
+.text:0000519E                 MOVS    R0, R5
+.text:000051A0                 LDR     R1, [SP,#0x218+var_1FC]
+.text:000051A2                 LDR     R2, [SP,#0x218+var_1A8]
+.text:000051A4                 LDR     R3, [SP,#0x218+var_1D0]
+.text:000051A6                 BLX     R4							@SetObjectField
+.text:000051A8                 LDR     R3, [R5]
+.text:000051AA                 MOVS    R1, #0x1A0
+.text:000051AE                 LDR     R2, [SP,#0x218+var_1A4]
+.text:000051B0                 LDR     R4, [R3,R1]
+.text:000051B2                 MOVS    R0, R5
+.text:000051B4                 LDR     R1, [SP,#0x218+var_1FC]
+.text:000051B6                 LDR     R3, [SP,#0x218+var_1CC]
+.text:000051B8                 BLX     R4							@SetObjectField
+.text:000051BA                 LDR     R3, [R5]
+.text:000051BC                 MOVS    R0, R5
+.text:000051BE                 MOVS    R1, R7
+.text:000051C0                 LDR     R3, [R3,#0x5C]
+.text:000051C2                 BLX     R3							@DeleteLocalRef
+.text:000051C4                 LDR     R3, [R5]
+.text:000051C6                 MOVS    R0, R5
+.text:000051C8                 LDR     R1, [SP,#0x218+var_1D0]
+.text:000051CA                 LDR     R3, [R3,#0x5C]
+.text:000051CC                 BLX     R3							@DeleteLocalRef
+.text:000051CE                 LDR     R3, [R5]
+.text:000051D0                 MOVS    R0, R5
+.text:000051D2                 LDR     R1, [SP,#0x218+var_1CC]
+.text:000051D4                 LDR     R3, [R3,#0x5C]
+.text:000051D6                 BLX     R3							@DeleteLocalRef
+.text:000051D8                 LDR     R3, [R5]
+.text:000051DA                 MOVS    R0, R5
+.text:000051DC                 LDR     R1, [SP,#0x218+var_1F4]
+.text:000051DE                 LDR     R3, [R3,#0x5C]
+.text:000051E0                 BLX     R3							@DeleteLocalRef
+.text:000051E2                 LDR     R3, [R5]
+.text:000051E4                 MOVS    R0, R5
+.text:000051E6                 LDR     R1, [SP,#0x218+var_1E4]
+.text:000051E8                 LDR     R3, [R3,#0x5C]
+.text:000051EA                 BLX     R3							@DeleteLocalRef
+.text:000051EC                 LDR     R3, [R5]
+.text:000051EE                 MOVS    R0, R5
+.text:000051F0                 LDR     R1, [SP,#0x218+var_200]
+.text:000051F2                 LDR     R3, [R3,#0x5C]
+.text:000051F4                 BLX     R3							@DeleteLocalRef
+.text:000051F6                 LDR     R3, [R5]
+.text:000051F8                 MOVS    R0, R5
+.text:000051FA                 LDR     R1, [SP,#0x218+var_1F8]
+.text:000051FC                 LDR     R3, [R3,#0x5C]
+.text:000051FE                 BLX     R3							@DeleteLocalRef
+.text:00005200                 LDR     R3, [R5]
+.text:00005202                 MOVS    R0, R5
+.text:00005204                 LDR     R1, [SP,#0x218+var_208]
+.text:00005206                 LDR     R3, [R3,#0x5C]
+.text:00005208                 BLX     R3							@DeleteLocalRef
+.text:0000520A
+.text:0000520A loc_520A                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+3Cj
+.text:0000520A                 LDR     R4, [SP,#0x218+var_18C]
+.text:0000520C                 LDR     R2, [SP,#0x218+var_1C]
+.text:0000520E                 LDR     R0, [SP,#0x218+var_1FC]
+.text:00005210                 LDR     R3, [R4]
+.text:00005212                 CMP     R2, R3
+.text:00005214                 BEQ     loc_521A
+.text:00005216                 BLX     __stack_chk_fail
+.text:0000521A ; ---------------------------------------------------------------------------
+.text:0000521A
+.text:0000521A loc_521A                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse+7D8j
+.text:0000521A                 ADD     SP, SP, #0x1FC
+.text:0000521C                 POP     {R1,R2,R4-R7,PC}
+.text:0000521C ; End of function Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1result_1parse
+.text:0000521C
+.text:0000521C ; ---------------------------------------------------------------------------

@@ -1,0 +1,1014 @@
+.text:00005254 ; =============== S U B R O U T I N E =======================================
+.text:00005254
+.text:00005254
+.text:00005254                 EXPORT Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes
+.text:00005254 Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes
+.text:00005254
+.text:00005254 var_1D0         = -0x1D0
+.text:00005254 var_1C8         = -0x1C8
+.text:00005254 var_1C4         = -0x1C4
+.text:00005254 var_1C0         = -0x1C0
+.text:00005254 var_1BC         = -0x1BC
+.text:00005254 var_1B8         = -0x1B8
+.text:00005254 var_1B4         = -0x1B4
+.text:00005254 var_1B0         = -0x1B0
+.text:00005254 var_1AC         = -0x1AC
+.text:00005254 var_1A8         = -0x1A8
+.text:00005254 var_1A4         = -0x1A4
+.text:00005254 var_1A0         = -0x1A0
+.text:00005254 var_19C         = -0x19C
+.text:00005254 var_198         = -0x198
+.text:00005254 var_194         = -0x194
+.text:00005254 var_190         = -0x190
+.text:00005254 var_18C         = -0x18C
+.text:00005254 var_188         = -0x188
+.text:00005254 var_184         = -0x184
+.text:00005254 var_180         = -0x180
+.text:00005254 var_17C         = -0x17C
+.text:00005254 var_178         = -0x178
+.text:00005254 var_174         = -0x174
+.text:00005254 var_170         = -0x170
+.text:00005254 var_16C         = -0x16C
+.text:00005254 s               = -0x168
+.text:00005254 var_164         = -0x164
+.text:00005254 var_160         = -0x160
+.text:00005254 dest            = -0x120
+.text:00005254 var_E0          = -0xE0
+.text:00005254 var_1C          = -0x1C
+.text:00005254
+.text:00005254                 PUSH    {R4-R7,LR}
+.text:00005256                 LDR     R1, =(__stack_chk_guard_ptr - 0x5260)
+.text:00005258                 SUB     SP, SP, #0x1BC
+.text:0000525A                 STR     R2, [SP,#0x1D0+var_1C8]
+.text:0000525C                 ADD     R1, PC ; __stack_chk_guard_ptr
+.text:0000525E                 LDR     R2, [R1] ; __stack_chk_guard
+.text:00005260                 MOVS    R5, R0
+.text:00005262                 MOVS    R1, #0          ; c
+.text:00005264                 LDR     R3, [R2]
+.text:00005266                 STR     R2, [SP,#0x1D0+var_1B0]
+.text:00005268                 MOVS    R2, #0x14C      ; n
+.text:0000526C                 ADD     R0, SP, #0x1D0+s ; s
+.text:0000526E                 STR     R3, [SP,#0x1D0+var_1C]
+.text:00005270                 BLX     memset
+.text:00005274                 MOVS    R3, #3
+.text:00005276                 STR     R3, [SP,#0x1D0+s]
+.text:00005278                 LDR     R3, [R5]
+.text:0000527A                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:0000527C                 MOVS    R0, R5
+.text:0000527E                 LDR     R3, [R3,#0x7C]
+.text:00005280                 BLX     R3
+.text:00005282                 LDR     R1, [R5]
+.text:00005284                 LDR     R2, =(aDevicename - 0x5292)
+.text:00005286                 LDR     R3, =(aB - 0x5294)
+.text:00005288                 STR     R0, [SP,#0x1D0+var_1AC]
+.text:0000528A                 ADDS    R1, #0xFC
+.text:0000528C                 LDR     R4, [R1,#0x7C]
+.text:0000528E                 ADD     R2, PC          ; "deviceName"
+.text:00005290                 ADD     R3, PC          ; "[B"
+.text:00005292                 LDR     R1, [SP,#0x1D0+var_1AC]
+.text:00005294                 MOVS    R0, R5
+.text:00005296                 BLX     R4
+.text:00005298                 LDR     R1, [R5]
+.text:0000529A                 LDR     R2, =(aDevicelock - 0x52A8)
+.text:0000529C                 LDR     R3, =(aI - 0x52AA)
+.text:0000529E                 ADDS    R1, #0xFC
+.text:000052A0                 LDR     R4, [R1,#0x7C]
+.text:000052A2                 STR     R0, [SP,#0x1D0+var_1B8]
+.text:000052A4                 ADD     R2, PC          ; "deviceLock"
+.text:000052A6                 ADD     R3, PC          ; "I"
+.text:000052A8                 LDR     R1, [SP,#0x1D0+var_1AC]
+.text:000052AA                 MOVS    R0, R5
+.text:000052AC                 BLX     R4
+.text:000052AE                 LDR     R6, =(aLjavaUtilArray - 0x52B8)
+.text:000052B0                 LDR     R3, [R5]
+.text:000052B2                 LDR     R2, =(aPeriodictaskli - 0x52C2)
+.text:000052B4                 ADD     R6, PC          ; "Ljava/util/ArrayList;"
+.text:000052B6                 ADDS    R3, #0xFC
+.text:000052B8                 LDR     R4, [R3,#0x7C]
+.text:000052BA                 STR     R0, [SP,#0x1D0+var_1B4]
+.text:000052BC                 MOVS    R3, R6
+.text:000052BE                 ADD     R2, PC          ; "periodicTaskList"
+.text:000052C0                 LDR     R1, [SP,#0x1D0+var_1AC]
+.text:000052C2                 MOVS    R0, R5
+.text:000052C4                 BLX     R4
+.text:000052C6                 LDR     R3, [R5]
+.text:000052C8                 LDR     R2, =(aTimertasklist - 0x52D4)
+.text:000052CA                 MOVS    R7, R0
+.text:000052CC                 ADDS    R3, #0xFC
+.text:000052CE                 LDR     R4, [R3,#0x7C]
+.text:000052D0                 ADD     R2, PC          ; "timerTaskList"
+.text:000052D2                 MOVS    R3, R6
+.text:000052D4                 LDR     R1, [SP,#0x1D0+var_1AC]
+.text:000052D6                 MOVS    R0, R5
+.text:000052D8                 BLX     R4
+.text:000052DA                 LDR     R3, [R5]
+.text:000052DC                 MOVS    R1, #0x17C
+.text:000052E0                 MOVS    R4, R0
+.text:000052E2                 LDR     R3, [R3,R1]
+.text:000052E4                 MOVS    R2, R7
+.text:000052E6                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:000052E8                 MOVS    R0, R5
+.text:000052EA                 BLX     R3
+.text:000052EC                 LDR     R3, [R5]
+.text:000052EE                 MOVS    R2, #0x17C
+.text:000052F2                 LDR     R3, [R3,R2]
+.text:000052F4                 STR     R0, [SP,#0x1D0+var_1A4]
+.text:000052F6                 MOVS    R2, R4
+.text:000052F8                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:000052FA                 MOVS    R0, R5
+.text:000052FC                 BLX     R3
+.text:000052FE                 LDR     R3, [R5]
+.text:00005300                 STR     R0, [SP,#0x1D0+var_1A0]
+.text:00005302                 LDR     R1, [SP,#0x1D0+var_1A4]
+.text:00005304                 LDR     R3, [R3,#0x7C]
+.text:00005306                 MOVS    R0, R5
+.text:00005308                 BLX     R3
+.text:0000530A                 LDR     R6, =(aGet - 0x5316)
+.text:0000530C                 LDR     R3, [R5]
+.text:0000530E                 LDR     R7, =(aILjavaLangObje - 0x531A)
+.text:00005310                 STR     R0, [SP,#0x1D0+var_17C]
+.text:00005312                 ADD     R6, PC          ; "get"
+.text:00005314                 ADDS    R3, #8
+.text:00005316                 ADD     R7, PC          ; "(I)Ljava/lang/Object;"
+.text:00005318                 LDR     R4, [R3,#0x7C]
+.text:0000531A                 MOVS    R2, R6
+.text:0000531C                 LDR     R1, [SP,#0x1D0+var_17C]
+.text:0000531E                 MOVS    R3, R7
+.text:00005320                 MOVS    R0, R5
+.text:00005322                 BLX     R4
+.text:00005324                 LDR     R1, =(aSize - 0x532E)
+.text:00005326                 LDR     R2, =(aI_1 - 0x5330)
+.text:00005328                 LDR     R3, [R5]
+.text:0000532A                 ADD     R1, PC          ; "size"
+.text:0000532C                 ADD     R2, PC          ; "()I"
+.text:0000532E                 STR     R1, [SP,#0x1D0+var_1C4]
+.text:00005330                 STR     R2, [SP,#0x1D0+var_1C0]
+.text:00005332                 ADDS    R3, #8
+.text:00005334                 LDR     R4, [R3,#0x7C]
+.text:00005336                 LDR     R2, [SP,#0x1D0+var_1C4]
+.text:00005338                 STR     R0, [SP,#0x1D0+var_1A8]
+.text:0000533A                 LDR     R1, [SP,#0x1D0+var_17C]
+.text:0000533C                 LDR     R3, [SP,#0x1D0+var_1C0]
+.text:0000533E                 MOVS    R0, R5
+.text:00005340                 BLX     R4
+.text:00005342                 LDR     R3, [R5]
+.text:00005344                 STR     R0, [SP,#0x1D0+var_1BC]
+.text:00005346                 LDR     R1, [SP,#0x1D0+var_1A0]
+.text:00005348                 LDR     R3, [R3,#0x7C]
+.text:0000534A                 MOVS    R0, R5
+.text:0000534C                 BLX     R3
+.text:0000534E                 LDR     R3, [R5]
+.text:00005350                 STR     R0, [SP,#0x1D0+var_178]
+.text:00005352                 MOVS    R2, R6
+.text:00005354                 ADDS    R3, #8
+.text:00005356                 LDR     R4, [R3,#0x7C]
+.text:00005358                 LDR     R1, [SP,#0x1D0+var_178]
+.text:0000535A                 MOVS    R3, R7
+.text:0000535C                 MOVS    R0, R5
+.text:0000535E                 BLX     R4
+.text:00005360                 LDR     R3, [R5]
+.text:00005362                 STR     R0, [SP,#0x1D0+var_174]
+.text:00005364                 LDR     R1, [SP,#0x1D0+var_178]
+.text:00005366                 ADDS    R3, #8
+.text:00005368                 LDR     R4, [R3,#0x7C]
+.text:0000536A                 LDR     R2, [SP,#0x1D0+var_1C4]
+.text:0000536C                 LDR     R3, [SP,#0x1D0+var_1C0]
+.text:0000536E                 MOVS    R0, R5
+.text:00005370                 BLX     R4
+.text:00005372                 LDR     R3, [R5]
+.text:00005374                 MOVS    R6, R0
+.text:00005376                 LDR     R1, [SP,#0x1D0+var_1A4]
+.text:00005378                 ADDS    R3, #0xC4
+.text:0000537A                 LDR     R3, [R3]
+.text:0000537C                 LDR     R2, [SP,#0x1D0+var_1BC]
+.text:0000537E                 MOVS    R0, R5
+.text:00005380                 BLX     R3
+.text:00005382                 LDR     R3, [R5]
+.text:00005384                 MOVS    R4, R0
+.text:00005386                 LDR     R1, [SP,#0x1D0+var_1A0]
+.text:00005388                 ADDS    R3, #0xC4
+.text:0000538A                 LDR     R3, [R3]
+.text:0000538C                 MOVS    R0, R5
+.text:0000538E                 MOVS    R2, R6
+.text:00005390                 BLX     R3
+.text:00005392                 STR     R4, [SP,#0x1D0+var_1BC]
+.text:00005394                 CMP     R4, #8
+.text:00005396                 BLE     loc_539C
+.text:00005398                 MOVS    R3, #8
+.text:0000539A                 STR     R3, [SP,#0x1D0+var_1BC]
+.text:0000539C
+.text:0000539C loc_539C                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+142j
+.text:0000539C                 STR     R0, [SP,#0x1D0+var_19C]
+.text:0000539E                 CMP     R0, #8
+.text:000053A0                 BLE     loc_53A6
+.text:000053A2                 MOVS    R1, #8
+.text:000053A4                 STR     R1, [SP,#0x1D0+var_19C]
+.text:000053A6
+.text:000053A6 loc_53A6                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+14Cj
+.text:000053A6                 LDR     R3, [R5]
+.text:000053A8                 MOVS    R2, #0x17C
+.text:000053AC                 LDR     R3, [R3,R2]
+.text:000053AE                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:000053B0                 LDR     R2, [SP,#0x1D0+var_1B8]
+.text:000053B2                 MOVS    R0, R5
+.text:000053B4                 BLX     R3
+.text:000053B6                 LDR     R2, [R5]
+.text:000053B8                 MOVS    R3, #0xB8
+.text:000053BA                 MOVS    R6, R0
+.text:000053BC                 LSLS    R3, R3, #2
+.text:000053BE                 LDR     R3, [R2,R3]
+.text:000053C0                 MOVS    R1, R6
+.text:000053C2                 MOVS    R2, #0
+.text:000053C4                 MOVS    R0, R5
+.text:000053C6                 BLX     R3
+.text:000053C8                 LDR     R2, [R5]
+.text:000053CA                 MOVS    R3, #0x2AC
+.text:000053CE                 LDR     R3, [R2,R3]
+.text:000053D0                 MOVS    R1, R6
+.text:000053D2                 MOVS    R7, R0
+.text:000053D4                 MOVS    R0, R5
+.text:000053D6                 BLX     R3
+.text:000053D8                 LDR     R3, [R5]
+.text:000053DA                 MOVS    R4, #0x190
+.text:000053DE                 STR     R0, [SP,#0x1D0+var_1C4]
+.text:000053E0                 LDR     R3, [R3,R4]
+.text:000053E2                 LDR     R2, [SP,#0x1D0+var_1B4]
+.text:000053E4                 MOVS    R0, R5
+.text:000053E6                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:000053E8                 BLX     R3
+.text:000053EA                 LDR     R2, [SP,#0x1D0+var_1C4]
+.text:000053EC                 MOV     R3, SP
+.text:000053EE                 ADDS    R3, #0xEF
+.text:000053F0                 STRB    R0, [R3]
+.text:000053F2                 CMP     R2, #0x3F
+.text:000053F4                 BLE     loc_53F8
+.text:000053F6                 MOVS    R2, #0x3F       ; n
+.text:000053F8
+.text:000053F8 loc_53F8                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+1A0j
+.text:000053F8                 MOVS    R1, R7          ; src
+.text:000053FA                 ADD     R0, SP, #0x1D0+dest ; dest
+.text:000053FC                 BLX     memcpy
+.text:00005400                 LDR     R3, [SP,#0x1D0+var_1BC]
+.text:00005402                 LDR     R1, [SP,#0x1D0+var_19C]
+.text:00005404                 LDR     R2, [R5]
+.text:00005406                 STR     R3, [SP,#0x1D0+var_164]
+.text:00005408                 MOVS    R3, #0x300
+.text:0000540C                 LDR     R4, [R2,R3]
+.text:0000540E                 STR     R1, [SP,#0x1D0+var_E0]
+.text:00005410                 MOVS    R2, R7
+.text:00005412                 MOVS    R1, R6
+.text:00005414                 MOVS    R3, #0
+.text:00005416                 MOVS    R0, R5
+.text:00005418                 BLX     R4
+.text:0000541A                 LDR     R1, =(aEnable - 0x5424)
+.text:0000541C                 ADD     R2, SP, #0x1D0+var_160
+.text:0000541E                 MOVS    R3, #0
+.text:00005420                 ADD     R1, PC          ; "enable"
+.text:00005422                 STR     R2, [SP,#0x1D0+var_1C8]
+.text:00005424                 STR     R3, [SP,#0x1D0+var_1C0]
+.text:00005426                 STR     R1, [SP,#0x1D0+var_1B4]
+.text:00005428                 B       loc_55F4
+.text:0000542A ; ---------------------------------------------------------------------------
+.text:0000542A
+.text:0000542A loc_542A                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+3A8j
+.text:0000542A                 LDR     R3, [R5]
+.text:0000542C                 LDR     R2, [SP,#0x1D0+var_1A8]
+.text:0000542E                 LDR     R1, [SP,#0x1D0+var_1A4]
+.text:00005430                 ADDS    R3, #0x88
+.text:00005432                 LDR     R4, [R3]
+.text:00005434                 MOVS    R0, R5
+.text:00005436                 LDR     R3, [SP,#0x1D0+var_1C0]
+.text:00005438                 BLX     R4
+.text:0000543A                 LDR     R3, [R5]
+.text:0000543C                 MOVS    R7, R0
+.text:0000543E                 MOVS    R1, R7
+.text:00005440                 LDR     R3, [R3,#0x7C]
+.text:00005442                 MOVS    R0, R5
+.text:00005444                 BLX     R3
+.text:00005446                 LDR     R6, =(aI - 0x5450)
+.text:00005448                 LDR     R3, [R5]
+.text:0000544A                 STR     R0, [SP,#0x1D0+var_1C4]
+.text:0000544C                 ADD     R6, PC          ; "I"
+.text:0000544E                 ADDS    R3, #0xFC
+.text:00005450                 LDR     R4, [R3,#0x7C]
+.text:00005452                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:00005454                 MOVS    R3, R6
+.text:00005456                 LDR     R2, [SP,#0x1D0+var_1B4]
+.text:00005458                 MOVS    R0, R5
+.text:0000545A                 BLX     R4
+.text:0000545C                 LDR     R3, [R5]
+.text:0000545E                 LDR     R2, =(aOnhour - 0x546A)
+.text:00005460                 STR     R0, [SP,#0x1D0+var_198]
+.text:00005462                 ADDS    R3, #0xFC
+.text:00005464                 LDR     R4, [R3,#0x7C]
+.text:00005466                 ADD     R2, PC          ; "onHour"
+.text:00005468                 MOVS    R3, R6
+.text:0000546A                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:0000546C                 MOVS    R0, R5
+.text:0000546E                 BLX     R4
+.text:00005470                 LDR     R3, [R5]
+.text:00005472                 LDR     R2, =(aOnmin - 0x547E)
+.text:00005474                 STR     R0, [SP,#0x1D0+var_194]
+.text:00005476                 ADDS    R3, #0xFC
+.text:00005478                 LDR     R4, [R3,#0x7C]
+.text:0000547A                 ADD     R2, PC          ; "onMin"
+.text:0000547C                 MOVS    R3, R6
+.text:0000547E                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:00005480                 MOVS    R0, R5
+.text:00005482                 BLX     R4
+.text:00005484                 LDR     R3, [R5]
+.text:00005486                 LDR     R2, =(aOntimedone - 0x5492)
+.text:00005488                 STR     R0, [SP,#0x1D0+var_190]
+.text:0000548A                 ADDS    R3, #0xFC
+.text:0000548C                 LDR     R4, [R3,#0x7C]
+.text:0000548E                 ADD     R2, PC          ; "onTimeDone"
+.text:00005490                 MOVS    R3, R6
+.text:00005492                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:00005494                 MOVS    R0, R5
+.text:00005496                 BLX     R4
+.text:00005498                 LDR     R3, [R5]
+.text:0000549A                 LDR     R2, =(aOffhour - 0x54A6)
+.text:0000549C                 STR     R0, [SP,#0x1D0+var_18C]
+.text:0000549E                 ADDS    R3, #0xFC
+.text:000054A0                 LDR     R4, [R3,#0x7C]
+.text:000054A2                 ADD     R2, PC          ; "offHour"
+.text:000054A4                 MOVS    R3, R6
+.text:000054A6                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000054A8                 MOVS    R0, R5
+.text:000054AA                 BLX     R4
+.text:000054AC                 LDR     R3, [R5]
+.text:000054AE                 LDR     R2, =(aOffmin - 0x54BA)
+.text:000054B0                 STR     R0, [SP,#0x1D0+var_188]
+.text:000054B2                 ADDS    R3, #0xFC
+.text:000054B4                 LDR     R4, [R3,#0x7C]
+.text:000054B6                 ADD     R2, PC          ; "offMin"
+.text:000054B8                 MOVS    R3, R6
+.text:000054BA                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000054BC                 MOVS    R0, R5
+.text:000054BE                 BLX     R4
+.text:000054C0                 LDR     R3, [R5]
+.text:000054C2                 LDR     R2, =(aOfftimedone - 0x54CE)
+.text:000054C4                 STR     R0, [SP,#0x1D0+var_184]
+.text:000054C6                 ADDS    R3, #0xFC
+.text:000054C8                 LDR     R4, [R3,#0x7C]
+.text:000054CA                 ADD     R2, PC          ; "offTimeDone"
+.text:000054CC                 MOVS    R3, R6
+.text:000054CE                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000054D0                 MOVS    R0, R5
+.text:000054D2                 BLX     R4
+.text:000054D4                 LDR     R1, [R5]
+.text:000054D6                 LDR     R2, =(aWeeks - 0x54E2)
+.text:000054D8                 LDR     R3, =(aI_0 - 0x54E4)
+.text:000054DA                 ADDS    R1, #0xFC
+.text:000054DC                 STR     R0, [SP,#0x1D0+var_180]
+.text:000054DE                 ADD     R2, PC          ; "weeks"
+.text:000054E0                 ADD     R3, PC          ; "[I"
+.text:000054E2                 LDR     R4, [R1,#0x7C]
+.text:000054E4                 MOVS    R0, R5
+.text:000054E6                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000054E8                 BLX     R4
+.text:000054EA                 LDR     R3, [R5]
+.text:000054EC                 MOVS    R1, #0x17C
+.text:000054F0                 MOVS    R2, R0
+.text:000054F2                 LDR     R3, [R3,R1]
+.text:000054F4                 MOVS    R0, R5
+.text:000054F6                 MOVS    R1, R7
+.text:000054F8                 BLX     R3
+.text:000054FA                 LDR     R2, [R5]
+.text:000054FC                 MOVS    R3, #0xBB
+.text:000054FE                 STR     R0, [SP,#0x1D0+var_1B8]
+.text:00005500                 LSLS    R3, R3, #2
+.text:00005502                 LDR     R3, [R2,R3]
+.text:00005504                 LDR     R1, [SP,#0x1D0+var_1B8]
+.text:00005506                 MOVS    R2, #0
+.text:00005508                 MOVS    R0, R5
+.text:0000550A                 BLX     R3
+.text:0000550C                 MOVS    R6, #0
+.text:0000550E                 MOVS    R2, R0
+.text:00005510                 MOVS    R1, R0
+.text:00005512                 MOVS    R3, R6
+.text:00005514                 MOVS    R0, #1
+.text:00005516
+.text:00005516 loc_5516                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+2D6j
+.text:00005516                 LDMIA   R1!, {R4}
+.text:00005518                 CMP     R4, #0
+.text:0000551A                 BEQ     loc_5526
+.text:0000551C                 MOVS    R4, R0
+.text:0000551E                 LSLS    R4, R3
+.text:00005520                 ORRS    R6, R4
+.text:00005522                 LSLS    R6, R6, #0x18
+.text:00005524                 LSRS    R6, R6, #0x18
+.text:00005526
+.text:00005526 loc_5526                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+2C6j
+.text:00005526                 ADDS    R3, #1
+.text:00005528                 CMP     R3, #7
+.text:0000552A                 BNE     loc_5516
+.text:0000552C                 LDR     R1, [R5]
+.text:0000552E                 MOVS    R3, #0x30C
+.text:00005532                 LDR     R4, [R1,R3]
+.text:00005534                 MOVS    R0, R5
+.text:00005536                 LDR     R1, [SP,#0x1D0+var_1B8]
+.text:00005538                 MOVS    R3, #0
+.text:0000553A                 BLX     R4
+.text:0000553C                 LDR     R3, [R5]
+.text:0000553E                 MOVS    R2, #0x190
+.text:00005542                 LDR     R3, [R3,R2]
+.text:00005544                 MOVS    R1, R7
+.text:00005546                 LDR     R2, [SP,#0x1D0+var_198]
+.text:00005548                 MOVS    R0, R5
+.text:0000554A                 BLX     R3
+.text:0000554C                 LDR     R3, [SP,#0x1D0+var_1C8]
+.text:0000554E                 MOVS    R1, #0x190
+.text:00005552                 STRB    R0, [R3]
+.text:00005554                 LDR     R3, [R5]
+.text:00005556                 LDR     R2, [SP,#0x1D0+var_194]
+.text:00005558                 MOVS    R0, R5
+.text:0000555A                 LDR     R3, [R3,R1]
+.text:0000555C                 MOVS    R1, R7
+.text:0000555E                 BLX     R3
+.text:00005560                 LDR     R2, [SP,#0x1D0+var_1C8]
+.text:00005562                 LDR     R3, [R5]
+.text:00005564                 MOVS    R1, #0xC8
+.text:00005566                 STRB    R0, [R2,#4]
+.text:00005568                 LSLS    R1, R1, #1
+.text:0000556A                 LDR     R3, [R3,R1]
+.text:0000556C                 LDR     R2, [SP,#0x1D0+var_190]
+.text:0000556E                 MOVS    R1, R7
+.text:00005570                 MOVS    R0, R5
+.text:00005572                 BLX     R3
+.text:00005574                 LDR     R2, [SP,#0x1D0+var_1C8]
+.text:00005576                 LDR     R3, [R5]
+.text:00005578                 MOVS    R1, #0xC8
+.text:0000557A                 STRB    R0, [R2,#5]
+.text:0000557C                 LSLS    R1, R1, #1
+.text:0000557E                 LDR     R3, [R3,R1]
+.text:00005580                 LDR     R2, [SP,#0x1D0+var_18C]
+.text:00005582                 MOVS    R1, R7
+.text:00005584                 MOVS    R0, R5
+.text:00005586                 BLX     R3
+.text:00005588                 LDR     R2, [SP,#0x1D0+var_1C8]
+.text:0000558A                 LDR     R3, [R5]
+.text:0000558C                 MOVS    R1, #0xC8
+.text:0000558E                 STRB    R0, [R2,#2]
+.text:00005590                 LSLS    R1, R1, #1
+.text:00005592                 LDR     R3, [R3,R1]
+.text:00005594                 LDR     R2, [SP,#0x1D0+var_188]
+.text:00005596                 MOVS    R1, R7
+.text:00005598                 MOVS    R0, R5
+.text:0000559A                 BLX     R3
+.text:0000559C                 LDR     R2, [SP,#0x1D0+var_1C8]
+.text:0000559E                 LDR     R3, [R5]
+.text:000055A0                 MOVS    R1, #0xC8
+.text:000055A2                 STRB    R0, [R2,#6]
+.text:000055A4                 LSLS    R1, R1, #1
+.text:000055A6                 LDR     R3, [R3,R1]
+.text:000055A8                 LDR     R2, [SP,#0x1D0+var_184]
+.text:000055AA                 MOVS    R1, R7
+.text:000055AC                 MOVS    R0, R5
+.text:000055AE                 BLX     R3
+.text:000055B0                 LDR     R2, [SP,#0x1D0+var_1C8]
+.text:000055B2                 LDR     R3, [R5]
+.text:000055B4                 MOVS    R1, #0xC8
+.text:000055B6                 STRB    R0, [R2,#7]
+.text:000055B8                 LSLS    R1, R1, #1
+.text:000055BA                 LDR     R3, [R3,R1]
+.text:000055BC                 LDR     R2, [SP,#0x1D0+var_180]
+.text:000055BE                 MOVS    R1, R7
+.text:000055C0                 MOVS    R0, R5
+.text:000055C2                 BLX     R3
+.text:000055C4                 LDR     R2, [SP,#0x1D0+var_1C8]
+.text:000055C6                 LDR     R3, [R5]
+.text:000055C8                 MOVS    R1, R7
+.text:000055CA                 STRB    R0, [R2,#3]
+.text:000055CC                 STRB    R6, [R2,#1]
+.text:000055CE                 LDR     R3, [R3,#0x5C]
+.text:000055D0                 MOVS    R0, R5
+.text:000055D2                 BLX     R3
+.text:000055D4                 LDR     R3, [R5]
+.text:000055D6                 MOVS    R0, R5
+.text:000055D8                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000055DA                 LDR     R3, [R3,#0x5C]
+.text:000055DC                 BLX     R3
+.text:000055DE                 LDR     R3, [R5]
+.text:000055E0                 LDR     R1, [SP,#0x1D0+var_1B8]
+.text:000055E2                 MOVS    R0, R5
+.text:000055E4                 LDR     R3, [R3,#0x5C]
+.text:000055E6                 BLX     R3
+.text:000055E8                 LDR     R3, [SP,#0x1D0+var_1C0]
+.text:000055EA                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:000055EC                 ADDS    R3, #1
+.text:000055EE                 ADDS    R1, #8
+.text:000055F0                 STR     R3, [SP,#0x1D0+var_1C0]
+.text:000055F2                 STR     R1, [SP,#0x1D0+var_1C8]
+.text:000055F4
+.text:000055F4 loc_55F4                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+1D4j
+.text:000055F4                 LDR     R2, [SP,#0x1D0+var_1C0]
+.text:000055F6                 LDR     R3, [SP,#0x1D0+var_1BC]
+.text:000055F8                 CMP     R2, R3
+.text:000055FA                 BGE     loc_55FE
+.text:000055FC                 B       loc_542A
+.text:000055FE ; ---------------------------------------------------------------------------
+.text:000055FE
+.text:000055FE loc_55FE                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+3A6j
+.text:000055FE                 LDR     R2, =(aOnenable - 0x5608)
+.text:00005600                 MOVS    R1, #0
+.text:00005602                 ADD     R6, SP, #0x1D0+s
+.text:00005604                 ADD     R2, PC          ; "onEnable"
+.text:00005606                 STR     R1, [SP,#0x1D0+var_1B8]
+.text:00005608                 STR     R2, [SP,#0x1D0+var_1A8]
+.text:0000560A                 B       loc_5934
+.text:0000560A ; ---------------------------------------------------------------------------
+.text:0000560C off_560C        DCD __stack_chk_guard_ptr - 0x5260
+.text:0000560C                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+2r
+.text:00005610 off_5610        DCD aDevicename - 0x5292
+.text:00005610                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+30r
+.text:00005610                                         ; "deviceName"
+.text:00005614 off_5614        DCD aB - 0x5294         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+32r
+.text:00005614                                         ; "[B"
+.text:00005618 off_5618        DCD aDevicelock - 0x52A8
+.text:00005618                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+46r
+.text:00005618                                         ; "deviceLock"
+.text:0000561C off_561C        DCD aI - 0x52AA         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+48r
+.text:0000561C                                         ; "I"
+.text:00005620 off_5620        DCD aLjavaUtilArray - 0x52B8
+.text:00005620                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+5Ar
+.text:00005620                                         ; "Ljava/util/ArrayList;"
+.text:00005624 off_5624        DCD aPeriodictaskli - 0x52C2
+.text:00005624                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+5Er
+.text:00005624                                         ; "periodicTaskList"
+.text:00005628 off_5628        DCD aTimertasklist - 0x52D4
+.text:00005628                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+74r
+.text:00005628                                         ; "timerTaskList"
+.text:0000562C off_562C        DCD aGet - 0x5316       ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+B6r
+.text:0000562C                                         ; "get"
+.text:00005630 off_5630        DCD aILjavaLangObje - 0x531A
+.text:00005630                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+BAr
+.text:00005630                                         ; "(I)Ljava/lang/Object;"
+.text:00005634 off_5634        DCD aSize - 0x532E      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+D0r
+.text:00005634                                         ; "size"
+.text:00005638 off_5638        DCD aI_1 - 0x5330       ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+D2r
+.text:00005638                                         ; "()I"
+.text:0000563C off_563C        DCD aEnable - 0x5424    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+1C6r
+.text:0000563C                                         ; "enable"
+.text:00005640 off_5640        DCD aI - 0x5450         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+1F2r
+.text:00005640                                         ; "I"
+.text:00005644 off_5644        DCD aOnhour - 0x546A    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+20Ar
+.text:00005644                                         ; "onHour"
+.text:00005648 off_5648        DCD aOnmin - 0x547E     ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+21Er
+.text:00005648                                         ; "onMin"
+.text:0000564C off_564C        DCD aOntimedone - 0x5492
+.text:0000564C                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+232r
+.text:0000564C                                         ; "onTimeDone"
+.text:00005650 off_5650        DCD aOffhour - 0x54A6   ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+246r
+.text:00005650                                         ; "offHour"
+.text:00005654 off_5654        DCD aOffmin - 0x54BA    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+25Ar
+.text:00005654                                         ; "offMin"
+.text:00005658 off_5658        DCD aOfftimedone - 0x54CE
+.text:00005658                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+26Er
+.text:00005658                                         ; "offTimeDone"
+.text:0000565C off_565C        DCD aWeeks - 0x54E2     ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+282r
+.text:0000565C                                         ; "weeks"
+.text:00005660 off_5660        DCD aI_0 - 0x54E4       ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+284r
+.text:00005660                                         ; "[I"
+.text:00005664 off_5664        DCD aOnenable - 0x5608  ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes:loc_55FEr
+.text:00005664                                         ; "onEnable"
+.text:00005668 ; ---------------------------------------------------------------------------
+.text:00005668
+.text:00005668 loc_5668                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+6ECj
+.text:00005668                 ADDS    R3, #0x88
+.text:0000566A                 LDR     R4, [R3]
+.text:0000566C                 LDR     R2, [SP,#0x1D0+var_174]
+.text:0000566E                 LDR     R1, [SP,#0x1D0+var_1A0]
+.text:00005670                 LDR     R3, [SP,#0x1D0+var_1B8]
+.text:00005672                 MOVS    R0, R5
+.text:00005674                 BLX     R4
+.text:00005676                 LDR     R3, [R5]
+.text:00005678                 STR     R0, [SP,#0x1D0+var_1BC]
+.text:0000567A                 LDR     R1, [SP,#0x1D0+var_1BC]
+.text:0000567C                 LDR     R3, [R3,#0x7C]
+.text:0000567E                 MOVS    R0, R5
+.text:00005680                 BLX     R3
+.text:00005682                 LDR     R7, =(aI - 0x568C)
+.text:00005684                 LDR     R3, [R5]
+.text:00005686                 STR     R0, [SP,#0x1D0+var_1B4]
+.text:00005688                 ADD     R7, PC          ; "I"
+.text:0000568A                 ADDS    R3, #0xFC
+.text:0000568C                 LDR     R4, [R3,#0x7C]
+.text:0000568E                 LDR     R1, [SP,#0x1D0+var_1B4]
+.text:00005690                 MOVS    R3, R7
+.text:00005692                 LDR     R2, [SP,#0x1D0+var_1A8]
+.text:00005694                 MOVS    R0, R5
+.text:00005696                 BLX     R4
+.text:00005698                 LDR     R1, =(aLcnComBroadlin - 0x56A2)
+.text:0000569A                 LDR     R3, [R5]
+.text:0000569C                 LDR     R2, =(aOntime - 0x56AC)
+.text:0000569E                 ADD     R1, PC          ; "Lcn/com/broadlink/blnetworkdataparse/Ti"...
+.text:000056A0                 STR     R1, [SP,#0x1D0+var_1C8]
+.text:000056A2                 ADDS    R3, #0xFC
+.text:000056A4                 LDR     R4, [R3,#0x7C]
+.text:000056A6                 STR     R0, [SP,#0x1D0+var_170]
+.text:000056A8                 ADD     R2, PC          ; "onTime"
+.text:000056AA                 LDR     R1, [SP,#0x1D0+var_1B4]
+.text:000056AC                 LDR     R3, [SP,#0x1D0+var_1C8]
+.text:000056AE                 MOVS    R0, R5
+.text:000056B0                 BLX     R4
+.text:000056B2                 LDR     R3, [R5]
+.text:000056B4                 LDR     R2, =(aOffenable - 0x56C0)
+.text:000056B6                 STR     R0, [SP,#0x1D0+var_1C4]
+.text:000056B8                 ADDS    R3, #0xFC
+.text:000056BA                 LDR     R4, [R3,#0x7C]
+.text:000056BC                 ADD     R2, PC          ; "offEnable"
+.text:000056BE                 MOVS    R3, R7
+.text:000056C0                 LDR     R1, [SP,#0x1D0+var_1B4]
+.text:000056C2                 MOVS    R0, R5
+.text:000056C4                 BLX     R4
+.text:000056C6                 LDR     R3, [R5]
+.text:000056C8                 LDR     R2, =(aOfftime - 0x56D4)
+.text:000056CA                 STR     R0, [SP,#0x1D0+var_16C]
+.text:000056CC                 ADDS    R3, #0xFC
+.text:000056CE                 LDR     R4, [R3,#0x7C]
+.text:000056D0                 ADD     R2, PC          ; "offTime"
+.text:000056D2                 LDR     R1, [SP,#0x1D0+var_1B4]
+.text:000056D4                 LDR     R3, [SP,#0x1D0+var_1C8]
+.text:000056D6                 MOVS    R0, R5
+.text:000056D8                 BLX     R4
+.text:000056DA                 LDR     R3, [R5]
+.text:000056DC                 MOVS    R2, #0x17C
+.text:000056E0                 MOVS    R4, R0
+.text:000056E2                 LDR     R3, [R3,R2]
+.text:000056E4                 LDR     R1, [SP,#0x1D0+var_1BC]
+.text:000056E6                 LDR     R2, [SP,#0x1D0+var_1C4]
+.text:000056E8                 MOVS    R0, R5
+.text:000056EA                 BLX     R3
+.text:000056EC                 LDR     R3, [R5]
+.text:000056EE                 MOVS    R1, #0x17C
+.text:000056F2                 MOVS    R2, R4
+.text:000056F4                 LDR     R3, [R3,R1]
+.text:000056F6                 STR     R0, [SP,#0x1D0+var_1C8]
+.text:000056F8                 LDR     R1, [SP,#0x1D0+var_1BC]
+.text:000056FA                 MOVS    R0, R5
+.text:000056FC                 BLX     R3
+.text:000056FE                 LDR     R3, [R5]
+.text:00005700                 STR     R0, [SP,#0x1D0+var_1C4]
+.text:00005702                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:00005704                 LDR     R3, [R3,#0x7C]
+.text:00005706                 MOVS    R0, R5
+.text:00005708                 BLX     R3
+.text:0000570A                 LDR     R3, [R5]
+.text:0000570C                 LDR     R2, =(aYear - 0x5718)
+.text:0000570E                 STR     R0, [SP,#0x1D0+var_1C0]
+.text:00005710                 ADDS    R3, #0xFC
+.text:00005712                 LDR     R4, [R3,#0x7C]
+.text:00005714                 ADD     R2, PC          ; "year"
+.text:00005716                 MOVS    R3, R7
+.text:00005718                 LDR     R1, [SP,#0x1D0+var_1C0]
+.text:0000571A                 MOVS    R0, R5
+.text:0000571C                 BLX     R4
+.text:0000571E                 LDR     R3, [R5]
+.text:00005720                 LDR     R2, =(aMonth - 0x572C)
+.text:00005722                 STR     R0, [SP,#0x1D0+var_198]
+.text:00005724                 ADDS    R3, #0xFC
+.text:00005726                 LDR     R4, [R3,#0x7C]
+.text:00005728                 ADD     R2, PC          ; "month"
+.text:0000572A                 MOVS    R3, R7
+.text:0000572C                 LDR     R1, [SP,#0x1D0+var_1C0]
+.text:0000572E                 MOVS    R0, R5
+.text:00005730                 BLX     R4
+.text:00005732                 LDR     R3, [R5]
+.text:00005734                 LDR     R2, =(aDay - 0x5740)
+.text:00005736                 STR     R0, [SP,#0x1D0+var_194]
+.text:00005738                 ADDS    R3, #0xFC
+.text:0000573A                 LDR     R4, [R3,#0x7C]
+.text:0000573C                 ADD     R2, PC          ; "day"
+.text:0000573E                 MOVS    R3, R7
+.text:00005740                 LDR     R1, [SP,#0x1D0+var_1C0]
+.text:00005742                 MOVS    R0, R5
+.text:00005744                 BLX     R4
+.text:00005746                 LDR     R3, [R5]
+.text:00005748                 LDR     R2, =(aHour - 0x5754)
+.text:0000574A                 STR     R0, [SP,#0x1D0+var_190]
+.text:0000574C                 ADDS    R3, #0xFC
+.text:0000574E                 LDR     R4, [R3,#0x7C]
+.text:00005750                 ADD     R2, PC          ; "hour"
+.text:00005752                 MOVS    R3, R7
+.text:00005754                 LDR     R1, [SP,#0x1D0+var_1C0]
+.text:00005756                 MOVS    R0, R5
+.text:00005758                 BLX     R4
+.text:0000575A                 LDR     R3, [R5]
+.text:0000575C                 LDR     R2, =(aMinute - 0x5768)
+.text:0000575E                 STR     R0, [SP,#0x1D0+var_18C]
+.text:00005760                 ADDS    R3, #0xFC
+.text:00005762                 LDR     R4, [R3,#0x7C]
+.text:00005764                 ADD     R2, PC          ; "minute"
+.text:00005766                 MOVS    R3, R7
+.text:00005768                 LDR     R1, [SP,#0x1D0+var_1C0]
+.text:0000576A                 MOVS    R0, R5
+.text:0000576C                 BLX     R4
+.text:0000576E                 LDR     R3, [R5]
+.text:00005770                 LDR     R2, =(aSecond - 0x577C)
+.text:00005772                 STR     R0, [SP,#0x1D0+var_188]
+.text:00005774                 ADDS    R3, #0xFC
+.text:00005776                 LDR     R4, [R3,#0x7C]
+.text:00005778                 ADD     R2, PC          ; "second"
+.text:0000577A                 MOVS    R3, R7
+.text:0000577C                 LDR     R1, [SP,#0x1D0+var_1C0]
+.text:0000577E                 MOVS    R0, R5
+.text:00005780                 BLX     R4
+.text:00005782                 LDR     R3, [R5]
+.text:00005784                 LDR     R2, =(aWeekday - 0x5790)
+.text:00005786                 STR     R0, [SP,#0x1D0+var_184]
+.text:00005788                 ADDS    R3, #0xFC
+.text:0000578A                 LDR     R4, [R3,#0x7C]
+.text:0000578C                 ADD     R2, PC          ; "weekday"
+.text:0000578E                 MOVS    R3, R7
+.text:00005790                 LDR     R1, [SP,#0x1D0+var_1C0]
+.text:00005792                 MOVS    R0, R5
+.text:00005794                 BLX     R4
+.text:00005796                 LDR     R3, [R5]
+.text:00005798                 MOVS    R2, #0x190
+.text:0000579C                 LDR     R3, [R3,R2]
+.text:0000579E                 STR     R0, [SP,#0x1D0+var_180]
+.text:000057A0                 LDR     R1, [SP,#0x1D0+var_1BC]
+.text:000057A2                 LDR     R2, [SP,#0x1D0+var_170]
+.text:000057A4                 MOVS    R0, R5
+.text:000057A6                 BLX     R3
+.text:000057A8                 LDR     R3, [SP,#0x1D0+var_1B8]
+.text:000057AA                 MOVS    R4, #0x18
+.text:000057AC                 ADD     R1, SP, #0x1D0+s
+.text:000057AE                 MULS    R4, R3
+.text:000057B0                 LDR     R3, [R5]
+.text:000057B2                 ADDS    R4, R1, R4
+.text:000057B4                 MOVS    R7, R4
+.text:000057B6                 MOVS    R2, #0xC8
+.text:000057B8                 ADDS    R7, #0x88
+.text:000057BA                 LSLS    R2, R2, #1
+.text:000057BC                 LDR     R3, [R3,R2]
+.text:000057BE                 STR     R0, [R7,#0xC]
+.text:000057C0                 LDR     R1, [SP,#0x1D0+var_1BC]
+.text:000057C2                 LDR     R2, [SP,#0x1D0+var_16C]
+.text:000057C4                 MOVS    R0, R5
+.text:000057C6                 BLX     R3
+.text:000057C8                 MOVS    R3, R4
+.text:000057CA                 ADDS    R3, #0x90
+.text:000057CC                 STR     R0, [R3,#0x10]
+.text:000057CE                 LDR     R3, [R5]
+.text:000057D0                 MOVS    R1, #0x190
+.text:000057D4                 LDR     R3, [R3,R1]
+.text:000057D6                 LDR     R2, [SP,#0x1D0+var_198]
+.text:000057D8                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:000057DA                 MOVS    R0, R5
+.text:000057DC                 BLX     R3
+.text:000057DE                 LDR     R3, [R5]
+.text:000057E0                 MOVS    R2, #0x190
+.text:000057E4                 ADDS    R4, #0x80
+.text:000057E6                 LDR     R3, [R3,R2]
+.text:000057E8                 STRH    R0, [R4,#0xC]
+.text:000057EA                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:000057EC                 LDR     R2, [SP,#0x1D0+var_194]
+.text:000057EE                 MOVS    R0, R5
+.text:000057F0                 BLX     R3
+.text:000057F2                 MOVS    R3, R6
+.text:000057F4                 ADDS    R3, #0x7B
+.text:000057F6                 STRB    R0, [R3]
+.text:000057F8                 LDR     R3, [R5]
+.text:000057FA                 MOVS    R1, #0x190
+.text:000057FE                 LDR     R3, [R3,R1]
+.text:00005800                 LDR     R2, [SP,#0x1D0+var_190]
+.text:00005802                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:00005804                 MOVS    R0, R5
+.text:00005806                 BLX     R3
+.text:00005808                 MOVS    R3, R6
+.text:0000580A                 ADDS    R3, #0x7A
+.text:0000580C                 STRB    R0, [R3]
+.text:0000580E                 LDR     R3, [R5]
+.text:00005810                 MOVS    R2, #0x190
+.text:00005814                 LDR     R3, [R3,R2]
+.text:00005816                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:00005818                 LDR     R2, [SP,#0x1D0+var_18C]
+.text:0000581A                 MOVS    R0, R5
+.text:0000581C                 BLX     R3
+.text:0000581E                 MOVS    R3, R6
+.text:00005820                 ADDS    R3, #0x78
+.text:00005822                 STRB    R0, [R3]
+.text:00005824                 LDR     R3, [R5]
+.text:00005826                 MOVS    R1, #0x190
+.text:0000582A                 LDR     R3, [R3,R1]
+.text:0000582C                 LDR     R2, [SP,#0x1D0+var_188]
+.text:0000582E                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:00005830                 MOVS    R0, R5
+.text:00005832                 BLX     R3
+.text:00005834                 MOVS    R3, R6
+.text:00005836                 ADDS    R3, #0x77
+.text:00005838                 STRB    R0, [R3]
+.text:0000583A                 LDR     R3, [R5]
+.text:0000583C                 MOVS    R2, #0x190
+.text:00005840                 LDR     R3, [R3,R2]
+.text:00005842                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:00005844                 LDR     R2, [SP,#0x1D0+var_184]
+.text:00005846                 MOVS    R0, R5
+.text:00005848                 BLX     R3
+.text:0000584A                 MOVS    R3, R6
+.text:0000584C                 ADDS    R3, #0x76
+.text:0000584E                 STRB    R0, [R3]
+.text:00005850                 LDR     R3, [R5]
+.text:00005852                 MOVS    R1, #0x190
+.text:00005856                 LDR     R3, [R3,R1]
+.text:00005858                 LDR     R2, [SP,#0x1D0+var_180]
+.text:0000585A                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:0000585C                 MOVS    R0, R5
+.text:0000585E                 BLX     R3
+.text:00005860                 MOVS    R3, R6
+.text:00005862                 ADDS    R3, #0x79
+.text:00005864                 STRB    R0, [R3]
+.text:00005866                 LDR     R3, [R5]
+.text:00005868                 MOVS    R2, #0x190
+.text:0000586C                 LDR     R3, [R3,R2]
+.text:0000586E                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:00005870                 LDR     R2, [SP,#0x1D0+var_198]
+.text:00005872                 MOVS    R0, R5
+.text:00005874                 BLX     R3
+.text:00005876                 LDR     R3, [R5]
+.text:00005878                 MOVS    R1, #0x190
+.text:0000587C                 LDR     R3, [R3,R1]
+.text:0000587E                 STRH    R0, [R7,#0x10]
+.text:00005880                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:00005882                 LDR     R2, [SP,#0x1D0+var_194]
+.text:00005884                 MOVS    R0, R5
+.text:00005886                 BLX     R3
+.text:00005888                 MOVS    R3, R6
+.text:0000588A                 ADDS    R3, #0x87
+.text:0000588C                 STRB    R0, [R3]
+.text:0000588E                 LDR     R3, [R5]
+.text:00005890                 MOVS    R2, #0x190
+.text:00005894                 LDR     R3, [R3,R2]
+.text:00005896                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:00005898                 LDR     R2, [SP,#0x1D0+var_190]
+.text:0000589A                 MOVS    R0, R5
+.text:0000589C                 BLX     R3
+.text:0000589E                 MOVS    R3, R6
+.text:000058A0                 ADDS    R3, #0x86
+.text:000058A2                 STRB    R0, [R3]
+.text:000058A4                 LDR     R3, [R5]
+.text:000058A6                 MOVS    R1, #0x190
+.text:000058AA                 LDR     R3, [R3,R1]
+.text:000058AC                 LDR     R2, [SP,#0x1D0+var_18C]
+.text:000058AE                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000058B0                 MOVS    R0, R5
+.text:000058B2                 BLX     R3
+.text:000058B4                 MOVS    R3, R6
+.text:000058B6                 ADDS    R3, #0x84
+.text:000058B8                 STRB    R0, [R3]
+.text:000058BA                 LDR     R3, [R5]
+.text:000058BC                 MOVS    R2, #0x190
+.text:000058C0                 LDR     R3, [R3,R2]
+.text:000058C2                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000058C4                 LDR     R2, [SP,#0x1D0+var_188]
+.text:000058C6                 MOVS    R0, R5
+.text:000058C8                 BLX     R3
+.text:000058CA                 MOVS    R3, R6
+.text:000058CC                 ADDS    R3, #0x83
+.text:000058CE                 STRB    R0, [R3]
+.text:000058D0                 LDR     R3, [R5]
+.text:000058D2                 MOVS    R1, #0x190
+.text:000058D6                 LDR     R3, [R3,R1]
+.text:000058D8                 LDR     R2, [SP,#0x1D0+var_184]
+.text:000058DA                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000058DC                 MOVS    R0, R5
+.text:000058DE                 BLX     R3
+.text:000058E0                 MOVS    R3, R6
+.text:000058E2                 ADDS    R3, #0x82
+.text:000058E4                 STRB    R0, [R3]
+.text:000058E6                 LDR     R3, [R5]
+.text:000058E8                 MOVS    R2, #0x190
+.text:000058EC                 LDR     R3, [R3,R2]
+.text:000058EE                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:000058F0                 LDR     R2, [SP,#0x1D0+var_180]
+.text:000058F2                 MOVS    R0, R5
+.text:000058F4                 BLX     R3
+.text:000058F6                 MOVS    R3, R6
+.text:000058F8                 ADDS    R3, #0x85
+.text:000058FA                 STRB    R0, [R3]
+.text:000058FC                 LDR     R3, [R5]
+.text:000058FE                 MOVS    R0, R5
+.text:00005900                 LDR     R1, [SP,#0x1D0+var_1B4]
+.text:00005902                 LDR     R3, [R3,#0x5C]
+.text:00005904                 BLX     R3
+.text:00005906                 LDR     R3, [R5]
+.text:00005908                 MOVS    R0, R5
+.text:0000590A                 LDR     R1, [SP,#0x1D0+var_1BC]
+.text:0000590C                 LDR     R3, [R3,#0x5C]
+.text:0000590E                 BLX     R3
+.text:00005910                 LDR     R3, [R5]
+.text:00005912                 MOVS    R0, R5
+.text:00005914                 LDR     R1, [SP,#0x1D0+var_1C8]
+.text:00005916                 LDR     R3, [R3,#0x5C]
+.text:00005918                 BLX     R3
+.text:0000591A                 LDR     R3, [R5]
+.text:0000591C                 MOVS    R0, R5
+.text:0000591E                 LDR     R1, [SP,#0x1D0+var_1C4]
+.text:00005920                 LDR     R3, [R3,#0x5C]
+.text:00005922                 BLX     R3
+.text:00005924                 LDR     R3, [R5]
+.text:00005926                 MOVS    R0, R5
+.text:00005928                 LDR     R1, [SP,#0x1D0+var_1C0]
+.text:0000592A                 LDR     R3, [R3,#0x5C]
+.text:0000592C                 BLX     R3
+.text:0000592E                 LDR     R3, [SP,#0x1D0+var_1B8]
+.text:00005930                 ADDS    R3, #1
+.text:00005932                 STR     R3, [SP,#0x1D0+var_1B8]
+.text:00005934
+.text:00005934 loc_5934                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+3B6j
+.text:00005934                 LDR     R1, [SP,#0x1D0+var_1B8]
+.text:00005936                 LDR     R2, [SP,#0x1D0+var_19C]
+.text:00005938                 ADDS    R6, #0x18
+.text:0000593A                 LDR     R3, [R5]
+.text:0000593C                 CMP     R1, R2
+.text:0000593E                 BGE     loc_5942
+.text:00005940                 B       loc_5668
+.text:00005942 ; ---------------------------------------------------------------------------
+.text:00005942
+.text:00005942 loc_5942                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+6EAj
+.text:00005942                 MOVS    R2, #0x2C0
+.text:00005946                 MOVS    R1, #0xA6
+.text:00005948                 LDR     R3, [R3,R2]
+.text:0000594A                 LSLS    R1, R1, #1
+.text:0000594C                 MOVS    R0, R5
+.text:0000594E                 BLX     R3
+.text:00005950                 LDR     R2, [R5]
+.text:00005952                 ADD     R3, SP, #0x1D0+s
+.text:00005954                 STR     R3, [SP,#0x1D0+var_1D0]
+.text:00005956                 MOVS    R3, #0x340
+.text:0000595A                 MOVS    R6, R0
+.text:0000595C                 LDR     R4, [R2,R3]
+.text:0000595E                 MOVS    R3, #0xA6
+.text:00005960                 MOVS    R2, #0
+.text:00005962                 MOVS    R0, R5
+.text:00005964                 MOVS    R1, R6
+.text:00005966                 LSLS    R3, R3, #1
+.text:00005968                 BLX     R4
+.text:0000596A                 LDR     R3, [R5]
+.text:0000596C                 MOVS    R0, R5
+.text:0000596E                 LDR     R1, [SP,#0x1D0+var_1AC]
+.text:00005970                 LDR     R3, [R3,#0x5C]
+.text:00005972                 BLX     R3
+.text:00005974                 LDR     R3, [R5]
+.text:00005976                 MOVS    R0, R5
+.text:00005978                 LDR     R1, [SP,#0x1D0+var_1A4]
+.text:0000597A                 LDR     R3, [R3,#0x5C]
+.text:0000597C                 BLX     R3
+.text:0000597E                 LDR     R3, [R5]
+.text:00005980                 MOVS    R0, R5
+.text:00005982                 LDR     R1, [SP,#0x1D0+var_1A0]
+.text:00005984                 LDR     R3, [R3,#0x5C]
+.text:00005986                 BLX     R3
+.text:00005988                 LDR     R3, [R5]
+.text:0000598A                 MOVS    R0, R5
+.text:0000598C                 LDR     R1, [SP,#0x1D0+var_17C]
+.text:0000598E                 LDR     R3, [R3,#0x5C]
+.text:00005990                 BLX     R3
+.text:00005992                 LDR     R3, [R5]
+.text:00005994                 MOVS    R0, R5
+.text:00005996                 LDR     R1, [SP,#0x1D0+var_178]
+.text:00005998                 LDR     R3, [R3,#0x5C]
+.text:0000599A                 BLX     R3
+.text:0000599C                 LDR     R1, [SP,#0x1D0+var_1B0]
+.text:0000599E                 LDR     R2, [SP,#0x1D0+var_1C]
+.text:000059A0                 MOVS    R0, R6
+.text:000059A2                 LDR     R3, [R1]
+.text:000059A4                 CMP     R2, R3
+.text:000059A6                 BEQ     loc_59AC
+.text:000059A8                 BLX     __stack_chk_fail
+.text:000059AC ; ---------------------------------------------------------------------------
+.text:000059AC
+.text:000059AC loc_59AC                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+752j
+.text:000059AC                 ADD     SP, SP, #0x1BC
+.text:000059AE                 POP     {R4-R7,PC}
+.text:000059AE ; End of function Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes
+.text:000059AE
+.text:000059AE ; ---------------------------------------------------------------------------
+.text:000059B0 off_59B0        DCD aI - 0x568C         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+42Er
+.text:000059B0                                         ; "I"
+.text:000059B4 off_59B4        DCD aLcnComBroadlin - 0x56A2
+.text:000059B4                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+444r
+.text:000059B4                                         ; "Lcn/com/broadlink/blnetworkdataparse/Ti"...
+.text:000059B8 off_59B8        DCD aOntime - 0x56AC    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+448r
+.text:000059B8                                         ; "onTime"
+.text:000059BC off_59BC        DCD aOffenable - 0x56C0 ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+460r
+.text:000059BC                                         ; "offEnable"
+.text:000059C0 off_59C0        DCD aOfftime - 0x56D4   ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+474r
+.text:000059C0                                         ; "offTime"
+.text:000059C4 off_59C4        DCD aYear - 0x5718      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+4B8r
+.text:000059C4                                         ; "year"
+.text:000059C8 off_59C8        DCD aMonth - 0x572C     ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+4CCr
+.text:000059C8                                         ; "month"
+.text:000059CC off_59CC        DCD aDay - 0x5740       ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+4E0r
+.text:000059CC                                         ; "day"
+.text:000059D0 off_59D0        DCD aHour - 0x5754      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+4F4r
+.text:000059D0                                         ; "hour"
+.text:000059D4 off_59D4        DCD aMinute - 0x5768    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+508r
+.text:000059D4                                         ; "minute"
+.text:000059D8 off_59D8        DCD aSecond - 0x577C    ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+51Cr
+.text:000059D8                                         ; "second"
+.text:000059DC off_59DC        DCD aWeekday - 0x5790   ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1set_1timer_1bytes+530r
+.text:000059DC                                         ; "weekday"
+.text:000059E0

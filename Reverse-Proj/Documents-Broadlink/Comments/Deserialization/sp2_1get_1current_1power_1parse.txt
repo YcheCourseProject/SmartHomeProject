@@ -1,0 +1,110 @@
+.text:00005A14 Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1current_1power_1parse
+.text:00005A14
+.text:00005A14 var_20          = -0x20
+.text:00005A14 var_1C          = -0x1C
+.text:00005A14
+.text:00005A14                 PUSH    {R0-R2,R4-R7,LR}                       @sp-=0x20      
+.text:00005A16                 STR     R2, [SP,#0x20+var_1C]                  @var_1C jbyteArray首地址
+.text:00005A18                 LDR     R2, [R0]                               @R2 JNativeI
+.text:00005A1A                 MOVS    R3, #0x2E0                             @R3 0x2E0
+.text:00005A1E                 LDR     R3, [R2,R3]                            @R3 &GetByteArrayElements
+.text:00005A20                 LDR     R1, [SP,#0x20+var_1C]                  @R1 jbyteArray
+.text:00005A22                 MOVS    R2, #0                                 @R2 #0
+.text:00005A24                 MOVS    R5, R0                                 @R5 JniEnv
+.text:00005A26                 BLX     R3                     @BL GetByteArrayElements R0 jbyte数组首地址
+.text:00005A28                 LDR     R2, [R5]                               @R2 JNativeI
+.text:00005A2A                 MOVS    R3, #0x2AC                             @R3 0x2AC
+.text:00005A2E                 LDR     R3, [R2,R3]                            @R3 &GetArrayLength
+.text:00005A30                 MOVS    R6, R0                        		  @R6 jbyte数组首地址
+.text:00005A32                 LDR     R1, [SP,#0x20+var_1C]                  @R1 jbyteArray
+.text:00005A34                 MOVS    R0, R5                                 @R0 JniEnv
+.text:00005A36                 BLX     R3               @GetArrayLength(JniEnv,jbyteArray) R0=len
+.text:00005A38                 MOVS    R3, #0                                 @R3 #0
+.text:00005A3A                 STR     R3, [SP,#0x20+var_20]                  @var_20 #0
+.text:00005A3C                 CMP     R0, #7                                                            
+.text:00005A3E                 BLS     loc_5AC4                               @<=7 loc_5AC4
+.text:00005A40                 LDR     R3, [R5]                               @R3 JNativeI
+.text:00005A42                 LDR     R1, =(aCnComBroadli_5 - 0x5A4C)        @R1 &aCn...
+.text:00005A44                 MOVS    R0, R5                                 @R0 JniEnv
+.text:00005A46                 LDR     R3, [R3,#0x18]                         @R3 &FindClass
+.text:00005A48                 ADD     R1, PC          ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00005A4A                 BLX     R3                                     @R0 jclass
+.text:00005A4C                 LDR     R1, [R5]                               @R1 JNativeI
+.text:00005A4E                 LDR     R2, =(aInit - 0x5A5C)                  @R2 &aInit
+.text:00005A50                 LDR     R3, =(aV - 0x5A5E)                     @R3 &aV
+.text:00005A52                 MOVS    R7, R0                                 @R7 jclass
+.text:00005A54                 ADDS    R1, #8                                 @R1 JNativeI+8
+.text:00005A56                 LDR     R4, [R1,#0x7C]                         @R4 JNativeI+0x08+0x7C
+.text:00005A58                 ADD     R2, PC          ; "<init>"             @R2 &aInit
+.text:00005A5A                 ADD     R3, PC          ; "()V"                @R3 &aV
+.text:00005A5C                 MOVS    R1, R7                                 @R1 jclass
+.text:00005A5E                 MOVS    R0, R5                                 @R0 JniEnv
+.text:00005A60                 BLX     R4                @BL CallObjectMethodV(JniEnv,jclass,&aInit,void)
+.text:00005A62                 LDR     R3, [R5]                               @R3 JNativeI
+.text:00005A64                 MOVS    R2, R0                                 @R2 jconstructMethod ????
+.text:00005A66                 MOVS    R1, R7                                 @R1 jclass
+.text:00005A68                 LDR     R3, [R3,#0x70]                         @R3 &NewObject
+.text:00005A6A                 MOVS    R0, R5								  @R0 JniEnv
+.text:00005A6C                 BLX     R3                              @调用无参数构造方法 R0=jobject
+.text:00005A6E                 LDR     R1, [R5]								  @R1 JnativeI
+.text:00005A70                 LDR     R2, =(aPower - 0x5A7E)                 @R2 &aPower
+.text:00005A72                 LDR     R3, =(aI - 0x5A80)                     @R3 &aI
+.text:00005A74                 ADDS    R1, #0xFC                              @R1 JnativeI+0xFC
+.text:00005A76                 LDR     R4, [R1,#0x7C]                         @R4 JnativeI+0x7C+0xFC
+.text:00005A78                 STR     R0, [SP,#0x20+var_20]                  @var_20 jobject
+.text:00005A7A                 ADD     R2, PC          ; "power"              @R2 &"power"
+.text:00005A7C                 ADD     R3, PC          ; "I"                  @R3 &"I"
+.text:00005A7E                 MOVS    R1, R7                                 @R1 jclass
+.text:00005A80                 MOVS    R0, R5                                 @R0 JniEnv
+.text:00005A82                 BLX     R4               @GetFieldID(JniEnv,jclass,"power"(name),"I"(int))
+.text:00005A84                 LDRB    R3, [R6,#5]							  @R3, jbyte[5]
+.text:00005A86                 LDRB    R1, [R6,#4]                            @R1, jbyte[4]
+.text:00005A88                 MOVS    R2, R0                                 @R2, jfieldID 
+.text:00005A8A                 LSLS    R3, R3, #8                   @R3, 0x00 0x00 0x($jbyte[5]) 0x00
+.text:00005A8C                 ORRS    R3, R1                   @R3 0x00 0x00 0x($jbyte[5]) 0x(jbyte[4])
+.text:00005A8E                 LDRB    R1, [R6,#6]                            @R1  jbyte[6]
+.text:00005A90                 LDR     R0, [R5]                               @R0 JnativeI
+.text:00005A92                 LSLS    R1, R1, #0x10          @R1 0x00 0x($jbyte[6]) 0x00 0x00       
+
+.text:00005A94                 ORRS    R3, R1         @R3 R3 orr R1 0x00 (jbyte[6]) (jbyte[5]) (jbyte[4])
+.text:00005A96                 LDRB    R1, [R6,#7]							  @R1 jbyte[7]
+.text:00005A98                 LSLS    R1, R1, #0x18               
+.text:00005A9A                 ORRS    R3, R1         @R3 (jbyte[7]) (jbyte[6]) (jbyte[5]) (jbyte[4]) 
+.text:00005A9C                 MOVS    R1, #0x1B4                             @R1 #0x1B4
+.text:00005AA0                 LDR     R4, [R0,R1]                            @R4 &SetIntField
+.text:00005AA2                 MOVS    R0, R5                                 @R0 JniEnv
+.text:00005AA4                 LDR     R1, [SP,#0x20+var_20]				  @R1 jobject
+.text:00005AA6                 BLX     R4          @SetIntField(JniEnv,jobject,jfieldID,(int)jbyte[7-4])
+.text:00005AA8                 LDR     R2, [R5]                               @R2 JnativeI
+.text:00005AAA                 MOVS    R3, #0x300                             @R3 #0X300
+.text:00005AAE                 LDR     R4, [R2,R3]                        @R4 &ReleaseByteArrayElements
+.text:00005AB0                 MOVS    R0, R5                                 @R0 JniEnv
+.text:00005AB2                 LDR     R1, [SP,#0x20+var_1C]                  @R1 jbyteArray收地址
+.text:00005AB4                 MOVS    R3, #0                                 @R3 #0
+.text:00005AB6                 MOVS    R2, R6                                 @R2 jbyte首地址
+.text:00005AB8                 BLX     R4          @ReleaseByteArrayElements(JniEnv,jbyteArray,*jbyte,0)
+.text:00005ABA                 LDR     R3, [R5]                               @R3 JnativeI
+.text:00005ABC                 MOVS    R0, R5                                 @R0 JniEnv
+.text:00005ABE                 MOVS    R1, R7                                 @R1 jclass
+.text:00005AC0                 LDR     R3, [R3,#0x5C]                         @R3 &DeleteLocalRef
+.text:00005AC2                 BLX     R3						 @DeleteLocalRef(JniEnv,jclass)
+.text:00005AC4
+.text:00005AC4 loc_5AC4                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1current_1power_1parse+2Aj
+.text:00005AC4                 LDR     R0, [SP,#0x20+var_20]                  @R0 #0(null?) 或者jobject
+.text:00005AC6                 POP     {R1-R7,PC}                             @PC=LR
+.text:00005AC6 ; End of function Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1current_1power_1parse
+.text:00005AC6
+.text:00005AC6 ; ---------------------------------------------------------------------------
+.text:00005AC8 off_5AC8        DCD aCnComBroadli_5 - 0x5A4C
+.text:00005AC8                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1current_1power_1parse+2Er
+.text:00005AC8                                         ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00005ACC off_5ACC        DCD aInit - 0x5A5C      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1current_1power_1parse+3Ar
+.text:00005ACC                                         ; "<init>"
+.text:00005AD0 off_5AD0        DCD aV - 0x5A5E         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1current_1power_1parse+3Cr
+.text:00005AD0                                         ; "()V"
+.text:00005AD4 off_5AD4        DCD aPower - 0x5A7E     ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1current_1power_1parse+5Cr
+.text:00005AD4                                         ; "power"
+.text:00005AD8 off_5AD8        DCD aI - 0x5A80         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1current_1power_1parse+5Er
+.text:00005AD8                                         ; "I"
+.text:00005ADC
+.text:00005ADC ; =============== S U B R O U T I N E =======================================

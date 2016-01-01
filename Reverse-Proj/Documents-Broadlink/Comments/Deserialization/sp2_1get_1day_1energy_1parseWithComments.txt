@@ -1,0 +1,140 @@
+.text:00005B10 ; =============== S U B R O U T I N E =======================================
+.text:00005B10
+.text:00005B10
+.text:00005B10                 EXPORT Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1day_1energy_1parse
+.text:00005B10 Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1day_1energy_1parse
+.text:00005B10
+.text:00005B10 var_30          = -0x30
+.text:00005B10 var_28          = -0x28
+.text:00005B10 var_24          = -0x24
+.text:00005B10 var_20          = -0x20
+.text:00005B10 var_1C          = -0x1C
+.text:00005B10
+.text:00005B10                 PUSH    {R4-R7,LR}
+.text:00005B12                 SUB     SP, SP, #0x1C
+.text:00005B14                 STR     R2, [SP,#0x30+var_24]    
+.text:00005B16                 LDR     R2, [R0]
+.text:00005B18                 MOVS    R3, #0x2E0
+.text:00005B1C                 LDR     R3, [R2,R3]              
+.text:00005B1E                 LDR     R1, [SP,#0x30+var_24]    
+.text:00005B20                 MOVS    R2, #0
+.text:00005B22                 MOVS    R5, R0
+.text:00005B24                 BLX     R3							@GetByteArrayElements
+.text:00005B26                 LDR     R2, [R5]
+.text:00005B28                 MOVS    R3, #0x2AC				 
+.text:00005B2C                 LDR     R3, [R2,R3]
+.text:00005B2E                 MOVS    R6, R0
+.text:00005B30                 LDR     R1, [SP,#0x30+var_24]   
+.text:00005B32                 MOVS    R0, R5
+.text:00005B34                 BLX     R3							@GetArrayLength
+.text:00005B36                 MOVS    R3, #0
+.text:00005B38                 STR     R3, [SP,#0x30+var_28]
+.text:00005B3A                 LDR     R3, =0x487
+.text:00005B3C                 CMP     R0, R3
+.text:00005B3E                 BLS     loc_5C10
+.text:00005B40                 LDR     R3, [R5]
+.text:00005B42                 LDR     R1, =(aCnComBroadli_6 - 0x5B4C)
+.text:00005B44                 MOVS    R0, R5
+.text:00005B46                 LDR     R3, [R3,#0x18]
+.text:00005B48                 ADD     R1, PC          ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00005B4A                 BLX     R3							@FindClass
+.text:00005B4C                 LDR     R1, [R5]
+.text:00005B4E                 LDR     R2, =(aInit - 0x5B5C)
+.text:00005B50                 LDR     R3, =(aV - 0x5B5E)
+.text:00005B52                 MOVS    R7, R0
+.text:00005B54                 ADDS    R1, #8
+.text:00005B56                 LDR     R4, [R1,#0x7C]
+.text:00005B58                 ADD     R2, PC          ; "<init>"
+.text:00005B5A                 ADD     R3, PC          ; "()V"
+.text:00005B5C                 MOVS    R1, R7
+.text:00005B5E                 MOVS    R0, R5
+.text:00005B60                 BLX     R4							@GetMethodID
+.text:00005B62                 LDR     R3, [R5]
+.text:00005B64                 MOVS    R2, R0
+.text:00005B66                 MOVS    R1, R7
+.text:00005B68                 LDR     R3, [R3,#0x70]
+.text:00005B6A                 MOVS    R0, R5
+.text:00005B6C                 BLX     R3							@NewObject
+.text:00005B6E                 LDR     R1, [R5]
+.text:00005B70                 LDR     R2, =(aPower - 0x5B7E)
+.text:00005B72                 LDR     R3, =(aI - 0x5B80)
+.text:00005B74                 ADDS    R1, #0xFC
+.text:00005B76                 LDR     R4, [R1,#0x7C]
+.text:00005B78                 STR     R0, [SP,#0x30+var_28]
+.text:00005B7A                 ADD     R2, PC          ; "power"
+.text:00005B7C                 ADD     R3, PC          ; "I"
+.text:00005B7E                 MOVS    R1, R7
+.text:00005B80                 MOVS    R0, R5
+.text:00005B82                 BLX     R4							@GetFieldID
+.text:00005B84                 LDR     R1, [R5]
+.text:00005B86                 LDR     R2, =(aEnergy - 0x5B94)
+.text:00005B88                 LDR     R3, =(aI_0 - 0x5B96)
+.text:00005B8A                 ADDS    R1, #0xFC
+.text:00005B8C                 LDR     R4, [R1,#0x7C]
+.text:00005B8E                 STR     R0, [SP,#0x30+var_1C]
+.text:00005B90                 ADD     R2, PC          ; "energy"
+.text:00005B92                 ADD     R3, PC          ; "[I"
+.text:00005B94                 MOVS    R1, R7
+.text:00005B96                 MOVS    R0, R5
+.text:00005B98                 BLX     R4							@GetFieldID
+.text:00005B9A                 LDR     R1, [R5]
+.text:00005B9C                 MOVS    R3, #0x17C
+.text:00005BA0                 MOVS    R2, R0
+.text:00005BA2                 LDR     R3, [R1,R3]
+.text:00005BA4                 MOVS    R0, R5
+.text:00005BA6                 LDR     R1, [SP,#0x30+var_28]
+.text:00005BA8                 BLX     R3							@GetObjectField
+.text:00005BAA                 STR     R0, [SP,#0x30+var_20]
+.text:00005BAC                 LDRB    R3, [R6,#5]
+.text:00005BAE                 LDRB    R2, [R6,#4]
+.text:00005BB0                 LDR     R1, [R5]
+.text:00005BB2                 LSLS    R3, R3, #8
+.text:00005BB4                 ORRS    R3, R2
+.text:00005BB6                 LDRB    R2, [R6,#6]
+.text:00005BB8                 MOVS    R0, R5
+.text:00005BBA                 LSLS    R2, R2, #0x10
+.text:00005BBC                 ORRS    R3, R2
+.text:00005BBE                 LDRB    R2, [R6,#7]
+.text:00005BC0                 LSLS    R2, R2, #0x18
+.text:00005BC2                 ORRS    R3, R2
+.text:00005BC4                 MOVS    R2, #0x1B4
+.text:00005BC8                 LDR     R4, [R1,R2]
+.text:00005BCA                 LDR     R1, [SP,#0x30+var_28]
+.text:00005BCC                 LDR     R2, [SP,#0x30+var_1C]
+.text:00005BCE                 BLX     R4							@SetIntField
+.text:00005BD0                 MOVS    R3, R6
+.text:00005BD2                 LDR     R2, [R5]
+.text:00005BD4                 ADDS    R3, #8
+.text:00005BD6                 STR     R3, [SP,#0x30+var_30]
+.text:00005BD8                 MOVS    R3, #0x34C
+.text:00005BDC                 LDR     R4, [R2,R3]
+.text:00005BDE                 MOVS    R3, #0x90
+.text:00005BE0                 MOVS    R0, R5
+.text:00005BE2                 LDR     R1, [SP,#0x30+var_20]
+.text:00005BE4                 MOVS    R2, #0
+.text:00005BE6                 LSLS    R3, R3, #1
+.text:00005BE8                 BLX     R4							@SetIntArrayRegion
+.text:00005BEA                 LDR     R2, [R5]
+.text:00005BEC                 MOVS    R3, #0x300
+.text:00005BF0                 LDR     R4, [R2,R3]
+.text:00005BF2                 MOVS    R0, R5
+.text:00005BF4                 LDR     R1, [SP,#0x30+var_24]
+.text:00005BF6                 MOVS    R2, R6
+.text:00005BF8                 MOVS    R3, #0
+.text:00005BFA                 BLX     R4							@ReleaseByteArrayElements
+.text:00005BFC                 LDR     R3, [R5]
+.text:00005BFE                 MOVS    R0, R5
+.text:00005C00                 MOVS    R1, R7
+.text:00005C02                 LDR     R3, [R3,#0x5C]
+.text:00005C04                 BLX     R3							@DeleteLocalRef
+.text:00005C06                 LDR     R3, [R5]
+.text:00005C08                 MOVS    R0, R5
+.text:00005C0A                 LDR     R1, [SP,#0x30+var_20]
+.text:00005C0C                 LDR     R3, [R3,#0x5C]
+.text:00005C0E                 BLX     R3							@DeleteLocalRef
+.text:00005C10
+.text:00005C10 loc_5C10                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1day_1energy_1parse+2Ej
+.text:00005C10                 LDR     R0, [SP,#0x30+var_28]
+.text:00005C12                 ADD     SP, SP, #0x1C
+.text:00005C14                 POP     {R4-R7,PC}
+.text:00005C14 ; End of function Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1day_1energy_1parse

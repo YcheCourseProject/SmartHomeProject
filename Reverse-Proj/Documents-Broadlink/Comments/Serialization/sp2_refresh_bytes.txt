@@ -1,0 +1,36 @@
+.text:00004A08 ; =============== S U B R O U T I N E =======================================
+.text:00004A08
+.text:00004A08
+.text:00004A08                 EXPORT Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1bytes
+.text:00004A08 Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1bytes
+.text:00004A08
+.text:00004A08 var_20          = -0x20
+.text:00004A08 var_14          = -0x14
+.text:00004A08
+.text:00004A08                 PUSH    {R0-R6,LR}			  @context sp-=0x20
+.text:00004A0A                 LDR     R2, [R0]				  @R2 JNativeI
+.text:00004A0C                 MOVS    R3, #1                 @R3 #1
+.text:00004A0E                 STR     R3, [SP,#0x20+var_14]  @var_14 #1
+.text:00004A10                 MOVS    R3, #0x2C0             @R3 #0x2C0
+.text:00004A14                 LDR     R3, [R2,R3]            @R3 &NewByteArray
+.text:00004A16                 MOVS    R1, #4		          @R1 #4
+.text:00004A18                 MOVS    R5, R0                 @R5 JniEnv 
+.text:00004A1A                 BLX     R3                     @BL NewByteArray(JniEnv,4)
+                                                                @R0 jbyteArray
+.text:00004A1C                 LDR     R2, [R5]               @R2 JNativeI
+.text:00004A1E                 ADD     R3, SP, #0x20+var_14   @R3 &var_14
+.text:00004A20                 STR     R3, [SP,#0x20+var_20]  @var_20 &var_14 
+.text:00004A22                 MOVS    R3, #0xD0              @R3 #0xD0
+.text:00004A24                 MOVS    R6, R0                 @R6 jbyteArray
+.text:00004A26                 LSLS    R3, R3, #2             @R3 ls2
+.text:00004A28                 LDR     R4, [R2,R3]            @R4 &SetByteArrayRegion
+.text:00004A2A                 MOVS    R0, R5 				  @R0 JniEnv
+.text:00004A2C                 MOVS    R1, R6                 @R1 jbyteArray
+.text:00004A2E                 MOVS    R2, #0                 @R2 #0
+.text:00004A30                 MOVS    R3, #4                 @R3 #4
+.text:00004A32                 BLX     R4          @BL SetByteArrayRegion(JniEnv,jbyteArray,0,4,&var_14)
+                                                    @jbyteArray 0x00 0x00 0x00 0x01
+.text:00004A34                 ADD     SP, SP, #0x10
+.text:00004A36                 MOVS    R0, R6
+.text:00004A38                 POP     {R4-R6,PC}
+.text:00004A38 ; End of function Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1refresh_1bytes

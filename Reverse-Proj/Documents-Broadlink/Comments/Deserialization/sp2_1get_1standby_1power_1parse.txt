@@ -1,0 +1,154 @@
+.text:00006088 ; =============== S U B R O U T I N E =======================================
+.text:00006088
+.text:00006088
+.text:00006088                 EXPORT Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse
+.text:00006088 Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse
+.text:00006088
+.text:00006088 var_2C          = -0x2C
+.text:00006088 var_28          = -0x28
+.text:00006088 var_24          = -0x24
+.text:00006088 dest            = -0x20
+.text:00006088 var_1C          = -0x1C
+.text:00006088
+.text:00006088                 PUSH    {R4-R7,LR}                @sp-=0x14
+.text:0000608A                 MOVS    R6, R2                    @R6 byte[]首地址 jbyteArray
+.text:0000608C                 LDR     R2, [R0]				     
+.text:0000608E                 MOVS    R3, #0x2E0
+.text:00006092                 LDR     R3, [R2,R3]               @R3 GetByteArrayElements
+.text:00006094                 SUB     SP, SP, #0x1C             @sp-=0x1C
+.text:00006096                 MOVS    R1, R6                    @R1 byte[]首地址 jbyteArray
+.text:00006098                 MOVS    R2, #0                    @R2 0
+.text:0000609A                 MOVS    R5, R0                    
+.text:0000609C                 BLX     R3             @GetByteArrayElements(xxx,jbyteArray,0) R0 Jbyte*
+.text:0000609E                 LDR     R2, [R5]                  
+.text:000060A0                 MOVS    R3, #0x2AC            
+.text:000060A4                 MOVS    R7, R0                    @R7 jbyte*
+.text:000060A6                 LDR     R3, [R2,R3]               @r3 GetArrayLength
+.text:000060A8                 MOVS    R0, R5                    
+.text:000060AA                 MOVS    R1, R6
+.text:000060AC                 BLX     R3                        @GetArrayLength(...,jbyteArray) R0 len
+.text:000060AE                 MOVS    R4, #0x300                
+.text:000060B2                 CMP     R0, #0xB
+.text:000060B4                 BHI     loc_60CA                  @R0>0xb(11),才满足条件进行解析
+.text:000060B6                 LDR     R3, [R5]                  
+.text:000060B8                 MOVS    R0, R5                    
+.text:000060BA                 MOVS    R1, R6                    @R1 jbyteArray
+.text:000060BC                 LDR     R4, [R3,R4]               @R4 ReleaseByteArrayElements
+.text:000060BE                 MOVS    R2, R7                    @R2 jbyte*
+.text:000060C0                 MOVS    R3, #0                    @R3 0
+.text:000060C2                 BLX     R4               @ReleaseByteArrayElements(R0,R1,R2,R3)
+.text:000060C4                 MOVS    R3, #0                
+.text:000060C6                 STR     R3, [SP,#0x30+var_2C]     @var_2C 0(null???)
+.text:000060C8                 B       loc_6174                  @跳转到收尾工作
+.text:000060CA ; ---------------------------------------------------------------------------
+.text:000060CA
+.text:000060CA loc_60CA                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse+2Cj
+.text:000060CA                 ADDS    R1, R7, #4      ; src     @R1=jbyte* 后移4byte
+.text:000060CC                 MOVS    R2, #4          ; n       @R2 4
+.text:000060CE                 ADD     R0, SP, #0x30+dest ; dest @R0 &dest
+.text:000060D0                 BLX     memcpy     @void *memcpy(void *dest, const void *src, size_t n);
+                                                                 @dest jbyte[4-7]
+.text:000060D4                 MOVS    R1, R7                    @R1 jbyte*
+.text:000060D6                 ADDS    R1, #8          ; src     @R1 后移8byte
+.text:000060D8                 MOVS    R2, #4          ; n       @R2 4
+.text:000060DA                 ADD     R0, SP, #0x30+var_1C ; dest @R0 &var_1C
+.text:000060DC                 BLX     memcpy
+                                                                 @var_1C jbyte[12-15]
+.text:000060E0                 LDR     R3, [R5]                  @R3 JnativeI
+.text:000060E2                 MOVS    R2, R7                    @R2 jbyte*
+.text:000060E4                 MOVS    R1, R6                    @R1 jbyteArray
+.text:000060E6                 LDR     R4, [R3,R4]               @R4 ReleaseByteArrayElements
+.text:000060E8                 MOVS    R0, R5                    
+.text:000060EA                 MOVS    R3, #0                    @R3 0
+.text:000060EC                 BLX     R4             @ReleaseByteArrayElements(R0,R1,R2,R3)
+.text:000060EE                 LDR     R3, [R5]
+.text:000060F0                 LDR     R1, =(aCnComBroadli_9 - 0x60FA) @R1 &aCnCom...
+.text:000060F2                 MOVS    R0, R5                   
+.text:000060F4                 LDR     R3, [R3,#0x18]            @R3 FindClass
+.text:000060F6                 ADD     R1, PC          ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:000060F8                 BLX     R3                       @FindClass(...) R0 jclass         
+.text:000060FA                 LDR     R1, [R5]                  
+.text:000060FC                 LDR     R2, =(aInit - 0x610A)
+.text:000060FE                 LDR     R3, =(aV - 0x610C)
+.text:00006100                 MOVS    R7, R0                    @R7 jobject
+.text:00006102                 ADDS    R1, #8
+.text:00006104                 LDR     R4, [R1,#0x7C]            @R4 GetObjectClass
+.text:00006106                 ADD     R2, PC          ; "<init>"
+.text:00006108                 ADD     R3, PC          ; "()V"
+.text:0000610A                 MOVS    R1, R7                    @R1 jbyte*
+.text:0000610C                 MOVS    R0, R5                    
+.text:0000610E                 BLX     R4            @GetObjectClass(xxx,jobject) R0 jclass
+.text:00006110                 LDR     R3, [R5]                  
+.text:00006112                 MOVS    R2, R0                    @R2 jclass
+.text:00006114                 MOVS    R1, R7                    @R1 jobject
+.text:00006116                 LDR     R3, [R3,#0x70]            @R3 NewObject
+.text:00006118                 MOVS    R0, R5                    
+.text:0000611A                 BLX     R3           @NewObject(R0,jobject,jclass)
+.text:0000611C                 LDR     R6, =(aI - 0x6126)
+.text:0000611E                 LDR     R3, [R5]
+.text:00006120                 LDR     R2, =(aStandbypower - 0x6130)
+.text:00006122                 ADD     R6, PC          ; "I"
+.text:00006124                 ADDS    R3, #0xFC               
+.text:00006126                 LDR     R4, [R3,#0x7C]           @R4 &GetFieldID
+.text:00006128                 STR     R0, [SP,#0x30+var_2C]    @var_2C jobject(BLSPAutoSaveInfo) 
+.text:0000612A                 MOVS    R3, R6             	    @"I"
+.text:0000612C                 ADD     R2, PC          ; "standbyPower"
+.text:0000612E                 MOVS    R1, R7             		@jobject
+.text:00006130                 MOVS    R0, R5             		@JniEnv
+.text:00006132                 BLX     R4                       @R0 "standbyPower" fieldId
+.text:00006134                 LDR     R3, [R5]
+.text:00006136                 LDR     R2, =(aStandbyenable - 0x6142)
+.text:00006138                 STR     R0, [SP,#0x30+var_28]    @var_28 "standbyPower" fieldId
+.text:0000613A                 ADDS    R3, #0xFC
+.text:0000613C                 LDR     R4, [R3,#0x7C]
+.text:0000613E                 ADD     R2, PC          ; "standbyEnable"
+.text:00006140                 MOVS    R3, R6
+.text:00006142                 MOVS    R1, R7                   @jobject
+.text:00006144                 MOVS    R0, R5
+.text:00006146                 BLX     R4                       @R0 "standbyEnable" fieldId
+.text:00006148                 LDR     R3, [R5]
+.text:0000614A                 MOVS    R6, #0x1B4
+.text:0000614E                 LDR     R4, [R3,R6]              @R4 &SetIntField
+.text:00006150                 STR     R0, [SP,#0x30+var_24]    @var_24 "standbyEnable" fieldId
+.text:00006152                 LDR     R1, [SP,#0x30+var_2C]    @R1 jobject 
+.text:00006154                 MOVS    R0, R5                   
+.text:00006156                 LDR     R2, [SP,#0x30+var_28]    @R2 "standbyPower" fieldId
+.text:00006158                 LDR     R3, [SP,#0x30+dest]      @R3 jbyte[4-7]
+.text:0000615A                 BLX     R4                       @standbyPower=(int)jbyte[4-7]
+.text:0000615C                 LDR     R3, [R5]                 
+.text:0000615E                 MOVS    R0, R5
+.text:00006160                 LDR     R1, [SP,#0x30+var_2C]    @R1 jobject
+.text:00006162                 LDR     R4, [R3,R6]              @R4 &SetIntField
+.text:00006164                 LDR     R2, [SP,#0x30+var_24]    @R2 "standbyEnable=" fieldId
+.text:00006166                 LDR     R3, [SP,#0x30+var_1C]    @R3 jbyte[12-15]
+.text:00006168                 BLX     R4                       @standbyEnable=(int)jbyte[12-15]
+.text:0000616A                 LDR     R3, [R5]                 
+.text:0000616C                 MOVS    R0, R5
+.text:0000616E                 MOVS    R1, R7                   @R1 jobject
+.text:00006170                 LDR     R3, [R3,#0x5C]           @R3 DeleteLocalRef
+.text:00006172                 BLX     R3
+.text:00006174
+.text:00006174 loc_6174                                ; CODE XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse+40j
+.text:00006174                 LDR     R0, [SP,#0x30+var_2C]    @R0 jobject
+.text:00006176                 ADD     SP, SP, #0x1C
+.text:00006178                 POP     {R4-R7,PC}
+.text:00006178 ; End of function Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse
+.text:00006178
+.text:00006178 ; ---------------------------------------------------------------------------
+.text:0000617A                 ALIGN 4
+.text:0000617C off_617C        DCD aCnComBroadli_9 - 0x60FA
+.text:0000617C                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse+68r
+.text:0000617C                                         ; "cn/com/broadlink/blnetworkdataparse/BLS"...
+.text:00006180 off_6180        DCD aInit - 0x610A      ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse+74r
+.text:00006180                                         ; "<init>"
+.text:00006184 off_6184        DCD aV - 0x610C         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse+76r
+.text:00006184                                         ; "()V"
+.text:00006188 off_6188        DCD aI - 0x6126         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse+94r
+.text:00006188                                         ; "I"
+.text:0000618C off_618C        DCD aStandbypower - 0x6130
+.text:0000618C                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse+98r
+.text:0000618C                                         ; "standbyPower"
+.text:00006190 off_6190        DCD aStandbyenable - 0x6142
+.text:00006190                                         ; DATA XREF: Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1get_1standby_1power_1parse+AEr
+.text:00006190                                         ; "standbyEnable"
+.text:00006194

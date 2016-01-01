@@ -1,6 +1,0 @@
-bin/*
-obj/*
-*.usr
-*.pfx
-
-AppPackages/*

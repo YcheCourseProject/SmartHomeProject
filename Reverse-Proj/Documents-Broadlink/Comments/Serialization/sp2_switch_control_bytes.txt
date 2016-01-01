@@ -1,0 +1,39 @@
+text:00005220 ; =============== S U B R O U T I N E =======================================
+.text:00005220
+.text:00005220
+.text:00005220                 EXPORT Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1switch_1control_1bytes
+.text:00005220 Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1switch_1control_1bytes
+.text:00005220
+.text:00005220 var_20          = -0x20
+.text:00005220 var_18          = -0x18
+.text:00005220 var_14          = -0x14
+.text:00005220
+.text:00005220                 PUSH    {R0-R6,LR}                      @sp sp-=0x20
+.text:00005222                 STR     R2, [SP,#0x20+var_14]           @var_14 paramInt
+.text:00005224                 MOVS    R3, #2                          @R3 #2
+.text:00005226                 LDR     R2, [R0]						   @R2 JNativeI
+.text:00005228                 STR     R3, [SP,#0x20+var_18]           @var_18 #2
+.text:0000522A                 MOVS    R3, #0x2C0                      @R3 #0x2C0
+.text:0000522E                 LDR     R3, [R2,R3]                     @R3 &NewByteArray
+.text:00005230                 MOVS    R1, #8                          @R1 #8
+.text:00005232                 MOVS    R5, R0                          @R5 JniEnv
+.text:00005234                 BLX     R3                              @BL NewByteArray(JniEnv,8)
+                                                                        @R0 jbyteArray
+.text:00005236                 LDR     R2, [R5]                        @R2 JNativeI
+.text:00005238                 ADD     R4, SP, #0x20+var_18			   @R4 &var_18
+.text:0000523A                 MOVS    R3, #0xD0                       @R3 #0xD0
+.text:0000523C                 MOVS    R6, R0                          @R6 jbyteArray
+.text:0000523E                 STR     R4, [SP,#0x20+var_20]           @var_20 &var_18
+.text:00005240                 LSLS    R3, R3, #2                      @R3 ls 2 
+.text:00005242                 LDR     R4, [R2,R3]                     @R4 &SetByteArrayRegion
+.text:00005244                 MOVS    R0, R5                          @R0 JniEnv
+.text:00005246                 MOVS    R1, R6                          @R1 jbyteArray
+.text:00005248                 MOVS    R2, #0                          @R2 #0
+.text:0000524A                 MOVS    R3, #8                          @R3 #8
+.text:0000524C                 BLX     R4            @BL SetByteArrayRegion(JniEnv,jbyteArray,0,8,&var_18)
+                                                     @ 0x00 0x00 0x00 0x02 0x00 0x00 0x00 0x0($pramInt)
+.text:0000524E                 ADD     SP, SP, #0x10                   @remove tmp
+.text:00005250                 MOVS    R0, R6                          @ret jbyteArray
+.text:00005252                 POP     {R4-R6,PC}
+.text:00005252 ; End of function Java_cn_com_broadlink_blnetworkdataparse_BLNetworkDataParse_sp2_1switch_1control_1bytes
+.text:00005252

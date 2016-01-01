@@ -1,0 +1,10 @@
+//)返回时，该互斥锁已被锁定。线程调用该函数让互斥锁上锁，
+//如果该互斥锁已被另一个线程锁定和拥有，则调用该线程将阻塞，直到该互斥锁变为可用为止
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+
+int pthread_mutex_unlock(pthread_mutex_t *mutex);
+
+//其参数tv是保存获取时间结果的结构体，参数tz用于保存时区结果：
+int gettimeofday(struct timeval*tv, struct timezone *tz);
+
+
