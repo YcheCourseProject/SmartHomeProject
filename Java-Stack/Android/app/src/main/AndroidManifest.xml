@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.smarthomeapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="com.microsoft.band.service.BIND_BAND_SERVICE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon_smarthome"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".activities.WBStatusAPIActivity"
+            android:label="@string/title_activity_wb_statusapi"></activity>
+        <activity
+            android:name=".ssoauth.WBAuthActivity"
+            android:label="授权页面"></activity>
+        <activity
+            android:name=".activities.TestSocialEventActivity"
+            android:label="@string/title_activity_test_social_event"></activity>
+        <activity
+            android:name=".activities.MainListViewActivity"
+            android:label="@string/title_activity_main_view">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ServiceTestActivity"
+            android:label="@string/title_activity_service_test"></activity>
+        <activity
+            android:name=".activities.xuhong.UIMainActivity"
+            android:label="@string/title_activity_ui__main"></activity>
+        <actiity
+            android:name=".activities.jiazhanpei.SetPreference"
+            android:label="@string/title_activity_ui__main"></actiity>
+        <activity
+            android:name=".activities.jiazhanpei.ShowEnvironmentData"
+            android:label="@string/title_activity_ui__main"></activity>
+        <activity
+            android:name=".activities.xuhong.ApplianceActivity"
+            android:label="@string/title_activity_appliance"></activity>
+
+        <activity android:name=".activities.jiazhanpei.ShowFamilylineInfo"></activity>
+        <activity
+            android:name=".activities.xuhong.StatisticComplaindegreeActivity"
+            android:label="@string/title_activity_statistic__complaindegree"></activity>
+        <activity
+            android:name=".activities.xuhong.ContrastElectricityActivity"
+            android:label="@string/title_activity_contrast_electricity"></activity>
+
+
+        <service
+            android:name=".services.CollectDataService"
+            android:enabled="true"
+            android:exported="true"></service>
+        <service
+            android:name=".services.CountService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+
+    </application>
+
+</manifest>

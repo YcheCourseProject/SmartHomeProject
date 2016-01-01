@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.example.smarthomeapp.fragment.AirconditionerFrgament"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--2015 7 18-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/fragment_airconditioner_label"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/switchkeyimage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/switch_off_normal"
+            android:layout_marginRight="50dp"
+            android:paddingTop="13dp"
+            />
+
+
+    </LinearLayout>
+    <!-- 2-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_family_control"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/layout_border_with_bg_color"
+        android:layout_weight="1" android:gravity="center"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/fragment_airconditioner_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="40dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+
+            >
+
+            <TextView
+                android:id="@+id/heater_current_temp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="27℃"
+                android:textSize="20dp"
+                android:paddingRight="50dp"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/fragment_airconditioner_set"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="20dp"
+        android:gravity="center"
+        >
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                >
+                <com.triggertrap.seekarc.SeekArc
+                    android:id="@+id/heaterseekArc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="30dp"
+                    seekarc:rotation="180"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="300"
+                    seekarc:touchInside="true"
+                    />
+                <TextView
+                    android:id="@+id/heaterTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="温度设置"/>
+</FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+

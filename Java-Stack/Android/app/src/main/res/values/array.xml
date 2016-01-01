@@ -1,0 +1,63 @@
+<resources>
+        <string-array name="gps_time_options">
+            <item>30 s</item>
+            <item>5 min</item>
+            <item>20 min</item>
+            <item>60 min</item>
+        </string-array>
+    <string-array name="gap_time_option_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="weibo_time_options">
+        <item>30 s</item>
+        <item>5 min</item>
+        <item>20 min</item>
+        <item>60 min</item>
+    </string-array>
+    <string-array name="weibo_time_option_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="message_time_options">
+        <item>30 s</item>
+        <item>5 min</item>
+        <item>20 min</item>
+        <item>60 min</item>
+    </string-array>
+    <string-array name="message_time_option_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="carlender_time_options">
+        <item>30 s</item>
+        <item>5 min</item>
+        <item>20 min</item>
+        <item>60 min</item>
+    </string-array>
+    <string-array name="carlender_time_option_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <array name="light_id">
+        <item>电灯1</item>
+        <item>电灯2</item>
+        <item>电灯3</item>
+        <item>电灯4</item>
+    </array>
+    <array name="room_id">
+        <item>房间1</item>
+        <item>房间2</item>
+        <item>房间3</item>
+        <item>房间4</item>
+    </array>
+
+</resources>

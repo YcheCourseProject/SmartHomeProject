@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <CheckBoxPreference
+        android:key="gps_set_preference"
+        android:title="GPS打开"
+        android:defaultValue="false"
+        />
+    <CheckBoxPreference
+        android:key="social_set_preference"
+        android:title="微博授权打开"
+        android:defaultValue="false"
+        />
+    <EditTextPreference
+        android:key="homeaddress_set_preference"
+        android:title="设置家庭地址"
+        />
+    <ListPreference
+        android:key="gps_time_frequency_setting"
+        android:dialogTitle="GPS时间采样频率"
+        android:title="设置GPS频率"
+        android:entries="@array/gps_time_options"
+        android:entryValues="@array/gap_time_option_value"
+        android:defaultValue="1"
+        />
+    <ListPreference
+        android:key="weibo_time_frequency_setting"
+        android:dialogTitle="微博时间采样频率"
+        android:title="设置采集微博数据频率"
+        android:entries="@array/weibo_time_options"
+        android:entryValues="@array/weibo_time_option_value"
+        android:defaultValue="1"
+        />
+    <ListPreference
+        android:key="message_time_frequency_setting"
+        android:dialogTitle="短信时间采样频率"
+        android:title="设置采集短信数据频率"
+        android:entries="@array/message_time_options"
+        android:entryValues="@array/message_time_option_value"
+        android:defaultValue="1"
+        />
+    <ListPreference
+        android:key="carlender_time_frequency_setting"
+        android:dialogTitle="日历时间采样频率"
+        android:title="设置采集日历数据频率"
+        android:entries="@array/carlender_time_options"
+        android:entryValues="@array/carlender_time_option_value"
+        android:defaultValue="1"
+        />
+
+</PreferenceScreen>

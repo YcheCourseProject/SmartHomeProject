@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.example.smarthomeapp.fragment.AirconditionerFrgament"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto">
+    <ExpandableListView
+        android:headerDividersEnabled="false"
+        android:divider="@android:color/transparent"
+        android:childDivider="@android:color/transparent"
+        android:id="@+id/expandlist_heater"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:cacheColorHint="#00000000"
+        android:listSelector="#00000000"
+        >
+    </ExpandableListView>
+
+</LinearLayout>
+

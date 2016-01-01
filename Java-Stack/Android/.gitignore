@@ -1,0 +1,9 @@
+.idea/*
+.gradle/*
+build/*
+app/build/*
+*.iml
+import-summary.txt
+local.properties
+
+*/build/*

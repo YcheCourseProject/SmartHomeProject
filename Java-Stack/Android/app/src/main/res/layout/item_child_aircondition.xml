@@ -1,0 +1,212 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.example.smarthomeapp.fragment.AirconditionerFrgament"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--2015 7 18-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/fragment_airconditioner_label"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/switchkeyimage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/switch_off_normal"
+            android:layout_marginRight="50dp"
+            android:paddingTop="13dp"
+            />
+
+        <ImageView
+            android:id="@+id/airconditionerimage"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            android:src="@drawable/airconditioner"
+            android:layout_marginRight="40dp"
+            />
+
+    </LinearLayout>
+    <!-- 2-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_family_control"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/layout_border_with_bg_color"
+        android:layout_weight="1" android:gravity="center"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/fragment_airconditioner_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="40dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            >
+            <ImageView
+                android:id="@+id/airconditioner_mode_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ac_mode_cool"
+                android:layout_marginRight="60dp"
+                />
+            <TextView
+                android:id="@+id/airconditioner_current_temp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="27℃"
+                android:textSize="20dp"
+                android:paddingRight="50dp"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/fragment_airconditioner_set"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="20dp"
+        android:gravity="center"
+        >
+        <LinearLayout
+            android:id="@+id/arclayoutmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+          <FrameLayout
+              android:id="@+id/menu_layout"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="left"
+              android:layout_weight="1"
+              >
+
+            <com.ogaclejapan.arclayout.ArcLayout
+                android:id="@+id/arc_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:arc_origin="center"
+                app:arc_radius="70dp"
+                app:arc_axisRadius="60dp"
+                app:arc_freeAngle="true"
+                app:arc_reverseAngle="false"
+                >
+
+                <ImageButton
+                    android:id="@+id/model_cool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:src="@drawable/ac_mode_cool"
+                    android:background="@color/white"
+                    app:arc_origin="center"
+                    app:arc_angle="45"
+                    />
+
+                <ImageButton
+                    android:id="@+id/model_humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:src="@drawable/ac_mode_arefaction"
+                    android:background="@color/white"
+                    app:arc_origin="center"
+                    app:arc_angle="135"
+                    />
+
+                <ImageButton
+                    android:id="@+id/model_dry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:src="@drawable/ac_mode_hot"
+                    android:background="@color/white"
+                    app:arc_origin="center"
+                    app:arc_angle="225"
+                    />
+                <ImageButton
+                    android:id="@+id/model_wind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:src="@drawable/ac_mode_ventilate"
+                    android:background="@color/white"
+                    app:arc_origin="center"
+                    app:arc_angle="315"
+                    />
+
+            </com.ogaclejapan.arclayout.ArcLayout>
+            <Button
+                android:id="@+id/modelhint"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:text="模式"
+                android:background="@color/shallowblue"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                />
+            </FrameLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <FrameLayout
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_weight="1"
+                >
+                <com.triggertrap.seekarc.SeekArc
+                    android:id="@+id/seekArc"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:padding="30dp"
+                    seekarc:rotation="180"
+                    seekarc:max="50"
+                    seekarc:startAngle="30"
+                    seekarc:sweepAngle="300"
+                    seekarc:touchInside="true" />
+                <TextView
+                    android:id="@+id/seekark_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                   />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+
+

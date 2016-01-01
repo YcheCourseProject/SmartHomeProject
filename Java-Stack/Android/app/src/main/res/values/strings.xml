@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="set_temp">设置温度：</string>
+    <string name="app_name">SmartHomeApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="family_in_env">室内环境</string>
+    <string name="family_device_control">家电控制</string>
+    <string name="family_circuit_display">家庭线路</string>
+    <string name="title_activity_wb_statusapi">WB_StatusAPI</string>
+    <string name="title_activity_test_social_event">TestSocialEventActivity</string>
+    <string name="title_activity_gps_band">gps_band</string>
+    <string name="title_activity_social">social</string>
+    <string name="title_activity_main_view">main_view</string>
+    <string name="title_activity_service_test">ServiceTestActivity</string>
+    <string name="title_activity_ui__main">UI_Main</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="temp_symbol">℃</string>
+    <string name="current_id">设备编号：</string>
+    <string name="current_temp">当前温度：</string>
+    <string name="title_tool">设置</string>
+    <string name="title_home">家庭</string>
+    <string name="title_personal">个人</string>
+    <string name="title_statistics">统计</string>
+    <string name="actvity_contrast_electricity">用电情况</string>
+    <string name="applicant_airconditioner">空调</string>
+    <string name="appliccant_heater">热水器</string>
+    <string name="applicant_light">电灯</string>
+    <string name="applicant_plug">插头</string>
+    <string name="applicant_curtain">窗帘</string>
+    <string name="title_activity_appliance">ApplianceActivity</string>
+    <string name="title_activity_statistic__complaindegree">Statistic_Complaindegree</string>
+    <string name="last_year">2014-04</string>
+    <string name="last_month">2015-03</string>
+    <string name="current_month">2015-04</string>
+    <string name="txt_former_month">上月</string>
+    <string name="title_activity_contrast_electricity">ContrastElectricityActivity</string>
+</resources>
