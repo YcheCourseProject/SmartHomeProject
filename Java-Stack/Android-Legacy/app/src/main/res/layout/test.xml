@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow_HarCur_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/orange" >
+            <TextView
+                android:id="@+id/textViewTitle0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dip"
+                android:layout_marginLeft="2dip"
+                android:layout_marginTop="2dip"
+                android:layout_weight="1"
+                android:background="@color/grey"
+                android:text="@string/harCurInfo"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:typeface="monospace" />
+
+
+
+
+            <ImageButton
+                android:id="@+id/imageButtonPush_HarCur1"
+                android:layout_width="70dp"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="2dip"
+                android:layout_marginRight="2dip"
+                android:layout_marginTop="2dip"
+                android:background="@color/grey"
+                android:src="@drawable/up" />
+
+        </TableRow>
+
+
+        <TableLayout
+            android:id="@+id/tablelayout_harcur_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+            <TableRow
+                android:id="@+id/TableRow_Cur_Info_1st"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/orange" >
+
+
+
+
+                <TextView
+                    android:id="@+id/textView_showlog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="----"
+                    android:textColor="@color/grey"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/TextView19"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginLeft="2dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_weight="1"
+                    android:background="@color/grey"
+                    android:text="@string/harCurInfo1st"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:typeface="monospace" />
+
+
+                <ImageButton
+                    android:id="@+id/imageButtonPush_HarCur11"
+                    android:layout_width="20dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="2dip"
+                    android:background="@color/grey"
+                    android:src="@drawable/up" />
+
+            </TableRow>
+
+
+            <TableLayout
+                android:id="@+id/tablelayout_harcur_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:id="@+id/TableRow06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+
+                    <TextView
+                        android:id="@+id/TextView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:text="@string/harCurA1"
+                        
+                        android:textSize="18dp" />
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_a1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <TextView
+                        android:id="@+id/TextView16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRow08"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+
+                    <TextView
+                        android:id="@+id/TextView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="2"
+                        android:text="@string/harCurB1"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_b1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <TextView
+                        android:id="@+id/TextView20"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRow07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TextView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/harCurC1"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_c1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <TextView
+                        android:id="@+id/TextView21"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+                </TableRow>
+            </TableLayout>
+        </TableLayout>
+
+
+        <TableLayout
+            android:id="@+id/tablelayout_harcur_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+
+            <TableRow
+                android:id="@+id/TableRow_Cur_Info_3th"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/orange" >
+
+                <TextView
+                    android:id="@+id/TextView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="----"
+                    android:textColor="@color/grey"
+                    android:textSize="20dp" />
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginLeft="2dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_weight="1"
+                    android:background="@color/grey"
+                    android:text="@string/harCurInfo3th"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:typeface="monospace" />
+
+
+                <ImageButton
+                    android:id="@+id/imageButtonPush_HarCur13"
+                    android:layout_width="20dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="2dip"
+                    android:background="@color/grey"
+                    android:src="@drawable/up" />
+
+            </TableRow>
+
+
+
+            <TableLayout
+                android:id="@+id/tablelayout_harcur_22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+                    <TextView
+                        android:id="@+id/textView_hint_settime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:text="@string/harCurA3"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_a3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="2"
+                        android:text="@string/harCurB3"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_b3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/harCurC3"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_c3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+                </TableRow>
+            </TableLayout>
+
+        </TableLayout>
+
+
+        <TableLayout
+            android:id="@+id/tablelayout_harcur_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+            <TableRow
+                android:id="@+id/TableRow_Cur_Info_5th"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/orange" >
+
+                <TextView
+                    android:id="@+id/TextView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="----"
+                    android:textColor="@color/grey"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/TextView09"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginLeft="2dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_weight="1"
+                    android:background="@color/grey"
+                    android:text="@string/harCurInfo5th"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:typeface="monospace" />
+
+
+                <ImageButton
+                    android:id="@+id/imageButtonPush_HarCur15"
+                    android:layout_width="20dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="2dip"
+                    android:background="@color/grey"
+                    android:src="@drawable/up" />
+
+            </TableRow>
+
+
+            <TableLayout
+                android:id="@+id/tablelayout_harcur_33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:id="@+id/TableRow02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:text="@string/harCurA5"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_a5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <TextView
+                        android:id="@+id/TextView06"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRow04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+                    <TextView
+                        android:id="@+id/TextView07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="2"
+                        android:text="@string/harCurB5"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_b5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <TextView
+                        android:id="@+id/TextView10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRow03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+                    <TextView
+                        android:id="@+id/TextView08"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/harCurC5"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+
+
+                    <TextView
+                        android:id="@+id/TextView_harCur_c5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="5"
+                        android:gravity="left"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <TextView
+                        android:id="@+id/TextView11"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="1"
+                        android:gravity="right"
+                        android:text="@string/CurrBasicUnit"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+                </TableRow>
+            </TableLayout>
+        </TableLayout>
+
+    </TableLayout>
+
+</LinearLayout>

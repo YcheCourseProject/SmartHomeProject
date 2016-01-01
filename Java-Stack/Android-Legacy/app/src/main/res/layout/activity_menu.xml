@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/littleblue"
+    android:gravity="center_horizontal|center_vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+    	android:background="@color/littleblue" 
+	>   
+        <TableLayout
+            android:id="@+id/tablelayout_iddress"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/littleblue"
+            android:orientation="vertical" 
+          	android:layout_marginBottom="50dp"
+            >
+			
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_large"
+                    android:layout_weight="3"
+                    android:drawableLeft="@drawable/icon_hotel_address"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/ipaddr"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/menu_tvIP"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="left|center_vertical|center_horizontal"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic"
+                    android:typeface="normal" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="@dimen/padding_large"
+                    android:layout_weight="3"
+                    android:drawableLeft="@drawable/icon_homepage_myctrip_gold"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/metertype"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/menu_tvTypeName"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="left|center_vertical|center_horizontal"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic"
+                    android:typeface="normal" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="3"
+                    android:drawableLeft="@drawable/icon_flight_board_warning"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/CnnStatus"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/menu_tvState"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="left|center_vertical|center_horizontal"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/red"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic"
+                    android:typeface="normal" />
+            </TableRow>
+        </TableLayout>
+
+        <GridView
+            android:id="@+id/gridView_functions2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/bottom_size">
+        </GridView>
+
+    </LinearLayout>
+
+</RelativeLayout>

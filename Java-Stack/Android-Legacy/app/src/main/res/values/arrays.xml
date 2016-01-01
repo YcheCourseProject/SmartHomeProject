@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="Menu_Function_Items">
+        <item>Realtime Detect</item>
+        <item>Electric History</item>
+        <item>Appliance Opt</item>
+        <item>LoadInfo Lib</item>
+    </string-array>
+    <string-array name="Connection_Stauts">
+        <item>Connected</item>
+        <item>Unconnected</item>
+    </string-array>
+    <string-array name="Optimize_Fnction_Items">
+        <item>Home</item>
+        <item>AC-Opt</item>
+        <item>WH-Opt</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="Real_Time_Price_List_Format">
+        <item>Start time:\t</item>
+        <item>\nThe Electricity-Price：\t\t</item>
+        <item>\tcents</item>
+    </string-array>
+    <string-array name="Handler_Warn_Info">
+        <item>warn</item>
+        <item>hint</item>
+        <item>Data Acquisition Success</item>
+        <item>Data Acquisition Failure</item>      
+        <item>Warn:Cannot reach the network</item>
+        <item>Network is Ok to get RealTime E-Price</item>
+    </string-array></resources>

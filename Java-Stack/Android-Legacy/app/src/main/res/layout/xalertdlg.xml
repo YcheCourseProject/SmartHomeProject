@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="300dp"
+    android:background="#fff"
+  android:layout_centerInParent="true" 
+      >
+   <!-- 退出游戏的背景图 -->
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_centerInParent="true"
+     android:orientation="vertical" 
+     android:gravity="center">
+	 <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:gravity="center">
+     <TextView
+         android:id="@+id/xalert_lbl"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:padding="10dp"
+         android:text="@string/txt_strategy"
+         android:textColor="#7ABECB"
+         android:textSize="20sp" />
+
+  <!--   <Button
+         android:id="@+id/btn_formore"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/txt_formore" />-->  
+	</LinearLayout>
+     <ScrollView
+         android:id="@+id/scrollView1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" >
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="vertical" >
+
+             <TextView
+                 android:id="@+id/xalert_txt"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:padding="15dp"
+                 android:textColor="#ff000000"
+                 android:textSize="15sp" />
+         </LinearLayout>
+     </ScrollView>
+
+ </LinearLayout>
+
+</RelativeLayout>

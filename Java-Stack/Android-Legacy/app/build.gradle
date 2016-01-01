@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.example.smarthome"
+        minSdkVersion 15
+        targetSdkVersion 18
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_5
+            targetCompatibility JavaVersion.VERSION_1_5
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    sourceSets { main { java.srcDirs = ['src/main/java', 'src/test', 'src/test/java'] } }
+}
+
+dependencies {
+    compile 'com.github.PhilJay:MPAndroidChart:v2.1.0'
+    compile 'com.beardedhen:androidbootstrap:2.0.1'
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile 'com.orhanobut:dialogplus:1.5@aar'
+
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile files('libs/achartengine-1.1.0.jar')
+    compile files('libs/androidplot-core-0.5.2.jar')
+    compile files('libs/jamod-1.2-SNAPSHOT.jar')
+}

@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/textview_hintwifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_small"
+        android:text="TextView"
+        android:textColor="@color/red"
+        android:textSize="@dimen/padding_large"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_hintwifi"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/tab_realtime"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/padding_small"
+                        android:text="@string/txt_certainregion"
+                        android:lines="1"
+                        android:layout_weight="1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="@dimen/padding_large"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" />
+
+                    <Button
+                        android:id="@+id/button_search_for_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/button_gain_realtime_price"
+                        android:textSize="@dimen/padding_large" />
+
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/padding_large"
+                    android:text="@string/txt_realtimeprice"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/padding_large" />
+
+                <ListView
+                    android:id="@+id/listView_realtime_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="255dp"
+                    android:layout_marginBottom="@dimen/padding_medium"
+                    android:layout_marginLeft="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/padding_small" >
+
+                </ListView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/GridView_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:numColumns="3"
+        android:scrollingCache="false" >
+
+    </GridView>
+
+</RelativeLayout>

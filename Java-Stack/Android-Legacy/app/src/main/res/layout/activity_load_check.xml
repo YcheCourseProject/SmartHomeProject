@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:gravity="top"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="4" >
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/loadCheck_plot"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/padding_small"
+                android:layout_marginBottom="@dimen/padding_large" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <CheckBox
+                android:id="@+id/checkBoxAp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AP" />
+
+            <CheckBox
+                android:id="@+id/checkBoxRp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RP" />
+
+            <CheckBox
+                android:id="@+id/checkBoxVAp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AppP" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="50dp"
+            android:layout_weight="3"
+            android:gravity="bottom|center" >
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:id="@+id/loadCheck_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" 
+                    android:paddingLeft="3px"
+                    android:paddingRight="3px">
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

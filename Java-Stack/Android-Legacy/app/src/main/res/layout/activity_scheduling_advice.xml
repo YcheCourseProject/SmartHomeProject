@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SchedulingAdviceActivity" >
+
+    <LinearLayout
+        android:id="@+id/layout_whole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal" 
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:id="@+id/textView_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Region" 
+                android:textSize="18dp"/>
+
+            <Spinner
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/Spinner_Region_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" 
+                android:tag="fd"/>
+
+            <Button
+                android:id="@+id/button_loadmonitor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GetPrice" 
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_pricecurve"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="vertical" 
+            android:layout_marginBottom="20dp">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView_loadname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:textSize="18dp"
+                android:text="Water-Heater Scheduling Advice" 
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/layout_schedulingtable"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_wholescheduling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

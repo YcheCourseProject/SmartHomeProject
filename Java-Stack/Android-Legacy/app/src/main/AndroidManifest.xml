@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.smarthome"
+    android:versionCode="1"
+    android:versionName="1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:name="com.example.shems.ASGApplication"
+        android:icon="@drawable/theme"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+        <activity
+            android:name="com.example.shems.activities.MainActivity"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name="com.example.shems.activities.ConnectingActivity"
+            android:label="@string/title_activity_connecting" />
+        <activity
+            android:name="com.example.shems.activities.MenuActivity"
+            android:label="@string/title_activity_menu" />
+        <activity
+            android:name="com.example.shems.activities.ScanActivity"
+            android:label="@string/title_activity_scan" />
+        <activity
+            android:name="com.example.shems.activities.ModifyParaActivity"
+            android:label="@string/title_activity_modify_para" />
+        <activity
+            android:name="com.example.shems.activities.FatherActivity"
+            android:label="@string/title_activity_father" />
+        <activity
+            android:name="com.example.shems.activities.LoadCheckActivity"
+            android:label="@string/title_activity_load_check" />
+        <activity
+            android:name="com.example.shems.activities.ShowLogActivity"
+            android:label="@string/title_activity_show_log" />
+        <activity
+            android:name="com.example.shems.activities.LoadListActivity"
+            android:label="@string/title_activity_load_list" />
+        <activity
+            android:name="com.example.shems.activities.HisAChartActivity"
+            android:label="@string/title_activity_his_achart" />
+        <activity
+            android:name="com.example.shems.activities.LogEventShowActivity"
+            android:label="@string/title_activity_log_event_show" />
+        <activity
+            android:name="com.example.shems.activities.GetRealTimePriceActivity"
+            android:label="@string/title_activity_get_real_time_price" />
+        <activity
+            android:name="com.example.shems.activities.OptimizeActivity"
+            android:label="@string/title_activity_optimize" />
+        <activity
+            android:name="com.example.shems.activities.WaterHeaterOptimzieActivity"
+            android:label="@string/title_activity_water_heater_optimzie" />
+        <activity
+            android:name="com.example.shems.activities.AirConditionerActivity"
+            android:label="@string/title_activity_air_conditioner" />
+        <activity
+            android:name="com.example.shems.activities.HBAChartActivity"
+            android:label="@string/title_activity_zhu_chart" />
+        <activity
+            android:name="com.example.shems.views.TableShow"
+            android:label="@string/title_activity_table_show" />
+        <activity
+            android:name="com.example.shems.activities.ACScheduleDetailChartActivity"
+            android:label="@string/title_activity_scheduling_chart"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.example.shems.activities.WHActivity"
+            android:label="@string/title_activity_wh" />
+        <activity
+            android:name="com.example.shems.tmp.MainListActivity"
+            android:label="@string/title_activity_main_list" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.shems.activities.ui.ElectricalStatisticsActivity"
+            android:label="@string/title_activity_electrical_statistics" />
+        <activity
+            android:name="com.example.shems.activities.ui.MyActionBarActivity"
+           />
+        <activity
+            android:name="com.example.shems.activities.ui.EventDetectionActivity"
+            android:label="@string/title_activity_event_detection" />
+        <activity
+            android:name="com.example.shems.activities.ui.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name="com.example.shems.activities.control.ACCtrlActivity" />
+        <activity android:name="com.example.shems.activities.control.CtrlMainActivity" />
+        <activity android:name="com.example.shems.activities.control.LoadMonitoringActivity" />
+        <activity android:name="com.example.shems.activities.control.LocationACQActivity" />
+        <activity android:name="com.example.shems.activities.control.SchedulingAdviceActivity" />
+        <activity android:name="com.example.shems.activities.control.SWCtrlActivity" />
+        <activity android:name="com.example.shems.activities.control.TmpHumAcqActivity" />
+        <activity
+            android:name="com.example.shems.activities.ui.ElectricalStatisticsActivity2"
+            android:label="@string/title_activity_electrical_statistics_activity2" >
+        </activity>
+    </application>
+
+</manifest>
