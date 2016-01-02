@@ -1,0 +1,7 @@
+空调				tcp client
+智能插座			udp client
+传感器盒子			tcp server
+传感器				tdp client
+灯				udp client
+窗帘				udp client
+热水器			    	暂时不支持
