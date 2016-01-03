@@ -1,0 +1,19 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+/build
+/target
+
+.classpath
+.project
+.settings/
+.mymetadata
+.springBeans
+jpa.reveng.xml
+
+#import file
+.tern-project
