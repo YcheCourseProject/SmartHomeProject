@@ -1,6 +1,6 @@
-#Smart Home Project
-##Source Code
-##Documents
-##Deployment
+# Smart Home Project
+## Source Code
+## Documents
+## Deployment
 
-##Needs to be updated
+## Needs to be updated
